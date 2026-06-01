@@ -17,3 +17,11 @@ body {
   background-color: var(--color-fip-gold);
   color: var(--color-fip-purple-900);
 }
+
+/* Accessible keyboard focus baseline for all interactive elements. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-fip-gold);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
