@@ -7,12 +7,16 @@
  */
 @theme {
   /* ---- Color: purples (backgrounds) ---- */
-  --color-fip-purple-900: rgb(28, 0, 55);   /* #1C0037 — body, header, footer, base sections */
-  --color-fip-purple-700: rgb(45, 0, 90);   /* alternated sections (video, "el FIP") */
-  --color-fip-purple-500: rgb(85, 1, 170);  /* awards section, accents */
+  /* Values measured by pixel-sampling the live site screenshot (img/Home.png),
+     replacing the audit's approximate figures. */
+  --color-fip-purple-900: rgb(24, 0, 54);    /* body, header, footer, base sections */
+  --color-fip-purple-700: rgb(42, 0, 90);    /* alternated sections (video, "el FIP") */
+  --color-fip-purple-500: rgb(84, 0, 168);   /* awards section, accents */
 
   /* ---- Color: accent + utility ---- */
-  --color-fip-gold:  rgb(212, 175, 55);     /* CTAs, badges, "27 años" highlight */
+  /* Live site gold is a pale champagne, NOT the audit's ~rgb(212,175,55).
+     Measured median over 286k gold pixels in img/Home.png. */
+  --color-fip-gold:  rgb(231, 206, 130);     /* CTAs, badges, "27 años" highlight */
   --color-fip-white: #ffffff;               /* text on dark backgrounds */
   --color-fip-blue:  #1a1aff;               /* reglamento letter badges (A–R) */
   --color-fip-black: #000000;               /* legacy login backdrop */
