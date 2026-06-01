@@ -20,6 +20,9 @@ next-env.d.ts
 *.pem
 npm-debug.log*
 
+# local reference screenshots (visual comparison only — not repo assets)
+/img/
+
 # editor
 .vscode/*
 !.vscode/extensions.json
