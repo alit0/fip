@@ -1,0 +1,29 @@
+/**
+ * FIP Festival — Design Tokens
+ * Single source of truth for the visual system. Consumed by Tailwind v4 via @theme,
+ * which also emits each token as a :root CSS variable (e.g. var(--color-fip-gold)).
+ * Values extracted from the site audit (section 9). Confirm exact hues with a color
+ * picker before locking — the audit flags them as approximate.
+ */
+@theme {
+  /* ---- Color: purples (backgrounds) ---- */
+  --color-fip-purple-900: rgb(28, 0, 55);   /* #1C0037 — body, header, footer, base sections */
+  --color-fip-purple-700: rgb(45, 0, 90);   /* alternated sections (video, "el FIP") */
+  --color-fip-purple-500: rgb(85, 1, 170);  /* awards section, accents */
+
+  /* ---- Color: accent + utility ---- */
+  --color-fip-gold:  rgb(212, 175, 55);     /* CTAs, badges, "27 años" highlight */
+  --color-fip-white: #ffffff;               /* text on dark backgrounds */
+  --color-fip-blue:  #1a1aff;               /* reglamento letter badges (A–R) */
+  --color-fip-black: #000000;               /* legacy login backdrop */
+
+  /* ---- Typography (font variables injected by next/font in root layout) ---- */
+  --font-title:  var(--font-inter), system-ui, sans-serif;   /* H1 up to 72px / weight 900 */
+  --font-impact: var(--font-archivo), system-ui, sans-serif; /* impact headlines */
+  --font-body:   var(--font-lato), system-ui, sans-serif;    /* body + nav (~13–14px uppercase) */
+
+  /* ---- Radius ---- */
+  --radius-pill: 9999px;  /* pill-shaped CTAs */
+  --radius-md:   0.5rem;
+  --radius-lg:   1rem;
+}

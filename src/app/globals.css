@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+/* Base: dark mode by default — purple backdrop, light text, Lato body. */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-fip-purple-900);
+  color: var(--color-fip-white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-fip-gold);
+  color: var(--color-fip-purple-900);
+}
