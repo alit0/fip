@@ -2,29 +2,45 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
-import {
-  MAIN_NAV,
-  JURADO_YEARS,
-  GANADOR_YEARS,
-} from "@/lib/navigation";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { MAIN_NAV, JURADO_YEARS, GANADOR_YEARS } from "@/lib/navigation";
 
 const DROPDOWN_ITEMS = {
   jurados: JURADO_YEARS.map((y) => ({ label: String(y), href: `/jurados/${y}` })),
   ganadores: GANADOR_YEARS.map((y) => ({ label: String(y), href: `/ganadores/${y}` })),
 } as const;
 
+function Logo({ onClick }: { onClick?: () => void }) {
+  return (
+    <Link
+      href="/"
+      onClick={onClick}
+      className="font-impact text-xl tracking-wide text-fip-white"
+    >
+      FIP<span className="text-fip-gold">.</span>
+    </Link>
+  );
+}
+
 export default function MainNav() {
-  const [open, setOpen] = useState<string | null>(null);
+  // desktop hover dropdown
+  const [hovered, setHovered] = useState<string | null>(null);
+  // mobile drawer + which accordion is expanded
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [expanded, setExpanded] = useState<string | null>(null);
+
+  const closeMobile = () => {
+    setMobileOpen(false);
+    setExpanded(null);
+  };
 
   return (
     <nav className="bg-fip-purple-900">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-impact text-xl tracking-wide text-fip-white">
-          FIP<span className="text-fip-gold">.</span>
-        </Link>
+        <Logo />
 
-        <ul className="flex flex-wrap items-center gap-x-5 gap-y-2 font-body text-[13px] uppercase tracking-wider">
+        {/* ---------- Desktop nav (lg and up) ---------- */}
+        <ul className="hidden items-center gap-x-5 font-body text-[13px] uppercase tracking-wider lg:flex">
           {MAIN_NAV.map((item) => {
             if ("href" in item) {
               return (
@@ -40,18 +56,17 @@ export default function MainNav() {
             }
 
             const items = DROPDOWN_ITEMS[item.dropdown];
-            const isOpen = open === item.dropdown;
+            const isOpen = hovered === item.dropdown;
             return (
               <li
                 key={item.dropdown}
                 className="relative"
-                onMouseEnter={() => setOpen(item.dropdown)}
-                onMouseLeave={() => setOpen(null)}
+                onMouseEnter={() => setHovered(item.dropdown)}
+                onMouseLeave={() => setHovered(null)}
               >
                 <button
                   type="button"
                   aria-expanded={isOpen}
-                  onClick={() => setOpen(isOpen ? null : item.dropdown)}
                   className="flex items-center gap-1 uppercase text-fip-white/85 transition-colors hover:text-fip-gold"
                 >
                   {item.label}
@@ -75,7 +90,77 @@ export default function MainNav() {
             );
           })}
         </ul>
+
+        {/* ---------- Mobile hamburger toggle (below lg) ---------- */}
+        <button
+          type="button"
+          aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((v) => !v)}
+          className="text-fip-white lg:hidden"
+        >
+          {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+        </button>
       </div>
+
+      {/* ---------- Mobile drawer ---------- */}
+      {mobileOpen && (
+        <div className="border-t border-white/10 lg:hidden">
+          <ul className="mx-auto flex max-w-7xl flex-col px-6 py-2 font-body text-sm uppercase tracking-wider">
+            {MAIN_NAV.map((item) => {
+              if ("href" in item) {
+                return (
+                  <li key={item.href} className="border-b border-white/5">
+                    <Link
+                      href={item.href}
+                      onClick={closeMobile}
+                      className="block py-3 text-fip-white/85 transition-colors hover:text-fip-gold"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              }
+
+              const items = DROPDOWN_ITEMS[item.dropdown];
+              const isExpanded = expanded === item.dropdown;
+              return (
+                <li key={item.dropdown} className="border-b border-white/5">
+                  <button
+                    type="button"
+                    aria-expanded={isExpanded}
+                    onClick={() =>
+                      setExpanded(isExpanded ? null : item.dropdown)
+                    }
+                    className="flex w-full items-center justify-between py-3 uppercase text-fip-white/85 transition-colors hover:text-fip-gold"
+                  >
+                    {item.label}
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform ${isExpanded ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  {isExpanded && (
+                    <ul className="pb-2 pl-4">
+                      {items.map(({ label, href }) => (
+                        <li key={href}>
+                          <Link
+                            href={href}
+                            onClick={closeMobile}
+                            className="block py-2 text-fip-white/70 transition-colors hover:text-fip-gold"
+                          >
+                            {label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }
