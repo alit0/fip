@@ -1,0 +1,36 @@
+{
+  "intro": "Este reglamento de carácter oficial está integrado por sus artículos generales y sus aclaraciones complementarias…",
+  "introTodo": "TODO: encabezado completo VERBATIM (la auditoría lo corta en «…»).",
+  "downloads": {
+    "es": { "label": "Reglamento (ES)", "href": "/descargas/reglamento.pdf" },
+    "pt": { "label": "Regulamento (PT)", "href": "/descargas/regulamento_port.pdf" }
+  },
+  "scoreTable": [
+    { "award": "Gran Prix", "points": 12 },
+    { "award": "Oro", "points": 10 },
+    { "award": "Plata", "points": 6 },
+    { "award": "Bronce", "points": 4 },
+    { "award": "Finalista", "points": 1 }
+  ],
+  "articles": [
+    { "letter": "A", "theme": "Condiciones de participación (apertura de inscripciones, fechas, deadlines)", "body": null },
+    { "letter": "B", "theme": "Condiciones para inscribir piezas (sin límite de categorías, clave propia)", "body": null },
+    { "letter": "C", "theme": "Carga de acciones en la Intranet (límite de videos 7 MB)", "body": null },
+    { "letter": "D", "theme": "Sobre discrepancias (acreditación de derechos)", "body": null },
+    { "letter": "E", "theme": "Discrepancias y controversias", "body": null },
+    { "letter": "F", "theme": "Derechos del organizador / Premios a otorgar (incl. Premios Especiales 2026, tablas de puntaje)", "body": null, "showScoreTable": true },
+    { "letter": "G", "theme": "Identificación de piezas gráficas (logo máx. 3 cm)", "body": null },
+    { "letter": "H", "theme": "Cancelación o irregularidades de inscripciones", "body": null },
+    { "letter": "I", "theme": "Presentación de la misma idea conceptual", "body": null },
+    { "letter": "J", "theme": "Comité ejecutivo del FIP / duración de mandatos", "body": null },
+    { "letter": "K", "theme": "El juzgamiento (fases, tabla de puntajes, derechos)", "body": null, "showScoreTable": true },
+    { "letter": "L", "theme": "Inscripciones / cargos por transferencia bancaria", "body": null },
+    { "letter": "M", "theme": "Tratamiento posterior de inscripciones (derechos de autor)", "body": null },
+    { "letter": "N", "theme": "Aceptación de las reglas (términos y condiciones, cargos por anulación)", "body": null },
+    { "letter": "O", "theme": "Compra de réplicas de trofeos y modo de envío", "body": null },
+    { "letter": "P", "theme": "Copias de campañas para afiches de la Muestra Gráfica", "body": null },
+    { "letter": "Q", "theme": "La Marca del Año", "body": null },
+    { "letter": "R", "theme": "Agencia del Año", "body": null }
+  ],
+  "articlesTodo": "TODO: cuerpo legal completo de cada artículo VERBATIM (la auditoría sólo aporta el tema de cada uno)."
+}

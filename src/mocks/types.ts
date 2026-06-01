@@ -45,6 +45,34 @@ export interface InstitutionalSection {
   body: string;
 }
 
+export interface ScoreRow {
+  award: string;
+  points: number;
+}
+
+export interface RegulationArticle {
+  /** A–R */
+  letter: string;
+  /** theme/title from the audit (table 4) */
+  theme: string;
+  /** TODO: full legal body, verbatim from the live site / PDF */
+  body: string | null;
+  /** the recurring score table appears inside some articles (e.g. F, K) */
+  showScoreTable?: boolean;
+}
+
+export interface Reglamento {
+  intro: string;
+  introTodo: string;
+  downloads: {
+    es: { label: string; href: string };
+    pt: { label: string; href: string };
+  };
+  scoreTable: ScoreRow[];
+  articles: RegulationArticle[];
+  articlesTodo: string;
+}
+
 export interface HomeContent {
   hero: {
     titleLead: string;
