@@ -1,0 +1,15 @@
+[
+  { "slug": "chi-herrero", "name": "Agustin Herrero", "country": "Chile", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "col-caro-aguirre", "name": "Roberto Caro Aguirre", "country": "Colombia", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "col-gonzalez", "name": "Victor Gonzalez", "country": "Colombia", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "col-zambrano-forero", "name": "Iván Zambrano Forero", "country": "Colombia", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "esp-hernandez", "name": "Guillermo Hernandéz", "country": "España", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "per-canchaya", "name": "Aldo Canchaya", "country": "Perú", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "arg-cordoni", "name": "Adrián Alonso Cordoni", "country": "Argentina", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "col-ochoa-charry", "name": "Camilo Ochoa Charry", "country": "Colombia", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "bra-soalheiro", "name": "Barbara Soalheiro", "country": "Brasil", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "bra-peltier", "name": "Fernanda Peltier", "country": "Brasil", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "bra-de-paula", "name": "Renata de Paula", "country": "Brasil", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "col-parada", "name": "Bawer Parada", "country": "Colombia", "role": null, "agency": null, "photoUrl": null },
+  { "slug": "bra-rosa", "name": "Guilherme Rosa", "country": "Brasil", "role": null, "agency": null, "photoUrl": null }
+]

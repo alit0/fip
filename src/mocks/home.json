@@ -1,0 +1,66 @@
+{
+  "hero": {
+    "titleLead": "El FIP celebra sus",
+    "highlight": "27 años",
+    "titleTail": "de exitosa trayectoria",
+    "badgeNumber": "27",
+    "badgeLabel": "Años",
+    "ctaLabel": "Informe Ganadores 2025 .PDF",
+    "ctaHref": "/descargas/campeones-2025.pdf",
+    "imageTodo": "TODO: foto del hero (red carpet / gala). Asset real pendiente."
+  },
+  "muestraDigital": {
+    "heading": "Muestra digital",
+    "ctaLabel": "Informe Ganadores 2025 .PDF",
+    "ctaHref": "/descargas/campeones-2025.pdf",
+    "imageTodo": "TODO: imagen de la muestra digital. Asset real pendiente."
+  },
+  "awards": {
+    "heading": "Los premios",
+    "items": [
+      { "label": "Agencias del año", "href": "/premios#precios" },
+      { "label": "Marcas del año", "href": "/premios#precios" },
+      { "label": "Evento del año", "href": "/premios#precios" },
+      { "label": "Gran Prix", "href": "/premios#precios" },
+      { "label": "FIP de Platino", "href": "/premios#precios" },
+      { "label": "Oro", "href": "/premios#precios" },
+      { "label": "Plata", "href": "/premios#precios" },
+      { "label": "Bronce", "href": "/premios#precios" }
+    ],
+    "ctaLabel": "Quiero mi réplica",
+    "ctaHref": "/premios"
+  },
+  "institutional": {
+    "heading": "FIP 2025 - Algunos comentarios de la 26° edición",
+    "intro": [
+      "Con una cifra realmente extraordinaria de participantes inscriptos y con la presencia de agencias líderes de envergadura mundial, el FIP consolida, después de 26 años brillantes, su prestigio alcanzado desde hace tiempo. Su jurado internacional ha contado además con figuras de excepcional trayectoria y el FIP se considera honrado de su colaboración.",
+      "Las redes fueron nuevamente y centralmente un gran divulgador del FIP y sus premios y esto es otro indicador de la notable vigencia del que muchos consideran un referente “de punta mundial” entre los grandes premios internacionales de la actividad. Un gran número de publicaciones gráficas y digitales difundieron además esta vigencia marcando la creatividad y los méritos en ascenso de los mejores profesionales de la región.",
+      "El FIP ha contado en 2025 con 127 categorías que analizaron 24 herramientas de este “nuevo marketing” de la era tecnológica que envuelve a la humanidad y, entre ellas, las categorías de eventos vienen experimentando un notable crecimiento que se ve reflejado en haber sido el rubro más disputado por toda clase de ideas. El FIP ofreció este año 40 categorías de eventos.",
+      "Esta 26ª edición del festival contó con la participación de una singular cantidad de marcas finalistas que disputaron el 3 de Diciembre en el espectacular Scala Hotel de Buenos Aires, los ya prestigiosos premios “Agencia del Año” y los premios “Marcas del Año País” del FIP que se entregan a aquellas que más premios obtienen en distintos rubros sumando los puntos que otorga el Reglamento del festival. Por otra parte, el FIP ha anunciado el lanzamiento de la categoría Promociones en Video Cases nuevo premio especial que aplicará a numerosas herramientas del FIP, los que a partir de su presentación generaron mucho interés en el segmento."
+    ],
+    "sections": [
+      {
+        "title": "La noche de los campeones",
+        "body": "El festival exhibió un exigente “Plan de Tiempos” en cuanto a su cronograma que desemboca en su evento de auténtica gala “Los Campeones del FIP” al que acertadamente, su organización ha subtitulado “el Marketing del Siglo XXI” y que se realizó en Buenos Aires, Argentina. En el evento, que conduce desde hace años Khaled Hallar, figura de la TV argentina, se entregaron también los Premios a la Trayectoria Profesional y se han comunicado también los nuevos integrantes del Hall de la Fama del Festival. Finalmente, cabe destacar que los premios que obtienen las agencias en las categorías del FIP suman para los rankings de cada país."
+      },
+      {
+        "title": "Los anuncios del FIP",
+        "body": "Se anunciaron 3 nuevos rubros o herramientas de marketing que llevaran al FIP a ofrecer casi 150 categorías en 2026. Son The Women’s FIP enteramente dedicado a la mujer, Casos en Video Case y Experiencia de Marca en 7 categorías. Esto confirma la extraordinaria actualidad del FIP que ya lanzado su próxima edición y ya está convocando a los nuevos integrantes del Jurado Internacional."
+      }
+    ],
+    "ctaLabel": "Cómo participar",
+    "ctaHref": "/inscripcion"
+  },
+  "categories": { "heading": "Categorías 2026" },
+  "jurors": {
+    "heading": "Jurados 2026",
+    "ctaLabel": "Todos los jurados",
+    "ctaHref": "/jurados/2026",
+    "todo": "TODO: la auditoría dice «12 jurados» pero lista 13; faltan cargo, agencia y fotos reales de cada jurado."
+  },
+  "sponsors": {
+    "heading": "Auspician",
+    "todo": "TODO: lista de auspiciantes incompleta (auditoría: «AEVEA, Nuevo Marketing, La Fundación, Hall de la Fama, etc.») y logos pendientes."
+  },
+  "rankings": { "heading": "Rankings" }
+}
