@@ -1,10 +1,13 @@
 import Section from "@/components/shared/Section";
 import Cta from "@/components/shared/Cta";
 import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
-import { home } from "@/mocks";
+import type { HomeContent } from "@/mocks/types";
 
-export default function InstitutionalText() {
-  const { institutional } = home;
+export default function InstitutionalText({
+  institutional,
+}: {
+  institutional: HomeContent["institutional"];
+}) {
   return (
     <Section bg="bright">
       <div className="grid items-start gap-10 md:grid-cols-[1fr_2fr]">

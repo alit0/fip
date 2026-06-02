@@ -7,7 +7,7 @@ import {
   MessageCircle,
   type LucideIcon,
 } from "lucide-react";
-import { SOCIAL_LINKS } from "@/lib/navigation";
+import type { SocialLink } from "@/mocks/types";
 
 const ICONS: Record<string, LucideIcon> = {
   Instagram,
@@ -18,10 +18,16 @@ const ICONS: Record<string, LucideIcon> = {
   WhatsApp: MessageCircle,
 };
 
-export default function SocialIcons({ className }: { className?: string }) {
+export default function SocialIcons({
+  links,
+  className,
+}: {
+  links: SocialLink[];
+  className?: string;
+}) {
   return (
     <ul className={`flex items-center gap-3 ${className ?? ""}`}>
-      {SOCIAL_LINKS.map(({ name, href }) => {
+      {links.map(({ name, href }) => {
         const Icon = ICONS[name] ?? MessageCircle;
         return (
           <li key={name}>

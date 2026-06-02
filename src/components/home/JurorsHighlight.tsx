@@ -2,12 +2,18 @@ import Section from "@/components/shared/Section";
 import SectionHeading from "@/components/shared/SectionHeading";
 import Cta from "@/components/shared/Cta";
 import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
-import { home, jurors } from "@/mocks";
+import type { HomeContent, Juror } from "@/mocks/types";
 
-export default function JurorsHighlight() {
+export default function JurorsHighlight({
+  labels,
+  jurors,
+}: {
+  labels: HomeContent["jurors"];
+  jurors: Juror[];
+}) {
   return (
     <Section bg="mid">
-      <SectionHeading>{home.jurors.heading}</SectionHeading>
+      <SectionHeading>{labels.heading}</SectionHeading>
       <ul className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
         {jurors.map((juror) => (
           <li key={juror.slug} className="flex flex-col items-center text-center">
@@ -26,8 +32,8 @@ export default function JurorsHighlight() {
         ))}
       </ul>
       <div className="mt-10 text-center">
-        <Cta href={home.jurors.ctaHref} variant="outline" size="lg">
-          {home.jurors.ctaLabel}
+        <Cta href={labels.ctaHref} variant="outline" size="lg">
+          {labels.ctaLabel}
         </Cta>
       </div>
     </Section>

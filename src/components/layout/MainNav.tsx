@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { MAIN_NAV, JURADO_YEARS, GANADOR_YEARS } from "@/lib/navigation";
 
 const DROPDOWN_ITEMS = {
@@ -23,6 +24,7 @@ function Logo({ onClick }: { onClick?: () => void }) {
 }
 
 export default function MainNav() {
+  const t = useTranslations("nav");
   // desktop hover dropdown
   const [hovered, setHovered] = useState<string | null>(null);
   // mobile drawer + which accordion is expanded
@@ -49,7 +51,7 @@ export default function MainNav() {
                     href={item.href}
                     className="text-fip-white/85 transition-colors hover:text-fip-gold"
                   >
-                    {item.label}
+                    {t(item.key)}
                   </Link>
                 </li>
               );
@@ -69,7 +71,7 @@ export default function MainNav() {
                   aria-expanded={isOpen}
                   className="flex items-center gap-1 uppercase text-fip-white/85 transition-colors hover:text-fip-gold"
                 >
-                  {item.label}
+                  {t(item.key)}
                   <ChevronDown size={14} />
                 </button>
                 {isOpen && (
@@ -116,7 +118,7 @@ export default function MainNav() {
                       onClick={closeMobile}
                       className="block py-3 text-fip-white/85 transition-colors hover:text-fip-gold"
                     >
-                      {item.label}
+                      {t(item.key)}
                     </Link>
                   </li>
                 );
@@ -129,12 +131,10 @@ export default function MainNav() {
                   <button
                     type="button"
                     aria-expanded={isExpanded}
-                    onClick={() =>
-                      setExpanded(isExpanded ? null : item.dropdown)
-                    }
+                    onClick={() => setExpanded(isExpanded ? null : item.dropdown)}
                     className="flex w-full items-center justify-between py-3 uppercase text-fip-white/85 transition-colors hover:text-fip-gold"
                   >
-                    {item.label}
+                    {t(item.key)}
                     <ChevronDown
                       size={16}
                       className={`transition-transform ${isExpanded ? "rotate-180" : ""}`}

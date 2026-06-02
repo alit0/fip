@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "reglamento": "Reglamento",
+    "categorias": "Categorías",
+    "inscripcion": "Inscripción",
+    "fechas": "Fechas de cierre",
+    "tarifario": "Tarifario",
+    "premios": "Premios / Réplicas",
+    "jurados": "Jurados",
+    "ganadores": "Ganadores",
+    "hall": "Hall de la fama",
+    "contacto": "Contacto"
+  },
+  "access": {
+    "jurados": "Ingreso Jurados",
+    "agencias": "Ingreso Agencias"
+  },
+  "footer": {
+    "follow": "Seguinos en",
+    "downloadsEs": "Descargas (ES)",
+    "downloadsPt": "Downloads (PT)",
+    "contact": "Contacto"
+  }
+}

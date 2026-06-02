@@ -1,0 +1,35 @@
+{
+  "contact": {
+    "address": "Av. Forest 1147, Buenos Aires, Argentina",
+    "whatsapp": "(+54) 9 11 6377 7902",
+    "tel": "(+54) 11 5707 8856",
+    "office": "+54 9 4803 0227",
+    "email": "info@fipfestival.com.ar"
+  },
+  "social": [
+    { "name": "Instagram", "href": "https://www.instagram.com/fipfestival" },
+    { "name": "Facebook", "href": "https://www.facebook.com/fipfestival" },
+    { "name": "X", "href": "https://x.com/FipAwards" },
+    { "name": "LinkedIn", "href": "https://www.linkedin.com/in/fip-festival-835459172/" },
+    { "name": "YouTube", "href": "https://www.youtube.com/channel/UCrkZR7HcevTOlfs1f0q7SWw" },
+    { "name": "WhatsApp", "href": "https://api.whatsapp.com/send?phone=5491163777902" }
+  ],
+  "downloads": {
+    "es": [
+      { "label": "Reglamento", "href": "/descargas/reglamento.pdf" },
+      { "label": "Presentación de campañas", "href": "/descargas/fip_presentacion_campanas.pptx" },
+      { "label": "Formulario de inscripción", "href": "/descargas/inscripcion_autocompletable.pdf" },
+      { "label": "Solicitud de réplicas", "href": "/descargas/replicas_Orden_de_Compra.pdf" },
+      { "label": "Categorías", "href": "/descargas/categorias.pdf" },
+      { "label": "Tarifario", "href": "/descargas/tarifario_feb2026.pdf" }
+    ],
+    "pt": [
+      { "label": "Regulamento", "href": "/descargas/regulamento_port.pdf" },
+      { "label": "Apresentação Campanhas", "href": "/descargas/fip_apresentacao_campanas_port.pptx" },
+      { "label": "Ficha de inscrição", "href": "/descargas/inscricao_autocompletable_port.pdf" },
+      { "label": "Solicitação de réplicas", "href": "/descargas/Replicas-Orden_de_Compra_port.docx" },
+      { "label": "Categorias", "href": "/descargas/categorias_port.pdf" },
+      { "label": "Tarifário / Preço", "href": "/descargas/tarifario-port__feb2026.pdf" }
+    ]
+  }
+}

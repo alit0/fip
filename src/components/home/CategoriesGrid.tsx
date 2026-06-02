@@ -1,12 +1,18 @@
 import Link from "next/link";
 import Section from "@/components/shared/Section";
 import SectionHeading from "@/components/shared/SectionHeading";
-import { home, rubros } from "@/mocks";
+import type { Rubro } from "@/mocks/types";
 
-export default function CategoriesGrid() {
+export default function CategoriesGrid({
+  heading,
+  rubros,
+}: {
+  heading: string;
+  rubros: Rubro[];
+}) {
   return (
     <Section bg="base">
-      <SectionHeading>{home.categories.heading}</SectionHeading>
+      <SectionHeading>{heading}</SectionHeading>
       <ul className="mt-10 grid grid-cols-1 gap-3 md:grid-cols-2">
         {rubros.map((rubro) => (
           <li key={rubro.number}>

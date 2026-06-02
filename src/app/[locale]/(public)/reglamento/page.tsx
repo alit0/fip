@@ -5,7 +5,7 @@ import DownloadButton from "@/components/shared/DownloadButton";
 import BackToTop from "@/components/shared/BackToTop";
 import AnchorIndex from "@/components/reglamento/AnchorIndex";
 import ArticleSection from "@/components/reglamento/ArticleSection";
-import { reglamento } from "@/mocks";
+import { getReglamento } from "@/lib/content";
 
 const description =
   "Reglamento oficial del FIP Festival: artículos generales, aclaraciones complementarias y tabla de puntajes. Descargable en español y portugués.";
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ReglamentoPage() {
-  const { intro, downloads, articles, scoreTable } = reglamento;
+export default async function ReglamentoPage() {
+  const { intro, downloads, articles, scoreTable } = await getReglamento();
 
   return (
     <>

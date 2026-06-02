@@ -40,6 +40,29 @@ export interface Sponsor {
   url: string | null;
 }
 
+export interface SocialLink {
+  name: string;
+  href: string;
+}
+
+export interface DownloadLink {
+  label: string;
+  href: string;
+}
+
+/** Site-wide config. Phase 3: backed by the Payload SiteConfig global. */
+export interface SiteConfig {
+  contact: {
+    address: string;
+    whatsapp: string;
+    tel: string;
+    office: string;
+    email: string;
+  };
+  social: SocialLink[];
+  downloads: { es: DownloadLink[]; pt: DownloadLink[] };
+}
+
 export interface InstitutionalSection {
   title: string;
   body: string;
@@ -59,6 +82,35 @@ export interface RegulationArticle {
   body: string | null;
   /** the recurring score table appears inside some articles (e.g. F, K) */
   showScoreTable?: boolean;
+}
+
+export type AwardIcon = "oro" | "cristal" | "platino";
+
+export interface Category {
+  rubroNumber: number;
+  /** e.g. MP.6 */
+  code: string;
+  /** real title from categorias.png; null = TODO (pending from categorias.pdf) */
+  title: string | null;
+  /** TODO: long description, verbatim from the live site / PDF */
+  description: string | null;
+  award: AwardIcon;
+  isSpecial: boolean;
+  /** e.g. "Gran Prix" / "Platino"; null when unknown */
+  specialType: string | null;
+  isNew: boolean;
+}
+
+export interface CategoriasPage {
+  subtitle: string;
+  downloads: {
+    es: { label: string; href: string };
+    pt: { label: string; href: string };
+  };
+  ventajas: { title: string; body: string | null }[];
+  /** audit code ranges per rubro number, for rubros not yet transcribed */
+  categoryRanges: Record<string, string>;
+  todo: string;
 }
 
 export interface Reglamento {

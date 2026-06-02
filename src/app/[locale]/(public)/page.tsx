@@ -7,12 +7,12 @@ import CategoriesGrid from "@/components/home/CategoriesGrid";
 import JurorsHighlight from "@/components/home/JurorsHighlight";
 import SponsorsGrid from "@/components/home/SponsorsGrid";
 import RankingsLinks from "@/components/home/RankingsLinks";
+import { getHomeContent, getRubros, getJurors, getSponsors } from "@/lib/content";
 
 const description =
   "El FIP celebra sus 27 años de exitosa trayectoria. Festival Iberoamericano de Promociones y Eventos: jurados, ganadores, categorías y rankings por país.";
 
 export const metadata: Metadata = {
-  // override the templated title so the Home tab reads cleanly
   title: "FIP Festival — 27 años de trayectoria",
   description,
   alternates: { canonical: "/" },
@@ -23,21 +23,27 @@ export const metadata: Metadata = {
     siteName: "FIP Festival",
     locale: "es_AR",
     type: "website",
-    // TODO: imagen Open Graph real pendiente (asset).
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [home, rubros, jurors, sponsors] = await Promise.all([
+    getHomeContent(),
+    getRubros(),
+    getJurors(),
+    getSponsors(),
+  ]);
+
   return (
     <>
-      <Hero />
-      <MuestraDigital />
-      <AwardsGrid />
-      <InstitutionalText />
-      <CategoriesGrid />
-      <JurorsHighlight />
-      <SponsorsGrid />
-      <RankingsLinks />
+      <Hero hero={home.hero} />
+      <MuestraDigital data={home.muestraDigital} />
+      <AwardsGrid awards={home.awards} />
+      <InstitutionalText institutional={home.institutional} />
+      <CategoriesGrid heading={home.categories.heading} rubros={rubros} />
+      <JurorsHighlight labels={home.jurors} jurors={jurors} />
+      <SponsorsGrid heading={home.sponsors.heading} sponsors={sponsors} />
+      <RankingsLinks heading={home.rankings.heading} />
     </>
   );
 }

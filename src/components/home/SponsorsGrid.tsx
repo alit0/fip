@@ -1,11 +1,17 @@
 import Section from "@/components/shared/Section";
 import SectionHeading from "@/components/shared/SectionHeading";
-import { home, sponsors } from "@/mocks";
+import type { Sponsor } from "@/mocks/types";
 
-export default function SponsorsGrid() {
+export default function SponsorsGrid({
+  heading,
+  sponsors,
+}: {
+  heading: string;
+  sponsors: Sponsor[];
+}) {
   return (
     <Section bg="base">
-      <SectionHeading>{home.sponsors.heading}</SectionHeading>
+      <SectionHeading>{heading}</SectionHeading>
       <ul className="mt-10 flex flex-wrap items-center justify-center gap-6">
         {sponsors.map((sponsor) => (
           <li

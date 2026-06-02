@@ -1,13 +1,12 @@
 import Link from "next/link";
 import Section from "@/components/shared/Section";
 import SectionHeading from "@/components/shared/SectionHeading";
-import { home } from "@/mocks";
 import { RANKING_COUNTRIES } from "@/lib/navigation";
 
-export default function RankingsLinks() {
+export default function RankingsLinks({ heading }: { heading: string }) {
   return (
     <Section bg="mid">
-      <SectionHeading>{home.rankings.heading}</SectionHeading>
+      <SectionHeading>{heading}</SectionHeading>
       <ul className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
         {RANKING_COUNTRIES.map((country) => (
           <li key={country.slug}>

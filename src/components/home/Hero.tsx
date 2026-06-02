@@ -1,5 +1,5 @@
 import Cta from "@/components/shared/Cta";
-import { home } from "@/mocks";
+import type { HomeContent } from "@/mocks/types";
 
 /** TODO: el "27 años" original es un sello SVG (/images/home/sello-27.svg). Acá se
  *  reemplaza por un badge CSS equivalente hasta tener el asset real. */
@@ -17,8 +17,7 @@ function YearBadge({ number, label }: { number: string; label: string }) {
  * (placeholder until the real asset lands), right-aligned overlaid text, "27" sello
  * top-right, and a faded "GANADORES FIP" watermark.
  */
-export default function Hero() {
-  const { hero } = home;
+export default function Hero({ hero }: { hero: HomeContent["hero"] }) {
   return (
     <section className="relative isolate overflow-hidden bg-fip-purple-900">
       {/* Background image placeholder + readability gradient */}

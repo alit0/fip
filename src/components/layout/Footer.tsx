@@ -1,9 +1,7 @@
-import Link from "next/link";
-import {
-  CONTACT,
-  DOWNLOADS_ES,
-  DOWNLOADS_PT,
-} from "@/lib/navigation";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import type { DownloadLink } from "@/mocks/types";
+import { getSiteConfig } from "@/lib/content";
 import SocialIcons from "./SocialIcons";
 
 function DownloadColumn({
@@ -11,7 +9,7 @@ function DownloadColumn({
   items,
 }: {
   title: string;
-  items: { label: string; href: string }[];
+  items: DownloadLink[];
 }) {
   return (
     <div>
@@ -34,7 +32,12 @@ function DownloadColumn({
   );
 }
 
-export default function Footer() {
+export default async function Footer() {
+  const [{ contact, social, downloads }, t] = await Promise.all([
+    getSiteConfig(),
+    getTranslations("footer"),
+  ]);
+
   return (
     <footer className="border-t border-white/10 bg-fip-purple-900">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-14 md:grid-cols-2 lg:grid-cols-4">
@@ -44,33 +47,33 @@ export default function Footer() {
             FIP<span className="text-fip-gold">.</span>
           </Link>
           <p className="mt-3 mb-4 text-sm uppercase tracking-widest text-fip-white/60">
-            Seguinos en
+            {t("follow")}
           </p>
-          <SocialIcons />
+          <SocialIcons links={social} />
         </div>
 
         {/* Block 2: descargas ES */}
-        <DownloadColumn title="Descargas (ES)" items={DOWNLOADS_ES} />
+        <DownloadColumn title={t("downloadsEs")} items={downloads.es} />
 
         {/* Block 3: descargas PT */}
-        <DownloadColumn title="Downloads (PT)" items={DOWNLOADS_PT} />
+        <DownloadColumn title={t("downloadsPt")} items={downloads.pt} />
 
         {/* Block 4: contacto */}
         <div>
           <h3 className="mb-3 font-title text-sm font-bold uppercase tracking-widest text-fip-gold">
-            Contacto
+            {t("contact")}
           </h3>
           <ul className="space-y-1.5 text-sm text-fip-white/75">
-            <li>{CONTACT.address}</li>
-            <li>WhatsApp: {CONTACT.whatsapp}</li>
-            <li>Tel: {CONTACT.tel}</li>
-            <li>Oficina: {CONTACT.office}</li>
+            <li>{contact.address}</li>
+            <li>WhatsApp: {contact.whatsapp}</li>
+            <li>Tel: {contact.tel}</li>
+            <li>Oficina: {contact.office}</li>
             <li>
               <a
-                href={`mailto:${CONTACT.email}`}
+                href={`mailto:${contact.email}`}
                 className="transition-colors hover:text-fip-gold"
               >
-                {CONTACT.email}
+                {contact.email}
               </a>
             </li>
           </ul>
