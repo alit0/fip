@@ -14,8 +14,9 @@ const SIZES: Record<Size, string> = {
   lg: "px-7 py-3.5 text-sm",
 };
 
-/** Treat downloads and absolute URLs as plain anchors; everything else is a Link. */
-function isExternal(href: string) {
+/** Treat downloads and absolute URLs as plain anchors; everything else is a Link.
+ *  Exported for unit testing — it is the one piece of pure logic in the component. */
+export function isExternal(href: string) {
   return /^https?:\/\//.test(href) || href.startsWith("/descargas");
 }
 
