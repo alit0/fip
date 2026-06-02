@@ -13,6 +13,7 @@ import type {
   Category,
   CategoriasPage,
   SiteConfig,
+  Inscripcion,
 } from "./types";
 
 import homeData from "./home.json";
@@ -23,6 +24,7 @@ import reglamentoData from "./reglamento.json";
 import categoriesData from "./categories.json";
 import categoriasData from "./categorias.json";
 import siteConfigData from "./site-config.json";
+import inscripcionData from "./inscripcion.json";
 
 export const home: HomeContent = homeData;
 export const rubros: Rubro[] = rubrosData;
@@ -32,6 +34,7 @@ export const reglamento: Reglamento = reglamentoData;
 export const categories: Category[] = categoriesData as Category[];
 export const categoriasPage: CategoriasPage = categoriasData;
 export const siteConfig: SiteConfig = siteConfigData;
+export const inscripcion: Inscripcion = inscripcionData as Inscripcion;
 
 export type {
   HomeContent,
@@ -45,4 +48,5 @@ export type {
   SocialLink,
   DownloadLink,
   AwardIcon,
+  Inscripcion,
 } from "./types";

@@ -14,5 +14,6 @@ export {
   getCategoriasPage,
 } from "./catalog";
 export { getReglamento } from "./reglamento";
+export { getInscripcion } from "./inscripcion";
 export { getJurors } from "./jurors";
 export { getSponsors } from "./sponsors";

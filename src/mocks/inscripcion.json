@@ -1,0 +1,121 @@
+{
+  "title": "Inscripción • Cómo presentar",
+  "subtitle": "Inscriba sus campañas en el FIP",
+  "index": [
+    { "label": "1. Formulario de inscripción", "href": "#inscripcion" },
+    { "label": "2. Presentación para las campañas", "href": "#presentacion" },
+    { "label": "3. Subir campañas", "href": "#subir-campanias" },
+    { "label": "4. Enviar láminas", "href": "#enviar-laminas" },
+    { "label": "Condiciones generales", "href": "#condiciones" }
+  ],
+  "steps": [
+    {
+      "id": "inscripcion",
+      "step": "Paso 1 • Inscripción",
+      "title": "Complete el formulario de inscripción",
+      "body": [
+        "Descargar formulario de inscripción, completarlo y enviarlo por e-mail a info@fipfestival.com.ar",
+        "Una vez acreditado el pago se le enviará por e-mail un nombre de usuario y contraseña para poder ingresar al sistema de carga de campañas. Recuerde que no hay límite de categorías para presentar una misma acción; en cada categoría presentada deberá abonar un arancel de inscripción (B1 Reglamento). Se pueden completar todas las categorías usando un solo formulario, indicando el número y código de todas las categorías en que presenta la misma acción. NO OLVIDE COMPLETAR TODOS LOS DATOS Y LOS E-MAILS QUE SE SOLICITAN: SON OBLIGATORIOS."
+      ],
+      "downloads": [
+        { "label": "Descargar formulario de inscripción — Español", "href": "/descargas/inscripcion_autocompletable.pdf", "lang": "ES" },
+        { "label": "Ficha de inscrição — Português", "href": "/descargas/inscricao_autocompletable_port.pdf", "lang": "PT" }
+      ]
+    },
+    {
+      "id": "presentacion",
+      "step": "Paso 2 • Presentación",
+      "title": "Cree la presentación para la campaña inscripta",
+      "body": [
+        "Antes de subir sus campañas al sistema online del FIP, usted debe descargar y llenar la presentación en PPT (PowerPoint). La presentación no puede exceder la cantidad de 30 placas; se recomiendan 25.",
+        "Si el contenido de varias acciones se repite, no es necesario crear nuevas presentaciones. Solo se crean nuevas presentaciones si el contenido varía significativamente.",
+        "Uso de video: colocar el link del video de la campaña en la última diapositiva de la presentación."
+      ],
+      "links": [
+        { "text": "¿Necesita ayuda? Guía para el contenido de la presentación", "href": "#contenido-presentaciones" }
+      ],
+      "downloads": [
+        { "label": "Descargar presentación para campañas", "href": "/descargas/fip_presentacion_campanas.pptx", "lang": "ES" },
+        { "label": "Download apresentação", "href": "/descargas/fip_apresentacao_campanas_port.pptx", "lang": "PT" }
+      ]
+    },
+    {
+      "id": "subir-campanias",
+      "step": "Paso 3 • Subir campañas",
+      "title": "Subir campañas",
+      "body": [
+        "Para cargar sus campañas debe acceder a Ingreso Agencias. Una vez allí, deberá completar con su nombre de usuario y contraseña para ingresar al sistema.",
+        "Una vez en el sistema pulse el botón «Ingresar nueva campaña» y complete los datos requeridos:"
+      ],
+      "bullets": ["Campaña", "Empresa", "Descripción (opcional)"],
+      "cta": { "label": "Ingreso Agencias", "href": "/acceso/agencias" },
+      "links": [
+        { "text": "¿No tiene el archivo PowerPoint para la presentación de campañas? Aquí puede descargarlo", "href": "/descargas/fip_presentacion_campanas.pptx" },
+        { "text": "¿Cuáles son las características que debe tener la presentación? Aquí puede verlas", "href": "#contenido-presentaciones" }
+      ],
+      "downloads": [
+        { "label": "Descargar presentación para campañas", "href": "/descargas/fip_presentacion_campanas.pptx", "lang": "ES" },
+        { "label": "Download apresentação", "href": "/descargas/fip_apresentacao_campanas_port.pptx", "lang": "PT" }
+      ]
+    },
+    {
+      "id": "enviar-laminas",
+      "step": "Paso 4 • Enviar láminas",
+      "title": "Envíe los archivos de sus láminas",
+      "body": [
+        "Una vez que las campañas hayan sido cargadas online, los participantes deberán enviar por e-mail o por sistema de transferencia (ej.: WeTransfer, iCloud) una lámina de 60 cm x 40 cm en formato digital por cada acción presentada. Formato del archivo: JPG / PDF, CMYK, 60 cm x 40 cm.",
+        "¿A dónde se presentan las láminas? Las láminas serán utilizadas por el FIP en su Muestra Digital, a exhibirse en su web luego de la entrega de premios, y luego integrará el programa viajero denominado «La Muestra Itinerante del FIP», que consiste en la presentación de eventos que se programarán a lo largo del año tanto en América como en Europa.",
+        "Precios: el costo de publicación de cada una será de 20 US / €, importe que deberá ser abonado por el participante junto a su inscripción. El material quedará en poder del Festival, dando el participante su conformidad para su libre uso."
+      ],
+      "imageTodo": "Diagrama formato de lámina 60×40 cm (JPG/PDF · CMYK) — asset real pendiente"
+    }
+  ],
+  "condiciones": {
+    "title": "Condiciones Generales",
+    "body": "En el caso de que un jurado informe al Comité Ejecutivo del FIP que alguna campaña inscripta no figura en la planilla oficial que el festival envía a sus jueces, dicho comité aplicará las sanciones que correspondan, que comprenderán las siguientes medidas: no tomar en cuenta dicha inscripción, multando al inscriptor en idéntica suma a la incurrida. En caso de reiteración (2 o más piezas irregularmente inscriptas a partir de la cesión de la clave) procederá a eliminar automáticamente todas las piezas del participante, considerando a la misma una falta grave. En ambos casos queda entendido que la infracción no tendrá derecho a resarcimiento ni reembolso alguno."
+  },
+  "contenido": {
+    "id": "contenido-presentaciones",
+    "title": "Contenido de las presentaciones",
+    "question": "¿Qué aspectos debe tener en cuenta para armar la presentación de las campañas?",
+    "aspects": [
+      {
+        "number": 1,
+        "title": "Apreciación Global",
+        "body": [
+          "¿Cómo se posicionan los productos / servicios dentro de la categoría?",
+          "¿Cómo se posiciona la marca? ¿Se trata de un relanzamiento?"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Objetivos de la Promoción",
+        "body": [
+          "¿Qué metas de marketing específicas se quieren alcanzar? ¿Se tuvieron en cuenta en el diseño de esta acción?",
+          "Ejemplos: introducción en el mercado, toma de participación y/o porción del mismo, mejora de la imagen del producto, incremento momentáneo de utilidades, superar problemas de competencia, de abastecimiento, etc."
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Descripción de la Estrategia",
+        "body": [
+          "¿Cómo se trabajó?",
+          "Ejemplos: planeamiento, utilización de incentivos, período de tiempo, publicidad, correo directo, material digital, materiales de ventas, segmento objetivo, nivel de presupuesto, etc."
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Objetivos Alcanzados",
+        "body": [
+          "¿Fueron logrados los objetivos del programa?",
+          "Explique y fundamente los objetivos alcanzados, no siendo necesario para esto dar cifras que comprometan la natural reserva de las empresas."
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Muestras de los Elementos",
+        "body": ["Exponga muestras o fotografías de los materiales de la promoción."]
+      }
+    ]
+  }
+}

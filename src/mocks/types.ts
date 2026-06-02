@@ -63,6 +63,50 @@ export interface SiteConfig {
   downloads: { es: DownloadLink[]; pt: DownloadLink[] };
 }
 
+export interface InscripcionDownload {
+  label: string;
+  href: string;
+  lang: "ES" | "PT";
+}
+
+export interface InscripcionStep {
+  /** anchor id, e.g. "inscripcion" */
+  id: string;
+  /** "Paso 1 • Inscripción" */
+  step: string;
+  /** "1. Complete el formulario de inscripción" */
+  title: string;
+  body: string[];
+  bullets?: string[];
+  /** inline help / intra-page anchor links */
+  links?: { text: string; href: string }[];
+  /** optional call to action, e.g. Ingreso Agencias */
+  cta?: { label: string; href: string };
+  downloads?: InscripcionDownload[];
+  /** TODO image (e.g. the 60×40 lámina format diagram) */
+  imageTodo?: string;
+}
+
+export interface InscripcionAspect {
+  number: number;
+  title: string;
+  body: string[];
+}
+
+export interface Inscripcion {
+  title: string;
+  subtitle: string;
+  index: { label: string; href: string }[];
+  steps: InscripcionStep[];
+  condiciones: { title: string; body: string };
+  contenido: {
+    id: string;
+    title: string;
+    question: string;
+    aspects: InscripcionAspect[];
+  };
+}
+
 export interface InstitutionalSection {
   title: string;
   body: string;
