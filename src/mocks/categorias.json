@@ -1,0 +1,37 @@
+{
+  "subtitle": "Los 23 segmentos de FIP y sus categorías",
+  "downloads": {
+    "es": { "label": "Descargar categorías (ES)", "href": "/descargas/categorias.pdf" },
+    "pt": { "label": "Download categorias (PT)", "href": "/descargas/categorias_port.pdf" }
+  },
+  "ventajas": [
+    { "title": "Descuentos por escala de tarifario", "body": null },
+    { "title": "Sobre el formato del juzgamiento", "body": null },
+    { "title": "Sobre «Mayores Chances»", "body": null }
+  ],
+  "categoryRanges": {
+    "2": "E.1–E.39 (+ Agencia del Año Eventos)",
+    "3": "CIM.1",
+    "4": "EM.1–EM.8",
+    "5": "DH.1–DH.3",
+    "6": "MC.1–MC.3",
+    "7": "TEC.1–TEC.11",
+    "8": "MI.1",
+    "9": "SUS.1–SUS.8",
+    "10": "PNC.1–PNC.4",
+    "11": "WF.1–WF.6",
+    "12": "LAN.1–LAN.4",
+    "13": "DEP.1–DEP.3",
+    "14": "POP.1–POP.3",
+    "15": "D.1–D.5",
+    "16": "VC.1–VC.7",
+    "17": "MS.1–MS.3",
+    "18": "INT.1",
+    "19": "MPU.1–MPU.5",
+    "20": "MD.1",
+    "21": "RRPP.1–RRPP.2",
+    "22": "INF.1",
+    "23": "PUB.1–PUB.2"
+  },
+  "todo": "Rubros 2–23 ingeridos desde categorias.pdf (códigos, títulos, descripciones, marcadores Gran Prix). Pendiente: descripciones del Rubro 1 (MP) — el PDF y el sitio en vivo difieren (ver discrepancias); íconos de premio reales (todas por defecto 'oro')."
+}
