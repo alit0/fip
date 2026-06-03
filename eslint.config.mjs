@@ -12,6 +12,9 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    ignores: [".next/**", "out/**", "build/**"],
+  },
   ...compat.config({
     extends: ["next/core-web-vitals"],
   }),
