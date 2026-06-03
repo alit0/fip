@@ -1,0 +1,103 @@
+{
+  "title": "Premios / Réplicas",
+  "intro": "Para adquirir réplicas de premios del FIP, el participante debe descargar el formulario de compra, completarlo y enviarlo por e-mail.",
+  "orderEmail": "productos@fipfestival.com.ar",
+  "priceNotice": "Debido a las alternativas de las políticas monetarias de la Reserva Federal y del Banco Central Europeo, los precios de réplicas que se enuncian son en dólares para la región latinoamericana y en euros para la región europea, tal como corresponde a sus monedas regionales de intercambio. No incluyen gastos de embalaje y envío ni de impuestos por nacionalización aduanera. Estos últimos están a cargo del participante.",
+  "trophies": [
+    {
+      "name": "Agencia del Año",
+      "description": "Extraordinario trofeo, una verdadera pieza artística, con imagen estilizada del FIP, destacada chapa de color azul en la base.",
+      "price": "550 US/€",
+      "imageTodo": "Trofeo Agencia del Año"
+    },
+    {
+      "name": "Marca del Año",
+      "description": "A pedido de los ganadores que requieran una segunda chapita, especificando la categoría y la acción, o el premio especial obtenido, más un diploma enmarcado en caja «FIP FESTIVALS».",
+      "price": "345 US/€",
+      "imageTodo": "Trofeo Marca del Año"
+    },
+    {
+      "name": "Gran Prix",
+      "description": "Extraordinario trofeo con estructura y pie de acrílico, con pirografía de textos en bajo relieve. Posee un biselado lateral en el cuerpo y la base.",
+      "price": "420 US/€",
+      "imageTodo": "Trofeo Gran Prix"
+    },
+    {
+      "name": "FIP de Oro",
+      "description": "Estatuilla de aluminio fundido con baño oro. En el frente de su diseño, los laureles y el sol provienen del escudo Nacional de la República Argentina; en el dorso, un mapamundi en relieve. La leyenda del año grabada en la chapa.",
+      "price": "380 US/€",
+      "imageTodo": "Trofeo FIP de Oro"
+    },
+    {
+      "name": "FIP de Plata",
+      "description": "Estatuilla de aluminio fundido con baño plata. En el frente de su diseño, los laureles y el sol provienen del escudo Nacional de la República Argentina; en el dorso, un mapamundi en relieve. La leyenda del año grabada en la chapa.",
+      "price": "380 US/€",
+      "imageTodo": "Trofeo FIP de Plata"
+    },
+    {
+      "name": "FIP de Bronce",
+      "description": "El original es un diploma y puede solicitarse una estatuilla.",
+      "price": "350 US/€",
+      "imageTodo": "Trofeo FIP de Bronce"
+    }
+  ],
+  "shipping": {
+    "heading": "Tarifario de envío",
+    "note": "Se aplica a réplicas que no hayan sido retiradas en el evento de ganadores. El pago de los envíos y de las réplicas es por anticipado.",
+    "rows": [
+      { "label": "Envíos de hasta 2 kilogramos", "price": "45 US/€" },
+      { "label": "Envíos de 2 a 5 kilogramos", "price": "75 US/€" },
+      { "label": "Envíos de 5 kilogramos o más", "price": "100 US/€" }
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Medios de pago",
+      "items": [
+        {
+          "title": "Argentina",
+          "body": "Pagos con tarjetas de crédito. En caso de pagos con tarjetas de crédito, se adicionará el 21% (IVA) correspondiente."
+        },
+        {
+          "title": "Pagos internacionales menores a 1000 U$/€",
+          "body": "Para giros menores a 1000 U$/€, los solicitantes deberán consultar las opciones de pago al FIP. En el caso de remesas de dinero, los gastos de la operación están a cargo del comprador."
+        },
+        {
+          "title": "Cobros con sistema PayPal",
+          "body": "El FIP opera con el sistema PayPal, enviando un link de pagos que vence al 3.er día y deberá renovarse. Se aclara que este sistema NO OPERA con tarjetas corporativas. Consultar al FIP si el pago es en euros, por existir una norma fiscal especial en Argentina."
+        },
+        {
+          "title": "Otras formas de pago",
+          "body": "Sobre los impuestos locales y su tratamiento en el país de origen: el participante deberá pagar el importe exacto de la factura. El Festival no reconocerá ninguna deducción atribuible a impuestos locales del país de origen desde donde se inscriba al FIP."
+        }
+      ]
+    },
+    {
+      "heading": "Condiciones de envío",
+      "items": [
+        {
+          "title": "Empaque y embalaje",
+          "body": "Dada la fragilidad de los trofeos y las normativas de los correos internacionales, el Festival utiliza cajas y embalajes especiales."
+        },
+        {
+          "title": "Cuentas de correo",
+          "body": "Se deberá proveer al FIP un número de cuenta de correo internacional (Fedex, DHL, UPS, Servientrega o Mamut) para facilitar la remisión de las réplicas al domicilio del destinatario."
+        },
+        {
+          "title": "Aduanas",
+          "body": "Habrá tasas de aduana en el país de destino, a cargo del destinatario. El festival declina toda responsabilidad acerca de diferencias en los presupuestos de envío que apliquen los correos según peso o tarifa volumétrica."
+        }
+      ]
+    }
+  ],
+  "downloads": {
+    "es": {
+      "label": "Formulario para réplicas de premios — Español",
+      "href": "/descargas/replicas_Orden_de_Compra.pdf"
+    },
+    "pt": {
+      "label": "Solicitação de réplicas de prêmios — Português",
+      "href": "/descargas/Replicas-Orden_de_Compra_port.docx"
+    }
+  }
+}

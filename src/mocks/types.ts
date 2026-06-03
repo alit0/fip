@@ -158,6 +158,34 @@ export interface Tarifario {
   sections: TarifarioSection[];
 }
 
+export interface Trophy {
+  name: string;
+  description: string;
+  price: string;
+  /** TODO: real trophy image asset pending */
+  imageTodo: string;
+}
+
+export interface PremiosShippingRow {
+  label: string;
+  price: string;
+}
+
+export interface Premios {
+  title: string;
+  intro: string;
+  orderEmail: string;
+  priceNotice: string;
+  trophies: Trophy[];
+  shipping: { heading: string; note: string; rows: PremiosShippingRow[] };
+  /** payment methods + shipping conditions; same shape as Tarifario text blocks */
+  sections: TarifarioSection[];
+  downloads: {
+    es: { label: string; href: string };
+    pt: { label: string; href: string };
+  };
+}
+
 export interface InstitutionalSection {
   title: string;
   body: string;
