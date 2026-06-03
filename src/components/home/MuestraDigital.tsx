@@ -1,8 +1,11 @@
 import Section from "@/components/shared/Section";
 import Cta from "@/components/shared/Cta";
-import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import type { HomeContent } from "@/mocks/types";
 
+/**
+ * Live site `<section class="video">`: a standalone band holding only the
+ * "Informe Ganadores" download CTA — no title, no image (see _scratch/Muestra_Digital_Analisis.md).
+ */
 export default function MuestraDigital({
   data,
 }: {
@@ -10,18 +13,10 @@ export default function MuestraDigital({
 }) {
   return (
     <Section bg="base">
-      <div className="grid items-center gap-10 md:grid-cols-2">
-        <ImagePlaceholder label={data.imageTodo} className="aspect-[16/9] w-full" />
-        <div className="text-center md:text-left">
-          <h2 className="font-title text-3xl font-black uppercase tracking-wide md:text-4xl">
-            {data.heading}
-          </h2>
-          <div className="mt-6">
-            <Cta href={data.ctaHref} variant="solid" size="lg">
-              {data.ctaLabel}
-            </Cta>
-          </div>
-        </div>
+      <div className="flex justify-center">
+        <Cta href={data.ctaHref} variant="solid" size="lg">
+          {data.ctaLabel}
+        </Cta>
       </div>
     </Section>
   );

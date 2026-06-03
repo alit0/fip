@@ -10,10 +10,8 @@
     "imageTodo": "TODO: foto del hero (red carpet / gala). Asset real pendiente."
   },
   "muestraDigital": {
-    "heading": "Muestra digital",
     "ctaLabel": "Informe Ganadores 2025 .PDF",
-    "ctaHref": "/descargas/campeones-2025.pdf",
-    "imageTodo": "TODO: imagen de la muestra digital. Asset real pendiente."
+    "ctaHref": "/descargas/campeones-2025.pdf"
   },
   "awards": {
     "heading": "Los premios",
@@ -23,12 +21,11 @@
       { "label": "Evento del año", "href": "/premios#precios" },
       { "label": "Gran Prix", "href": "/premios#precios" },
       { "label": "FIP de Platino", "href": "/premios#precios" },
-      { "label": "Oro", "href": "/premios#precios" },
-      { "label": "Plata", "href": "/premios#precios" },
-      { "label": "Bronce", "href": "/premios#precios" }
-    ],
-    "ctaLabel": "Quiero mi réplica",
-    "ctaHref": "/premios"
+      { "label": "FIP de Oro", "href": "/premios#precios" },
+      { "label": "FIP de Plata", "href": "/premios#precios" },
+      { "label": "FIP de Bronce", "href": "/premios#precios" },
+      { "label": "Quiero mi réplica", "href": "/premios" }
+    ]
   },
   "institutional": {
     "heading": "FIP 2025 - Algunos comentarios de la 26° edición",
@@ -40,11 +37,11 @@
     ],
     "sections": [
       {
-        "title": "La noche de los campeones",
+        "title": "LA NOCHE DE LOS CAMPEONES",
         "body": "El festival exhibió un exigente “Plan de Tiempos” en cuanto a su cronograma que desemboca en su evento de auténtica gala “Los Campeones del FIP” al que acertadamente, su organización ha subtitulado “el Marketing del Siglo XXI” y que se realizó en Buenos Aires, Argentina. En el evento, que conduce desde hace años Khaled Hallar, figura de la TV argentina, se entregaron también los Premios a la Trayectoria Profesional y se han comunicado también los nuevos integrantes del Hall de la Fama del Festival. Finalmente, cabe destacar que los premios que obtienen las agencias en las categorías del FIP suman para los rankings de cada país."
       },
       {
-        "title": "Los anuncios del FIP",
+        "title": "LOS ANUNCIOS DEL FIP",
         "body": "Se anunciaron 3 nuevos rubros o herramientas de marketing que llevaran al FIP a ofrecer casi 150 categorías en 2026. Son The Women’s FIP enteramente dedicado a la mujer, Casos en Video Case y Experiencia de Marca en 7 categorías. Esto confirma la extraordinaria actualidad del FIP que ya lanzado su próxima edición y ya está convocando a los nuevos integrantes del Jurado Internacional."
       }
     ],

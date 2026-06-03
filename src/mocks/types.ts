@@ -260,16 +260,12 @@ export interface HomeContent {
     imageTodo: string;
   };
   muestraDigital: {
-    heading: string;
     ctaLabel: string;
     ctaHref: string;
-    imageTodo: string;
   };
   awards: {
     heading: string;
     items: AwardLink[];
-    ctaLabel: string;
-    ctaHref: string;
   };
   institutional: {
     heading: string;

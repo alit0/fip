@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Section from "@/components/shared/Section";
 import SectionHeading from "@/components/shared/SectionHeading";
-import Cta from "@/components/shared/Cta";
 import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
 import type { HomeContent } from "@/mocks/types";
 
@@ -26,11 +25,6 @@ export default function AwardsGrid({
             </span>
           </Link>
         ))}
-      </div>
-      <div className="mt-10 text-center">
-        <Cta href={awards.ctaHref} variant="solid" size="lg">
-          {awards.ctaLabel}
-        </Cta>
       </div>
     </Section>
   );
