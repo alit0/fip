@@ -15,6 +15,7 @@ import type {
   SiteConfig,
   Inscripcion,
   FechasCierre,
+  Tarifario,
 } from "./types";
 
 import homeData from "./home.json";
@@ -27,6 +28,7 @@ import categoriasData from "./categorias.json";
 import siteConfigData from "./site-config.json";
 import inscripcionData from "./inscripcion.json";
 import fechasCierreData from "./fechas-cierre.json";
+import tarifarioData from "./tarifario.json";
 
 export const home: HomeContent = homeData;
 export const rubros: Rubro[] = rubrosData;
@@ -38,6 +40,7 @@ export const categoriasPage: CategoriasPage = categoriasData;
 export const siteConfig: SiteConfig = siteConfigData;
 export const inscripcion: Inscripcion = inscripcionData as Inscripcion;
 export const fechasCierre: FechasCierre = fechasCierreData;
+export const tarifario: Tarifario = tarifarioData;
 
 export type {
   HomeContent,
@@ -53,4 +56,5 @@ export type {
   AwardIcon,
   Inscripcion,
   FechasCierre,
+  Tarifario,
 } from "./types";

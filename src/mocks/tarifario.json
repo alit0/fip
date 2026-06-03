@@ -1,0 +1,76 @@
+{
+  "title": "Tarifario 2026",
+  "notice": "Importante: por cada categoría presentada se considera 1 inscripción. Si se presenta una misma campaña en varias categorías, cada una lo hace en forma independiente y abona por cada una un arancel. Es decir: 1 inscripción = 1 arancel, independientemente de que sea o no la misma acción.",
+  "baseFees": {
+    "items": [
+      { "label": "General", "price": "390 US/€" },
+      { "label": "Marketing Promocional", "price": "390 US/€" },
+      { "label": "Eventos", "price": "390 US/€" }
+    ]
+  },
+  "quantityDiscounts": [
+    "−3% adicional presentando entre 6 y 16 inscripciones",
+    "−5% adicional presentando a partir de 16 inscripciones"
+  ],
+  "otherFees": [
+    {
+      "label": "Agencia del Año País",
+      "desc": "Costo de inscripción como Agencia del Año País. Se abona un solo arancel por año por agencia participante.",
+      "price": "200 US/€"
+    },
+    {
+      "label": "Procesamiento de materiales y láminas digitales de la Muestra Gráfica",
+      "price": "10 US/€"
+    }
+  ],
+  "feesNote": "Una vez concretada la inscripción y realizado el pago, el FIP les enviará un tutorial de cómo deben realizar la inscripción.",
+  "downloads": {
+    "es": { "label": "Descargar tarifario — Español", "href": "/descargas/tarifario_feb2026.pdf" },
+    "pt": { "label": "Download tarifário / preço — Português", "href": "/descargas/tarifario-port__feb2026.pdf" }
+  },
+  "sections": [
+    {
+      "heading": "Pago de inscripciones",
+      "items": [
+        {
+          "title": "Inscripciones en Argentina",
+          "body": "Para las inscripciones en Argentina el pago deberá realizarse en $ (pesos argentinos), al cual deberá adicionarse el valor del IVA (21%) + el impuesto de Ingresos Brutos correspondiente."
+        },
+        {
+          "title": "Pagos desde el exterior",
+          "body": "Pago de inscripciones por transferencia bancaria internacional. El participante deberá abonar los gastos bancarios, tasas e impuestos argentinos según las siguientes indicaciones: por pagos de hasta 500 dólares/euros deberán adicionarse 55 dólares/euros; por pagos de 501 dólares/euros o más deberán adicionarse 95 dólares/euros, según su región y la moneda que corresponda a su factura. La comisión mínima + tax que cobra el banco en Argentina no incluye eventuales gastos, tarifas ni Swift que cobren los bancos emisores, intermediarios o corresponsales, por lo que los mismos deberán estar cubiertos por el emisor del pago: el FIP debe recibir el importe facturado."
+        },
+        {
+          "title": "Otras formas de pago",
+          "body": "Sobre los impuestos locales y su tratamiento en el país de origen, el participante deberá pagar el importe exacto de la factura, no correspondiendo deducciones atribuibles a impuestos locales del país de origen."
+        },
+        {
+          "title": "Pago anticipado / condiciones",
+          "body": "Se considera «inscripción con pago anticipado» aquella que haya sido efectivamente girada o transferida al organizador (FIP) sin excederse de la fecha pactada para esta condición. Queda establecido que esa fecha es la del cierre regional estipulado. Los descuentos otorgados por el FIP se considerarán caídos (perdidos) cuando medie incumplimiento de pago en las fechas acordadas."
+        }
+      ]
+    },
+    {
+      "heading": "Envío de factura",
+      "items": [
+        {
+          "title": "Sobre facturas anticipadas",
+          "body": "No podremos procesar su inscripción hasta que recibamos su pago. Este debe coincidir con sus inscripciones."
+        },
+        {
+          "title": "Inscripciones no abonadas",
+          "body": "Toda inscripción no abonada será registrada en forma provisoria durante un período de ocho (8) días hábiles; luego de este período, la inscripción caducará. Sin embargo, usted puede recibir una Pro-Forma cuando el FIP reciba sus formularios de inscripción, que le servirá de comprobante para pagar realizando un giro por agencia o por transferencia bancaria según le indiquemos. Por favor envíenos su confirmación de pago / «Constancia de pago» y los formularios de inscripción por fax o e-mail. Recién allí sus inscripciones quedarán confirmadas."
+        }
+      ]
+    },
+    {
+      "heading": "Ganadores",
+      "items": [
+        {
+          "title": "¿Cuándo sabré si gané?",
+          "body": "El juzgamiento de las campañas tiene lugar un mes antes de la gala de premiaciones. En forma anticipada, el FIP publicará en la web la lista de finalistas o «short list». Los ganadores se sabrán en la ceremonia de premiación. No enviaremos notificación oficial de ganadores antes de que el Festival abra su ceremonia. Los finalistas serán contactados por teléfono o e-mail para que puedan asistir a la ceremonia de los premios."
+        }
+      ]
+    }
+  ]
+}

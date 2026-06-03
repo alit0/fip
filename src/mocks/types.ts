@@ -133,6 +133,31 @@ export interface FechasCierre {
   };
 }
 
+export interface TarifarioFee {
+  label: string;
+  desc?: string;
+  price: string;
+}
+
+export interface TarifarioSection {
+  heading: string;
+  items: { title: string; body: string }[];
+}
+
+export interface Tarifario {
+  title: string;
+  notice: string;
+  baseFees: { items: { label: string; price: string }[] };
+  quantityDiscounts: string[];
+  otherFees: TarifarioFee[];
+  feesNote: string;
+  downloads: {
+    es: { label: string; href: string };
+    pt: { label: string; href: string };
+  };
+  sections: TarifarioSection[];
+}
+
 export interface InstitutionalSection {
   title: string;
   body: string;
