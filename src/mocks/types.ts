@@ -107,6 +107,32 @@ export interface Inscripcion {
   };
 }
 
+export interface DiscountRow {
+  descuento: string;
+  tipo: string;
+  condicion: string;
+  vigencia: string;
+}
+
+export interface ClosingRow {
+  /** region name or process stage */
+  label: string;
+  detail: string;
+  date: string;
+}
+
+export interface FechasCierre {
+  title: string;
+  intro: string;
+  discounts: { heading: string; rows: DiscountRow[] };
+  closings: {
+    heading: string;
+    regions: ClosingRow[];
+    milestones: ClosingRow[];
+    note: string;
+  };
+}
+
 export interface InstitutionalSection {
   title: string;
   body: string;

@@ -15,5 +15,6 @@ export {
 } from "./catalog";
 export { getReglamento } from "./reglamento";
 export { getInscripcion } from "./inscripcion";
+export { getFechasCierre } from "./fechas-cierre";
 export { getJurors } from "./jurors";
 export { getSponsors } from "./sponsors";

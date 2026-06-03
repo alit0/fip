@@ -1,0 +1,85 @@
+{
+  "title": "Fechas & Descuentos 2026",
+  "intro": "En esta sección, el participante puede encontrar la fecha de cierre de su región. Esto significa el día límite para presentar la ficha de inscripción con sus respectivas campañas.",
+  "discounts": {
+    "heading": "Descuentos por inscripción",
+    "rows": [
+      {
+        "descuento": "-10%",
+        "tipo": "Inscripción anticipada",
+        "condicion": "Descuento por inscripción realizada dentro del período promocional.",
+        "vigencia": "Hasta el 31 de mayo de 2026"
+      },
+      {
+        "descuento": "-3%",
+        "tipo": "Adicional por cantidad",
+        "condicion": "Presentando entre 6 y 16 inscripciones.",
+        "vigencia": "Adicional al descuento vigente."
+      },
+      {
+        "descuento": "-5%",
+        "tipo": "Adicional por cantidad",
+        "condicion": "Presentando más de 16 inscripciones.",
+        "vigencia": "Adicional al descuento vigente."
+      }
+    ]
+  },
+  "closings": {
+    "heading": "Fechas de cierre 2026",
+    "regions": [
+      {
+        "label": "América Central & Caribe",
+        "detail": "Panamá, Costa Rica, Nicaragua, El Salvador, Honduras, Guatemala, Puerto Rico, Trinidad y Tobago, Rca. Dominicana y Cuba. País invitado: República Dominicana.",
+        "date": "24 de julio"
+      },
+      {
+        "label": "Región Países Andinos",
+        "detail": "Chile, Perú, Bolivia, Ecuador, Venezuela y Colombia.",
+        "date": "3 de agosto"
+      },
+      {
+        "label": "América del Norte",
+        "detail": "Canadá, Estados Unidos y México.",
+        "date": "7 de agosto"
+      },
+      {
+        "label": "Cono Sur",
+        "detail": "Argentina, Brasil, Paraguay y Uruguay.",
+        "date": "14 de agosto"
+      },
+      {
+        "label": "Europa y país extracomunitario invitado",
+        "detail": "España, Portugal y país extracomunitario invitado.",
+        "date": "21 de agosto"
+      }
+    ],
+    "milestones": [
+      {
+        "label": "Envío de materiales digitales — Deadline",
+        "detail": "Láminas y planchas: los participantes deberán enviar las láminas / planchas en formato digital en archivos .JPG a 150 dpi de resolución a arte@fipfestival.com.ar",
+        "date": "28 de agosto"
+      },
+      {
+        "label": "Revisión técnica de campaña",
+        "detail": "Formatos & categorías: se revisarán según el reglamento los formatos y la correcta carga de categorías presentadas, formato de presentaciones, etc.",
+        "date": "1 al 4 de septiembre"
+      },
+      {
+        "label": "Período de juzgamiento",
+        "detail": "El jurado realizará la evaluación de las campañas; las agencias ganadoras que figuran en la terna serán anunciadas en el informe de finalistas después de la auditoría del FIP.",
+        "date": "7 al 16 de septiembre"
+      },
+      {
+        "label": "Informe de finalistas",
+        "detail": "Comunicado de prensa a los participantes y a los medios de las acciones finalistas.",
+        "date": "30 de septiembre"
+      },
+      {
+        "label": "Fiesta de premiación de ganadores",
+        "detail": "El acto de proclamación de ganadores y «Muestra Gráfica Digital» de casos participantes se realizará de forma presencial.",
+        "date": "Próximamente"
+      }
+    ],
+    "note": "Se podrán presentar en el FIP todos los trabajos realizados y/o en ejecución entre el 1° de enero de 2025 hasta el 30 de agosto de 2026 y que no se hayan presentado anteriormente, a menos que tengan cambios de sede (país o ciudad) o nuevos agregados en su formato."
+  }
+}
