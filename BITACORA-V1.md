@@ -227,7 +227,7 @@ Gemini en `_scratch/` (ver sección 9).
 - [x] 6. **Tarifario** — aranceles, descuentos por cantidad, formas de pago, envío de factura
 - [x] 7. **Premios / Réplicas** — catálogo de 6 trofeos con precios, tarifario de envío, medios de pago
 - [ ] 8. Jurados `[year]` ← siguiente (Gemini ya relevó)
-- [ ] 9. Ganadores `[year]` (ojo: 4 de 7 años sólo en PDF)
+- [ ] 9. Ganadores `[year]` (Gemini dejó solo datos crudos; 2024 y 2023 sólo en PDF)
 - [ ] 10. Hall de la Fama (Gemini ya relevó)
 - [ ] 11. Ranking `[country]` (Gemini ya relevó)
 - [ ] 12. Contacto (incluye formulario nuevo)
@@ -391,11 +391,11 @@ para maquetar; nunca es código.** Lo que hay hoy:
 - `Muestra_Digital_Analisis.md` — análisis de la franja entre el hero y los premios
 
 > [!CAUTION]
-> ROADMAP y ORQUESTACION mencionan que Gemini "ya relevó Ganadores", pero **no hay un
-> `Relevamiento_Ganadores.md` en `_scratch/`**. Lo que sí se sabe (registrado al
-> relevar el vivo) es que Ganadores 2024 y 2023 están **sólo en PDF** (no hay página
-> HTML). Antes de maquetar Ganadores, conviene pedirle a Gemini el relevamiento
-> faltante o trabajar desde esos PDFs.
+> **Ganadores** es la página más cara que falta. En `_scratch/` sólo hay **datos
+> crudos** (`ganadores_php_data.json`), no un `Relevamiento_Ganadores.md` prolijo, y
+> **2024 y 2023 existen sólo en PDF** (no hay página HTML scrapeable). Antes de
+> maquetarla, conviene pedirle a Gemini un relevamiento prolijo o trabajar directo de
+> esos PDFs.
 
 ### Documentos de análisis en el repo
 

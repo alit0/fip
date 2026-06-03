@@ -62,7 +62,10 @@ Hace lo que NO es maquetado de páginas y que vive en archivos distintos:
 ### Gemini CLI — relevamiento
 
 Scrapea el sitio en vivo, documenta contenido, confirma discrepancias contra la
-auditoría. Ya relevó Ganadores y Premios. **Siempre escribe en `_scratch/`, nunca
+auditoría. Ya entregó relevamientos prolijos de Premios, Jurados, Ranking y Hall de
+la Fama. De **Ganadores** sólo dejó datos crudos (JSON), y 2024 y 2023 sólo existen
+en PDF (sin tablas HTML scrapeables): esa página necesita un relevamiento prolijo —o
+trabajar de los PDFs— antes de maquetarse. **Siempre escribe en `_scratch/`, nunca
 toca código.** No necesita worktree propio.
 
 > [!CAUTION]

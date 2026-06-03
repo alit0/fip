@@ -8,9 +8,10 @@
 > [ORQUESTACION-AGENTES.md](./ORQUESTACION-AGENTES.md). La
 > [BITACORA](./BITACORA-V1.md) sigue siendo la fuente de verdad del **estado**.
 
-**Estado de partida:** Fase 2, páginas 1-4 maquetadas (Home, Reglamento,
-Categorías, Inscripción). Cimientos arquitectónicos hechos (capa async + ruteo
-i18n). Testing base instalado. Equipo de agentes en formación.
+**Estado de partida:** Fase 2, páginas 1-7 maquetadas (Home, Reglamento,
+Categorías, Inscripción, Fechas de cierre, Tarifario, Premios). Cimientos
+arquitectónicos hechos (capa async + ruteo i18n). Testing base instalado (18 tests).
+Equipo de 3 agentes operando.
 
 **Lo nuevo en v2:** el trabajo se reparte entre tres agentes según sus fortalezas,
 sin que se pisen, usando git worktrees. Claude Code construye el core, Codex hace
@@ -67,8 +68,8 @@ porque tocan archivos distintos.
 ## Hito 1 — Cimientos arquitectónicos
 
 ✅ **Hecho.** Capa de datos async (`lib/content/`) + ruteo i18n con segmento
-`[locale]` y `next-intl`. Lo hizo Claude Code en solitario (era pre-equipo). Las 4
-páginas existentes corren sobre estos rieles.
+`[locale]` y `next-intl`. Lo hizo Claude Code en solitario (era pre-equipo). Las 7
+páginas maquetadas corren sobre estos rieles.
 
 ---
 
@@ -83,8 +84,10 @@ trabajo en equipo de verdad.**
   `feat/claude-<pagina>`. Tu revisión en el navegador antes de mergear se mantiene
   intacta.
 - **Gemini (releva, en paralelo):** adelanta el contenido de las páginas pesadas que
-  vienen. Ya entregó Ganadores y Premios (en `_scratch/`). Puede ir relevando
-  Jurados y Ranking mientras Claude Code maqueta las livianas.
+  vienen. Ya entregó relevamientos prolijos de Premios, Jurados, Ranking y Hall de la
+  Fama (en `_scratch/`). De **Ganadores** sólo dejó datos crudos (JSON), y 2024 y 2023
+  sólo existen en PDF (sin tablas HTML scrapeables): esa página necesita un
+  relevamiento prolijo —o trabajar directo de los PDFs— antes de maquetarse.
 - **Codex (infra, en paralelo):** los quick wins que no chocan con páginas — los
   boundaries base (`error.tsx`/`loading.tsx`/`not-found.tsx`) y los scripts
   `typecheck`/`lint`. Rama `feat/codex-infra`.
@@ -97,13 +100,14 @@ trabajo en equipo de verdad.**
 
 ### Páginas pendientes (orden de la bitácora)
 
-5. Fechas de cierre ← en curso (Claude Code)
-6. Tarifario
-7. Premios / Réplicas (Gemini ya lo relevó)
-8. Jurados `[year]`
-9. Ganadores `[year]` (Gemini ya lo relevó — ojo: 4 de 7 años solo en PDF)
-10. Hall de la Fama
-11. Ranking `[country]`
+Ya hechas: **5. Fechas de cierre · 6. Tarifario · 7. Premios / Réplicas.** Faltan:
+
+8. Jurados `[year]` (Gemini ya relevó)
+9. Ganadores `[year]` (Gemini dejó **solo datos crudos** en `_scratch/`; 2024 y 2023
+   sólo existen en PDF — necesita un relevamiento prolijo, o trabajar de los PDFs,
+   antes de maquetarse)
+10. Hall de la Fama (Gemini ya relevó)
+11. Ranking `[country]` (Gemini ya relevó)
 12. Contacto (incluye formulario nuevo)
 
 ### Método por página (el de siempre)
