@@ -39,6 +39,11 @@ describe("páginas con datos (async server components)", () => {
     expect(container).not.toBeEmptyDOMElement();
   });
 
+  it("«Home» muestra el subtítulo verbatim del vivo (LA NOCHE DE LOS CAMPEONES)", async () => {
+    const { container } = render(await Home());
+    expect(container.textContent).toContain("LA NOCHE DE LOS CAMPEONES");
+  });
+
   it("«Reglamento» renderiza", async () => {
     const { container } = render(await Reglamento());
     expect(container).not.toBeEmptyDOMElement();
