@@ -21,7 +21,6 @@ import GanadoresYear from "@/app/[locale]/(public)/ganadores/[year]/page";
 import RankingCountry from "@/app/[locale]/(public)/ranking/[country]/page";
 
 const staticPages: [string, () => React.ReactNode][] = [
-  ["Fechas de cierre", Fechas],
   ["Tarifario", Tarifario],
   ["Premios", Premios],
   ["Hall de la Fama", Hall],
@@ -54,6 +53,11 @@ describe("páginas con datos (async server components)", () => {
 
   it("«Inscripción» renderiza", async () => {
     const { container } = render(await Inscripcion());
+    expect(container).not.toBeEmptyDOMElement();
+  });
+
+  it("«Fechas de cierre» renderiza", async () => {
+    const { container } = render(await Fechas());
     expect(container).not.toBeEmptyDOMElement();
   });
 });
