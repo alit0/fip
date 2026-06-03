@@ -31,3 +31,6 @@ npm-debug.log*
 # local audit/working artifacts (not repo assets)
 /Auditoria_Unpacked/
 audit_live_site.py
+
+# agent working artifacts (scraping, data dumps, reference files) — not repo assets
+/_scratch/
