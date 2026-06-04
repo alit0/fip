@@ -87,6 +87,13 @@ describe("páginas públicas dinámicas (con un parámetro válido)", () => {
     expect(container).not.toBeEmptyDOMElement();
   });
 
+  it("«Jurados 2026» muestra un jurado con su país (Agustin Herrero · Chile)", async () => {
+    const ui = await JuradosYear({ params: Promise.resolve({ year: "2026" }) });
+    const { container } = render(ui);
+    expect(container.textContent).toContain("Agustin Herrero");
+    expect(container.textContent).toContain("Chile");
+  });
+
   it("«Ganadores [year]» renderiza para 2025", async () => {
     const ui = await GanadoresYear({ params: Promise.resolve({ year: "2025" }) });
     const { container } = render(ui);
