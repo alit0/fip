@@ -17,6 +17,7 @@ import type {
   FechasCierre,
   Tarifario,
   Premios,
+  JuradosByYear,
 } from "./types";
 
 import homeData from "./home.json";
@@ -31,6 +32,7 @@ import inscripcionData from "./inscripcion.json";
 import fechasCierreData from "./fechas-cierre.json";
 import tarifarioData from "./tarifario.json";
 import premiosData from "./premios.json";
+import juradosData from "./jurados.json";
 
 export const home: HomeContent = homeData;
 export const rubros: Rubro[] = rubrosData;
@@ -44,6 +46,7 @@ export const inscripcion: Inscripcion = inscripcionData as Inscripcion;
 export const fechasCierre: FechasCierre = fechasCierreData;
 export const tarifario: Tarifario = tarifarioData;
 export const premios: Premios = premiosData;
+export const jurados: JuradosByYear = juradosData;
 
 export type {
   HomeContent,
@@ -61,4 +64,6 @@ export type {
   FechasCierre,
   Tarifario,
   Premios,
+  JuradoYearEntry,
+  JuradosByYear,
 } from "./types";

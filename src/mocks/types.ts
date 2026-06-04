@@ -186,6 +186,34 @@ export interface Premios {
   };
 }
 
+/** One juror on the per-year Jurados page (app/[locale]/(public)/jurados/[year]). */
+export interface JuradoYearEntry {
+  slug: string;
+  name: string;
+  /** Cargo / subtitle (separated from bio in the v2 source). May be empty. */
+  role: string;
+  /** Agency. Present mainly for recent years (2026/2025); empty otherwise. */
+  agency: string;
+  /** Country name. May be empty when the source did not have it. */
+  country: string;
+  /** Country flag emoji. NOTE: fabricated by the relevamiento (not in the live HTML). */
+  countryFlag: string;
+  /** Long biography. May be empty. */
+  bio: string;
+  /** TODO: real juror photo asset pending */
+  photoUrl: string | null;
+  /**
+   * INTERNAL provenance flag — NOT rendered. true = país/bandera read from the live
+   * site (2026/2025); false = inferred by the relevamiento (slug-derived país, mapped
+   * flag) for older editions. Kept for the final live-verification pass.
+   */
+  countryVerified: boolean;
+  order: number;
+}
+
+/** Jurors keyed by edition year ("2020"…"2026"). */
+export type JuradosByYear = Record<string, JuradoYearEntry[]>;
+
 export interface InstitutionalSection {
   title: string;
   body: string;

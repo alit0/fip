@@ -19,4 +19,5 @@ export { getFechasCierre } from "./fechas-cierre";
 export { getTarifario } from "./tarifario";
 export { getPremios } from "./premios";
 export { getJurors } from "./jurors";
+export { getJurados } from "./jurados";
 export { getSponsors } from "./sponsors";
