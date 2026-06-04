@@ -18,6 +18,7 @@ import type {
   Tarifario,
   Premios,
   JuradosByYear,
+  HallDeLaFama,
 } from "./types";
 
 import homeData from "./home.json";
@@ -33,6 +34,7 @@ import fechasCierreData from "./fechas-cierre.json";
 import tarifarioData from "./tarifario.json";
 import premiosData from "./premios.json";
 import juradosData from "./jurados.json";
+import hallData from "./hall-de-la-fama.json";
 
 export const home: HomeContent = homeData;
 export const rubros: Rubro[] = rubrosData;
@@ -47,6 +49,7 @@ export const fechasCierre: FechasCierre = fechasCierreData;
 export const tarifario: Tarifario = tarifarioData;
 export const premios: Premios = premiosData;
 export const jurados: JuradosByYear = juradosData;
+export const hallDeLaFama: HallDeLaFama = hallData;
 
 export type {
   HomeContent,
@@ -66,4 +69,6 @@ export type {
   Premios,
   JuradoYearEntry,
   JuradosByYear,
+  HallMember,
+  HallDeLaFama,
 } from "./types";

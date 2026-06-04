@@ -221,6 +221,38 @@ export interface InstitutionalSection {
   body: string;
 }
 
+/** A Hall of Fame member (app/[locale]/(public)/hall-de-la-fama). */
+export interface HallMember {
+  slug: string;
+  name: string;
+  /** cargo / role; may be empty */
+  role: string;
+  /** empresa; may be empty */
+  company: string;
+  country: string;
+  /** ISO-3166-1 alpha-2 for <CountryFlag>; null when unknown */
+  countryCode: string | null;
+  /** TODO: real photo asset pending */
+  photoUrl: string | null;
+  /** source logo path when the member has one (→ placeholder); null otherwise */
+  logoTodo: string | null;
+  /**
+   * Text biography. Only present for César González & Ángel Pedrote; for the rest the
+   * bio is an image on the live site (see bioImageTodo), so this is empty.
+   */
+  bioText: string;
+  /** Path of the _info.png when the bio is an image asset (→ placeholder); null otherwise. */
+  bioImageTodo: string | null;
+  order: number;
+}
+
+export interface HallDeLaFama {
+  title: string;
+  /** Institutional copy: ~11 apartados (qué es, principios, criterios, jury, …). */
+  institutional: InstitutionalSection[];
+  members: HallMember[];
+}
+
 export interface ScoreRow {
   award: string;
   points: number;
