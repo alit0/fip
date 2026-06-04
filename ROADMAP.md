@@ -10,7 +10,7 @@
 
 **Estado de partida:** Fase 2, páginas 1-7 maquetadas (Home, Reglamento,
 Categorías, Inscripción, Fechas de cierre, Tarifario, Premios). Cimientos
-arquitectónicos hechos (capa async + ruteo i18n). Testing base instalado (18 tests).
+arquitectónicos hechos (capa async + ruteo i18n). Testing base instalado.
 Equipo de 3 agentes operando.
 
 **Lo nuevo en v2:** el trabajo se reparte entre tres agentes según sus fortalezas,
@@ -121,9 +121,8 @@ Ya hechas: **5. Fechas de cierre · 6. Tarifario · 7. Premios / Réplicas.** Fa
 - Smoke test de la página nueva.
 - Commit + push a `develop` (con tu OK); `main` solo se toca en los releases.
 
-### Pendientes de contenido arrastrados
+### Pendientes de contenido restantes
 
-- [ ] Texto verbatim de "FIP 2025" del Home (en `Home.png`).
 - [ ] Ubicar los premios "Red del Año" (Independientes + Mundiales).
 - [ ] Confirmar nombre del Rubro 5 (Desarrollo Humano vs "FIP Salud y desarrollo
   humano"). → buen encargo para Gemini.
