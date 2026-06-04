@@ -196,6 +196,8 @@ export interface JuradoYearEntry {
   agency: string;
   /** Country name. May be empty when the source did not have it. */
   country: string;
+  /** ISO-3166-1 alpha-2 country code derived by the content layer when available. */
+  countryCode?: string | null;
   /** Country flag emoji. NOTE: fabricated by the relevamiento (not in the live HTML). */
   countryFlag: string;
   /** Long biography. May be empty. */

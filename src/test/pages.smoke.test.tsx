@@ -92,6 +92,7 @@ describe("páginas públicas dinámicas (con un parámetro válido)", () => {
     const { container } = render(ui);
     expect(container.textContent).toContain("Agustin Herrero");
     expect(container.textContent).toContain("Chile");
+    expect(container.querySelector('svg[aria-label="Bandera de Chile"]')).not.toBeNull();
   });
 
   it("«Ganadores [year]» renderiza para 2025", async () => {

@@ -5,6 +5,7 @@ import Section from "@/components/shared/Section";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 import BackToTop from "@/components/shared/BackToTop";
 import ImagePlaceholder from "@/components/shared/ImagePlaceholder";
+import CountryFlag from "@/components/shared/CountryFlag";
 import { JURADO_YEARS } from "@/lib/navigation";
 import { getJurados } from "@/lib/content";
 
@@ -66,10 +67,11 @@ export default async function JuradosYearPage({
                   <span className="mt-1 line-clamp-1 text-xs text-fip-white/60">{juror.role}</span>
                 )}
                 {juror.country && (
-                  <span className="mt-2 text-xs text-fip-white/80">
-                    {juror.countryFlag && `${juror.countryFlag} `}
-                    {juror.country}
-                  </span>
+                  <CountryFlag
+                    countryCode={juror.countryCode}
+                    countryName={juror.country}
+                    className="mt-2 text-xs text-fip-white/80"
+                  />
                 )}
               </a>
             </li>
@@ -97,10 +99,7 @@ export default async function JuradosYearPage({
                 )}
                 <p className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-fip-white/70">
                   {juror.country && (
-                    <span>
-                      {juror.countryFlag && `${juror.countryFlag} `}
-                      {juror.country}
-                    </span>
+                    <CountryFlag countryCode={juror.countryCode} countryName={juror.country} />
                   )}
                   {juror.agency && <span>Agencia: {juror.agency}</span>}
                 </p>
