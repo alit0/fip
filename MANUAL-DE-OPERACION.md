@@ -80,7 +80,10 @@ Estas reglas se mantienen pase lo que pase:
 4. **Commit + push antes de pasar a lo siguiente** (red de seguridad en GitHub).
 5. **Commits en unidades limpias:** una cosa por commit. La página por un lado, el
    testing por otro, los docs por otro.
-6. **Solo el tech lead mergea a `main`.** Los agentes pushean ramas, nunca `main`.
+6. **Nadie commitea en `main` directo; `main` es sagrada (solo releases).** El trabajo
+   vive en `develop`: Claude Code commitea directo ahí (con tu OK); Codex usa ramas
+   `feat/*` sacadas de `develop`. Solo el tech lead integra a `develop` y promueve a
+   `main`.
 7. **No dar por hecho lo que no se verificó en git.** Si depende del estado del repo,
    se mira con `git status` / `git log`, no se asume.
 8. **Antes de comandos que crean/borran/sobrescriben carpetas o cambian de rama, leer
@@ -106,8 +109,9 @@ El ciclo que usamos para cada página de Fase 2, y que funcionó bien:
    a layout.
 5. **Si está OK, das el OK explícito** para los dos commits: `feat(pagina)` y el de
    testing aparte.
-6. **Claude Code commitea y pushea** (en este proyecto trabaja sobre `main` directo;
-   los agentes de rama es distinto, ver protocolo de git).
+6. **Claude Code commitea y pushea** (en este proyecto commitea sobre `develop`
+   directo; `main` es sagrada y no se toca en el día a día. Los agentes de rama es
+   distinto, ver protocolo de git).
 7. **Verificás** con `git log --oneline` y `npm test` que quedó limpio.
 
 > [!NOTE]
@@ -126,9 +130,15 @@ es **git worktrees**: varias carpetas, cada una con su rama, todas del mismo rep
 ### Estructura
 
 ```text
-FipFestival/          → rama main (tu carpeta; acá mergeás y publicás)
-FipFestival-codex/    → worktree de Codex (si se monta a mano)
+FipFestival/          → rama develop (tu carpeta; integración / trabajo diario)
+FipFestival-codex/    → worktree de Codex, ramas feat/codex-* desde develop
 ```
+
+> [!IMPORTANT]
+> **Flujo main + develop.** `main` es la rama **sagrada**: estable, publicable, solo
+> recibe releases. **Nadie commitea ahí directo, jamás.** El trabajo diario vive en
+> `develop`. `main` se actualiza solo desde `develop` cuando hay un hito publicable
+> (ver "Release a main" abajo).
 
 > [!NOTE]
 > En la práctica, **opencode/Codex crea sus propios worktrees temporales** en
@@ -137,25 +147,38 @@ FipFestival-codex/    → worktree de Codex (si se monta a mano)
 
 ### El ciclo de una tarea en rama (Codex)
 
-1. Codex crea rama `feat/codex-<tarea>` desde `main`.
+1. Codex crea rama `feat/codex-<tarea>` desde `develop`.
 2. Trabaja en su worktree, commitea en unidades limpias.
-3. **Pushea su rama**, NO `main`. Avisa.
+3. **Pushea su rama**, NO `develop` ni `main`. Avisa.
 4. Vos revisás el diff de la rama.
-5. **Vos mergeás a `main`** con el ritual de abajo.
+5. **Vos mergeás a `develop`** con el ritual de abajo.
 6. Limpieza de la rama (local + remota).
 
-### Ritual de merge (SAGRADO — seguir el orden)
+### Ritual de merge a develop (SAGRADO — seguir el orden)
 
 ```bash
-# Parado en main, en TU carpeta principal, working tree LIMPIO
-git checkout main
+# Parado en develop, en TU carpeta principal, working tree LIMPIO
+git checkout develop
 git pull
 git merge feat/codex-<tarea>
 npm test          # ← si da ROJO, NO seguir
-git push          # ← solo si los tests están en VERDE
+git push          # ← solo si los tests están en VERDE (pushea develop)
 # limpieza:
 git branch -d feat/codex-<tarea>
 git push origin --delete feat/codex-<tarea>
+```
+
+### Release a main (cuando hay un hito publicable)
+
+`main` se toca **solo** acá, y es una decisión consciente, no el día a día:
+
+```bash
+git checkout develop && git pull
+npm test                      # ← todo en VERDE antes de tocar main
+git checkout main && git pull
+git merge --no-ff develop     # promover develop → main (release)
+git push
+git checkout develop          # volver a trabajar en develop
 ```
 
 > [!CAUTION]

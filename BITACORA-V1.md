@@ -4,7 +4,7 @@
 > Documento de referencia para retomar el proyecto o traspasarlo a otra persona.
 
 **Estado:** Fase 2 en curso — 7 de 12 páginas maquetadas · equipo de 3 agentes en marcha
-**Repositorio:** `github.com/alit0/fip` (rama `main`)
+**Repositorio:** `github.com/alit0/fip` (trabajo en `develop`; `main` = releases)
 **Última actualización:** 3 de junio de 2026
 
 ## Tabla de contenidos
@@ -408,8 +408,15 @@ para maquetar; nunca es código.** Lo que hay hoy:
 
 ## 10. Git y respaldo
 
-Proyecto versionado y respaldado en **`github.com/alit0/fip`** (rama `main`). Local
-y remoto sincronizados.
+Proyecto versionado y respaldado en **`github.com/alit0/fip`**. Local y remoto
+sincronizados.
+
+> [!IMPORTANT]
+> **Flujo de ramas: `main` + `develop`.** `main` es la rama **sagrada** (estable,
+> publicable, solo recibe releases — nadie commitea ahí directo). `develop` es la
+> rama de integración / trabajo diario donde cae todo. `main` se actualiza desde
+> `develop` solo en un release (hito publicable). El detalle del flujo está en
+> [ORQUESTACION-AGENTES.md](./ORQUESTACION-AGENTES.md).
 
 > [!WARNING]
 > **Incidente resuelto:** en el setup inicial hubo confusión de carpetas (una
@@ -419,9 +426,10 @@ y remoto sincronizados.
 
 ### Rutina de git del proyecto
 
-Cada agente trabaja en su **rama** (`feat/<agente>-<tarea>`) y pushea esa rama; el
-tech lead es el único que mergea a `main`. Para publicar tu propio trabajo alcanza
-con:
+El trabajo vive en `develop`: Claude Code commitea directo ahí (con el OK del tech
+lead tras la revisión) y Codex usa ramas `feat/codex-*` sacadas de `develop`. Solo el
+tech lead integra a `develop` y promueve a `main` en los releases; **nadie commitea
+en `main` directo**. Para publicar tu propio trabajo alcanza con:
 
 ```bash
 git push
@@ -480,7 +488,8 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 ### 11.5 Recordatorios de método
 
 - Una página/tarea por vez por agente; revisar en el navegador antes de aprobar;
-  commit + push antes de seguir. **Sólo el tech lead mergea a `main`.**
+  commit + push a `develop` antes de seguir. **`main` es sagrada: nadie commitea ahí
+  directo; solo el tech lead la actualiza en un release.**
 - No afirmarle al asistente que algo está hecho sin verificarlo en git.
 - Después de cada corrida de Gemini, correr `git status` para confirmar que no se
   escapó de `_scratch/`.
