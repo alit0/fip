@@ -139,3 +139,22 @@ Para Fase 2, mi plan sería:
 1. **Acordar upgrade controlado de Vitest a 4.1.8** para eliminar el critical y las vulnerabilidades dev asociadas.
 2. **No tocar Next/PostCSS todavía**, salvo que quieras audit limpio a toda costa. Si lo querés, prefiero override manual antes que Next canary.
 3. **Nunca usar `npm audit fix --force` sin diff revisado**, porque npm propone downgrades/majors que no respetan la arquitectura actual.
+
+## Seguimiento Fase 2 — 2026-06-04
+
+Se intentó el upgrade explícito `vitest@2.1.9` → `vitest@4.1.8` sin usar
+`npm audit fix --force`.
+
+Resultado: **revertido**. `npm test` dejó de ejecutar los 18 tests y falló antes de
+correrlos por incompatibilidad de parsing/transforms en la cadena nueva
+`vitest@4.1.8` / `vite@8.x` / Rolldown:
+
+- `src/test/pages.smoke.test.tsx`: `Unexpected JSX expression` en `render(<Page />)`.
+- `src/components/shared/Cta.tsx`: fallo de import analysis sobre TSX.
+
+Como el criterio de aceptación de Fase 2 exige que los 18 tests sigan verdes, no se
+mantiene este upgrade en `package.json` ni en `package-lock.json`.
+
+Decisión pendiente para tech lead: si se quiere cerrar el critical de Vitest, hacerlo
+como tarea separada de migración de test runner/config Vite, no como bump seguro de
+dependencia.
