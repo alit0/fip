@@ -2,7 +2,6 @@ import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
 
 // Páginas estáticas SÍNCRONAS (placeholders: la función devuelve JSX directo)
-import Hall from "@/app/[locale]/(public)/hall-de-la-fama/page";
 import Contacto from "@/app/[locale]/(public)/contacto/page";
 import Consejos from "@/app/[locale]/(public)/20-consejos/page";
 
@@ -14,6 +13,7 @@ import Inscripcion from "@/app/[locale]/(public)/inscripcion/page";
 import Fechas from "@/app/[locale]/(public)/fechas-de-cierre/page";
 import Tarifario from "@/app/[locale]/(public)/tarifario/page";
 import Premios from "@/app/[locale]/(public)/premios/page";
+import Hall from "@/app/[locale]/(public)/hall-de-la-fama/page";
 
 // Páginas dinámicas ASÍNCRONAS (reciben `params` como Promise)
 import JuradosYear from "@/app/[locale]/(public)/jurados/[year]/page";
@@ -21,7 +21,6 @@ import GanadoresYear from "@/app/[locale]/(public)/ganadores/[year]/page";
 import RankingCountry from "@/app/[locale]/(public)/ranking/[country]/page";
 
 const staticPages: [string, () => React.ReactNode][] = [
-  ["Hall de la Fama", Hall],
   ["Contacto", Contacto],
   ["20 Consejos", Consejos],
 ];
@@ -77,6 +76,16 @@ describe("páginas con datos (async server components)", () => {
   it("«Premios» muestra un precio clave (Agencia del Año: 550)", async () => {
     const { container } = render(await Premios());
     expect(container.textContent).toContain("550");
+  });
+
+  it("«Hall de la Fama» renderiza", async () => {
+    const { container } = render(await Hall());
+    expect(container).not.toBeEmptyDOMElement();
+  });
+
+  it("«Hall de la Fama» muestra un miembro conocido (César González)", async () => {
+    const { container } = render(await Hall());
+    expect(container.textContent).toContain("César González");
   });
 });
 
