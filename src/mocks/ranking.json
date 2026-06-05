@@ -1,0 +1,1349 @@
+{
+  "colombia": {
+    "label": "Colombia",
+    "countryCode": "CO",
+    "period": "2017 - 2024",
+    "rows": [
+      {
+        "position": "1",
+        "agency": "Publictv",
+        "granPrix": "2",
+        "oro": "21",
+        "plata": "18",
+        "bronce": "18",
+        "total": "59"
+      },
+      {
+        "position": "2",
+        "agency": "Producción de eventos 911",
+        "granPrix": "3",
+        "oro": "12",
+        "plata": "6",
+        "bronce": "11",
+        "total": "32"
+      },
+      {
+        "position": "3",
+        "agency": "On Brand Experience",
+        "granPrix": "2",
+        "oro": "5",
+        "plata": "7",
+        "bronce": "5",
+        "total": "19"
+      },
+      {
+        "position": "4",
+        "agency": "A la Pepa",
+        "granPrix": "3",
+        "oro": "6",
+        "plata": "5",
+        "bronce": "5",
+        "total": "19"
+      },
+      {
+        "position": "5",
+        "agency": "Villalon",
+        "granPrix": "1",
+        "oro": "9",
+        "plata": "4",
+        "bronce": "4",
+        "total": "18"
+      },
+      {
+        "position": "6",
+        "agency": "Mccann Momentum",
+        "granPrix": "-",
+        "oro": "6",
+        "plata": "7",
+        "bronce": "4",
+        "total": "17"
+      },
+      {
+        "position": "7",
+        "agency": "On Vacation",
+        "granPrix": "1",
+        "oro": "6",
+        "plata": "4",
+        "bronce": "5",
+        "total": "16"
+      },
+      {
+        "position": "8",
+        "agency": "Feeling Company",
+        "granPrix": "-",
+        "oro": "5",
+        "plata": "5",
+        "bronce": "2",
+        "total": "12"
+      },
+      {
+        "position": "9",
+        "agency": "Alquimia",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "5",
+        "bronce": "2",
+        "total": "8"
+      },
+      {
+        "position": "10",
+        "agency": "BRM",
+        "granPrix": "-",
+        "oro": "4",
+        "plata": "3",
+        "bronce": "1",
+        "total": "8"
+      },
+      {
+        "position": "11",
+        "agency": "La Fabrica",
+        "granPrix": "1",
+        "oro": "3",
+        "plata": "1",
+        "bronce": "2",
+        "total": "7"
+      },
+      {
+        "position": "12",
+        "agency": "CPC",
+        "granPrix": "-",
+        "oro": "3",
+        "plata": "3",
+        "bronce": "1",
+        "total": "7"
+      },
+      {
+        "position": "13",
+        "agency": "Netbangers",
+        "granPrix": "3",
+        "oro": "1",
+        "plata": "1",
+        "bronce": "1",
+        "total": "6"
+      },
+      {
+        "position": "14",
+        "agency": "Ariadna",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "2",
+        "bronce": "-",
+        "total": "4"
+      },
+      {
+        "position": "15",
+        "agency": "Ipal",
+        "granPrix": "3",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "4"
+      },
+      {
+        "position": "16",
+        "agency": "Havas/Arena Media",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "2",
+        "bronce": "1",
+        "total": "3"
+      },
+      {
+        "position": "17",
+        "agency": "Universal Mccann",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "-",
+        "bronce": "3",
+        "total": "3"
+      },
+      {
+        "position": "18",
+        "agency": "VLA",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "1",
+        "bronce": "-",
+        "total": "3"
+      },
+      {
+        "position": "19",
+        "agency": "Atomo",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "2",
+        "bronce": "-",
+        "total": "3"
+      },
+      {
+        "position": "20",
+        "agency": "Pópuli",
+        "granPrix": "1",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "1",
+        "total": "3"
+      },
+      {
+        "position": "21",
+        "agency": "Gorila",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "1",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "22",
+        "agency": "VML",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "-",
+        "bronce": "1",
+        "total": "1"
+      },
+      {
+        "position": "23",
+        "agency": "Publicis",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "-",
+        "bronce": "1",
+        "total": "1"
+      },
+      {
+        "position": "24",
+        "agency": "Caramelo Escaso",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "1",
+        "bronce": "-",
+        "total": "1"
+      },
+      {
+        "position": "25",
+        "agency": "TBWA Colombia",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "1",
+        "bronce": "-",
+        "total": "1"
+      },
+      {
+        "position": "26",
+        "agency": "V2V Marketing",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "1"
+      }
+    ]
+  },
+  "argentina": {
+    "label": "Argentina",
+    "countryCode": "AR",
+    "period": "2017 - 2024",
+    "rows": [
+      {
+        "position": "1",
+        "agency": "LATCOM",
+        "granPrix": "1",
+        "oro": "10",
+        "plata": "4",
+        "bronce": "6",
+        "total": "21"
+      },
+      {
+        "position": "2",
+        "agency": "SAPPIA",
+        "granPrix": "2",
+        "oro": "7",
+        "plata": "2",
+        "bronce": "1",
+        "total": "12"
+      },
+      {
+        "position": "3",
+        "agency": "WUNDERMAN-THOMPSON",
+        "granPrix": "1",
+        "oro": "2",
+        "plata": "2",
+        "bronce": "5",
+        "total": "10"
+      },
+      {
+        "position": "4",
+        "agency": "LOOP 360",
+        "granPrix": "1",
+        "oro": "5",
+        "plata": "2",
+        "bronce": "2",
+        "total": "10"
+      },
+      {
+        "position": "5",
+        "agency": "VENUE",
+        "granPrix": "1",
+        "oro": "3",
+        "plata": "2",
+        "bronce": "4",
+        "total": "10"
+      },
+      {
+        "position": "6",
+        "agency": "THE WALT DISNEY COMPANY",
+        "granPrix": "2",
+        "oro": "1",
+        "plata": "2",
+        "bronce": "5",
+        "total": "10"
+      },
+      {
+        "position": "7",
+        "agency": "GRUPO BASICOS",
+        "granPrix": "-",
+        "oro": "4",
+        "plata": "2",
+        "bronce": "1",
+        "total": "7"
+      },
+      {
+        "position": "8",
+        "agency": "PLAY UP",
+        "granPrix": "2",
+        "oro": "3",
+        "plata": "1",
+        "bronce": "1",
+        "total": "7"
+      },
+      {
+        "position": "9",
+        "agency": "WIPER",
+        "granPrix": "2",
+        "oro": "3",
+        "plata": "1",
+        "bronce": "1",
+        "total": "7"
+      },
+      {
+        "position": "10",
+        "agency": "OSTARA 360",
+        "granPrix": "1",
+        "oro": "2",
+        "plata": "2",
+        "bronce": "-",
+        "total": "5"
+      },
+      {
+        "position": "11",
+        "agency": "MATE",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "1",
+        "bronce": "1",
+        "total": "4"
+      },
+      {
+        "position": "12",
+        "agency": "SENTIDOS",
+        "granPrix": "-",
+        "oro": "3",
+        "plata": "1",
+        "bronce": "-",
+        "total": "4"
+      },
+      {
+        "position": "13",
+        "agency": "MCI",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "2",
+        "bronce": "1",
+        "total": "4"
+      },
+      {
+        "position": "14",
+        "agency": "TRAMA GLOBAL",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "1",
+        "bronce": "-",
+        "total": "3"
+      },
+      {
+        "position": "15",
+        "agency": "CAS",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "3",
+        "bronce": "-",
+        "total": "3"
+      },
+      {
+        "position": "16",
+        "agency": "PUBLIQUEST",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "1",
+        "bronce": "1",
+        "total": "2"
+      },
+      {
+        "position": "17",
+        "agency": "WARNER MEDIA",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "-",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "18",
+        "agency": "CLARIN",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "1"
+      },
+      {
+        "position": "19",
+        "agency": "HAVAS",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "1",
+        "bronce": "-",
+        "total": "1"
+      },
+      {
+        "position": "20",
+        "agency": "LA NIÑA",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "1"
+      },
+      {
+        "position": "21",
+        "agency": "EL DOK HARAS",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "1"
+      }
+    ]
+  },
+  "brasil": {
+    "label": "Brasil",
+    "countryCode": "BR",
+    "period": "2017 - 2024",
+    "rows": [
+      {
+        "position": "1",
+        "agency": "Innova",
+        "granPrix": "6",
+        "oro": "22",
+        "plata": "7",
+        "bronce": "15",
+        "total": "50"
+      },
+      {
+        "position": "2",
+        "agency": "Red Door Agency",
+        "granPrix": "3",
+        "oro": "16",
+        "plata": "10",
+        "bronce": "8",
+        "total": "37"
+      },
+      {
+        "position": "3",
+        "agency": "Netza",
+        "granPrix": "1",
+        "oro": "12",
+        "plata": "9",
+        "bronce": "6",
+        "total": "28"
+      },
+      {
+        "position": "4",
+        "agency": "Solution Off",
+        "granPrix": "2",
+        "oro": "16",
+        "plata": "4",
+        "bronce": "5",
+        "total": "27"
+      },
+      {
+        "position": "5",
+        "agency": "Dmattos",
+        "granPrix": "1",
+        "oro": "7",
+        "plata": "3",
+        "bronce": "4",
+        "total": "15"
+      },
+      {
+        "position": "6",
+        "agency": "Atenas",
+        "granPrix": "1",
+        "oro": "6",
+        "plata": "2",
+        "bronce": "3",
+        "total": "12"
+      },
+      {
+        "position": "7",
+        "agency": "Attach",
+        "granPrix": "-",
+        "oro": "5",
+        "plata": "4",
+        "bronce": "3",
+        "total": "12"
+      },
+      {
+        "position": "8",
+        "agency": "Hsol MKT",
+        "granPrix": "-",
+        "oro": "5",
+        "plata": "2",
+        "bronce": "7",
+        "total": "12"
+      },
+      {
+        "position": "9",
+        "agency": "Eleve",
+        "granPrix": "2",
+        "oro": "6",
+        "plata": "1",
+        "bronce": "2",
+        "total": "11"
+      },
+      {
+        "position": "10",
+        "agency": "Fuego",
+        "granPrix": "-",
+        "oro": "4",
+        "plata": "4",
+        "bronce": "2",
+        "total": "10"
+      },
+      {
+        "position": "11",
+        "agency": "Sherpa",
+        "granPrix": "1",
+        "oro": "3",
+        "plata": "3",
+        "bronce": "2",
+        "total": "9"
+      },
+      {
+        "position": "12",
+        "agency": "EAI?! Marketing",
+        "granPrix": "-",
+        "oro": "5",
+        "plata": "3",
+        "bronce": "1",
+        "total": "9"
+      },
+      {
+        "position": "13",
+        "agency": "The Group",
+        "granPrix": "1",
+        "oro": "4",
+        "plata": "2",
+        "bronce": "1",
+        "total": "8"
+      },
+      {
+        "position": "14",
+        "agency": "Elkis 18",
+        "granPrix": "1",
+        "oro": "2",
+        "plata": "2",
+        "bronce": "2",
+        "total": "7"
+      },
+      {
+        "position": "15",
+        "agency": "TSB ETC",
+        "granPrix": "-",
+        "oro": "3",
+        "plata": "1",
+        "bronce": "3",
+        "total": "7"
+      },
+      {
+        "position": "16",
+        "agency": "Tupiniquim",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "4",
+        "bronce": "2",
+        "total": "7"
+      },
+      {
+        "position": "17",
+        "agency": "Alternativa",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "2",
+        "bronce": "3",
+        "total": "7"
+      },
+      {
+        "position": "18",
+        "agency": "People",
+        "granPrix": "-",
+        "oro": "3",
+        "plata": "3",
+        "bronce": "1",
+        "total": "7"
+      },
+      {
+        "position": "19",
+        "agency": "Bferraz",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "2",
+        "bronce": "1",
+        "total": "6"
+      },
+      {
+        "position": "20",
+        "agency": "V3A",
+        "granPrix": "1",
+        "oro": "2",
+        "plata": "2",
+        "bronce": "1",
+        "total": "6"
+      },
+      {
+        "position": "21",
+        "agency": "F/Malta",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "1",
+        "bronce": "3",
+        "total": "6"
+      },
+      {
+        "position": "22",
+        "agency": "Outra Praia",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "3",
+        "bronce": "-",
+        "total": "5"
+      },
+      {
+        "position": "23",
+        "agency": "DMC",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "2",
+        "bronce": "1",
+        "total": "5"
+      },
+      {
+        "position": "24",
+        "agency": "Sallero",
+        "granPrix": "-",
+        "oro": "3",
+        "plata": "1",
+        "bronce": "1",
+        "total": "5"
+      },
+      {
+        "position": "25",
+        "agency": "Fito",
+        "granPrix": "1",
+        "oro": "3",
+        "plata": "1",
+        "bronce": "-",
+        "total": "5"
+      },
+      {
+        "position": "26",
+        "agency": "Almap BBDO",
+        "granPrix": "1",
+        "oro": "1",
+        "plata": "2",
+        "bronce": "-",
+        "total": "4"
+      },
+      {
+        "position": "27",
+        "agency": "Avantgarde",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "1",
+        "bronce": "1",
+        "total": "3"
+      },
+      {
+        "position": "28",
+        "agency": "Case",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "-",
+        "bronce": "1",
+        "total": "3"
+      },
+      {
+        "position": "29",
+        "agency": "We Pad",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "-",
+        "bronce": "1",
+        "total": "3"
+      },
+      {
+        "position": "30",
+        "agency": "Smash",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "2",
+        "bronce": "-",
+        "total": "3"
+      },
+      {
+        "position": "31",
+        "agency": "Hood",
+        "granPrix": "-",
+        "oro": "3",
+        "plata": "-",
+        "bronce": "-",
+        "total": "3"
+      },
+      {
+        "position": "32",
+        "agency": "AKM Performma",
+        "granPrix": "1",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "33",
+        "agency": "Kwai for business",
+        "granPrix": "1",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "34",
+        "agency": "Nico",
+        "granPrix": "1",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "35",
+        "agency": "Eventesse",
+        "granPrix": "1",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "36",
+        "agency": "Hands",
+        "granPrix": "1",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "37",
+        "agency": "De Brito",
+        "granPrix": "1",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "38",
+        "agency": "Promovisao",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "1"
+      }
+    ]
+  },
+  "espana": {
+    "label": "España",
+    "countryCode": "ES",
+    "period": "2017 - 2024",
+    "rows": [
+      {
+        "position": "1",
+        "agency": "ACCIONA LIVING & CULTURE",
+        "granPrix": "8",
+        "oro": "59",
+        "plata": "60",
+        "bronce": "41",
+        "total": "168"
+      },
+      {
+        "position": "2",
+        "agency": "BEON",
+        "granPrix": "4",
+        "oro": "35",
+        "plata": "36",
+        "bronce": "20",
+        "total": "95"
+      },
+      {
+        "position": "3",
+        "agency": "EXPERIENTIA",
+        "granPrix": "4",
+        "oro": "32",
+        "plata": "8",
+        "bronce": "14",
+        "total": "58"
+      },
+      {
+        "position": "4",
+        "agency": "SOMOS",
+        "granPrix": "5",
+        "oro": "23",
+        "plata": "10",
+        "bronce": "12",
+        "total": "50"
+      },
+      {
+        "position": "5",
+        "agency": "DISSIMILITY",
+        "granPrix": "1",
+        "oro": "14",
+        "plata": "11",
+        "bronce": "7",
+        "total": "33"
+      },
+      {
+        "position": "6",
+        "agency": "LIGHT HOUSE",
+        "granPrix": "2",
+        "oro": "12",
+        "plata": "10",
+        "bronce": "4",
+        "total": "28"
+      },
+      {
+        "position": "7",
+        "agency": "BTOB MARKETING",
+        "granPrix": "0",
+        "oro": "7",
+        "plata": "9",
+        "bronce": "3",
+        "total": "19"
+      },
+      {
+        "position": "8",
+        "agency": "MEDIA PRO",
+        "granPrix": "0",
+        "oro": "5",
+        "plata": "7",
+        "bronce": "5",
+        "total": "17"
+      },
+      {
+        "position": "9",
+        "agency": "NEW LINK",
+        "granPrix": "1",
+        "oro": "9",
+        "plata": "1",
+        "bronce": "5",
+        "total": "16"
+      },
+      {
+        "position": "10",
+        "agency": "ABSOLUTE",
+        "granPrix": "0",
+        "oro": "7",
+        "plata": "6",
+        "bronce": "1",
+        "total": "14"
+      },
+      {
+        "position": "11",
+        "agency": "UILA MOTOR",
+        "granPrix": "0",
+        "oro": "7",
+        "plata": "5",
+        "bronce": "2",
+        "total": "14"
+      },
+      {
+        "position": "12",
+        "agency": "MOMENTUM",
+        "granPrix": "4",
+        "oro": "3",
+        "plata": "1",
+        "bronce": "2",
+        "total": "10"
+      },
+      {
+        "position": "13",
+        "agency": "INUSUAL",
+        "granPrix": "0",
+        "oro": "3",
+        "plata": "3",
+        "bronce": "3",
+        "total": "9"
+      },
+      {
+        "position": "14",
+        "agency": "TAIPEY",
+        "granPrix": "0",
+        "oro": "3",
+        "plata": "3",
+        "bronce": "3",
+        "total": "9"
+      },
+      {
+        "position": "15",
+        "agency": "NANOOK",
+        "granPrix": "0",
+        "oro": "6",
+        "plata": "2",
+        "bronce": "1",
+        "total": "9"
+      },
+      {
+        "position": "16",
+        "agency": "ATREVIA",
+        "granPrix": "0",
+        "oro": "5",
+        "plata": "2",
+        "bronce": "1",
+        "total": "8"
+      },
+      {
+        "position": "17",
+        "agency": "ADN",
+        "granPrix": "0",
+        "oro": "1",
+        "plata": "3",
+        "bronce": "3",
+        "total": "7"
+      },
+      {
+        "position": "18",
+        "agency": "SENSEI",
+        "granPrix": "0",
+        "oro": "1",
+        "plata": "1",
+        "bronce": "0",
+        "total": "2"
+      },
+      {
+        "position": "19",
+        "agency": "PIXEL",
+        "granPrix": "0",
+        "oro": "1",
+        "plata": "0",
+        "bronce": "0",
+        "total": "1"
+      }
+    ]
+  },
+  "peru": {
+    "label": "Perú",
+    "countryCode": "PE",
+    "period": "2017 - 2024",
+    "rows": [
+      {
+        "position": "1",
+        "agency": "Grupo Lucky",
+        "granPrix": "2",
+        "oro": "9",
+        "plata": "5",
+        "bronce": "8",
+        "total": "24"
+      },
+      {
+        "position": "2",
+        "agency": "Playgroup",
+        "granPrix": "-",
+        "oro": "10",
+        "plata": "6",
+        "bronce": "6",
+        "total": "22"
+      },
+      {
+        "position": "3",
+        "agency": "Exe",
+        "granPrix": "-",
+        "oro": "10",
+        "plata": "6",
+        "bronce": "5",
+        "total": "21"
+      },
+      {
+        "position": "4",
+        "agency": "Momentum",
+        "granPrix": "2",
+        "oro": "6",
+        "plata": "2",
+        "bronce": "3",
+        "total": "13"
+      },
+      {
+        "position": "5",
+        "agency": "Grupo Marca",
+        "granPrix": "6",
+        "oro": "1",
+        "plata": "2",
+        "bronce": "1",
+        "total": "10"
+      },
+      {
+        "position": "6",
+        "agency": "Shock",
+        "granPrix": "1",
+        "oro": "2",
+        "plata": "4",
+        "bronce": "1",
+        "total": "8"
+      },
+      {
+        "position": "7",
+        "agency": "Fosbury",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "1",
+        "bronce": "2",
+        "total": "4"
+      },
+      {
+        "position": "8",
+        "agency": "Tale",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "1",
+        "bronce": "2",
+        "total": "3"
+      },
+      {
+        "position": "9",
+        "agency": "Apoyo Comunicación",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "-",
+        "bronce": "1",
+        "total": "3"
+      },
+      {
+        "position": "10",
+        "agency": "Smart Brands",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "1",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "11",
+        "agency": "Ariadna",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "1",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "12",
+        "agency": "Ogilvy",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "1"
+      },
+      {
+        "position": "13",
+        "agency": "Chaman",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "-",
+        "bronce": "1",
+        "total": "1"
+      }
+    ]
+  },
+  "mexico": {
+    "label": "México",
+    "countryCode": "MX",
+    "period": "2017 - 2024",
+    "rows": [
+      {
+        "position": "1",
+        "agency": "Pedrote Marketing",
+        "granPrix": "5",
+        "oro": "42",
+        "plata": "29",
+        "bronce": "7",
+        "total": "83"
+      },
+      {
+        "position": "2",
+        "agency": "AmásB",
+        "granPrix": "4",
+        "oro": "25",
+        "plata": "14",
+        "bronce": "7",
+        "total": "50"
+      },
+      {
+        "position": "3",
+        "agency": "Future Group",
+        "granPrix": "3",
+        "oro": "20",
+        "plata": "16",
+        "bronce": "11",
+        "total": "50"
+      },
+      {
+        "position": "4",
+        "agency": "Licuadora",
+        "granPrix": "4",
+        "oro": "13",
+        "plata": "14",
+        "bronce": "9",
+        "total": "40"
+      },
+      {
+        "position": "5",
+        "agency": "Player Group",
+        "granPrix": "4",
+        "oro": "16",
+        "plata": "11",
+        "bronce": "-",
+        "total": "31"
+      },
+      {
+        "position": "6",
+        "agency": "Ifahto",
+        "granPrix": "3",
+        "oro": "13",
+        "plata": "11",
+        "bronce": "-",
+        "total": "27"
+      },
+      {
+        "position": "7",
+        "agency": "Ache Producciones",
+        "granPrix": "1",
+        "oro": "5",
+        "plata": "10",
+        "bronce": "-",
+        "total": "16"
+      },
+      {
+        "position": "8",
+        "agency": "Shark BTL",
+        "granPrix": "-",
+        "oro": "8",
+        "plata": "2",
+        "bronce": "-",
+        "total": "10"
+      },
+      {
+        "position": "9",
+        "agency": "Kung Fu Klan",
+        "granPrix": "-",
+        "oro": "6",
+        "plata": "3",
+        "bronce": "1",
+        "total": "10"
+      },
+      {
+        "position": "10",
+        "agency": "Picci Co",
+        "granPrix": "-",
+        "oro": "3",
+        "plata": "4",
+        "bronce": "3",
+        "total": "10"
+      },
+      {
+        "position": "11",
+        "agency": "Pik Nik",
+        "granPrix": "1",
+        "oro": "4",
+        "plata": "1",
+        "bronce": "3",
+        "total": "9"
+      },
+      {
+        "position": "12",
+        "agency": "KfK",
+        "granPrix": "-",
+        "oro": "4",
+        "plata": "1",
+        "bronce": "4",
+        "total": "9"
+      },
+      {
+        "position": "13",
+        "agency": "Drive 360",
+        "granPrix": "1",
+        "oro": "2",
+        "plata": "2",
+        "bronce": "2",
+        "total": "7"
+      },
+      {
+        "position": "14",
+        "agency": "Gideas",
+        "granPrix": "1",
+        "oro": "2",
+        "plata": "2",
+        "bronce": "1",
+        "total": "6"
+      },
+      {
+        "position": "15",
+        "agency": "Piknik",
+        "granPrix": "1",
+        "oro": "2",
+        "plata": "2",
+        "bronce": "1",
+        "total": "6"
+      },
+      {
+        "position": "16",
+        "agency": "Avanna",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "3",
+        "bronce": "1",
+        "total": "6"
+      },
+      {
+        "position": "17",
+        "agency": "Evek",
+        "granPrix": "-",
+        "oro": "3",
+        "plata": "1",
+        "bronce": "1",
+        "total": "5"
+      },
+      {
+        "position": "18",
+        "agency": "Must Wanted",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "3",
+        "bronce": "-",
+        "total": "5"
+      },
+      {
+        "position": "19",
+        "agency": "Pauta Creativa",
+        "granPrix": "1",
+        "oro": "3",
+        "plata": "1",
+        "bronce": "-",
+        "total": "5"
+      },
+      {
+        "position": "20",
+        "agency": "Amperson",
+        "granPrix": "-",
+        "oro": "2",
+        "plata": "1",
+        "bronce": "-",
+        "total": "3"
+      },
+      {
+        "position": "21",
+        "agency": "Archer Troy",
+        "granPrix": "1",
+        "oro": "-",
+        "plata": "1",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "22",
+        "agency": "Totem",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "2",
+        "bronce": "-",
+        "total": "2"
+      },
+      {
+        "position": "23",
+        "agency": "Linkeo",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "1",
+        "total": "2"
+      },
+      {
+        "position": "24",
+        "agency": "Enso",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "1"
+      },
+      {
+        "position": "25",
+        "agency": "Grupo Vanguardia Siete Doce",
+        "granPrix": "-",
+        "oro": "1",
+        "plata": "-",
+        "bronce": "-",
+        "total": "1"
+      },
+      {
+        "position": "26",
+        "agency": "Red Door",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "1",
+        "bronce": "-",
+        "total": "1"
+      },
+      {
+        "position": "27",
+        "agency": "Madison",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "1",
+        "bronce": "-",
+        "total": "1"
+      },
+      {
+        "position": "28",
+        "agency": "Walt Disney Company",
+        "granPrix": "-",
+        "oro": "-",
+        "plata": "1",
+        "bronce": "-",
+        "total": "1"
+      }
+    ]
+  }
+}

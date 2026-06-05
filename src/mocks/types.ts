@@ -275,6 +275,33 @@ export interface Contacto {
   office: string;
 }
 
+/**
+ * One row of a country ranking. Medal counts are kept as strings, verbatim from the
+ * live site (the source uses "-" for none in most countries and "0" in España; no
+ * arithmetic verification was done — see relevamiento).
+ */
+export interface RankingRow {
+  position: string;
+  agency: string;
+  granPrix: string;
+  oro: string;
+  plata: string;
+  bronce: string;
+  total: string;
+}
+
+export interface RankingCountry {
+  label: string;
+  /** ISO-3166-1 alpha-2 for <CountryFlag>. */
+  countryCode: string;
+  /** historical period, e.g. "2017 - 2024". */
+  period: string;
+  rows: RankingRow[];
+}
+
+/** Rankings keyed by country slug ("colombia", "argentina", …). */
+export type RankingByCountry = Record<string, RankingCountry>;
+
 export interface ScoreRow {
   award: string;
   points: number;

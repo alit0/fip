@@ -20,6 +20,7 @@ import type {
   JuradosByYear,
   HallDeLaFama,
   Contacto,
+  RankingByCountry,
 } from "./types";
 
 import homeData from "./home.json";
@@ -37,6 +38,7 @@ import premiosData from "./premios.json";
 import juradosData from "./jurados.json";
 import hallData from "./hall-de-la-fama.json";
 import contactoData from "./contacto.json";
+import rankingData from "./ranking.json";
 
 export const home: HomeContent = homeData;
 export const rubros: Rubro[] = rubrosData;
@@ -53,6 +55,7 @@ export const premios: Premios = premiosData;
 export const jurados: JuradosByYear = juradosData;
 export const hallDeLaFama: HallDeLaFama = hallData;
 export const contacto: Contacto = contactoData;
+export const ranking: RankingByCountry = rankingData;
 
 export type {
   HomeContent,
@@ -77,4 +80,7 @@ export type {
   ContactPerson,
   ContactEmail,
   Contacto,
+  RankingRow,
+  RankingCountry,
+  RankingByCountry,
 } from "./types";
