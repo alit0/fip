@@ -120,6 +120,21 @@ describe("páginas públicas dinámicas (con un parámetro válido)", () => {
     expect(container).not.toBeEmptyDOMElement();
   });
 
+  it("«Ganadores 2025» (completo) muestra la grilla de Categorías con Gran Prix", async () => {
+    const ui = await GanadoresYear({ params: Promise.resolve({ year: "2025" }) });
+    const { container } = render(ui);
+    expect(container.textContent).toContain("Categorías con Gran Prix");
+    expect(container.textContent).toContain("Heineken Power Music Station");
+  });
+
+  it("«Ganadores 2024» (solo-PDF) muestra el botón de descarga del informe", async () => {
+    const ui = await GanadoresYear({ params: Promise.resolve({ year: "2024" }) });
+    const { container } = render(ui);
+    expect(
+      container.querySelector('a[href="/descargas/informe-ganadores-fip2024.pdf"]'),
+    ).not.toBeNull();
+  });
+
   it("«Ranking [country]» renderiza para colombia", async () => {
     const ui = await RankingCountry({ params: Promise.resolve({ country: "colombia" }) });
     const { container } = render(ui);
