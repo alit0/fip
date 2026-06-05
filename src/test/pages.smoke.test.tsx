@@ -125,4 +125,10 @@ describe("páginas públicas dinámicas (con un parámetro válido)", () => {
     const { container } = render(ui);
     expect(container).not.toBeEmptyDOMElement();
   });
+
+  it("«Ranking colombia» muestra una agencia del ranking (Publictv)", async () => {
+    const ui = await RankingCountry({ params: Promise.resolve({ country: "colombia" }) });
+    const { container } = render(ui);
+    expect(container.textContent).toContain("Publictv");
+  });
 });
