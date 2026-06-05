@@ -302,6 +302,60 @@ export interface RankingCountry {
 /** Rankings keyed by country slug ("colombia", "argentina", …). */
 export type RankingByCountry = Record<string, RankingCountry>;
 
+/** A Grand Prize / special recognition row on the Ganadores page. */
+export interface GanadorGrande {
+  /** premio / categoría (e.g. "Agencia del Año Argentina", "Trayectoria Profesional") */
+  premio: string;
+  /** ganador / agencia */
+  ganador: string;
+  pais: string;
+  countryCode: string | null;
+}
+
+/** A category winner row (one award level). */
+export interface GanadorRow {
+  /** Gran Prix / Oro / Plata / Bronce / Cristal */
+  nivel: string;
+  campania: string;
+  marca: string;
+  agencia: string;
+  pais: string;
+  countryCode: string | null;
+}
+
+export interface GanadorCategoria {
+  codigo: string;
+  /** may be empty when the source didn't expose a clean category name (older years) */
+  nombre: string;
+  rows: GanadorRow[];
+}
+
+export interface GanadorRubro {
+  rubro: string;
+  categorias: GanadorCategoria[];
+}
+
+/**
+ * Per-year data completeness, driving the hybrid render:
+ * - "completo": full grid (grandes + categorías by rubro) — 2025, 2020.
+ * - "parcial": only grandes premios in HTML; full detail lives in the PDF — 2022, 2021.
+ * - "solo-pdf": no HTML at all, grandes extracted from the PDF — 2024, 2023, 2019.
+ */
+export type GanadoresCompleteness = "completo" | "parcial" | "solo-pdf";
+
+export interface GanadoresYear {
+  year: number;
+  completeness: GanadoresCompleteness;
+  /** real PDF report link from the live site; null when not available yet (TODO). */
+  pdfUrl: string | null;
+  grandes: GanadorGrande[];
+  /** category grid grouped by rubro → categoría; empty for partial/pdf-only years. */
+  rubros: GanadorRubro[];
+}
+
+/** Ganadores keyed by edition year ("2019"…"2025"). */
+export type GanadoresByYear = Record<string, GanadoresYear>;
+
 export interface ScoreRow {
   award: string;
   points: number;

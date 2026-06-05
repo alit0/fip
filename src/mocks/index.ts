@@ -21,6 +21,7 @@ import type {
   HallDeLaFama,
   Contacto,
   RankingByCountry,
+  GanadoresByYear,
 } from "./types";
 
 import homeData from "./home.json";
@@ -39,6 +40,7 @@ import juradosData from "./jurados.json";
 import hallData from "./hall-de-la-fama.json";
 import contactoData from "./contacto.json";
 import rankingData from "./ranking.json";
+import ganadoresData from "./ganadores.json";
 
 export const home: HomeContent = homeData;
 export const rubros: Rubro[] = rubrosData;
@@ -56,6 +58,7 @@ export const jurados: JuradosByYear = juradosData;
 export const hallDeLaFama: HallDeLaFama = hallData;
 export const contacto: Contacto = contactoData;
 export const ranking: RankingByCountry = rankingData;
+export const ganadores: GanadoresByYear = ganadoresData as GanadoresByYear;
 
 export type {
   HomeContent,
@@ -83,4 +86,11 @@ export type {
   RankingRow,
   RankingCountry,
   RankingByCountry,
+  GanadorGrande,
+  GanadorRow,
+  GanadorCategoria,
+  GanadorRubro,
+  GanadoresCompleteness,
+  GanadoresYear,
+  GanadoresByYear,
 } from "./types";
