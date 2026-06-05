@@ -21,4 +21,5 @@ export { getPremios } from "./premios";
 export { getJurors } from "./jurors";
 export { getJurados } from "./jurados";
 export { getHallDeLaFama } from "./hall-de-la-fama";
+export { getContacto } from "./contacto";
 export { getSponsors } from "./sponsors";

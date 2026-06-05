@@ -253,6 +253,28 @@ export interface HallDeLaFama {
   members: HallMember[];
 }
 
+export interface ContactPerson {
+  role: string;
+  name: string;
+  email: string;
+}
+
+export interface ContactEmail {
+  label: string;
+  email: string;
+}
+
+/** Contacto page (app/[locale]/(public)/contacto). */
+export interface Contacto {
+  title: string;
+  intro: string;
+  people: ContactPerson[];
+  emails: ContactEmail[];
+  whatsapps: string[];
+  address: string;
+  office: string;
+}
+
 export interface ScoreRow {
   award: string;
   points: number;
