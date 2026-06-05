@@ -2,7 +2,6 @@ import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
 
 // Páginas estáticas SÍNCRONAS (placeholders: la función devuelve JSX directo)
-import Contacto from "@/app/[locale]/(public)/contacto/page";
 import Consejos from "@/app/[locale]/(public)/20-consejos/page";
 
 // Páginas ASÍNCRONAS (leen la capa de contenido con await)
@@ -14,6 +13,7 @@ import Fechas from "@/app/[locale]/(public)/fechas-de-cierre/page";
 import Tarifario from "@/app/[locale]/(public)/tarifario/page";
 import Premios from "@/app/[locale]/(public)/premios/page";
 import Hall from "@/app/[locale]/(public)/hall-de-la-fama/page";
+import Contacto from "@/app/[locale]/(public)/contacto/page";
 
 // Páginas dinámicas ASÍNCRONAS (reciben `params` como Promise)
 import JuradosYear from "@/app/[locale]/(public)/jurados/[year]/page";
@@ -21,7 +21,6 @@ import GanadoresYear from "@/app/[locale]/(public)/ganadores/[year]/page";
 import RankingCountry from "@/app/[locale]/(public)/ranking/[country]/page";
 
 const staticPages: [string, () => React.ReactNode][] = [
-  ["Contacto", Contacto],
   ["20 Consejos", Consejos],
 ];
 
@@ -86,6 +85,17 @@ describe("páginas con datos (async server components)", () => {
   it("«Hall de la Fama» muestra un miembro conocido (César González)", async () => {
     const { container } = render(await Hall());
     expect(container.textContent).toContain("César González");
+  });
+
+  it("«Contacto» renderiza", async () => {
+    const { container } = render(await Contacto());
+    expect(container).not.toBeEmptyDOMElement();
+  });
+
+  it("«Contacto» muestra un email de contacto y el formulario", async () => {
+    const { container } = render(await Contacto());
+    expect(container.textContent).toContain("jorge@fipfestival.com.ar");
+    expect(container.querySelector("form")).not.toBeNull();
   });
 });
 
