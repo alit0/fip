@@ -1,0 +1,168 @@
+{
+  "title": "Hall de la Fama",
+  "institutional": [
+    {
+      "title": "QUE ES – QUE BUSCA CONSAGRAR",
+      "body": "El Hall de la Fama del FIP refleja el deseo y el deber de dar tributo a aquellos que han tenido roles claves en la historia del Marketing internacional, y que a la  misma vez desarrollaron su espíritu creativo creando ideas que ya cuentan con miles de trofeos y objetos relacionados a las mismas.\n\nEste Hall de la Fama es un lugar para las leyendas. Personalidades que alcanzaron su cenit- Exalta sus logros, consagra definitivamente a los mejores.\n\nImagine un creativo tan destacado que participó en diez ediciones y ganó premios en todas ellas. Es una verdadera  leyenda. Es indiscutible- Imagine un pionero y todos los riesgos con los que debió luchar. Imagine a los que soñaron e hicieron realidad sus sueños.\n\nDentro de los nombres que se encontrarán dentro del Hall de la Fama del FIP, también habrá fundadores y pioneros. Figuras que levantaron el nivel de las promociones cuando más importaba, dejando su legado  y haciéndonos felices. De eso trata. De exaltarlos, de nombrarlos, de homenajearlos.  Nada más. Y nada menos…"
+    },
+    {
+      "title": "PRINCIPIOS y FUNDAMENTOS",
+      "body": "El Hall de la Fama fue registrado el 15 de Febrero de 2015, luego de profundos debates acerca de sus fundamentos: De lo que reciben los profesionales de Marketing y Eventos de la región (incluidos España y Portugal) no había nada parecido. RECIEN AHORA SE LANZA Las figuras y sus logros no eran exaltadas. Algo faltaba...\n\nUn Salón de la Fama (en este caso un “primer paso” que es un Hall) es un elemento testimonial establecido por una empresa humana para tratar de honrar a personas con logros notables en determinada actividad. En el caso del Hall de la Fama del FIP, es algo aún mas figurativo, porque incluye logros de las Marcas, méritos de los Medios Especializados y hasta docentes prestigiosos."
+    },
+    {
+      "title": "EL CRITERIO PARA LAS CANDIDATURAS",
+      "body": "Este fue debate más amplio. Se llegó a la conclusión de que la región posee ( por múltiples causas y situaciones que entroncan con lo social y lo económico) verdaderos héroes que muchas veces no tienen los recursos suficientes y sin embargo lanzan ideas extraordinarias y generan éxitos para las marcas. También aparecieron en el análisis los “fundadores”, los maestros en los centros de estudio, los medios especializados."
+    },
+    {
+      "title": "JURY DE DESIGNACIÓN -  NOMINACIONES",
+      "body": "Cual debía ser su perfil, cual la cantidad y cuanto debía durar, nos preguntábamos. El FIP optó por un mix: figuras de la actividad y otras retiradas y se les dió carácter rotativo. Una cierta brevedad de cada jury en el tiempo aseguraría total transparencia a la función. Reportaría amplitud de criterios y el debate enriquecería el objetivo: la total neutralidad."
+    },
+    {
+      "title": "CRITERIOS EN EL FUTURO – NUEVOS NOMBRES",
+      "body": "Seguramente el Hall de la Fama del FIP, sorprenderá y también sorprenderá con sus designaciones de sus comienzos. Había que lanzar la idea y el FIP encargó a sus fundadores la designación de los primeros miembros. Hubo que buscar indiscutibles para arrancar. Algunos de muy bajo perfil y otros, extraordinarios personajes. Se  les reconocería su trayectoria  profesional en primer lugar. Este Hall pretende ser un referente de la excelencia."
+    },
+    {
+      "title": "QUE RECIBE AQUEL QUE SE INTEGRA AL HALL",
+      "body": "Recibe un certificado y una medalla. Y su integración a la web y presencia continuada en los news del Hall Y en las redes. Esta prevista una estatuilla además."
+    },
+    {
+      "title": "EL PRESTIGIO QUE RESPALDA AL FIP",
+      "body": "Nos respaldan 25 laboriosos e impecables años, sin mancha alguna, y con los mejores mil jurados que pudimos invitar. El FIP tuvo jurados de Japón, de Italia, de Francia, de Angola, de Emiratos... hasta de Mozambique ha tenido.  Y cientos de profesionales de la Región"
+    },
+    {
+      "title": "EL ICONO DEL HALL DE LA FAMA del FIP",
+      "body": "Ha sido creado por el mismo genial diseñador que a los 23 años propuso el nombre del Festival y su primer logo: Diego de la Vega, uno de sus fundadores."
+    },
+    {
+      "title": "LAS ACTIVIDADES DEL HALL",
+      "body": "En su funcionamiento, el FIP aspira a tener embajadores que periódicamente nos propongan las ternas de candidatos de su país. El embajador tendrá a su cargo la selección de los candidatos y su elevación al Hall. A su vez"
+    },
+    {
+      "title": "LAS AGENCIAS y LAS MARCAS",
+      "body": "Las agencias podrán proponer sus candidatos de las marcas. Deberán obtener sus antecedentes y mencionar los logros."
+    },
+    {
+      "title": "LAS MARCAS y SUS NOMINACIONES",
+      "body": "EL HALL DE LA FAMA DEL FIP PODRÁ DESIGNAR POR SI MISMO Y COMO INTEGRANTES A LAS MARCAS QUE SE HAYAN DESTACADO COMO MÁS GANADORAS EN LAS DISTINTAS EDICIONES DEL FESTIVAL .\n\nBuenos Aires, 10 de Marzo de 2021"
+    }
+  ],
+  "members": [
+    {
+      "slug": "mex-fernando-castillo",
+      "name": "Fernando del Castillo",
+      "role": "CEO Future Group",
+      "company": "",
+      "country": "México",
+      "countryCode": "MX",
+      "photoUrl": null,
+      "logoTodo": null,
+      "bioText": "",
+      "bioImageTodo": "images/hall/mex-fernando-castillo_info.png",
+      "order": 1
+    },
+    {
+      "slug": "andrzej",
+      "name": "Andrzej Rattinger Aranda",
+      "role": "",
+      "company": "",
+      "country": "México",
+      "countryCode": "MX",
+      "photoUrl": null,
+      "logoTodo": null,
+      "bioText": "",
+      "bioImageTodo": "images/hall/andrzej_info.png",
+      "order": 2
+    },
+    {
+      "slug": "chile-emilio-abud",
+      "name": "Emilio Abud",
+      "role": "",
+      "company": "Ají",
+      "country": "Chile",
+      "countryCode": "CL",
+      "photoUrl": null,
+      "logoTodo": null,
+      "bioText": "",
+      "bioImageTodo": "images/hall/chile-emilio-abud_info.png",
+      "order": 3
+    },
+    {
+      "slug": "hond-carlos-flores",
+      "name": "Carlos Vega Flores",
+      "role": "",
+      "company": "C&S Marketing",
+      "country": "Honduras",
+      "countryCode": "HN",
+      "photoUrl": null,
+      "logoTodo": null,
+      "bioText": "",
+      "bioImageTodo": "images/hall/hond-carlos-flores_info.png",
+      "order": 4
+    },
+    {
+      "slug": "mejan",
+      "name": "Claudio Mejan Ganem",
+      "role": "Director General de GIDEAS",
+      "company": "",
+      "country": "México",
+      "countryCode": "MX",
+      "photoUrl": null,
+      "logoTodo": null,
+      "bioText": "",
+      "bioImageTodo": "images/hall/mejan_info.png",
+      "order": 5
+    },
+    {
+      "slug": "peru-romero",
+      "name": "Juan Carlos Carrión Romero",
+      "role": "",
+      "company": "",
+      "country": "Perú",
+      "countryCode": "PE",
+      "photoUrl": null,
+      "logoTodo": null,
+      "bioText": "",
+      "bioImageTodo": "images/hall/carrion_info.png",
+      "order": 6
+    },
+    {
+      "slug": "arg-carlos-bartolome",
+      "name": "Carlos Bartolomé",
+      "role": "",
+      "company": "Carlos Bartolomé y Asociados",
+      "country": "Argentina",
+      "countryCode": "AR",
+      "photoUrl": null,
+      "logoTodo": null,
+      "bioText": "",
+      "bioImageTodo": "images/hall/arg-carlos-bartolome_info.png",
+      "order": 7
+    },
+    {
+      "slug": "hall-cesar-gonzalez",
+      "name": "César González",
+      "role": "CEO de SOMOS Experiences",
+      "company": "",
+      "country": "España",
+      "countryCode": "ES",
+      "photoUrl": null,
+      "logoTodo": "images/hall/cesar-gonzalez-logo.png",
+      "bioText": "Estudió Diseño Gráfico en el Centro Español de Nuevas Profesiones de Madrid. Comenzó su trayectoria hace 30 años en el departamento creativo de EDT, donde empezó su carrera profesional en el mundo de los eventos. Su inquietud por conocer en profundidad el sector y su perseverancia en el ámbito profesional, le han permitido formar parte en el crecimiento de una de las compañías más sólidas y relevantes de la industria. La búsqueda de la excelencia y el buen servicio al cliente son los principales valores que le han llevado a liderar grandes proyectos de clientes como Santander, Telefónica, Real Madrid, Iberdrola, Mapfre, Ferrovial, Respsol, entre otros. Al frente de EDT Eventos desde 2015, César ha participado en la expansión de la compañía, y ha liderado la fusión con las agencias UNIT Elements y Efímero, que dieron lugar a la creación en 2020 del Grupo SOMOS, y Staff Eventos en 2022, proyecto que dirige desde sus inicios. Entre los principales objetivos que plantea para el Grupo destaca la diversificación de la compañía creando una división de comunicación y branding content, así como empresas de producción in house, apostando por el talento y su fidelización para crear estructuras sólidas. Desde el punto de vista de la creación de eventos, su meta es transformar el sector hacia una industria más sostenible, aportando este valor añadido a los clientes. CEO de SOMOS Experiences. César es una persona positiva, inquieta, ambiciosa y comprometida, a la que le gusta observar y escuchar. No entiende la vida sin ilusión e intensidad, poniendo la vista en el futuro, actuando en el presente y aprendiendo del pasado.\n\nA lo largo de su carrera, ha participado en diferentes momentos como:\n\n• Más de 100 premios en la industria de los eventos.\n\n• Jurado de diferentes premios y galardones de nuestra industria.\n\n• Miembro de la Junta Directiva de AEVEA y actual presidente.\n\n• Ponencias, charlas y masterclass sobre eventos, marketing y comunicación.\n\n• Miembro de Madrid Convention Bureau.\n\n• Miembro del Club para la Excelencia en Eventos (2012-2017).\n\n• Ponente invitado al curso de verano “Protocolo como medios de comunicación política y social del siglo XXI” de la Universidad Complutense de Madrid (verano 2023).",
+      "bioImageTodo": null,
+      "order": 8
+    },
+    {
+      "slug": "hall-angel-pedrote",
+      "name": "Jesus Angel Pedrote Aznar",
+      "role": "FUNDADOR/CEO de Pedrote Marketing.",
+      "company": "",
+      "country": "México",
+      "countryCode": "MX",
+      "photoUrl": null,
+      "logoTodo": "images/hall/angel-pedrote-logo.png",
+      "bioText": "Dedicado desde hace +35 años a la Mercadotecnia, Trade Marketing, BTL, Eventos y Producción. En el año 1997 funda Pedrote y Asociados trabajando con empresas como Kellogg de México, HP, Casa Cuervo, Banamex, Warner, 3M, Del Monte, y otras. En el año 2000 ests empresa es adquirida por The Interpublic Group of Companies (Bolsa NY – “IPG”) manteniendo esta sociedad hasta el año 2005, atendiendo empresas como General Motors, American Express, Kellogg de México, Unilever, The Coca Cola Company México, Cerveceria Cuauhtemoc, British American Tobacco, Vileda, y otras.  A partir del año 2005 se funda Pedrote Marketing, marca que se ha mantenido durante los últimos 18 años dentro de las 3 principales Agencias de Promoción, BTL y Trade Marketing del país, los últimos 2 como primer lugar, y que cuenta con oficinas propias en las 10 principales ciudades de la república Mexicana, y a un staff conformado por mas de 180 integrantes. Pedrote Marketing es la Agencia del ramo más premiada del mercado Mexicano, habiendo recibido mas de 220 reconocimientos Nacionales e Internacionales incluyendo en cuatro ocasiones “La Agencia del Año” (2005, 2008, 2016, 2020) de la revista Merca2.0. Además el Festival Iberoamericano de Promociones y Eventos (FIP) concedió a Angel Pedrote el Reconocimiento a la Trayectoria Profesional en el año 2008, galardón al que ningún otro Mexicano del ramo ha tenido acceso. En los últimos 5 años, ha desarrollado e implementado campañas para empresas lideres en su ramo, entre las que se incluyen. México Calidad Suprema, Zuko, Conagra, Novartis, WalMart, SAM’s Club, British American Tobacco, El Oso, Radiopolis, GSK, Casa Cuervo, Universidad del Valle de México, Teka, Comex/PPG, Soriana, Casa Cuervo, MMK, Maceite, Hunter Douglas, Procter & Gamble, Osram, Cervecería Modelo, Procter & Gamble, Huawei, Samsung, Hewllett Packard, Liverpool, AMD, Intel y Acer… por mencionar algunos de sus +50 clientes. Sumado a la realización de campañas para prácticamente todo tipo de categorías de productos y servicios, es fundador de la Asociación Mexicana de Agencias de Promociones (AMAPRO), participa en el Consejo Editorial de la revista Merca2.0 y fué miembro del Consejo Consultivo de BANAMEX hasta el año 2016, y colabora con una columna mensual para la revista especializada InformaBTL desde hace +14 años.",
+      "bioImageTodo": null,
+      "order": 9
+    }
+  ]
+}

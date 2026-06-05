@@ -28,7 +28,7 @@ const archivoBlack = Archivo_Black({
 
 export const metadata: Metadata = {
   // TODO: set to the real production domain before launch.
-  metadataBase: new URL("https://www.fipfestival.com.ar"),
+  metadataBase: new URL(process.env.SITE_URL ?? "https://www.fipfestival.com.ar"),
   title: {
     default: "FIP Festival — Festival Iberoamericano de Promociones y Eventos",
     template: "%s · FIP Festival",

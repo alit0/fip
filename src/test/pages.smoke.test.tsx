@@ -2,8 +2,6 @@ import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
 
 // Páginas estáticas SÍNCRONAS (placeholders: la función devuelve JSX directo)
-import Hall from "@/app/[locale]/(public)/hall-de-la-fama/page";
-import Contacto from "@/app/[locale]/(public)/contacto/page";
 import Consejos from "@/app/[locale]/(public)/20-consejos/page";
 
 // Páginas ASÍNCRONAS (leen la capa de contenido con await)
@@ -14,6 +12,8 @@ import Inscripcion from "@/app/[locale]/(public)/inscripcion/page";
 import Fechas from "@/app/[locale]/(public)/fechas-de-cierre/page";
 import Tarifario from "@/app/[locale]/(public)/tarifario/page";
 import Premios from "@/app/[locale]/(public)/premios/page";
+import Hall from "@/app/[locale]/(public)/hall-de-la-fama/page";
+import Contacto from "@/app/[locale]/(public)/contacto/page";
 
 // Páginas dinámicas ASÍNCRONAS (reciben `params` como Promise)
 import JuradosYear from "@/app/[locale]/(public)/jurados/[year]/page";
@@ -21,8 +21,6 @@ import GanadoresYear from "@/app/[locale]/(public)/ganadores/[year]/page";
 import RankingCountry from "@/app/[locale]/(public)/ranking/[country]/page";
 
 const staticPages: [string, () => React.ReactNode][] = [
-  ["Hall de la Fama", Hall],
-  ["Contacto", Contacto],
   ["20 Consejos", Consejos],
 ];
 
@@ -78,6 +76,27 @@ describe("páginas con datos (async server components)", () => {
     const { container } = render(await Premios());
     expect(container.textContent).toContain("550");
   });
+
+  it("«Hall de la Fama» renderiza", async () => {
+    const { container } = render(await Hall());
+    expect(container).not.toBeEmptyDOMElement();
+  });
+
+  it("«Hall de la Fama» muestra un miembro conocido (César González)", async () => {
+    const { container } = render(await Hall());
+    expect(container.textContent).toContain("César González");
+  });
+
+  it("«Contacto» renderiza", async () => {
+    const { container } = render(await Contacto());
+    expect(container).not.toBeEmptyDOMElement();
+  });
+
+  it("«Contacto» muestra un email de contacto y el formulario", async () => {
+    const { container } = render(await Contacto());
+    expect(container.textContent).toContain("jorge@fipfestival.com.ar");
+    expect(container.querySelector("form")).not.toBeNull();
+  });
 });
 
 describe("páginas públicas dinámicas (con un parámetro válido)", () => {
@@ -87,15 +106,44 @@ describe("páginas públicas dinámicas (con un parámetro válido)", () => {
     expect(container).not.toBeEmptyDOMElement();
   });
 
+  it("«Jurados 2026» muestra un jurado con su país (Agustin Herrero · Chile)", async () => {
+    const ui = await JuradosYear({ params: Promise.resolve({ year: "2026" }) });
+    const { container } = render(ui);
+    expect(container.textContent).toContain("Agustin Herrero");
+    expect(container.textContent).toContain("Chile");
+    expect(container.querySelector('svg[aria-label="Bandera de Chile"]')).not.toBeNull();
+  });
+
   it("«Ganadores [year]» renderiza para 2025", async () => {
     const ui = await GanadoresYear({ params: Promise.resolve({ year: "2025" }) });
     const { container } = render(ui);
     expect(container).not.toBeEmptyDOMElement();
   });
 
+  it("«Ganadores 2025» (completo) muestra la grilla de Categorías con Gran Prix", async () => {
+    const ui = await GanadoresYear({ params: Promise.resolve({ year: "2025" }) });
+    const { container } = render(ui);
+    expect(container.textContent).toContain("Categorías con Gran Prix");
+    expect(container.textContent).toContain("Heineken Power Music Station");
+  });
+
+  it("«Ganadores 2024» (solo-PDF) muestra el botón de descarga del informe", async () => {
+    const ui = await GanadoresYear({ params: Promise.resolve({ year: "2024" }) });
+    const { container } = render(ui);
+    expect(
+      container.querySelector('a[href="/descargas/informe-ganadores-fip2024.pdf"]'),
+    ).not.toBeNull();
+  });
+
   it("«Ranking [country]» renderiza para colombia", async () => {
     const ui = await RankingCountry({ params: Promise.resolve({ country: "colombia" }) });
     const { container } = render(ui);
     expect(container).not.toBeEmptyDOMElement();
+  });
+
+  it("«Ranking colombia» muestra una agencia del ranking (Publictv)", async () => {
+    const ui = await RankingCountry({ params: Promise.resolve({ country: "colombia" }) });
+    const { container } = render(ui);
+    expect(container.textContent).toContain("Publictv");
   });
 });

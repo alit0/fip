@@ -1,0 +1,23 @@
+{
+  "title": "Contacto",
+  "intro": "¿Querés inscribirte, proponer una colaboración o hacer una consulta? Escribinos por el medio que prefieras o dejanos tu mensaje en el formulario.",
+  "people": [
+    {
+      "role": "Presidente",
+      "name": "Jorge Sardella",
+      "email": "jorge@fipfestival.com.ar"
+    },
+    {
+      "role": "Director Ejecutivo",
+      "name": "Diego de la Vega",
+      "email": "ddelavega@fipfestival.com.ar"
+    }
+  ],
+  "emails": [
+    { "label": "Prensa", "email": "prensa@fipfestival.com.ar" },
+    { "label": "Información general", "email": "info@fipfestival.com.ar" }
+  ],
+  "whatsapps": ["(+54) 11 6377 7902", "(+54) 11 5707 8856"],
+  "address": "Av. Forest 1147, Buenos Aires, Argentina",
+  "office": "(+54) 9 4803 0227"
+}

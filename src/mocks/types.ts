@@ -186,10 +186,175 @@ export interface Premios {
   };
 }
 
+/** One juror on the per-year Jurados page (app/[locale]/(public)/jurados/[year]). */
+export interface JuradoYearEntry {
+  slug: string;
+  name: string;
+  /** Cargo / subtitle (separated from bio in the v2 source). May be empty. */
+  role: string;
+  /** Agency. Present mainly for recent years (2026/2025); empty otherwise. */
+  agency: string;
+  /** Country name. May be empty when the source did not have it. */
+  country: string;
+  /** ISO-3166-1 alpha-2 country code derived by the content layer when available. */
+  countryCode?: string | null;
+  /** Country flag emoji. NOTE: fabricated by the relevamiento (not in the live HTML). */
+  countryFlag: string;
+  /** Long biography. May be empty. */
+  bio: string;
+  /** TODO: real juror photo asset pending */
+  photoUrl: string | null;
+  /**
+   * INTERNAL provenance flag — NOT rendered. true = país/bandera read from the live
+   * site (2026/2025); false = inferred by the relevamiento (slug-derived país, mapped
+   * flag) for older editions. Kept for the final live-verification pass.
+   */
+  countryVerified: boolean;
+  order: number;
+}
+
+/** Jurors keyed by edition year ("2020"…"2026"). */
+export type JuradosByYear = Record<string, JuradoYearEntry[]>;
+
 export interface InstitutionalSection {
   title: string;
   body: string;
 }
+
+/** A Hall of Fame member (app/[locale]/(public)/hall-de-la-fama). */
+export interface HallMember {
+  slug: string;
+  name: string;
+  /** cargo / role; may be empty */
+  role: string;
+  /** empresa; may be empty */
+  company: string;
+  country: string;
+  /** ISO-3166-1 alpha-2 for <CountryFlag>; null when unknown */
+  countryCode: string | null;
+  /** TODO: real photo asset pending */
+  photoUrl: string | null;
+  /** source logo path when the member has one (→ placeholder); null otherwise */
+  logoTodo: string | null;
+  /**
+   * Text biography. Only present for César González & Ángel Pedrote; for the rest the
+   * bio is an image on the live site (see bioImageTodo), so this is empty.
+   */
+  bioText: string;
+  /** Path of the _info.png when the bio is an image asset (→ placeholder); null otherwise. */
+  bioImageTodo: string | null;
+  order: number;
+}
+
+export interface HallDeLaFama {
+  title: string;
+  /** Institutional copy: ~11 apartados (qué es, principios, criterios, jury, …). */
+  institutional: InstitutionalSection[];
+  members: HallMember[];
+}
+
+export interface ContactPerson {
+  role: string;
+  name: string;
+  email: string;
+}
+
+export interface ContactEmail {
+  label: string;
+  email: string;
+}
+
+/** Contacto page (app/[locale]/(public)/contacto). */
+export interface Contacto {
+  title: string;
+  intro: string;
+  people: ContactPerson[];
+  emails: ContactEmail[];
+  whatsapps: string[];
+  address: string;
+  office: string;
+}
+
+/**
+ * One row of a country ranking. Medal counts are kept as strings, verbatim from the
+ * live site (the source uses "-" for none in most countries and "0" in España; no
+ * arithmetic verification was done — see relevamiento).
+ */
+export interface RankingRow {
+  position: string;
+  agency: string;
+  granPrix: string;
+  oro: string;
+  plata: string;
+  bronce: string;
+  total: string;
+}
+
+export interface RankingCountry {
+  label: string;
+  /** ISO-3166-1 alpha-2 for <CountryFlag>. */
+  countryCode: string;
+  /** historical period, e.g. "2017 - 2024". */
+  period: string;
+  rows: RankingRow[];
+}
+
+/** Rankings keyed by country slug ("colombia", "argentina", …). */
+export type RankingByCountry = Record<string, RankingCountry>;
+
+/** A Grand Prize / special recognition row on the Ganadores page. */
+export interface GanadorGrande {
+  /** premio / categoría (e.g. "Agencia del Año Argentina", "Trayectoria Profesional") */
+  premio: string;
+  /** ganador / agencia */
+  ganador: string;
+  pais: string;
+  countryCode: string | null;
+}
+
+/** A category winner row (one award level). */
+export interface GanadorRow {
+  /** Gran Prix / Oro / Plata / Bronce / Cristal */
+  nivel: string;
+  campania: string;
+  marca: string;
+  agencia: string;
+  pais: string;
+  countryCode: string | null;
+}
+
+export interface GanadorCategoria {
+  codigo: string;
+  /** may be empty when the source didn't expose a clean category name (older years) */
+  nombre: string;
+  rows: GanadorRow[];
+}
+
+export interface GanadorRubro {
+  rubro: string;
+  categorias: GanadorCategoria[];
+}
+
+/**
+ * Per-year data completeness, driving the hybrid render:
+ * - "completo": full grid (grandes + categorías by rubro) — 2025, 2020.
+ * - "parcial": only grandes premios in HTML; full detail lives in the PDF — 2022, 2021.
+ * - "solo-pdf": no HTML at all, grandes extracted from the PDF — 2024, 2023, 2019.
+ */
+export type GanadoresCompleteness = "completo" | "parcial" | "solo-pdf";
+
+export interface GanadoresYear {
+  year: number;
+  completeness: GanadoresCompleteness;
+  /** real PDF report link from the live site; null when not available yet (TODO). */
+  pdfUrl: string | null;
+  grandes: GanadorGrande[];
+  /** category grid grouped by rubro → categoría; empty for partial/pdf-only years. */
+  rubros: GanadorRubro[];
+}
+
+/** Ganadores keyed by edition year ("2019"…"2025"). */
+export type GanadoresByYear = Record<string, GanadoresYear>;
 
 export interface ScoreRow {
   award: string;

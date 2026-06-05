@@ -10,12 +10,13 @@
 
 **Estado de partida:** Fase 2, páginas 1-7 maquetadas (Home, Reglamento,
 Categorías, Inscripción, Fechas de cierre, Tarifario, Premios). Cimientos
-arquitectónicos hechos (capa async + ruteo i18n). Testing base instalado (18 tests).
+arquitectónicos hechos (capa async + ruteo i18n). Testing base instalado.
 Equipo de 3 agentes operando.
 
 **Lo nuevo en v2:** el trabajo se reparte entre tres agentes según sus fortalezas,
 sin que se pisen, usando git worktrees. Claude Code construye el core, Codex hace
-infra/QA/seguridad, Gemini releva. Vos sos el tech lead que mergea a `main`.
+infra/QA/seguridad, Gemini releva. Vos sos el tech lead que integra a `develop` y
+publica a `main` en los releases.
 
 ## Tabla de contenidos
 
@@ -39,7 +40,7 @@ infra/QA/seguridad, Gemini releva. Vos sos el tech lead que mergea a `main`.
 | **Claude Code** | Core del producto | páginas, componentes, mocks, `lib/content` |
 | **Codex (GPT-5.5)** | Infra + QA + seguridad | config, boundaries, tests, auth |
 | **Gemini CLI** | Relevamiento | `_scratch/` (cero código) |
-| **Vos** | Tech lead | mergea a `main`, aprueba todo |
+| **Vos** | Tech lead | integra a `develop`, releases a `main` (sagrada), aprueba todo |
 
 > [!IMPORTANT]
 > La división es por **tipo de archivo**, no por página. Eso es lo que permite el
@@ -80,9 +81,8 @@ trabajo en equipo de verdad.**
 
 ### Reparto de trabajo
 
-- **Claude Code (core):** maqueta las páginas, una por vez, en su rama
-  `feat/claude-<pagina>`. Tu revisión en el navegador antes de mergear se mantiene
-  intacta.
+- **Claude Code (core):** maqueta las páginas, una por vez, commiteando **directo en
+  `develop`**. Tu revisión en el navegador antes del commit se mantiene intacta.
 - **Gemini (releva, en paralelo):** adelanta el contenido de las páginas pesadas que
   vienen. Ya entregó relevamientos prolijos de Premios, Jurados, Ranking y Hall de la
   Fama (en `_scratch/`). De **Ganadores** sólo dejó datos crudos (JSON), y 2024 y 2023
@@ -112,18 +112,17 @@ Ya hechas: **5. Fechas de cierre · 6. Tarifario · 7. Premios / Réplicas.** Fa
 
 ### Método por página (el de siempre)
 
-- Una página por vez, en su rama.
+- Una página por vez (Claude Code commitea directo en `develop`).
 - Para páginas con mucho contenido, usar el relevamiento de Gemini de `_scratch/`
   como fuente (no transcribir de capturas).
 - Regla de fuentes: cuando el sitio en vivo difiere de la auditoría o un PDF, manda
   el sitio en vivo.
-- Revisar en el navegador antes de mergear.
+- Revisar en el navegador antes del commit.
 - Smoke test de la página nueva.
-- Merge a `main` (vos) + push.
+- Commit + push a `develop` (con tu OK); `main` solo se toca en los releases.
 
-### Pendientes de contenido arrastrados
+### Pendientes de contenido restantes
 
-- [ ] Texto verbatim de "FIP 2025" del Home (en `Home.png`).
 - [ ] Ubicar los premios "Red del Año" (Independientes + Mundiales).
 - [ ] Confirmar nombre del Rubro 5 (Desarrollo Humano vs "FIP Salud y desarrollo
   humano"). → buen encargo para Gemini.
@@ -262,9 +261,11 @@ Lo transversal que se cierra antes de publicar.
 
 Las de siempre, más las del trabajo en equipo:
 
-- **Una página/tarea por vez por agente.** Revisar antes de mergear.
-- **Solo vos mergeás a `main`.** Los agentes pushean ramas, no `main`.
-- **Una rama por tarea** (`feat/<agente>-<tarea>`), nunca trabajar en `main` directo.
+- **Una página/tarea por vez por agente.** Revisar antes de integrar.
+- **Nadie commitea en `main` directo: es sagrada, solo recibe releases.** El trabajo
+  vive en `develop`; solo vos integrás a `develop` y publicás a `main`.
+- **Claude Code commitea directo en `develop`; Codex usa ramas `feat/codex-*` sacadas
+  de `develop`** y mergeadas a `develop`. Nadie trabaja en `main` directo.
 - **Un agente toca `package.json` por vez** (es el archivo más compartido).
 - **Regla de fuentes:** sitio en vivo manda sobre auditoría/PDF.
 - **Antes de comandos que crean/borran/sobrescriben carpetas o cambian de rama, leer

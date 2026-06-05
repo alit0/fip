@@ -1,0 +1,3125 @@
+{
+  "2019": {
+    "year": 2019,
+    "completeness": "solo-pdf",
+    "pdfUrl": "/descargas/informe-ganadores-fip2019.pdf",
+    "grandes": [
+      {
+        "premio": "Agencia del Año Argentina",
+        "ganador": "LATCOM",
+        "pais": "Argentina",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "Agencia del Año Chile",
+        "ganador": "AJI",
+        "pais": "Chile",
+        "countryCode": "CL"
+      },
+      {
+        "premio": "Agencia del Año Brasil",
+        "ganador": "NETZA",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Agencia del Año Peru",
+        "ganador": "MOMENTUM PERU",
+        "pais": "Peru",
+        "countryCode": "PE"
+      },
+      {
+        "premio": "Agencia del Año Ecuador",
+        "ganador": "ATIS/PTV",
+        "pais": "Ecuador",
+        "countryCode": "EC"
+      },
+      {
+        "premio": "Agencia del Año Colombia",
+        "ganador": "PRODUCCIÓN DE EVENTOS 911",
+        "pais": "Colombia",
+        "countryCode": "CO"
+      },
+      {
+        "premio": "Agencia del Año Mexico",
+        "ganador": "PLAYER GROUP",
+        "pais": "Mexico",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "Agencia del Año España",
+        "ganador": "AURIGA",
+        "pais": "España",
+        "countryCode": "ES"
+      }
+    ],
+    "rubros": []
+  },
+  "2020": {
+    "year": 2020,
+    "completeness": "completo",
+    "pdfUrl": "/descargas/campeones-2020.pdf",
+    "grandes": [
+      {
+        "premio": "MARCA DEL AÑO 2020MÉXICO",
+        "ganador": "Harley Davidson",
+        "pais": "MÉXICO",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "EVENTO DEL AÑO 2020ARGENTINA",
+        "ganador": "MELI 20 / Mercado Libre",
+        "pais": "ARGENTINA",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "RECONOCIMIENTO A LA TRAYECTORIA PROFESIONALBRASIL",
+        "ganador": "SERGIO JUNQUEIRA",
+        "pais": "BRASIL",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "CREATIVO DEL AÑOBRASIL",
+        "ganador": "DIL MOTA – LB BRASIL",
+        "pais": "BRASIL",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Agencia del Año Argentina",
+        "ganador": "SAPPIA",
+        "pais": "Argentina",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "Agencia del Año Brasil",
+        "ganador": "ELEVE",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Agencia del Año Bolivia",
+        "ganador": "IGEL SRL",
+        "pais": "Bolivia",
+        "countryCode": "BO"
+      },
+      {
+        "premio": "Agencia del Año Colombia",
+        "ganador": "PUBLICITV",
+        "pais": "Colombia",
+        "countryCode": "CO"
+      },
+      {
+        "premio": "Agencia del Año MéXico",
+        "ganador": "PEDROTE MARKETIN",
+        "pais": "MéXico",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "Agencia del Año EspañA",
+        "ganador": "NEWLINK SPAIN",
+        "pais": "EspañA",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Agencia del Año Perú",
+        "ganador": "PLAY GROUP",
+        "pais": "Perú",
+        "countryCode": "PE"
+      }
+    ],
+    "rubros": [
+      {
+        "rubro": "Otros",
+        "categorias": [
+          {
+            "codigo": "",
+            "nombre": "Desconocida",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "JOHNNIE Y LETRAS DISTRICT",
+                "marca": "JOHNNIE WALKER",
+                "agencia": "NEWLINK SPAIN",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "LIOS EMBARAZOSOS",
+                "marca": "FAMISANAR",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "CHECK OUT FACIL",
+                "marca": "BANCO 24 HORAS",
+                "agencia": "WE PAD",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "KIT KAT SUMMER BREAK 2020",
+                "marca": "KIT KAT",
+                "agencia": "FUTURE MEXICO",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "ESPECTACULO DE NAVIDAD NOEL 2019 \" EL REGALO SECRETO \"",
+                "marca": "GALLETAS NOEL",
+                "agencia": "VILLALON",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "TEATRO NEGRO - INTERCERAMIC",
+                "marca": "INTERCERAMIC",
+                "agencia": "DIAFI",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "VAN GOGH ALIVE MX",
+                "marca": "VAN GOGH ALIVE",
+                "agencia": "MUST WANTED GROUP",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "OPERACIÓN RESCATE",
+                "marca": "GOWEST",
+                "agencia": "GOWEST",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "MUNDO CULINARIO NESTLÉ",
+                "marca": "CARNATION, LA LECHERA, MAGGI Y OTROS",
+                "agencia": "FUTURE MÉXICO",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "ENCHÚLAME EL CHANGARRO",
+                "marca": "W- RADIO",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "SERENATA LIVE SOFKA",
+                "marca": "SOFKA",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "OPERACIÓN RESCATE",
+                "marca": "GOWEST",
+                "agencia": "GOWEST",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "UNIV NORBERT WIENER. CAMPAÑA DE PERFORMANCE",
+                "marca": "NORBERT WIENER",
+                "agencia": "PLAY GROUP",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Gran Prix",
+                "campania": "PULSAR PROAM CHAMPIONSHIP MEXICO",
+                "marca": "BAJAJ MOTOCICLETAS - INDIA",
+                "agencia": "REBORN",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "EVENTO FINAL CBLOL 19 (CAMPEONATO BRASILEIRO DE LEAGUE OF LEGENDS)",
+                "marca": "RIOT GAMES",
+                "agencia": "ELEVE",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "BATCAVERNA DA OI NA CCXP",
+                "marca": "OI",
+                "agencia": "V3A",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "CHECK OUT FACIL",
+                "marca": "BANCO 24 HORAS",
+                "agencia": "WE PAD",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "HARLEY ROAD TOUR",
+                "marca": "HARLEY DAVIDSON",
+                "agencia": "GRUPO A MÁS B",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "CÁSATE CON MARTHA !",
+                "marca": "W - RADIO",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "CAMPAÑA DE PERFORMANCE 2019",
+                "marca": "FUTURA SCHOOLS",
+                "agencia": "PLAY GROUP",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "TE HACE FELIZ ON VACATION",
+                "marca": "ON VACATION",
+                "agencia": "ON VACATION",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "BOLSAS DE AIRE TAKATA",
+                "marca": "TOYOTA",
+                "agencia": "IFAHTO",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "HARLEY ROAD TOUR",
+                "marca": "HARLEY DAVIDSON",
+                "agencia": "GRUPO A MÁS B",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "MAISON LANCOME 2020",
+                "marca": "LANCOME",
+                "agencia": "EFÍMERO",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "SEAT DME",
+                "marca": "SEAT",
+                "agencia": "UNIT ELEMENTS",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "L'OREAL SUMMER DIGITAL MEETING 2020",
+                "marca": "L'OREAL LUXE",
+                "agencia": "EFÍMERO",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "CAMPAÑA DE PERFORMANCE 2019",
+                "marca": "FUTURA SCHOOLS",
+                "agencia": "PLAY GROUP",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "LOS EXPERTOS OSRAM",
+                "marca": "OSRAM",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "SE DÊ UM TEMPO POR VOCÊ E PARA VOCÊ",
+                "marca": "DASA S.A.",
+                "agencia": "ELKIS18 LIVE MARKETING",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "ECOMICS BY NISSAN",
+                "marca": "NISSAN",
+                "agencia": "INNOVA AATB",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "MAS QUOKKA",
+                "marca": "QUOKKA",
+                "agencia": "NEWLINK SPAIN",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "CYBER DAYS CAMPAÑAS MAYO Y JULIO 2020",
+                "marca": "CYBER DAYS PERÚ",
+                "agencia": "PLAY GROUP",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "EVENTO FINAL CBLOL 20 (CAMPEONATO BRASILEIRO DE LEAGUE OF LEGENDS)",
+                "marca": "RIOT GAMES",
+                "agencia": "ELEVE",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "CUADERNOS ESTILO",
+                "marca": "CUADERNOS ESTILO",
+                "agencia": "PLAN-BELOW",
+                "pais": "ECUADOR",
+                "countryCode": "EC"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "JOHNNIE Y LETRAS DISTRICT",
+                "marca": "JOHNNIE WALKER",
+                "agencia": "NEWLINK SPAIN",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "GIRA LENOVO CHANNEL TOUR",
+                "marca": "LENOVO",
+                "agencia": "PEDROTE MARKETING/UMI",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "ESPECTACULO DE NAVIDAD NOEL 2019 \" EL REGALO SECRETO \"",
+                "marca": "GALLETAS NOEL",
+                "agencia": "VILLALON",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "EL PORTAL DEL TERROR",
+                "marca": "MEGACENTER / COCA-COLA / SUPREMA / FULL SEGURID",
+                "agencia": "IGEL",
+                "pais": "BOLIVIA",
+                "countryCode": "BO"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "VIVE LA MAGIA DE LA NAVIDAD",
+                "marca": "MEGACENTER / COCA-COLA / SUPREMA / FULL SEGURID",
+                "agencia": "IGEL",
+                "pais": "BOLIVIA",
+                "countryCode": "BO"
+              },
+              {
+                "nivel": "Gran Prix",
+                "campania": "BOLSAS DE AIRE TAKATA",
+                "marca": "TOYOTA",
+                "agencia": "IFAHTO",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "TABASCO, EL SABOR EXPANDE",
+                "marca": "TABASCO",
+                "agencia": "FOLLOW UP",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Gran Prix",
+                "campania": "LA RECETA DE LA FELICIDAD MAGGI",
+                "marca": "NESTLÉ DE COLOMBIA",
+                "agencia": "PRODUCCIÓN DE EVENTOS 911",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "E-COMICS BY NISSAN",
+                "marca": "NISSAN",
+                "agencia": "INNOVA AATB",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "HARLEY ROAD TOUR",
+                "marca": "HARLEY DAVIDSON MÉXICO",
+                "agencia": "GRUPO A MÁS B",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "UILA LEXUS UX TENNIS CUP EDITION",
+                "marca": "LEXUS",
+                "agencia": "UILA",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "HEINEKEN F1 FESTIVAL SENNA TRIBUTE",
+                "marca": "HEINEKEN",
+                "agencia": "RED DOOR AGENCY",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "LO QUE LE HIZO FALTA A PAPÁ",
+                "marca": "SOFKA",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "E CEOMMERCE EKONOLLANTAS",
+                "marca": "EKONOLLANTAS",
+                "agencia": "EXE PERÚ",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "DISEÑO CAMPAÑAS WEB",
+                "marca": "WARNER BROTHERS",
+                "agencia": "PEDROTE MARKETING / UMI",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "FEDERACIÓN PERUANA DE TENIS - WEB SITE 2019",
+                "marca": "FEDERACIÓN PERUANA DE TENIS",
+                "agencia": "PLAY GROUP",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "JOHNNIE Y LETRAS DISTRICT",
+                "marca": "JOHNNIE WALKER",
+                "agencia": "NEWLINK SPAIN",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "CUMBRE LATINOAMERICANA DE PERDIDAS Y DESPERDICIOS ALMENTICIOS",
+                "marca": "BANCO INTERAMERICANO DE DESARROLLO",
+                "agencia": "ALQUIMIA",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "REGALOS CON PROPÓSITO",
+                "marca": "SOFKA",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "CUMBRE LATINOAMERICANA DE PERDIDAS Y DESPERDICIOS ALMENTICIOS",
+                "marca": "BANCO INTERAMERICANO DE DESARROLLO",
+                "agencia": "ALQUIMIA",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "E COMMERCE EKONOLLANTAS",
+                "marca": "EKONOLLANTAS",
+                "agencia": "EXE PERÚ",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "HOSPITAL DE CAMPANA",
+                "marca": "REDE D'OR SAO LUIZ",
+                "agencia": "V3A",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "UNIVERSIDAD NORBERT WIENER",
+                "marca": "NORBERT WIENER",
+                "agencia": "PLAY GROUP",
+                "pais": "Perú",
+                "countryCode": "PE"
+              }
+            ]
+          },
+          {
+            "codigo": "",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "ALFA. Y EL BUSCADOR DE ESTRELLAS",
+                "marca": "NCB - ARABIA SAUDITA",
+                "agencia": "SMART WORKS",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "AUDI E-TRON",
+                "marca": "AUDI",
+                "agencia": "UNIT ELEMENTS",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "MP",
+        "categorias": [
+          {
+            "codigo": "MP.2",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "MERIDIAN TIPS",
+                "marca": "MERIDIAN-DE PPG COMEX",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.4",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "HARLEY ROAD TOUR",
+                "marca": "HARLEY DAVIDSON MÉXICO",
+                "agencia": "GRUPO A MÁS B",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.7",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "\"AVES DE PRESA\" - AT&T",
+                "marca": "AT&T",
+                "agencia": "DIAFI",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.9",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "DATE BIDA",
+                "marca": "BIDA JUMEX",
+                "agencia": "FUTURE MEXICO",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.11",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "STREET MK “GRACIAS POR ELEGIR ANDALUCÍA”",
+                "marca": "TURISMO ANDALUZ - ANDALUCÍA",
+                "agencia": "GRUPO ABBSOLUTE",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "ON VACATION MI DESTINO FAVORITO",
+                "marca": "ON VACATION",
+                "agencia": "ON VACATION",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Campaña",
+                "marca": "Marca",
+                "agencia": "Agencia",
+                "pais": "PAIS",
+                "countryCode": null
+              }
+            ]
+          },
+          {
+            "codigo": "MP.17",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "BET INTERNO OMO 25 AÑOS",
+                "marca": "UNILEVER",
+                "agencia": "IGEL",
+                "pais": "BOLIVIA",
+                "countryCode": "BO"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "CONVENCIÓN MERIDIAN",
+                "marca": "MERIDIAN-DE PPG COMEX",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "LO QUE LE HIZO FALTA A PAPÁ",
+                "marca": "SOFKA",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.19",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "CHECK OUT FACIL",
+                "marca": "BANCO 24 HORAS",
+                "agencia": "WE PAD",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "HARLEY ROAD TOUR",
+                "marca": "HARLEY DAVIDSON MÉXICO",
+                "agencia": "GRUPO A MÁS B",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "MERIDIAN TIPS",
+                "marca": "MERIDIAN-DE PPG COMEX",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.21",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "INCONFUNDIBLE TANQUERAY",
+                "marca": "TANQUERAY",
+                "agencia": "NEWLINK SPAIN",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "ESPECTACULO DE NAVIDAD NOEL 2019 \" EL REGALO SECRETO \"",
+                "marca": "GALLETAS NOEL",
+                "agencia": "VILLALON",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "MUNDO CULINARIO NESTLÉ",
+                "marca": "MAGGI, LA LECHERA Y OTROS",
+                "agencia": "FUTURE MEXICO",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "EL PORTAL DEL TERROR",
+                "marca": "MEGACENTER/ COCA-COLA / SUPREMA / FULL SEGURID",
+                "agencia": "IGEL",
+                "pais": "BOLIVIA",
+                "countryCode": "BO"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.22 B",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "CARAVANA OMO",
+                "marca": "UNILEVER",
+                "agencia": "IGEL",
+                "pais": "BOLIVIA",
+                "countryCode": "BO"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.27",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "KIT KAT SUMMER BREAK 2020",
+                "marca": "KIT KAT",
+                "agencia": "FUTURE MEXICO",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "ACTIVIDADES DE RESPONSABILIDAD SOCIAL",
+                "marca": "TEATRO",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "MP13",
+        "categorias": [
+          {
+            "codigo": "MP13",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "EVENTO FINAL CBLOL 19 (CAMPEONATO BRASILEIRO DE LEAGUE OF LEGENDS)",
+                "marca": "RIOT GAMES",
+                "agencia": "ELEVE",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "HARLEY ROAD TOUR",
+                "marca": "HARLEY DAVIDSON MÉXICO",
+                "agencia": "GRUPO A MÁS B",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "CARAVANA OMO",
+                "marca": "UNILEVER",
+                "agencia": "IGEL",
+                "pais": "BOLIVIA",
+                "countryCode": "BO"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "CONECTANDO COLOMBIA CON EL FUTURO",
+                "marca": "HUGHES NET",
+                "agencia": "ALQUIMIA",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "MP15",
+        "categorias": [
+          {
+            "codigo": "MP15",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "STAND RIOT GAMES NA CCXP 2019",
+                "marca": "RIOT GAMES",
+                "agencia": "ELEVE",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "CIM",
+        "categorias": [
+          {
+            "codigo": "CIM.1",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "LANZAMIENTO SOLAN GAS",
+                "marca": "SOLÁN DE CABRAS",
+                "agencia": "ACCIONA INGENIERIA CULTURAL",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "PULSAR PROAM CHAMPIONSHIP MEXICO",
+                "marca": "BAJAJ MOTOCICLETAS",
+                "agencia": "RE BORN",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "HARLEY ROAD TOUR",
+                "marca": "HARLEY DAVIDSON MÉXICO",
+                "agencia": "GRUPO A MÁS B",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "E",
+        "categorias": [
+          {
+            "codigo": "E.1",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "MELI 20",
+                "marca": "MERCADO LIBRE",
+                "agencia": "SAPPIA",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "SAP NOW BRASIL 2019",
+                "marca": "SAP",
+                "agencia": "RED DOOR AGENCY",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "DEVELACIÓN INSIGNIA",
+                "marca": "BANCO SABADELL",
+                "agencia": "LICUADORA GROUP",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "EVENTO FORMAL DE RECONOCIMIENTO",
+                "marca": "COLFONDOS",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              }
+            ]
+          },
+          {
+            "codigo": "E.3",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "EL PORTAL DEL TERROR",
+                "marca": "MEGACENTER / COCA-COLA / SUPREMA / FULL SEGURID",
+                "agencia": "IGEL",
+                "pais": "BOLIVIA",
+                "countryCode": "BO"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "TECH TALK SHOWS - EDICIÓN DE LEYENDAS DE TERROR",
+                "marca": "HPE/ MICROSOFT",
+                "agencia": "PEDROTE MARKETING / UMI",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "VIVE LA MAGIA DE LA NAVIDAD",
+                "marca": "MEGACENTER / COCA-COLA / SUPREMA / FULL SEGURID",
+                "agencia": "IGEL",
+                "pais": "BOLIVIA",
+                "countryCode": "BO"
+              }
+            ]
+          },
+          {
+            "codigo": "E.4",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "CÁSATE CON MARTHA !",
+                "marca": "W - RADIO",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "TECH TALK SHOWS - EDICIÓN DE LEYENDAS DE TERROR",
+                "marca": "HPE/ MICROSOFT",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "E.5",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "LA RECETA DE LA FELICIDAD MAGGI",
+                "marca": "NESTLÉ DE COLOMBIA",
+                "agencia": "PRODUCCIÓN DE EVENTOS 911",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "LANZAMIENTO SOLAN GAS",
+                "marca": "SOLÁN DE CABRAS",
+                "agencia": "ACCIONA INGIENERIA CULTURAL",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              }
+            ]
+          },
+          {
+            "codigo": "E.6",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "NOTAVEIS DO ANO 2019",
+                "marca": "RD RAIA DROGAS !",
+                "agencia": "RED DOOR AGENCY",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "MELI 20",
+                "marca": "MERCADO LIBRE",
+                "agencia": "SAPPIA",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "FORMULA MAGICA",
+                "marca": "COLFONDOS",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "RALLY DCG / LENOVO",
+                "marca": "LENOVO",
+                "agencia": "PEDROTE MARKETING/UMI",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "E.8",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "VI EDICIÓN DE LOS PREMIOS PLATINO DEL CINE IBEROAMERICANO",
+                "marca": "EGEDA",
+                "agencia": "INUSUAL EVENTS",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "ENCHÚLAME EL CHANGARRO",
+                "marca": "W- RADIO",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "DO MIL AO MILHÃO - A MAIOR AULA DE FINANÇAS PESSOAIS DO MUNDO",
+                "marca": "PRIMO RICO",
+                "agencia": "ELEVE",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              }
+            ]
+          },
+          {
+            "codigo": "E.9",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "REGALOS CON PROPÓSITO",
+                "marca": "SOFKA",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "CUMBRE LATINOAMERICANA DE PERDIDAS Y DESPERDICIOS ALMENTICIOS",
+                "marca": "BANCO INTERAMERICANO DE DESARROLLO",
+                "agencia": "ALQUIMIA",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "TRABAJAMOS CON EL CORAZON",
+                "marca": "ON VACATION",
+                "agencia": "ON VACATION",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              }
+            ]
+          },
+          {
+            "codigo": "E.11",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "GIRA LENOVO CHANNEL TOUR",
+                "marca": "LENOVO",
+                "agencia": "PEDROTE MARKETING/UMI",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "HARLEY ROAD TOUR",
+                "marca": "HARLEY DAVIDSON",
+                "agencia": "GRUPO A MÁS B",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "E.12",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "EVENTO FINAL CBLOL 20 (CAMPEONATO BRASILEIRO DE LEAGUE OF LEGENDS)",
+                "marca": "RIOT GAMES",
+                "agencia": "ELEVE",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "EVENTO FINAL CBLOL 20 (CAMPEONATO BRASILEIRO DE LEAGUE OF LEGENDS)",
+                "marca": "RIOT GAMES",
+                "agencia": "ELEVE",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "LIDL SKIN FOODIES",
+                "marca": "LIDL",
+                "agencia": "NEWLINK SPAIN",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              }
+            ]
+          },
+          {
+            "codigo": "E.14",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "MELI 20",
+                "marca": "MERCADO LIBRE",
+                "agencia": "SAPPIA",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              }
+            ]
+          },
+          {
+            "codigo": "E.15",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "MAHOU SAN MIGUEL UNE 2020",
+                "marca": "MAHOU SAN MIGUEL",
+                "agencia": "NEWLINK SPAIN",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "SEAT CONFERENCE AFTER SALES",
+                "marca": "SEAT",
+                "agencia": "UNIT ELEMENTS",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "DO MIL AO MILHÃO - A MAIOR AULA DE FINANÇAS PESSOAIS DO MUNDO",
+                "marca": "PRIMO RICO",
+                "agencia": "ELEVE",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              }
+            ]
+          },
+          {
+            "codigo": "E.16",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "VAN GOGH ALIVE MX",
+                "marca": "VAN GOGH ALIVE",
+                "agencia": "MUST WANTED GROUP",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "E.17",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "INAUGURACAO BASE ANTARTICA FERAZ",
+                "marca": "MARINHA DO BRASIL",
+                "agencia": "V3A",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "EVENTO FINAL CBLOL 19 (CAMPEONATO BRASILEIRO DE LEAGUE OF LEGENDS)",
+                "marca": "RIOT GAMES",
+                "agencia": "ELEVE",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "ESPECTACULO DE NAVIDAD NOEL 2019 \" EL REGALO SECRETO \"",
+                "marca": "GALLETAS NOEL",
+                "agencia": "VILLALON",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "VAN GOGH ALIVE MX",
+                "marca": "VAN GOGH ALIVE",
+                "agencia": "MUST WANTED GROUP",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "MD",
+        "categorias": [
+          {
+            "codigo": "MD.1",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "RALLY DCG / LENOVO",
+                "marca": "LENOVO",
+                "agencia": "PEDROTE MARKETING/UMI",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "MD.5",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "ESPECTACULO DE NAVIDAD NOEL 2019 \" EL REGALO SECRETO \"",
+                "marca": "GALLETAS NOEL",
+                "agencia": "VILLALON",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "IZA TU BANDERA",
+                "marca": "PILOT",
+                "agencia": "CHAMAN",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "OPERACIÓN RESCATE",
+                "marca": "GOWEST",
+                "agencia": "GOWEST",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "MC",
+        "categorias": [
+          {
+            "codigo": "MC.1",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "LA 10 ES PARA EL CHAPU",
+                "marca": "AGEA SA/GRAN DT",
+                "agencia": "LIBRE",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "PULSAR PROAM CHAMPIONSHIP MEXICO",
+                "marca": "BAJAJ MOTOCICLETAS",
+                "agencia": "RE BORN",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "SE DÊ UM TEMPO POR VOCÊ E PARA VOCÊ",
+                "marca": "DASA S.A.",
+                "agencia": "ELKIS18 LIVE MARKETING",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "TEC",
+        "categorias": [
+          {
+            "codigo": "TEC.3",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "HPE TECHNOLOGY SERIES",
+                "marca": "HEWLETT PACKARD",
+                "agencia": "PEDROTE MARKETING/UMI",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "TEC.6",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "ECOSISTEMA EL DORADO",
+                "marca": "AEROPUERTO EL DORADO",
+                "agencia": "PLM MARKETING GROUP",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "EVENTO FINAL CBLOL 19 (CAMPEONATO BRASILEIRO DE LEAGUE OF LEGENDS)",
+                "marca": "RIOT GAMES",
+                "agencia": "ELEVE",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "CYBER DAYS CAMPAÑAS MAYO Y JULIO 2020",
+                "marca": "CYBER DAYS PERÚ",
+                "agencia": "PLAY GROUP",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "LOS EXPERTOS OSRAM",
+                "marca": "OSRAM",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "TEC .8",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "MERIDIAN TIPS",
+                "marca": "MERIDIAN-DE PPG COMEX",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "ON VACATION MI DESTINO FAVORITO",
+                "marca": "ON VACATION",
+                "agencia": "ON VACATION",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "SUS",
+        "categorias": [
+          {
+            "codigo": "SUS.1",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "TAURUS - CIMA CONTRA EL CÁNCER",
+                "marca": "TAURUS, CIMA CONTRA EL CÁNCER",
+                "agencia": "LICUADORA GROUP",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "PNC",
+        "categorias": [
+          {
+            "codigo": "PNC.1",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "TEATRO NEGRO - INTERCERAMIC",
+                "marca": "INTERCERAMIC",
+                "agencia": "DIAFI",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "CARAVANA OMO",
+                "marca": "UNILEVER",
+                "agencia": "IGEL",
+                "pais": "BOLIVIA",
+                "countryCode": "BO"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "PUB",
+        "categorias": [
+          {
+            "codigo": "PUB.1",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "TINTA GEL",
+                "marca": "PILOT",
+                "agencia": "CHAMAN",
+                "pais": "Perú",
+                "countryCode": "PE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "LAN",
+        "categorias": [
+          {
+            "codigo": "LAN.1",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "LANZAMIENTO SOLAN GAS",
+                "marca": "SOLAN DE CABRAS",
+                "agencia": "ACCIONA",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              }
+            ]
+          },
+          {
+            "codigo": "LAN.6",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "MOTOROLA ONE",
+                "marca": "MOTOROLA",
+                "agencia": "RED DOOR AGENCY",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "MOTO EXPERIENCE",
+                "marca": "MOTOROLA",
+                "agencia": "RED DOOR AGENCY",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "DEP",
+        "categorias": [
+          {
+            "codigo": "DEP.1",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "LEXUS UP DRIVING EXPERIENCE",
+                "marca": "LEXUS",
+                "agencia": "UILA",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "ACTIVATION PATROCINIO MONSTER ENERGY",
+                "marca": "MONSTER ENERGY",
+                "agencia": "UILA",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              }
+            ]
+          },
+          {
+            "codigo": "DEP.2",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "FEDERACIÓN PERUANA DE TENIS - WEB SITE 2019",
+                "marca": "FEDERACIÓN PERUANA DE TENIS",
+                "agencia": "PLAY GROUP",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "HEINEKEN F1 FESTIVAL SENNA TRIBUTE",
+                "marca": "HEINEKEN",
+                "agencia": "RED DOOR AGENCY",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "POP",
+        "categorias": [
+          {
+            "codigo": "POP.2",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Cristal",
+                "campania": "EL PORTAL DEL TERROR",
+                "marca": "MEGACENTER/ COCA-COLA / SUPREMA / FULL SEGURID",
+                "agencia": "IGEL",
+                "pais": "BOLIVIA",
+                "countryCode": "BO"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "PABELLÓN DE TURESPAÑA EN FITUR 2020",
+                "marca": "TURESPAÑA",
+                "agencia": "GRUPO ABBSOLUTE",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "HARLEY ROAD TOUR",
+                "marca": "HARLEY DAVIDSON MÉXICO",
+                "agencia": "GRUPO A MÁS B",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "ENCHÚLAME EL CHANGARRO",
+                "marca": "W- RADIO",
+                "agencia": "PEDROTE MARKETING",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "D",
+        "categorias": [
+          {
+            "codigo": "D.1",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "ROCK IT",
+                "marca": "MERCADO LIBRE",
+                "agencia": "SAPPIA",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "MELI 20",
+                "marca": "MERCADO LIBRE",
+                "agencia": "SAPPIA",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "LANZAMIENTO SOLÁN GAS",
+                "marca": "SOLÁN DE CABRAS",
+                "agencia": "ACCIONA",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Campaña",
+                "marca": "Marca",
+                "agencia": "Agencia",
+                "pais": "PAIS",
+                "countryCode": null
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "MS",
+        "categorias": [
+          {
+            "codigo": "MS.1",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "NO SON APLAUSOS",
+                "marca": "FUNDACIÓN ANAR",
+                "agencia": "NEWLINK SPAIN",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "SE DÊ UM TEMPO POR VOCÊ E PARA VOCÊ",
+                "marca": "DASA S.A.",
+                "agencia": "ELKIS18 LIVE MARKETING",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "REGALOS CON PROPÓSITO",
+                "marca": "SOFKA",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              }
+            ]
+          },
+          {
+            "codigo": "MS.4",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "SE DÊ UM TEMPO POR VOCÊ E PARA VOCÊ",
+                "marca": "DASA S.A.",
+                "agencia": "ELKIS18 LIVE MARKETING",
+                "pais": "BRASIL",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "PILOT RAP",
+                "marca": "PILOT",
+                "agencia": "CHAMAN",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "ES HORA DE AYUDARNOS",
+                "marca": "EXE PERU SAC",
+                "agencia": "EXE PERÚ",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "BOLSAS DE AIRE TAKATA",
+                "marca": "TOYOTA",
+                "agencia": "IFAHTO",
+                "pais": "MÉXICO",
+                "countryCode": "MX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "DH",
+        "categorias": [
+          {
+            "codigo": "DH",
+            "nombre": "",
+            "rows": [
+              {
+                "nivel": "Oro",
+                "campania": "LIOS EMBARAZOSOS",
+                "marca": "FAMISANAR",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "LA MAGIA DE UN SEMI DIOS",
+                "marca": "FAMISANAR",
+                "agencia": "PUBLICITV",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "CONECTANDO COLOMBIA CON EL FUTURO",
+                "marca": "THUGHES NET",
+                "agencia": "ALQUIMIA",
+                "pais": "COLOMBIA",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "HIGIENIZACIONES LEXUS",
+                "marca": "LEXUS",
+                "agencia": "UILA",
+                "pais": "ESPAÑA",
+                "countryCode": "ES"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "2021": {
+    "year": 2021,
+    "completeness": "parcial",
+    "pdfUrl": "/descargas/campeones-2021.pdf",
+    "grandes": [
+      {
+        "premio": "MARCA DEL AÑO 2021MÉXICO",
+        "ganador": "MERCK",
+        "pais": "MÉXICO",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "RED INDEPENDIENTE DEL AÑO 2021ARGENTINA",
+        "ganador": "LOOP",
+        "pais": "ARGENTINA",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "EVENTO DEL AÑO 2021MÉXICO",
+        "ganador": "GRUPO AmásBMARCA: MERCK LANZAMIENTO PERGOVERIS PEN",
+        "pais": "MÉXICO",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "RECONOCIMIENTO A LA TRAYECTORIA PROFESIONALESPAÑA",
+        "ganador": "ESTRELLA DÍAZ MORGADO DE STAFF EVENTOS",
+        "pais": "ESPAÑA",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Agencia del Año Argentina",
+        "ganador": "SAPPIA",
+        "pais": "Argentina",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "Agencia del Año Brasil",
+        "ganador": "INNOVA",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Agencia del Año Colombia",
+        "ganador": "PUBLICITV",
+        "pais": "Colombia",
+        "countryCode": "CO"
+      },
+      {
+        "premio": "Agencia del Año MéXico",
+        "ganador": "PEDROTE MARKETING",
+        "pais": "MéXico",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "Agencia del Año EspañA",
+        "ganador": "ACCIONA",
+        "pais": "EspañA",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Agencia del Año Perú",
+        "ganador": "EXE",
+        "pais": "Perú",
+        "countryCode": "PE"
+      }
+    ],
+    "rubros": []
+  },
+  "2022": {
+    "year": 2022,
+    "completeness": "parcial",
+    "pdfUrl": "/descargas/campeones-2022.pdf",
+    "grandes": [
+      {
+        "premio": "MARCA DEL AÑO 2022BRASIL",
+        "ganador": "DISNEY PIXAR",
+        "pais": "BRASIL",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "EVENTO DEL AÑO 2022MÉXICO",
+        "ganador": "Mundo Pixar de Disney Pixar",
+        "pais": "BRASIL",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "RECONOCIMIENTO A LA TRAYECTORIA PROFESIONALARGENTINA",
+        "ganador": "ALEJANDRO VERZOUB",
+        "pais": "ARGENTINA",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "RECONOCIMIENTO A LA TRAYECTORIA PERIODÍSTICAARGENTINA",
+        "ganador": "KHALED HALLAR",
+        "pais": "ARGENTINA",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "RECONOCIMIENTO AL MÉRITO PERIODÍSTICOMÉXICO",
+        "ganador": "INFORMA BTL",
+        "pais": "MÉXICO",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "Agencia del Año Argentina",
+        "ganador": "LATCOM",
+        "pais": "Argentina",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "Agencia del Año Brasil",
+        "ganador": "RED DOOR AGENCY",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Agencia del Año Colombia",
+        "ganador": "PUBLICITV",
+        "pais": "Colombia",
+        "countryCode": "CO"
+      },
+      {
+        "premio": "Agencia del Año MéXico",
+        "ganador": "FUTURE OMNICHANNEL AGENCY",
+        "pais": "MéXico",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "Agencia del Año EspañA",
+        "ganador": "ACCIONA CULTURA",
+        "pais": "EspañA",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Agencia del Año Perú",
+        "ganador": "PLAY GROUP",
+        "pais": "Perú",
+        "countryCode": "PE"
+      }
+    ],
+    "rubros": []
+  },
+  "2023": {
+    "year": 2023,
+    "completeness": "solo-pdf",
+    "pdfUrl": "/descargas/informe-ganadores-fip2023.pdf",
+    "grandes": [
+      {
+        "premio": "Agencia del Año Argentina",
+        "ganador": "VENUE BRAND EXPERIENCE",
+        "pais": "Argentina",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "Agencia del Año Brasil",
+        "ganador": "RED DOOR AGENCY",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Agencia del Año Bolivia",
+        "ganador": "IGEL",
+        "pais": "Bolivia",
+        "countryCode": "BO"
+      },
+      {
+        "premio": "Agencia del Año Colombia",
+        "ganador": "CPC",
+        "pais": "Colombia",
+        "countryCode": "CO"
+      },
+      {
+        "premio": "Agencia del Año Perú",
+        "ganador": "SHOCK",
+        "pais": "Perú",
+        "countryCode": "PE"
+      },
+      {
+        "premio": "Agencia del Año México",
+        "ganador": "LICUADORA GROUP",
+        "pais": "México",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "Agencia del Año España",
+        "ganador": "ACCIONA CULTURA",
+        "pais": "España",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Reconocimiento a la Trayectoria Profesional",
+        "ganador": "César González",
+        "pais": "España",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Hall de la Fama",
+        "ganador": "César González",
+        "pais": "España",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Hall de la Fama",
+        "ganador": "Angel Pedrote",
+        "pais": "México",
+        "countryCode": "MX"
+      }
+    ],
+    "rubros": []
+  },
+  "2024": {
+    "year": 2024,
+    "completeness": "solo-pdf",
+    "pdfUrl": "/descargas/informe-ganadores-fip2024.pdf",
+    "grandes": [
+      {
+        "premio": "Agencia del Año Argentina",
+        "ganador": "MCI",
+        "pais": "Argentina",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "Agencia del Año Brasil",
+        "ganador": "SOLUTION OFF",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Agencia del Año Chile",
+        "ganador": "BEFUN EXPERIENCES",
+        "pais": "Chile",
+        "countryCode": "CL"
+      },
+      {
+        "premio": "Agencia del Año Colombia",
+        "ganador": "VILLALON ENTRETENIMIENTO",
+        "pais": "Colombia",
+        "countryCode": "CO"
+      },
+      {
+        "premio": "Agencia del Año Perú",
+        "ganador": "GRUPO LUCKY",
+        "pais": "Perú",
+        "countryCode": "PE"
+      },
+      {
+        "premio": "Agencia del Año México",
+        "ganador": "LICUADORA GROUP",
+        "pais": "México",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "Agencia del Año España",
+        "ganador": "EXPERIENTIA",
+        "pais": "España",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Trayectoria Profesional",
+        "ganador": "Edson Potsch",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Trayectoria Profesional en Eventos",
+        "ganador": "Marco Antonio Rea",
+        "pais": "México",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "Premio Revelación",
+        "ganador": "BTOB",
+        "pais": "España",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Creativo del Año",
+        "ganador": "Aldo Canchaya Toledo (Grupo Lucky)",
+        "pais": "Perú",
+        "countryCode": "PE"
+      }
+    ],
+    "rubros": []
+  },
+  "2025": {
+    "year": 2025,
+    "completeness": "completo",
+    "pdfUrl": "/descargas/campeones-2025.pdf",
+    "grandes": [
+      {
+        "premio": "Trayectoria Profesional",
+        "ganador": "Mónica Sáenz(Acciona Cultura)",
+        "pais": "España",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Mejor Acción Pub. No Convencional",
+        "ganador": "SHERPA42",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Mejor Lanzamiento",
+        "ganador": "AVANNA",
+        "pais": "México",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "Premio Revelación",
+        "ganador": "BULL MARKETING",
+        "pais": "Colombia",
+        "countryCode": "CO"
+      },
+      {
+        "premio": "Mejor Red Internacional",
+        "ganador": "GRUPO LUCKY",
+        "pais": "Perú",
+        "countryCode": "PE"
+      },
+      {
+        "premio": "Hall de la Fama",
+        "ganador": "Wagner Zaratín",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Hall de la Fama",
+        "ganador": "Serge Crespín",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Hall de la Fama",
+        "ganador": "Luis Pérez",
+        "pais": "España",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Marca del Año",
+        "ganador": "FANTA",
+        "pais": "España",
+        "countryCode": "ES"
+      },
+      {
+        "premio": "Marca del Año",
+        "ganador": "HSBC",
+        "pais": "México",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "Marca del Año",
+        "ganador": "ICPNA",
+        "pais": "Perú",
+        "countryCode": "PE"
+      },
+      {
+        "premio": "Marca del Año",
+        "ganador": "COCA-COLA",
+        "pais": "Ecuador",
+        "countryCode": "EC"
+      },
+      {
+        "premio": "Marca del Año",
+        "ganador": "PILFRUT",
+        "pais": "Bolivia",
+        "countryCode": "BO"
+      },
+      {
+        "premio": "Marca del Año",
+        "ganador": "TITÁN PLAZA CENTRO COMERCIAL",
+        "pais": "Colombia",
+        "countryCode": "CO"
+      },
+      {
+        "premio": "Marca del Año",
+        "ganador": "HEINEKEN",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Marca del Año",
+        "ganador": "MCDONALD'S",
+        "pais": "Argentina",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "Agencia del Año",
+        "ganador": "LATCOM",
+        "pais": "Argentina",
+        "countryCode": "AR"
+      },
+      {
+        "premio": "Agencia del Año",
+        "ganador": "INNOVA - ALL AROUND THE BRAND",
+        "pais": "Brasil",
+        "countryCode": "BR"
+      },
+      {
+        "premio": "Agencia del Año",
+        "ganador": "FOSBURY LATAM",
+        "pais": "Colombia",
+        "countryCode": "CO"
+      },
+      {
+        "premio": "Agencia del Año",
+        "ganador": "GRUPO LUCKY",
+        "pais": "Perú",
+        "countryCode": "PE"
+      },
+      {
+        "premio": "Agencia del Año",
+        "ganador": "GRUPO LUCKY ECUADOR",
+        "pais": "Ecuador",
+        "countryCode": "EC"
+      },
+      {
+        "premio": "Agencia del Año",
+        "ganador": "GRUPO LUCKY BOLIVIA",
+        "pais": "Bolivia",
+        "countryCode": "BO"
+      },
+      {
+        "premio": "Agencia del Año",
+        "ganador": "GRUPO AMASB",
+        "pais": "México",
+        "countryCode": "MX"
+      },
+      {
+        "premio": "Agencia del Año",
+        "ganador": "EXPERIENTIA",
+        "pais": "España",
+        "countryCode": "ES"
+      }
+    ],
+    "rubros": [
+      {
+        "rubro": "MP",
+        "categorias": [
+          {
+            "codigo": "MP.2",
+            "nombre": "Acciones de Bebidas Alcohólicas y No Alcohólicas",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Heineken Power Music Station",
+                "marca": "Heineken",
+                "agencia": "Atenas.ag",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Macaronesian Stories",
+                "marca": "Grupo Varma",
+                "agencia": "Experientia y Sr. Goldwind",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Beats Mansion",
+                "marca": "Beats",
+                "agencia": "Sherpa42",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "The Carnaval Day",
+                "marca": "Amstel/Heineken",
+                "agencia": "Atenas.ag",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Desalia",
+                "marca": "Varma",
+                "agencia": "Lighthouse",
+                "pais": "España",
+                "countryCode": "ES"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.6",
+            "nombre": "Emotional Marketing",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "La Investigación en Alzheimer tiene nombre y apellido",
+                "marca": "Fundación Pasqual Maragall",
+                "agencia": "Atrevia",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Heineken Power Music Station",
+                "marca": "Heineken",
+                "agencia": "Atenas.ag",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Fanta The Afterlife Train Experience",
+                "marca": "Fanta",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "El Regalo Inolvidable de Coca-Cola",
+                "marca": "Coca-Cola",
+                "agencia": "Grupo Lucky Ecuador",
+                "pais": "Ecuador",
+                "countryCode": "EC"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Heroes del Barrio",
+                "marca": "Zorro Abarrotero",
+                "agencia": "Momentum Mexico",
+                "pais": "México",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.15",
+            "nombre": "Prueba de Producto",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Samsung Galaxy Ring",
+                "marca": "Samsung",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "BYD Dolphin Surf Launch",
+                "marca": "BYD",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Coca-Cola Share a Coke",
+                "marca": "Coca-Cola",
+                "agencia": "Grupo Lucky Ecuador",
+                "pais": "Ecuador",
+                "countryCode": "EC"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Samsung Lanzamiento S25",
+                "marca": "Samsung",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Club Pasión de Habanos",
+                "marca": "Tabacalera",
+                "agencia": "Dissimility",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Entra a Casinoverso y crea nuestro nuevo sabor",
+                "marca": "Casino",
+                "agencia": "Grupo Lucky Perú",
+                "pais": "Perú",
+                "countryCode": "PE"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.16 (A)",
+            "nombre": "Experiencia de Marca (Consumo Masivo)",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Lançamento BYD Yuan Pro",
+                "marca": "BYD",
+                "agencia": "Fanclub Live & Digital Marketing",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Atelier Kérastase",
+                "marca": "Kérastase",
+                "agencia": "Experientia",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "El Legado",
+                "marca": "La Fabril",
+                "agencia": "La Sien Creativa",
+                "pais": "Colombia",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Salta Conmigo",
+                "marca": "SEAT",
+                "agencia": "Experientia",
+                "pais": "España",
+                "countryCode": "ES"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.16 (B)",
+            "nombre": "Experiencia de Marca (Servicios)",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Mundo Pixar",
+                "marca": "Mundo Pixar",
+                "agencia": "Solution Off",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Johnnie Walker Blonde - Verao",
+                "marca": "Johnnie Walker",
+                "agencia": "Sherpa42",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Mazda Crafted in Japan",
+                "marca": "Mazda",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Crocantudoke",
+                "marca": "Sadia",
+                "agencia": "Hub",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Fit Na Rua",
+                "marca": "Centauro",
+                "agencia": "Innova - All Around The Brand",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              }
+            ]
+          },
+          {
+            "codigo": "MP.16 (C)",
+            "nombre": "Experiencia de Marca (Bebidas)",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Guaraná Homenagea Senna",
+                "marca": "Guaraná Antartica",
+                "agencia": "Sherpa42",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "The Carnaval Day",
+                "marca": "Amstel/Heineken",
+                "agencia": "Atenas.ag",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Desalia",
+                "marca": "Varma",
+                "agencia": "Lighthouse",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Heineken Power Music Station",
+                "marca": "Heineken",
+                "agencia": "Atenas.ag",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "E",
+        "categorias": [
+          {
+            "codigo": "E.1 (A)",
+            "nombre": "Eventos Corporativos (Consumo Masivo)",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Heineken Village - Edicion Senna",
+                "marca": "Heineken",
+                "agencia": "Red Door Agency",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "BBVA Go Further",
+                "marca": "BBVA",
+                "agencia": "Experientia",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Coca Cola - Kick Off 2025",
+                "marca": "Coca-Cola",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Encuentro Helvex 2024",
+                "marca": "Helvex",
+                "agencia": "Drive 360°",
+                "pais": "México",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Kids & Us The Convention 2025",
+                "marca": "Kids & Us",
+                "agencia": "Open Mind Entertainment",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Newsan Brindis 2024",
+                "marca": "Newsan",
+                "agencia": "MCI",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              }
+            ]
+          },
+          {
+            "codigo": "E.1 (B)",
+            "nombre": "Eventos Corporativos (Servicios)",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Mastercard Innovation Forum",
+                "marca": "Mastercard",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Evento que se transformó en Galería de Arte",
+                "marca": "Pacífico Seguros",
+                "agencia": "Grupo Lucky Perú",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "T&M - Bradesco Seguros",
+                "marca": "Bradesco Seguros",
+                "agencia": "AKM Agência",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Talento Imparable",
+                "marca": "Grupo Adecco",
+                "agencia": "Dissimility",
+                "pais": "España",
+                "countryCode": "ES"
+              }
+            ]
+          },
+          {
+            "codigo": "E.6",
+            "nombre": "Lanzamiento de Producto",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Fanta The Afterlife Train Experience",
+                "marca": "Fanta",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Moeve - Lanzamiento de Marca",
+                "marca": "Moeve",
+                "agencia": "Somos Experiences",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Salta Conmigo",
+                "marca": "SEAT",
+                "agencia": "Experientia",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Samsung Lanzamiento S25",
+                "marca": "Samsung",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              }
+            ]
+          },
+          {
+            "codigo": "E.8",
+            "nombre": "Mejor Evento de Motivación e Incentivo",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Mazda MTC",
+                "marca": "Mazda",
+                "agencia": "Piknik",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "BBVA Go Further",
+                "marca": "BBVA",
+                "agencia": "Experientia",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Talento Imparable",
+                "marca": "Grupo Adecco",
+                "agencia": "Dissimility",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Pepsico Top Time África del Sur",
+                "marca": "Pepsico",
+                "agencia": "DMC Incentives",
+                "pais": "España",
+                "countryCode": "ES"
+              }
+            ]
+          },
+          {
+            "codigo": "E.15",
+            "nombre": "Mejor Evento de Celebración",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "10° Aniversario Netflix",
+                "marca": "Netflix",
+                "agencia": "Somos Experiences",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Salta Conmigo",
+                "marca": "SEAT",
+                "agencia": "Experientia",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Ceremonia Inaugural Final Copa del Rey",
+                "marca": "RFEF",
+                "agencia": "Mediapro Events",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Desalia",
+                "marca": "Varma",
+                "agencia": "Lighthouse",
+                "pais": "España",
+                "countryCode": "ES"
+              }
+            ]
+          },
+          {
+            "codigo": "E.16 (A)",
+            "nombre": "Convención, Reunión o Congreso (Consumo Masivo)",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Encuentro Helvex 2024",
+                "marca": "Helvex",
+                "agencia": "Drive 360°",
+                "pais": "México",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Coca-Cola - Kick Off 2025",
+                "marca": "Coca-Cola",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Dermajal 2025",
+                "marca": "L'Oreal Dermatological",
+                "agencia": "Avanna",
+                "pais": "México",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Convención Itinerante - Nestlé",
+                "marca": "Nestlé",
+                "agencia": "Somos Experiences",
+                "pais": "España",
+                "countryCode": "ES"
+              }
+            ]
+          },
+          {
+            "codigo": "E.16 (B)",
+            "nombre": "Convención, Reunión o Congreso (Servicios)",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Openweek15",
+                "marca": "Open de Arbitraje",
+                "agencia": "Dissimility",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "BBVA Go Further",
+                "marca": "BBVA",
+                "agencia": "Experientia",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Mastercard Innovation Forum",
+                "marca": "Mastercard",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "2º de Hormonologia",
+                "marca": "ASBRAH",
+                "agencia": "Fito",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Summit FY26",
+                "marca": "Serasa Experian",
+                "agencia": "Renase",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Lanzamiento Lilly Mounjaro",
+                "marca": "Lilly Mounjaro",
+                "agencia": "Grupo Amasb",
+                "pais": "México",
+                "countryCode": "MX"
+              }
+            ]
+          },
+          {
+            "codigo": "E.17",
+            "nombre": "Mejor Evento Temático",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "La Gran Golfada",
+                "marca": "Volkswagen",
+                "agencia": "Experientia y Sr. Goldwind",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Vamos a pasarnos el juego",
+                "marca": "Mahou",
+                "agencia": "Lighthouse",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Samsung Ring",
+                "marca": "Samsung",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "El Legado",
+                "marca": "La Fabril",
+                "agencia": "La Sien Creativa",
+                "pais": "Colombia",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Xiaomi Kickoff 2024",
+                "marca": "Xiaomi",
+                "agencia": "Drive 360°",
+                "pais": "México",
+                "countryCode": "MX"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "MI",
+        "categorias": [
+          {
+            "codigo": "MI.1",
+            "nombre": "Acciones dirigidas a los jóvenes",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "ICPNA Gamer",
+                "marca": "ICPNA",
+                "agencia": "Fosbury Latam",
+                "pais": "Perú",
+                "countryCode": "PE"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Fanta The Afterlife Train Experience",
+                "marca": "Fanta",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "El Corte Inglés The New Market",
+                "marca": "El Corte Inglés",
+                "agencia": "Somos Experiences",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "McDonald's Feat",
+                "marca": "McDonald's",
+                "agencia": "Latcom",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Casa Vero",
+                "marca": "Gonzales Byass",
+                "agencia": "Lighthouse",
+                "pais": "España",
+                "countryCode": "ES"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "PNC",
+        "categorias": [
+          {
+            "codigo": "PNC.3",
+            "nombre": "Acciones de Street Marketing y Ambient Marketing",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "SEAT Guadalquivir Stadium",
+                "marca": "SEAT",
+                "agencia": "Experientia",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Fanta The Afterlife Train Experience",
+                "marca": "Fanta",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Epson Ecotank",
+                "marca": "Epson",
+                "agencia": "Latcom",
+                "pais": "Argentina",
+                "countryCode": "AR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Coca-Cola Share a Coke",
+                "marca": "Coca-Cola",
+                "agencia": "Grupo Lucky Ecuador",
+                "pais": "Ecuador",
+                "countryCode": "EC"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Fit Na Rua",
+                "marca": "Centauro",
+                "agencia": "Innova - All Around The Brand",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "POP",
+        "categorias": [
+          {
+            "codigo": "POP.1",
+            "nombre": "Stands - Ambientación",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Coca-Cola Share a Coke",
+                "marca": "Coca-Cola",
+                "agencia": "Grupo Lucky Ecuador",
+                "pais": "Ecuador",
+                "countryCode": "EC"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Nexus Room",
+                "marca": "Penguin Random House",
+                "agencia": "Licuadora",
+                "pais": "México",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "UEFA Champions League con Sabritas",
+                "marca": "Pepsico",
+                "agencia": "Madison Agency",
+                "pais": "México",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Danone na APAS Show 2025",
+                "marca": "Danone",
+                "agencia": "TSB ETC",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "D",
+        "categorias": [
+          {
+            "codigo": "D.4",
+            "nombre": "Diseño Ambiental",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Carrozas Desfile Dia de la Hispanidad",
+                "marca": "Comunidad de Madrid",
+                "agencia": "Lighthouse/Hawork, Inkubadora",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Fanta The Afterlife Train Experience",
+                "marca": "Fanta",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Mobil Static Car Tour 2024",
+                "marca": "Mobil",
+                "agencia": "Drive 360°",
+                "pais": "México",
+                "countryCode": "MX"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "Feria de Vivienda Colsubsidio",
+                "marca": "Colsubsidio",
+                "agencia": "Logistica 911",
+                "pais": "Colombia",
+                "countryCode": "CO"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Talent Arena - Feed Your Pro",
+                "marca": "Mobile World Capital / GSMA",
+                "agencia": "Experientia",
+                "pais": "España",
+                "countryCode": "ES"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rubro": "RRPP",
+        "categorias": [
+          {
+            "codigo": "RRPP.2",
+            "nombre": "Marketing de Influencers",
+            "rows": [
+              {
+                "nivel": "Gran Prix",
+                "campania": "Nova Canção do Neymar Jr",
+                "marca": "Canção Alimentos",
+                "agencia": "Innova - All Around The Brand",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Oro",
+                "campania": "Fanta The Afterlife Train Experience",
+                "marca": "Fanta",
+                "agencia": "Acciona Living & Culture",
+                "pais": "España",
+                "countryCode": "ES"
+              },
+              {
+                "nivel": "Plata",
+                "campania": "The Carnaval Day",
+                "marca": "Amstel/Heineken",
+                "agencia": "Atenas.ag",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              },
+              {
+                "nivel": "Bronce",
+                "campania": "Single Night",
+                "marca": "Heineken",
+                "agencia": "Atenas.ag",
+                "pais": "Brasil",
+                "countryCode": "BR"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

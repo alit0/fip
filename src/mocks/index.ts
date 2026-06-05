@@ -17,6 +17,11 @@ import type {
   FechasCierre,
   Tarifario,
   Premios,
+  JuradosByYear,
+  HallDeLaFama,
+  Contacto,
+  RankingByCountry,
+  GanadoresByYear,
 } from "./types";
 
 import homeData from "./home.json";
@@ -31,6 +36,11 @@ import inscripcionData from "./inscripcion.json";
 import fechasCierreData from "./fechas-cierre.json";
 import tarifarioData from "./tarifario.json";
 import premiosData from "./premios.json";
+import juradosData from "./jurados.json";
+import hallData from "./hall-de-la-fama.json";
+import contactoData from "./contacto.json";
+import rankingData from "./ranking.json";
+import ganadoresData from "./ganadores.json";
 
 export const home: HomeContent = homeData;
 export const rubros: Rubro[] = rubrosData;
@@ -44,6 +54,11 @@ export const inscripcion: Inscripcion = inscripcionData as Inscripcion;
 export const fechasCierre: FechasCierre = fechasCierreData;
 export const tarifario: Tarifario = tarifarioData;
 export const premios: Premios = premiosData;
+export const jurados: JuradosByYear = juradosData;
+export const hallDeLaFama: HallDeLaFama = hallData;
+export const contacto: Contacto = contactoData;
+export const ranking: RankingByCountry = rankingData;
+export const ganadores: GanadoresByYear = ganadoresData as GanadoresByYear;
 
 export type {
   HomeContent,
@@ -61,4 +76,21 @@ export type {
   FechasCierre,
   Tarifario,
   Premios,
+  JuradoYearEntry,
+  JuradosByYear,
+  HallMember,
+  HallDeLaFama,
+  ContactPerson,
+  ContactEmail,
+  Contacto,
+  RankingRow,
+  RankingCountry,
+  RankingByCountry,
+  GanadorGrande,
+  GanadorRow,
+  GanadorCategoria,
+  GanadorRubro,
+  GanadoresCompleteness,
+  GanadoresYear,
+  GanadoresByYear,
 } from "./types";
