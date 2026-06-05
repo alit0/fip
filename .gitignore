@@ -36,3 +36,7 @@ audit_live_site.py
 
 # agent working artifacts (scraping, data dumps, reference files) — not repo assets
 /_scratch/
+
+# downloadable PDF assets — served locally for dev/review, real serving via Phase 3 storage
+/PDF/
+/public/descargas/
