@@ -47,6 +47,11 @@ describe("páginas con datos (async server components)", () => {
     expect(container).not.toBeEmptyDOMElement();
   });
 
+  it("«Reglamento» muestra el cuerpo verbatim de un artículo (Art. C)", async () => {
+    const { container } = render(await Reglamento());
+    expect(container.textContent).toContain("videos de hasta 7 megas");
+  });
+
   it("«Categorías» renderiza", async () => {
     const { container } = render(await Categorias());
     expect(container).not.toBeEmptyDOMElement();
