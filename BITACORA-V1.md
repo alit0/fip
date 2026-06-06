@@ -220,7 +220,7 @@ Gemini en `_scratch/` (ver sección 9).
 ### Progreso de la Fase 2 (páginas)
 
 - [x] 1. **Home** — hero, premios, FIP 2025, categorías, jurados, auspiciantes, rankings (corregido para alinearlo al sitio en vivo)
-- [x] 2. **Reglamento** — índice, artículos A–R, tabla de puntajes
+- [x] 2. **Reglamento** — índice, artículos A–R, tabla de puntajes **+ cuerpos verbatim cargados**
 - [x] 3. **Categorías** — 23 rubros, 143 categorías reales (desde PDF + MP del sitio en vivo)
 - [x] 4. **Inscripción** — pasos, condiciones, contenido de la presentación
 - [x] 5. **Fechas de cierre** — descuentos por pago anticipado + tabla de cierres regionales
@@ -264,6 +264,9 @@ alinearlo al sitio en vivo** (ver detalle abajo).
 
 **Reglamento** — índice de anclas, artículos A–R con badges, tabla de puntajes
 (Gran Prix 12 · Oro 10 · Plata 6 · Bronce 4 · Finalista 1), descargas ES/PT.
+**Cuerpos legales verbatim cargados** (17 de 18 artículos, desde
+`_scratch/Texto_Canonico_Vivo.md`): pasó de solo-estructura a **contenido completo**.
+El Art. O queda sin cuerpo a propósito (el vivo solo tiene su título, sin texto legal).
 
 **Categorías** — header + grilla de 23 rubros numerados (anclas `#rubro-N`) +
 "Ventajas a considerar" + detalle por rubro. Las **143 categorías** se extrajeron de
@@ -292,7 +295,8 @@ pasada (`fix(home)`):
 
 1. **FIP 2025** — el cuerpo ya estaba en verbatim completo; se ajustaron los
    subtítulos a mayúsculas como en el vivo ("LA NOCHE DE LOS CAMPEONES", "LOS
-   ANUNCIOS DEL FIP"). _(Esto cierra el pendiente histórico del copy verbatim.)_
+   ANUNCIOS DEL FIP"). _(Pendiente histórico del copy verbatim **RESUELTO**:
+   confirmado contra `_scratch/Texto_Canonico_Vivo.md` por la auditoría de fidelidad.)_
 2. **Franja del informe** — el vivo no tiene título "Muestra digital"; la franja
    quedó sólo con el CTA de descarga del informe (sin título ni imagen).
 3. **Nombres de premios** — "Oro/Plata/Bronce" → "FIP de Oro/Plata/Bronce".
@@ -469,14 +473,27 @@ git clone https://github.com/alit0/fip.git
 - [ ] Confirmar el nombre del Rubro 5 (Desarrollo Humano vs. "FIP Salud y desarrollo humano").
 - [ ] Reemplazar todos los placeholders de imágenes por assets reales (fotos de
   jurados, logos, íconos de premios, sello "27", banderas, imágenes OG).
+- [ ] **Consulta cliente/FIP:** el Art. R del Reglamento dice "Vigencia: 31 de Junio
+  2026" — junio tiene 30 días. Es un **error de contenido del vivo** (no un typo), se
+  dejó **verbatim**. Confirmar el valor correcto con el cliente.
 
-### 11.3 Deuda técnica anotada
+### 11.3 Auditoría de fidelidad de texto y pulido (Hito 7)
+
+- [ ] **Referencia de fidelidad:** `_scratch/Texto_Canonico_Vivo.md` contiene el texto
+  verbatim del vivo (extraído el 2/6/2026) de las **5 páginas institucionales** (Home,
+  Reglamento, Inscripción, Tarifario, Premios). Es la fuente para auditar la fidelidad
+  de texto en el pulido del Hito 7.
+- [ ] **Inscripción — variaciones menores vs el vivo** (detectadas en la auditoría de
+  fidelidad): "Muestra Digital" debería decir "Muestra Itinerante"; ajustes de
+  puntuación/énfasis. Cosmético, para el Hito 7.
+
+### 11.4 Deuda técnica anotada
 
 - [ ] **Renombrar `MuestraDigital.tsx`** — tras la corrección del Home, el componente
   ya no maqueta ninguna "muestra digital" (es la franja del informe de ganadores). El
   nombre quedó sin describir lo que hace; renombrar en un refactor aparte.
 
-### 11.4 Sobre el testing (criterio acordado)
+### 11.5 Sobre el testing (criterio acordado)
 
 No obsesionarse con cobertura total ahora. En Fase 2 (páginas estáticas con mock) lo
 visual se valida mirando el navegador, y cada página suma su smoke + una aserción de
@@ -485,7 +502,7 @@ la Fase 3 y, sobre todo, las áreas privadas — el wizard de carga de agencias 
 scoring de jurados (4 criterios, votos bloqueables). Ahí un bug no es un color
 corrido: es un voto mal calculado o una campaña que no se guarda.
 
-### 11.5 Recordatorios de método
+### 11.6 Recordatorios de método
 
 - Una página/tarea por vez por agente; revisar en el navegador antes de aprobar;
   commit + push a `develop` antes de seguir. **`main` es sagrada: nadie commitea ahí
