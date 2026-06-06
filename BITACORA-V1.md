@@ -3,9 +3,9 @@
 > Réplica de [fipfestival.com.ar](https://www.fipfestival.com.ar/) en **Next.js + Payload CMS**.
 > Documento de referencia para retomar el proyecto o traspasarlo a otra persona.
 
-**Estado:** Fase 2 en curso — 7 de 12 páginas maquetadas · equipo de 3 agentes en marcha
+**Estado:** Fase 2 COMPLETA — 12/12 páginas públicas maquetadas · próximo: Fase 3 (CMS)
 **Repositorio:** `github.com/alit0/fip` (trabajo en `develop`; `main` = releases)
-**Última actualización:** 3 de junio de 2026
+**Última actualización:** 6 de junio de 2026
 
 ## Tabla de contenidos
 
@@ -206,8 +206,8 @@ Gemini en `_scratch/` (ver sección 9).
 | Fase | Qué incluye | Estado |
 |------|-------------|--------|
 | **Fase 1** | Arquitectura + esqueleto: layout base, routing de las 15 páginas como placeholders, tokens | ✅ Completa y pusheada |
-| **Fase 2** | Frontend público con datos mock: maquetar las 12 páginas, responsive + SEO | 🔄 En curso (7/12) |
-| **Fase 3** | Backend/API + CMS: collections de Payload, PostgreSQL, panel admin, storage, migrar mock→queries | ⏳ Pendiente |
+| **Fase 2** | Frontend público con datos mock: maquetar las 12 páginas, responsive + SEO | ✅ Completa (12/12) — release a `main` |
+| **Fase 3** | Backend/API + CMS: collections de Payload, PostgreSQL, panel admin, storage, migrar mock→queries | 🔜 Siguiente |
 | **Fase 4** | i18n es/pt: campos traducibles + UI con next-intl + descargas por idioma | ⏳ Pendiente (rieles ya puestos en Hito 1) |
 | **Fase 5** | Área privada Agencias: login, dashboard, wizard de 4 pasos, validaciones | ⏳ Pendiente |
 | **Fase 6** | Área privada Jurados: scoring por 4 criterios, votos bloqueables, reportes (la más compleja) | ⏳ Pendiente |
@@ -226,13 +226,14 @@ Gemini en `_scratch/` (ver sección 9).
 - [x] 5. **Fechas de cierre** — descuentos por pago anticipado + tabla de cierres regionales
 - [x] 6. **Tarifario** — aranceles, descuentos por cantidad, formas de pago, envío de factura
 - [x] 7. **Premios / Réplicas** — catálogo de 6 trofeos con precios, tarifario de envío, medios de pago
-- [ ] 8. Jurados `[year]` ← siguiente (Gemini ya relevó)
-- [ ] 9. Ganadores `[year]` (Gemini dejó solo datos crudos; 2024 y 2023 sólo en PDF)
-- [ ] 10. Hall de la Fama (Gemini ya relevó)
-- [ ] 11. Ranking `[country]` (Gemini ya relevó)
-- [ ] 12. Contacto (incluye formulario nuevo)
+- [x] 8. **Jurados `[year]`** — grilla por año (2020-2026), país/bandera; fuente v2 con flag interno de verificación
+- [x] 9. **Ganadores `[year]`** — híbrida (completo / parcial / solo-PDF) con botones de informe en PDF
+- [x] 10. **Hall de la Fama** — bloque institucional + miembros (bio en texto o en imagen)
+- [x] 11. **Ranking `[country]`** — tabla histórica 2017-2024 por país (6 países)
+- [x] 12. **Contacto** — datos de contacto + formulario (client component; envío sin backend, TODO Fase 3)
 
-Las 5 que faltan (8–12) están como placeholders y ya tienen su ruta y su smoke test.
+Las 12 páginas públicas están maquetadas sobre la capa async + i18n, con smoke tests y
+aserciones de datos críticos. **Release de Fase 2 a `main`** hecho (ver "Estado al cierre").
 
 ---
 
@@ -251,7 +252,7 @@ Las 5 que faltan (8–12) están como placeholders y ya tienen su ruta y su smok
 > sentido una base de datos para mostrar páginas vacías). La estructura quedó lista
 > para que Payload entre limpio en la Fase 3.
 
-### 7.2 Fase 2 — Páginas maquetadas (7/12)
+### 7.2 Fase 2 — Páginas maquetadas (12/12)
 
 Todas tiran de un mock tipado a través de la capa async (`lib/content`), con
 SEO/Open Graph por página e imágenes como placeholders marcados `TODO`.
@@ -315,13 +316,15 @@ pasada (`fix(home)`):
 
 ### 7.4 Testing
 
-**18 tests, todos en verde** (Vitest + Testing Library + jsdom). Cobertura actual:
+**25 tests, todos en verde** (Vitest + Testing Library + jsdom). Cobertura actual:
 
-- **Smoke** de todas las páginas maquetadas (renderizan sin error): públicas
-  estáticas, públicas con datos (async) y dinámicas con un parámetro válido
-  (`jurados/2026`, `ganadores/2025`, `ranking/colombia`).
-- **Aserciones de dato crítico** en las páginas que lo ameritan: Premios (que aparezca
-  el precio clave `550`) y Home (que aparezca `LA NOCHE DE LOS CAMPEONES`).
+- **Smoke** de las 12 páginas públicas (renderizan sin error): públicas estáticas,
+  públicas con datos (async) y dinámicas con un parámetro válido (`jurados/2026`,
+  `ganadores/2025`, `ranking/colombia`).
+- **Aserciones de dato crítico** en las páginas que lo ameritan: Premios (`550`), Home
+  (`LA NOCHE DE LOS CAMPEONES`), Jurados (un jurado con su país), Ganadores (caso
+  completo y caso solo-PDF), Ranking (una agencia), Contacto (email + formulario) y
+  Reglamento (cuerpo verbatim de un artículo).
 - Un test unitario de helper (`isExternal`).
 
 > [!NOTE]
@@ -458,14 +461,19 @@ git clone https://github.com/alit0/fip.git
 
 ### 11.1 Próximos pasos inmediatos (en orden)
 
-1. **Seguir Fase 2** — maquetar las 5 páginas restantes (Jurados `[year]`, Ganadores
-   `[year]`, Hall de la Fama, Ranking `[country]`, Contacto), una por vez, revisando
-   en el navegador y comparando contra el vivo. Usar los relevamientos de Gemini de
-   `_scratch/` como fuente.
-2. **Conseguir el relevamiento de Ganadores** que falta en `_scratch/` (o trabajar
-   desde los PDFs, recordando que 2024 y 2023 son sólo PDF).
+Fase 2 está **completa** (12/12, con release a `main`). El próximo gran hito es la **Fase 3**.
+
+1. **Arrancar Fase 3 — Backend + CMS** (Hito 3 del ROADMAP): collections de Payload
+   (traducir las 15 entidades a schema TypeScript), PostgreSQL, panel admin, storage, y
+   migrar `lib/content/` de mock → queries de Payload (las páginas no se tocan: es la
+   inversión del Hito 1). Codex monta entorno (`.env`, secrets, storage) y los tests de
+   integración en paralelo.
+2. **Storage real de assets** — los PDFs de descarga (servidos en local, fuera de git) y
+   el resto de los assets necesitan el bucket de producción, que es parte de la Fase 3.
 3. **Decidir sobre la auditoría npm fase 2** — aplicar (o no) los fixes de seguridad
    reportados en `SECURITY-AUDIT-NPM.md`. Pendiente de decisión.
+4. **Pulido de fidelidad (Hito 7)** — auditar el texto contra
+   `_scratch/Texto_Canonico_Vivo.md` (ver 11.3).
 
 ### 11.2 Pendientes de contenido
 
@@ -528,9 +536,13 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 
 ---
 
-> **Estado al cierre de esta sesión:** Fase 2 con 7 de 12 páginas (Home, Reglamento,
-> Categorías, Inscripción, Fechas de cierre, Tarifario, Premios) maquetadas,
-> verificadas y pusheadas; Home alineado al sitio en vivo. Cimientos arquitectónicos
-> (capa async + ruteo i18n) y andamiaje de testing (18 tests en verde) hechos. Equipo
-> de 3 agentes en marcha con git worktrees. **Próximo paso sugerido:** maquetar las 5
-> páginas restantes de Fase 2, empezando por Jurados `[year]`.
+> **Estado al cierre de esta sesión:** **Fase 2 COMPLETA** — las **12 páginas públicas**
+> (Home, Reglamento, Categorías, Inscripción, Fechas de cierre, Tarifario, Premios,
+> Jurados, Ganadores, Hall de la Fama, Ranking, Contacto) maquetadas, verificadas y
+> pusheadas, con los cuerpos del Reglamento cargados verbatim. Cimientos (capa async +
+> ruteo i18n), testing (**25 tests en verde**) y flujo **`main` + `develop`** en marcha.
+> **Primer release de Fase 2 a `main`** hecho (`release: Fase 2 completa…`, merge
+> `--no-ff`). _Ojo:_ el release se hizo **antes** de cargar los cuerpos del Reglamento,
+> así que `main` está un pasito atrás de `develop`; el **próximo release** llevará el
+> Reglamento completo + el pulido del Hito 7. **Próximo paso:** Fase 3 (Payload +
+> PostgreSQL + CMS).
