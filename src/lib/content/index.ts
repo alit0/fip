@@ -7,8 +7,8 @@
 export { type Locale, DEFAULT_LOCALE } from "./locale";
 export { getSiteConfig } from "./site-config";
 export { getHomeContent } from "./home";
+export { getRubros, type RubroEntry } from "./rubros";
 export {
-  getRubros,
   getCategories,
   getCategoriesByRubro,
   getCategoriasPage,

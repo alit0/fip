@@ -1,10 +1,6 @@
-import { rubros, categories, categoriasPage } from "@/mocks";
-import type { Rubro, Category, CategoriasPage } from "@/mocks/types";
+import { categories, categoriasPage } from "@/mocks";
+import type { Category, CategoriasPage } from "@/mocks/types";
 import { type Locale, DEFAULT_LOCALE } from "./locale";
-
-export async function getRubros(_locale: Locale = DEFAULT_LOCALE): Promise<Rubro[]> {
-  return rubros;
-}
 
 export async function getCategories(
   _locale: Locale = DEFAULT_LOCALE,
