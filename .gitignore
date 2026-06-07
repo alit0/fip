@@ -45,3 +45,6 @@ audit_live_site.py
 .graphifyignore
 .opencode/
 graphify-out/
+
+# Payload CMS local media uploads (dev only; production uses S3/compatible storage)
+/media/
