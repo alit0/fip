@@ -454,8 +454,34 @@ cubriendo:
 
 **DB validada:** 23 rubros creados, asignados a edición 2026.
 
-**Próximas migraciones:** `Category` como siguiente slice (depende de Rubro),
-luego `Winner`. El patrón ya está consolidado para el backbone relacional.
+**Categorías — mini-hito cerrado (7 jun 2026):**
+
+Collection Payload `Categories` creada y cableada al backbone relacional.
+Establece la jerarquía `Edition → Rubro → Category`.
+
+**Comportamiento:**
+- Campos: `rubro` (rel. Rubros), `edition` (rel. Editions), `code` (text),
+  `title` (text localized), `description` (textarea localized), `awardIcon` (select),
+  `isSpecial`, `specialType`, `isNew` (flags), `order` (number).
+- Getter `getCategories()` en `src/lib/content/categories.ts` (nuevo archivo).
+- Mapping dinámico: resuelve `rubroCode`, `rubroNumber` y `editionYear` mediante
+  relaciones de profundidad 2 (`depth: 2`).
+- Fallback seguro a mocks (`categories.json`) mapeados dinámicamente si Payload falla.
+- Seed idempotente por `edición + rubro + código`: `npm run seed:categories`.
+- Carga las 147 categorías reales del festival vinculadas a sus rubros.
+
+**Tests subidos a 46** (desde 42): se agregaron 4 tests para `getCategories()`
+cubriendo:
+- Payload con docs → mapping relacional correcto.
+- Fallback a mocks con reconstrucción dinámica del mapa de rubros.
+- Manejo de relaciones no expandidas (fallbacks a 0 / string vacío).
+
+**DB validada:** 147 categorías creadas, vinculadas a sus 23 rubros padres.
+
+**Backbone actual consolidado:** `Edition → Rubro → Category`.
+
+**Próximas migraciones:** `Winner` como siguiente slice (depende de Category),
+completando el núcleo duro del modelo de datos del festival.
 
 **Pendiente en Fase 3:**
 - Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
@@ -582,7 +608,7 @@ datan de agosto 2025. Sirven como visión original del proyecto.
 - **Obsolescencia:** Strapi fue reemplazado por Payload CMS; la arquitectura de
   API separada por una app única Next.js.
 - **Impacto:** Nada en estos documentos bloquea la Fase 3. El próximo slice técnico
-  sigue siendo `Rubro → Category → Winner`.
+  sigue siendo `Winner`.
 - **Decisiones pendientes (extraídas de la visión original):**
   - Criterios finales de scoring de jurados (unificar nombres entre docs).
   - Definición de roles avanzados (Owner / Admin / Comité Ejecutivo).
@@ -640,7 +666,7 @@ git clone https://github.com/alit0/fip.git
 ### 11.1 Próximos pasos inmediatos (en orden)
 
 Fase 2 está **completa** (12/12, con release a `main`). **Fase 3 está en curso** — el
-vertical slice inicial (Payload base + PostgreSQL + Admin + collections Users/Media/Sponsors)
+vertical slice inicial (Payload base + PostgreSQL + Admin + collections Users/Media/Sponsors/Editions/Rubros/Categories)
 está funcionando. Lo que sigue:
 
 1. **Migrar `lib/content/` mock → queries de Payload** — ~~`getSponsors()`~~ ✅ hecho,
@@ -717,10 +743,10 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 > **Estado al cierre de esta sesión (7 jun 2026):** **Fase 3 EN CURSO** —
 > Payload CMS 3 base integrado con PostgreSQL 16 en Docker. Admin `/admin`
 > funcionando con collections `Users` (auth), `Media` (uploads), `Sponsors`,
-> `Editions` y `Rubros`. Localization rails `es`/`pt` preparados. `.env.local`
-> requerido (gitignoreado). **42 tests en verde** (subió de 38 con 4 tests para
-> `getRubros()`). Typecheck y build limpios. Las 12 páginas públicas de Fase 2
-> intactas. **Tres pipelines reales validados:** `getSponsors()`,
-> `getCurrentEdition()` y `getRubros()` → Payload con fallback seguro.
-> `Edition` y `Rubro` creados como base del backbone; siguiente slice:
-> `Category → Winner`.
+> `Editions`, `Rubros` y `Categories`. Localization rails `es`/`pt` preparados.
+> `.env.local` requerido (gitignoreado). **46 tests en verde** (subió de 42 con
+> 4 tests para `getCategories()`). Typecheck y build limpios. Las 12 páginas
+> públicas de Fase 2 intactas. **Cuatro pipelines reales validados:**
+> `getSponsors()`, `getCurrentEdition()`, `getRubros()` y `getCategories()`
+> → Payload con fallback seguro. Backbone `Edition → Rubro → Category`
+> consolidado; siguiente slice: `Winner`.
