@@ -345,8 +345,41 @@ Configuración en `payload.config.ts` (raíz del proyecto) con:
 `@payloadcms/next@3.85.0` espera Next.js `<15.5.0` pero el proyecto tiene
 `next@15.5.19`. No afecta el funcionamiento (build, typecheck y tests en verde).
 
+**Pipeline real validado — mini-hito cerrado (7 jun 2026):**
+
+`getSponsors()` ahora lee Payload primero y cae al mock si:
+- DB no disponible
+- Payload falla
+- `docs: []` (sin sponsors activos en la base)
+
+El fallback mock ("Avid") queda intacto como red de seguridad cuando Payload
+no responde o no tiene datos. Home ya renderiza sponsors reales desde Payload
+(`Test Payload Sponsor`, `Test Payload Sponsor 2`); el mock no apareció,
+confirmando que el pipeline real está funcionando.
+
+**Tests subidos a 32** (desde 25): se agregaron 7 tests focales para `getSponsors()`
+cubriendo:
+- Payload con docs válidos → mapping correcto de `name`, `url`, `logoUrl`
+- Payload con `docs: []` → fallback mock
+- Payload con error → fallback mock
+- Protección contra mutación del campo `name` (mutation testing confirma)
+
+**Mutation testing:** antes de este cambio, los tests no detectaban roturas en
+el mapping de `name`; ahora sí. Fue el indicador de que el pipeline real estaba
+validado.
+
+**`/admin` funciona** — puede tener timeout inicial (>30s) por carga pesada
+de Payload CMS durante el primer arranque.
+
+**Pendientes específicos de Sponsors:**
+- Resolver `logoUrl` real desde Media (actualmente hardcodeado como `null`)
+- Seed formal de Sponsors desde `src/mocks/` a Payload
+
+**Próximas migraciones:** Edition → Rubro → Category → Winner (backbone del
+modelo de datos). El pipeline ya está probado; el patrón se replica.
+
 **Pendiente en Fase 3:**
-- Migrar `lib/content/` de mock → queries de Payload (sin tocar páginas).
+- Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
 - Crear el resto de las collections (Edition, Rubro, Category, Juror, Winner, etc.)
   según el plan en `_scratch/Plan_Collections_Fase3.md`.
 - Storage S3 para producción.
@@ -584,10 +617,13 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 
 ---
 
-> **Estado al cierre de esta sesión:** **Fase 3 EN CURSO** — Payload CMS 3 base
-> integrado con PostgreSQL 16 en Docker. Admin `/admin` funcionando con collections
-> iniciales `Users` (auth), `Media` (uploads) y `Sponsors`. Localization rails `es`/`pt`
-> preparados. `.env.local` requerido (gitignoreado). **25 tests en verde**, typecheck y
-> build limpios. Las 12 páginas públicas de Fase 2 intactas. Migración mock → queries
-> pendiente. **Próximo paso:** migrar `getSponsors()` como prueba del pipeline, luego
-> el backbone `Edition → Rubro → Category → Winner`.
+> **Estado al cierre de esta sesión (7 jun 2026):** **Fase 3 EN CURSO** —
+> Payload CMS 3 base integrado con PostgreSQL 16 en Docker. Admin `/admin`
+> funcionando con collections `Users` (auth), `Media` (uploads) y `Sponsors`.
+> Localization rails `es`/`pt` preparados. `.env.local` requerido (gitignoreado).
+> **32 tests en verde** (subió de 25 con 7 tests focales para `getSponsors()`).
+> Typecheck y build limpios. Las 12 páginas públicas de Fase 2 intactas.
+> **Primer pipeline real validado:** `getSponsors()` → Payload → Home con fallback
+> mock. `Sponsors` parcialmente migrado a Payload; resto de collections (Edition →
+> Rubro → Category → Winner) pendiente. **Próximo paso:** replicar el patrón de
+> `getSponsors()` para las demás entidades del backbone.

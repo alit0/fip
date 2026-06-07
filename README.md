@@ -13,7 +13,7 @@ El proyecto está en **Fase 3 en curso**.
 - **Payload CMS 3** base integrado: admin en `/admin` funcionando.
 - Collections iniciales creadas: `Users` (auth admin), `Media` (uploads), `Sponsors`.
 - `.env.local` requerido para desarrollo (gitignoreado); `.env.example` como template.
-- Tests, typecheck y build en verde (25 tests).
+- Tests, typecheck y build en verde (32 tests).
 - Migración mock → queries pendiente (dentro de `src/lib/content/`, sin tocar páginas).
 - Áreas privadas de **Agencias** y **Jurados** siguen pendientes para fases finales.
 
@@ -123,7 +123,7 @@ Según la documentación de operación vigente:
 
 ## Próximas fases
 
-- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors · 🔄 Migración mock → queries pendiente.
+- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors · ✅ `getSponsors()` migrado parcialmente a Payload con fallback mock · 🔄 Resto de entidades del backbone (Edition → Rubro → Category → Winner) pendientes.
 - **Fase 4:** i18n completo es/pt para contenido.
 - **Fase 5:** área privada de Agencias.
 - **Fase 6:** área privada de Jurados y scoring.
