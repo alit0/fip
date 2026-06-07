@@ -7,12 +7,13 @@ import { fileURLToPath } from 'url'
 import { Users } from './src/collections/Users'
 import { Media } from './src/collections/Media'
 import { Sponsors } from './src/collections/Sponsors'
+import { Editions } from './src/collections/Editions'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-  collections: [Users, Media, Sponsors],
+  collections: [Users, Media, Sponsors, Editions],
 
   admin: {
     user: Users.slug,

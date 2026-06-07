@@ -11,7 +11,8 @@
     "start": "next start",
     "test": "vitest run",
     "test:watch": "vitest",
-    "seed:sponsors": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-sponsors.ts"
+    "seed:sponsors": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-sponsors.ts",
+    "seed:edition": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-edition.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.85.0",

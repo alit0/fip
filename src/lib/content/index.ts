@@ -25,3 +25,4 @@ export { getContacto } from "./contacto";
 export { getRanking } from "./ranking";
 export { getGanadores } from "./ganadores";
 export { getSponsors } from "./sponsors";
+export { getCurrentEdition } from "./edition";
