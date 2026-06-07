@@ -9,12 +9,13 @@ import { Media } from './src/collections/Media'
 import { Sponsors } from './src/collections/Sponsors'
 import { Editions } from './src/collections/Editions'
 import { Rubros } from './src/collections/Rubros'
+import { Categories } from './src/collections/Categories'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-  collections: [Users, Media, Sponsors, Editions, Rubros],
+  collections: [Users, Media, Sponsors, Editions, Rubros, Categories],
 
   admin: {
     user: Users.slug,

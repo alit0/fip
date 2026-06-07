@@ -8,8 +8,8 @@ export { type Locale, DEFAULT_LOCALE } from "./locale";
 export { getSiteConfig } from "./site-config";
 export { getHomeContent } from "./home";
 export { getRubros, type RubroEntry } from "./rubros";
+export { getCategories, type CategoryEntry } from "./categories";
 export {
-  getCategories,
   getCategoriesByRubro,
   getCategoriasPage,
 } from "./catalog";
