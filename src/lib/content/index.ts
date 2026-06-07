@@ -23,6 +23,7 @@ export { getJurados } from "./jurados";
 export { getHallDeLaFama } from "./hall-de-la-fama";
 export { getContacto } from "./contacto";
 export { getRanking } from "./ranking";
+export { getRankingEntries, type RankingEntry } from "./rankings";
 export { getGanadores } from "./ganadores";
 export { getWinners, type WinnerEntry } from "./winners";
 export { getSponsors } from "./sponsors";

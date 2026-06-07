@@ -15,7 +15,8 @@
     "seed:edition": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-edition.ts",
     "seed:rubros": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-rubros.ts",
     "seed:categories": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-categories.ts",
-    "seed:winners": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-winners.ts"
+    "seed:winners": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-winners.ts",
+    "seed:rankings": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-rankings.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.85.0",
