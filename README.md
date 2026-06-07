@@ -11,10 +11,11 @@ El proyecto está en **Fase 3 en curso**.
 - Fase 2 completa: 12/12 páginas públicas maquetadas con datos mock.
 - **PostgreSQL 16** integrado vía Docker Compose (`docker compose up -d`).
 - **Payload CMS 3** base integrado: admin en `/admin` funcionando.
-- Collections creadas: `Users` (auth admin), `Media` (uploads), `Sponsors`, `Editions`, `Rubros`, `Categories`.
+- Collections creadas: `Users` (auth admin), `Media` (uploads), `Sponsors`, `Editions`, `Rubros`, `Categories`, `Winners`.
 - `.env.local` requerido para desarrollo (gitignoreado); `.env.example` como template.
-- Tests, typecheck y build en verde (46 tests).
-- Migración mock → queries en curso (Sponsors, Editions, Rubros y Categories ya migrados).
+- Tests, typecheck y build en verde (50 tests).
+- Migración mock → queries en curso (Sponsors, Editions, Rubros, Categories y Winners ya migrados).
+
 
 - Áreas privadas de **Agencias** y **Jurados** siguen pendientes para fases finales.
 
@@ -53,6 +54,7 @@ npm run seed:sponsors   # carga sponsors desde mocks a Payload (idempotente)
 npm run seed:edition     # carga edición 2026 en Payload (idempotente)
 npm run seed:rubros      # carga rubros desde mocks a Payload (idempotente)
 npm run seed:categories  # carga categorías desde mocks a Payload (idempotente)
+npm run seed:winners     # carga ganadores desde mocks a Payload (idempotente)
 ```
 
 > **Nota:** `npm run seed:sponsors` requiere PostgreSQL corriendo (`docker compose up -d`)
@@ -136,7 +138,7 @@ Según la documentación de operación vigente:
 
 ## Próximas fases
 
-- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors/Editions/Rubros/Categories · ✅ `getSponsors()`, `getCurrentEdition()`, `getRubros()` y `getCategories()` migrados a Payload con fallback · 🔄 Resto del backbone (Winner) pendiente.
+- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors/Editions/Rubros/Categories/Winners · ✅ `getSponsors()`, `getCurrentEdition()`, `getRubros()`, `getCategories()` y `getWinners()` migrados a Payload con fallback · 🔄 Siguiente slice recomendado: `Ranking` o `Juror`.
 - **Fase 4:** i18n completo es/pt para contenido.
 - **Fase 5:** área privada de Agencias.
 - **Fase 6:** área privada de Jurados y scoring.

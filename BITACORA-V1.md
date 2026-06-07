@@ -478,10 +478,35 @@ cubriendo:
 
 **DB validada:** 147 categorías creadas, vinculadas a sus 23 rubros padres.
 
-**Backbone actual consolidado:** `Edition → Rubro → Category`.
+**Winners — mini-hito cerrado (7 jun 2026):**
 
-**Próximas migraciones:** `Winner` como siguiente slice (depende de Category),
-completando el núcleo duro del modelo de datos del festival.
+Collection Payload `Winners` creada y cableada al backbone relacional.
+Completa el núcleo duro del modelo de datos del festival.
+
+**Comportamiento:**
+- Campos: `edition` (rel. Editions), `rubro` (rel. Rubros), `category` (rel. Categories),
+  `awardLevel` (select), `specialAwardName` (text localized), `campaign` (text),
+  `brand` (text), `agency` (text), `country` (text), `isGrandReco` (checkbox).
+- Getter `getWinners()` en `src/lib/content/winners.ts` (nuevo archivo).
+- Fallback dinámico: realiza un "flattening" del archivo anidado `ganadores.json`
+  para entregar una lista plana compatible con el nuevo modelo.
+- Seed idempotente por `edición + categoría + nivel + campaña + agencia`:
+  `npm run seed:winners`.
+- **Regla de integridad:** El seed NO crea ediciones automáticamente; requiere que el
+  backbone (`Edition` y `Categories`) para el año en cuestión ya existan en la DB.
+
+**Tests subidos a 50** (desde 46): se agregaron 4 tests para `getWinners()`
+cubriendo:
+- Payload con docs → mapping relacional profundo (`depth: 2`).
+- Fallback a mocks con aplanado de años, rubros y categorías.
+- Manejo de relaciones no expandidas con fallbacks seguros.
+
+**DB local:** Estructura de tablas y tipos creada. Registros de ganadores en 0
+esperando la carga de categorías históricas.
+
+**Backbone actual consolidado:** `Edition → Rubro → Category → Winner`.
+
+**Próximo slice técnico:** Definir siguiente entidad CMS (Ranking o Juror).
 
 **Pendiente en Fase 3:**
 - Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
@@ -666,17 +691,17 @@ git clone https://github.com/alit0/fip.git
 ### 11.1 Próximos pasos inmediatos (en orden)
 
 Fase 2 está **completa** (12/12, con release a `main`). **Fase 3 está en curso** — el
-vertical slice inicial (Payload base + PostgreSQL + Admin + collections Users/Media/Sponsors/Editions/Rubros/Categories)
+vertical slice inicial (Payload base + PostgreSQL + Admin + collections Users/Media/Sponsors/Editions/Rubros/Categories/Winners)
 está funcionando. Lo que sigue:
 
 1. **Migrar `lib/content/` mock → queries de Payload** — ~~`getSponsors()`~~ ✅ hecho,
-   ~~`getCurrentEdition()`~~ ✅ hecho, ~~`getRubros()`~~ ✅ hecho. Siguiente: backbone
-   `Category → Winner`.
+   ~~`getCurrentEdition()`~~ ✅ hecho, ~~`getRubros()`~~ ✅ hecho, ~~`getCategories()`~~ ✅ hecho,
+   ~~`getWinners()`~~ ✅ hecho. Siguiente: backbone `Ranking` o `Juror`.
 2. **Crear el resto de las collections** según el orden topológico definido en
-   `_scratch/Plan_Collections_Fase3.md`: Edition, SiteConfig, PageContent, RankingEntry,
-   DownloadFile, HallOfFameMember, Rubro, Juror, Category, Winner.
+   `_scratch/Plan_Collections_Fase3.md`: SiteConfig, PageContent, RankingEntry,
+   DownloadFile, HallOfFameMember, Juror.
 3. **Storage S3 para producción** — reemplazar `staticDir: 'media'` por adapter S3.
-4. ~~**Script de seed**~~ ✅ Hecho: `npm run seed:sponsors` carga sponsors desde mocks a Payload.
+4. ~~**Script de seed**~~ ✅ Hecho: `npm run seed:sponsors`, `npm run seed:rubros`, `npm run seed:categories` y `npm run seed:winners` cargan datos desde mocks.
 5. Codex escribe tests de integración para las queries de `lib/content/` en paralelo.
 
 ### 11.2 Pendientes de contenido
@@ -743,10 +768,11 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 > **Estado al cierre de esta sesión (7 jun 2026):** **Fase 3 EN CURSO** —
 > Payload CMS 3 base integrado con PostgreSQL 16 en Docker. Admin `/admin`
 > funcionando con collections `Users` (auth), `Media` (uploads), `Sponsors`,
-> `Editions`, `Rubros` y `Categories`. Localization rails `es`/`pt` preparados.
-> `.env.local` requerido (gitignoreado). **46 tests en verde** (subió de 42 con
-> 4 tests para `getCategories()`). Typecheck y build limpios. Las 12 páginas
-> públicas de Fase 2 intactas. **Cuatro pipelines reales validados:**
-> `getSponsors()`, `getCurrentEdition()`, `getRubros()` y `getCategories()`
-> → Payload con fallback seguro. Backbone `Edition → Rubro → Category`
-> consolidado; siguiente slice: `Winner`.
+> `Editions`, `Rubros`, `Categories` y `Winners`. Localization rails `es`/`pt`
+> preparados. `.env.local` requerido (gitignoreado). **50 tests en verde**
+> (subió de 46 con 4 tests para `getWinners()`). Typecheck y build limpios. Las
+> 12 páginas públicas de Fase 2 intactas. **Cinco pipelines reales validados:**
+> `getSponsors()`, `getCurrentEdition()`, `getRubros()`, `getCategories()`
+> y `getWinners()` → Payload con fallback seguro. Backbone relacional núcleo
+> (`Edition → Rubro → Category → Winner`) consolidado.
+
