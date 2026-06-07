@@ -6,17 +6,16 @@ las páginas públicas.
 
 ## Estado actual
 
-El proyecto está en **Fase 2 en curso**.
+El proyecto está en **Fase 3 en curso**.
 
-- Cimientos arquitectónicos creados: App Router, rutas localizadas, layout base,
-  tokens visuales y capa de contenido async.
-- Frontend público avanzado con páginas maquetadas según la documentación vigente
-  del proyecto. La bitácora registra 7/12 páginas de Fase 2 cerradas.
-- Testing base instalado con **Vitest**, **React Testing Library** y **jsdom**.
-- **Payload CMS** y **PostgreSQL** todavía no están implementados: quedan para
-  Fase 3.
-- Las áreas privadas de **Agencias** y **Jurados** siguen pendientes para fases
-  finales.
+- Fase 2 completa: 12/12 páginas públicas maquetadas con datos mock.
+- **PostgreSQL 16** integrado vía Docker Compose (`docker compose up -d`).
+- **Payload CMS 3** base integrado: admin en `/admin` funcionando.
+- Collections iniciales creadas: `Users` (auth admin), `Media` (uploads), `Sponsors`.
+- `.env.local` requerido para desarrollo (gitignoreado); `.env.example` como template.
+- Tests, typecheck y build en verde (25 tests).
+- Migración mock → queries pendiente (dentro de `src/lib/content/`, sin tocar páginas).
+- Áreas privadas de **Agencias** y **Jurados** siguen pendientes para fases finales.
 
 ## Stack
 
@@ -25,16 +24,22 @@ El proyecto está en **Fase 2 en curso**.
 - **next-intl** para ruteo y chrome de interfaz es/pt.
 - **TypeScript**.
 - **Vitest** + **React Testing Library** + **jsdom** para tests base.
-- **Payload CMS 3** + **PostgreSQL** planificados para Fase 3.
+- **Payload CMS 3** + **PostgreSQL 16** (Docker) — integrados en Fase 3.
+- **Docker Compose** para base de datos local (`docker compose up -d`).
 
 ## Correr en local
 
 ```bash
+cp .env.example .env.local   # editar con DATABASE_URI y PAYLOAD_SECRET
+docker compose up -d         # levantar PostgreSQL
 npm install
 npm run dev
 ```
 
-Abrir <http://localhost:3000>.
+Abrir <http://localhost:3000> (sitio público) y <http://localhost:3000/admin> (CMS).
+
+> **Nota:** `npm install` requiere `--legacy-peer-deps` por un desfase entre las peer
+> dependencies de Next.js y Payload CMS. No afecta el funcionamiento.
 
 Comandos útiles:
 
@@ -49,12 +54,15 @@ npm test
 
 ```text
 src/
-├─ app/[locale]/     rutas públicas y layouts localizados
-├─ components/       componentes de layout, páginas y shared UI
-├─ lib/content/      getters async que alimentan las páginas
-├─ mocks/            datos temporales usados por la capa de contenido
-├─ i18n/             routing y mensajes de next-intl
-└─ test/             smoke tests y tests base
+├─ app/
+│  ├─ [locale]/         rutas públicas y layouts localizados
+│  └─ (payload)/        admin CMS y API de Payload
+├─ collections/         config de colecciones de Payload (Users, Media, Sponsors…)
+├─ components/          componentes de layout, páginas y shared UI
+├─ lib/content/         getters async que alimentan las páginas
+├─ mocks/               datos temporales usados por la capa de contenido
+├─ i18n/                routing y mensajes de next-intl
+└─ test/                smoke tests y tests base
 ```
 
 ## Regla arquitectónica clave
@@ -115,7 +123,7 @@ Según la documentación de operación vigente:
 
 ## Próximas fases
 
-- **Fase 3:** Payload CMS, PostgreSQL, admin, storage y migración mock → queries.
+- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors · 🔄 Migración mock → queries pendiente.
 - **Fase 4:** i18n completo es/pt para contenido.
 - **Fase 5:** área privada de Agencias.
 - **Fase 6:** área privada de Jurados y scoring.

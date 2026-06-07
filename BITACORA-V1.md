@@ -3,9 +3,9 @@
 > Réplica de [fipfestival.com.ar](https://www.fipfestival.com.ar/) en **Next.js + Payload CMS**.
 > Documento de referencia para retomar el proyecto o traspasarlo a otra persona.
 
-**Estado:** Fase 2 COMPLETA — 12/12 páginas públicas maquetadas · próximo: Fase 3 (CMS)
+**Estado:** Fase 3 EN CURSO — Payload CMS base integrado · PostgreSQL en Docker · Admin /admin funcionando
 **Repositorio:** `github.com/alit0/fip` (trabajo en `develop`; `main` = releases)
-**Última actualización:** 6 de junio de 2026
+**Última actualización:** 7 de junio de 2026
 
 ## Tabla de contenidos
 
@@ -173,8 +173,13 @@ src/
 │     │  ├─ contacto/, 20-consejos/
 │     │  ├─ jurados/[year]/, ganadores/[year]/, ranking/[country]/
 │     ├─ (auth)/                 # áreas privadas (fase final): acceso/jurados, acceso/agencias
-│     └─ (payload)/              # admin CMS (se cablea en Fase 3)
-├─ collections/                  # SCHEMA Payload = modelo de datos (Fase 3)
+│     └─ (payload)/              # admin CMS + API (cableado en Fase 3) ✅
+│        ├─ admin/[[...segments]]/ page.tsx, not-found.tsx
+│        ├─ admin/importMap.js
+│        ├─ api/[...slug]/route.ts
+│        └─ layout.tsx
+├─ collections/                  # SCHEMA Payload = modelo de datos (Fase 3) ✅
+│  ├─ Users.ts, Media.ts, Sponsors.ts
 ├─ components/
 │  ├─ layout/                    # TopBar, MainNav (con menú mobile), Footer, SocialIcons
 │  ├─ home/ categorias/ inscripcion/ fechas/ reglamento/   # componentes por página
@@ -207,7 +212,7 @@ Gemini en `_scratch/` (ver sección 9).
 |------|-------------|--------|
 | **Fase 1** | Arquitectura + esqueleto: layout base, routing de las 15 páginas como placeholders, tokens | ✅ Completa y pusheada |
 | **Fase 2** | Frontend público con datos mock: maquetar las 12 páginas, responsive + SEO | ✅ Completa (12/12) — release a `main` |
-| **Fase 3** | Backend/API + CMS: collections de Payload, PostgreSQL, panel admin, storage, migrar mock→queries | 🔜 Siguiente |
+| **Fase 3** | Backend/API + CMS: collections de Payload, PostgreSQL, panel admin, storage, migrar mock→queries | 🔄 En curso — Payload base + PostgreSQL + Admin integrados |
 | **Fase 4** | i18n es/pt: campos traducibles + UI con next-intl + descargas por idioma | ⏳ Pendiente (rieles ya puestos en Hito 1) |
 | **Fase 5** | Área privada Agencias: login, dashboard, wizard de 4 pasos, validaciones | ⏳ Pendiente |
 | **Fase 6** | Área privada Jurados: scoring por 4 criterios, votos bloqueables, reportes (la más compleja) | ⏳ Pendiente |
@@ -304,7 +309,50 @@ pasada (`fix(home)`):
 4. **"Quiero mi réplica"** — pasó de botón externo a ser un ítem más de la grilla de
    premios, como en el vivo.
 
-### 7.3 Infraestructura (territorio Codex)
+### 7.3 Fase 3 — Payload CMS base (en curso)
+
+**PostgreSQL:** base de datos PostgreSQL 16 Alpine levantada con Docker Compose
+(`docker compose up -d`). Contenedor `fip-postgres`, usuario `fip_user`, base
+`fip_dev`, puerto `5432`, volumen persistente `fip_postgres_data`. Healthcheck con
+`pg_isready`.
+
+**Payload CMS 3:** integrado como dependencia dentro de la misma app Next.js.
+Configuración en `payload.config.ts` (raíz del proyecto) con:
+- `@payloadcms/db-postgres` conectado vía `DATABASE_URI` de `.env.local`.
+- `@payloadcms/richtext-lexical` como editor.
+- Localization rails `es`/`pt` preparados (`defaultLocale: es`, `fallback: true`).
+- Tipos generados en `src/payload-types.ts`.
+
+**Collections iniciales creadas:**
+- `Users` — auth mínima (`auth: true`, email/password). Para entrar al admin.
+  Sin roles complejos todavía (Fase 5-6).
+- `Media` — uploads para imágenes, PDF, PPTX, DOCX. `staticDir: 'media'`.
+  Storage local primero; S3 pendiente.
+- `Sponsors` — `name` (requerido), `country`, `countryCode` (ISO alpha-2),
+  `logo` (upload→Media, opcional), `url`, `order`, `active` (default `true`).
+
+**Rutas de Payload:** bajo `src/app/(payload)/` (fuera del `[locale]` de i18n):
+- `admin/[[...segments]]/page.tsx` — panel admin (`/admin`).
+- `api/[...slug]/route.ts` — REST API (`/api`).
+- `layout.tsx` — `RootLayout` con `serverFunction` e `importMap`.
+
+**Middleware:** next-intl excluye `/admin` del matcher para no interferir.
+
+**Dependencias instaladas:** `payload`, `@payloadcms/next`, `@payloadcms/db-postgres`,
+`@payloadcms/richtext-lexical`, `sharp`, `graphql`.
+
+**Nota técnica:** la instalación usó `--legacy-peer-deps` porque
+`@payloadcms/next@3.85.0` espera Next.js `<15.5.0` pero el proyecto tiene
+`next@15.5.19`. No afecta el funcionamiento (build, typecheck y tests en verde).
+
+**Pendiente en Fase 3:**
+- Migrar `lib/content/` de mock → queries de Payload (sin tocar páginas).
+- Crear el resto de las collections (Edition, Rubro, Category, Juror, Winner, etc.)
+  según el plan en `_scratch/Plan_Collections_Fase3.md`.
+- Storage S3 para producción.
+- Script de seed desde `src/mocks/`.
+
+### 7.4 Infraestructura (territorio Codex)
 
 - **Boundaries** del App Router: `error.tsx`, `loading.tsx`, `not-found.tsx` en
   `src/app/[locale]/`.
@@ -314,7 +362,7 @@ pasada (`fix(home)`):
 - Auditoría de dependencias npm corrida (fase 1, sólo reporte): ver
   [`SECURITY-AUDIT-NPM.md`](./SECURITY-AUDIT-NPM.md) y sección 9.
 
-### 7.4 Testing
+### 7.5 Testing
 
 **25 tests, todos en verde** (Vitest + Testing Library + jsdom). Cobertura actual:
 
@@ -461,19 +509,19 @@ git clone https://github.com/alit0/fip.git
 
 ### 11.1 Próximos pasos inmediatos (en orden)
 
-Fase 2 está **completa** (12/12, con release a `main`). El próximo gran hito es la **Fase 3**.
+Fase 2 está **completa** (12/12, con release a `main`). **Fase 3 está en curso** — el
+vertical slice inicial (Payload base + PostgreSQL + Admin + collections Users/Media/Sponsors)
+está funcionando. Lo que sigue:
 
-1. **Arrancar Fase 3 — Backend + CMS** (Hito 3 del ROADMAP): collections de Payload
-   (traducir las 15 entidades a schema TypeScript), PostgreSQL, panel admin, storage, y
-   migrar `lib/content/` de mock → queries de Payload (las páginas no se tocan: es la
-   inversión del Hito 1). Codex monta entorno (`.env`, secrets, storage) y los tests de
-   integración en paralelo.
-2. **Storage real de assets** — los PDFs de descarga (servidos en local, fuera de git) y
-   el resto de los assets necesitan el bucket de producción, que es parte de la Fase 3.
-3. **Decidir sobre la auditoría npm fase 2** — aplicar (o no) los fixes de seguridad
-   reportados en `SECURITY-AUDIT-NPM.md`. Pendiente de decisión.
-4. **Pulido de fidelidad (Hito 7)** — auditar el texto contra
-   `_scratch/Texto_Canonico_Vivo.md` (ver 11.3).
+1. **Migrar `lib/content/` mock → queries de Payload** — empezar por `getSponsors()`
+   como prueba del pipeline (bajo riesgo, collection ya existente), luego el backbone
+   `Edition → Rubro → Category → Winner`.
+2. **Crear el resto de las collections** según el orden topológico definido en
+   `_scratch/Plan_Collections_Fase3.md`: Edition, SiteConfig, PageContent, RankingEntry,
+   DownloadFile, HallOfFameMember, Rubro, Juror, Category, Winner.
+3. **Storage S3 para producción** — reemplazar `staticDir: 'media'` por adapter S3.
+4. **Script de seed** desde `src/mocks/` a Payload para poblar la base.
+5. Codex escribe tests de integración para las queries de `lib/content/` en paralelo.
 
 ### 11.2 Pendientes de contenido
 
@@ -536,13 +584,10 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 
 ---
 
-> **Estado al cierre de esta sesión:** **Fase 2 COMPLETA** — las **12 páginas públicas**
-> (Home, Reglamento, Categorías, Inscripción, Fechas de cierre, Tarifario, Premios,
-> Jurados, Ganadores, Hall de la Fama, Ranking, Contacto) maquetadas, verificadas y
-> pusheadas, con los cuerpos del Reglamento cargados verbatim. Cimientos (capa async +
-> ruteo i18n), testing (**25 tests en verde**) y flujo **`main` + `develop`** en marcha.
-> **Primer release de Fase 2 a `main`** hecho (`release: Fase 2 completa…`, merge
-> `--no-ff`). _Ojo:_ el release se hizo **antes** de cargar los cuerpos del Reglamento,
-> así que `main` está un pasito atrás de `develop`; el **próximo release** llevará el
-> Reglamento completo + el pulido del Hito 7. **Próximo paso:** Fase 3 (Payload +
-> PostgreSQL + CMS).
+> **Estado al cierre de esta sesión:** **Fase 3 EN CURSO** — Payload CMS 3 base
+> integrado con PostgreSQL 16 en Docker. Admin `/admin` funcionando con collections
+> iniciales `Users` (auth), `Media` (uploads) y `Sponsors`. Localization rails `es`/`pt`
+> preparados. `.env.local` requerido (gitignoreado). **25 tests en verde**, typecheck y
+> build limpios. Las 12 páginas públicas de Fase 2 intactas. Migración mock → queries
+> pendiente. **Próximo paso:** migrar `getSponsors()` como prueba del pipeline, luego
+> el backbone `Edition → Rubro → Category → Winner`.
