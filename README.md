@@ -48,7 +48,12 @@ npm run build
 npm run typecheck
 npm run lint
 npm test
+npm run seed:sponsors   # carga sponsors desde mocks a Payload (idempotente)
 ```
+
+> **Nota:** `npm run seed:sponsors` requiere PostgreSQL corriendo (`docker compose up -d`)
+> y `.env.local` configurado. Es idempotente: si se corre dos veces, no duplica sponsors.
+> No borra datos existentes.
 
 ## Estructura resumida
 

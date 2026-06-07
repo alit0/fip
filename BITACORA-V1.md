@@ -372,11 +372,37 @@ validado.
 de Payload CMS durante el primer arranque.
 
 **Pendientes específicos de Sponsors:**
+- ~~Seed formal de Sponsors~~ ✅ Hecho: `npm run seed:sponsors`
 - Resolver `logoUrl` real desde Media (actualmente hardcodeado como `null`)
-- Seed formal de Sponsors desde `src/mocks/` a Payload
 
-**Próximas migraciones:** Edition → Rubro → Category → Winner (backbone del
-modelo de datos). El pipeline ya está probado; el patrón se replica.
+**Próximas migraciones:** `Edition` como siguiente slice del backbone (entidad raíz sin
+dependencias), luego `Rubro → Category → Winner`. El pipeline ya está probado; el patrón se
+replica.
+
+**Seed formal de Sponsors — mini-hito cerrado (7 jun 2026):**
+
+Script oficial creado en `scripts/seed-sponsors.ts` para cargar sponsors desde
+`src/mocks/sponsors.json` a Payload/PostgreSQL. Comando: `npm run seed:sponsors`.
+
+**Comportamiento:**
+- Lee los 4 sponsors del mock: AEVEA, Nuevo Marketing, La Fundación, Hall de la Fama
+- Upsert por `name` (exact match): si existe, actualiza `url`/`active`/`order`; si no, crea
+- Idempotente: correr dos veces no duplica
+- No borra datos existentes (no implementa delete/reset)
+- No sube logos todavía (`logoUrl` queda pendiente; Media no está cableada)
+- Mapea: `name`, `url`, `active: true`, `order` (índice del array)
+- NO mapea `country`/`countryCode` (no están en el mock actual)
+
+**Requisitos:**
+- PostgreSQL corriendo (`docker compose up -d`)
+- `.env.local` con `DATABASE_URI` y `PAYLOAD_SECRET`
+
+**Datos de prueba locales:** la DB local tiene 2 sponsors adicionales (`Test Payload Sponsor`,
+`Test Payload Sponsor 2`) creados manualmente durante verificación del pipeline. No son parte
+del seed oficial; pueden limpiarse manualmente si molestan, pero no afectan el funcionamiento.
+
+**Pendiente específico:**
+- Resolver `logoUrl` real desde Media (actualmente hardcodeado como `null` en mock y seed)
 
 **Pendiente en Fase 3:**
 - Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
@@ -553,7 +579,7 @@ está funcionando. Lo que sigue:
    `_scratch/Plan_Collections_Fase3.md`: Edition, SiteConfig, PageContent, RankingEntry,
    DownloadFile, HallOfFameMember, Rubro, Juror, Category, Winner.
 3. **Storage S3 para producción** — reemplazar `staticDir: 'media'` por adapter S3.
-4. **Script de seed** desde `src/mocks/` a Payload para poblar la base.
+4. ~~**Script de seed**~~ ✅ Hecho: `npm run seed:sponsors` carga sponsors desde mocks a Payload.
 5. Codex escribe tests de integración para las queries de `lib/content/` en paralelo.
 
 ### 11.2 Pendientes de contenido
