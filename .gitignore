@@ -40,3 +40,8 @@ audit_live_site.py
 # downloadable PDF assets — served locally for dev/review, real serving via Phase 3 storage
 /PDF/
 /public/descargas/
+
+# local graph/code visualization artifacts
+.graphifyignore
+.opencode/
+graphify-out/
