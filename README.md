@@ -11,9 +11,9 @@ El proyecto está en **Fase 3 en curso**.
 - Fase 2 completa: 12/12 páginas públicas maquetadas con datos mock.
 - **PostgreSQL 16** integrado vía Docker Compose (`docker compose up -d`).
 - **Payload CMS 3** base integrado: admin en `/admin` funcionando.
-- Collections iniciales creadas: `Users` (auth admin), `Media` (uploads), `Sponsors`.
+- Collections creadas: `Users` (auth admin), `Media` (uploads), `Sponsors`, `Editions`.
 - `.env.local` requerido para desarrollo (gitignoreado); `.env.example` como template.
-- Tests, typecheck y build en verde (32 tests).
+- Tests, typecheck y build en verde (38 tests).
 - Migración mock → queries pendiente (dentro de `src/lib/content/`, sin tocar páginas).
 - Áreas privadas de **Agencias** y **Jurados** siguen pendientes para fases finales.
 
@@ -49,11 +49,16 @@ npm run typecheck
 npm run lint
 npm test
 npm run seed:sponsors   # carga sponsors desde mocks a Payload (idempotente)
+npm run seed:edition     # carga edición 2026 en Payload (idempotente)
 ```
 
 > **Nota:** `npm run seed:sponsors` requiere PostgreSQL corriendo (`docker compose up -d`)
 > y `.env.local` configurado. Es idempotente: si se corre dos veces, no duplica sponsors.
 > No borra datos existentes.
+
+> **Nota:** `npm run seed:edition` requiere los mismos prerequisitos. Es idempotente
+> por `year`: si se corre dos veces, no duplica ediciones. El getter `getCurrentEdition()`
+> ya existe y devuelve la edición actual desde Payload con fallback seguro a 2026.
 
 ## Estructura resumida
 
@@ -128,7 +133,7 @@ Según la documentación de operación vigente:
 
 ## Próximas fases
 
-- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors · ✅ `getSponsors()` migrado parcialmente a Payload con fallback mock · 🔄 Resto de entidades del backbone (Edition → Rubro → Category → Winner) pendientes.
+- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors/Editions · ✅ `getSponsors()` y `getCurrentEdition()` migrados a Payload con fallback · 🔄 Resto del backbone (Rubro → Category → Winner) pendiente.
 - **Fase 4:** i18n completo es/pt para contenido.
 - **Fase 5:** área privada de Agencias.
 - **Fase 6:** área privada de Jurados y scoring.

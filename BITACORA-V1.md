@@ -375,9 +375,8 @@ de Payload CMS durante el primer arranque.
 - ~~Seed formal de Sponsors~~ ✅ Hecho: `npm run seed:sponsors`
 - Resolver `logoUrl` real desde Media (actualmente hardcodeado como `null`)
 
-**Próximas migraciones:** `Edition` como siguiente slice del backbone (entidad raíz sin
-dependencias), luego `Rubro → Category → Winner`. El pipeline ya está probado; el patrón se
-replica.
+**Próximas migraciones:** ~~`Edition`~~ ✅ Hecho. Siguiente: `Rubro` (depende de Edition),
+luego `Category → Winner`. El patrón ya está probado dos veces (Sponsors y Edition).
 
 **Seed formal de Sponsors — mini-hito cerrado (7 jun 2026):**
 
@@ -404,9 +403,41 @@ del seed oficial; pueden limpiarse manualmente si molestan, pero no afectan el f
 **Pendiente específico:**
 - Resolver `logoUrl` real desde Media (actualmente hardcodeado como `null` en mock y seed)
 
+**Edition mínimo — mini-hito cerrado (7 jun 2026):**
+
+Collection Payload `Editions` creada como raíz del backbone del modelo de datos
+(entidad sin dependencias que agrupa Rubros, Categorías, Ganadores, etc.).
+
+**Comportamiento:**
+- Campos: `year` (number, required, unique), `isCurrent` (checkbox, default false),
+  `title` (text opcional), `status` (select: draft/active/closed)
+- Getter `getCurrentEdition()` en `src/lib/content/edition.ts`
+- Intenta leer desde Payload: `find({ where: { isCurrent: true }, limit: 1 })`
+- Fallback seguro si Payload falla, docs vacío, o tabla no existe:
+  ```ts
+  { year: 2026, isCurrent: true, title: "FIP Festival 2026", status: "active" }
+  ```
+- Seed idempotente por `year`: `npm run seed:edition`
+- No borra ediciones existentes
+- Warn si hay múltiples ediciones con `isCurrent=true`
+
+**Tests subidos a 38** (desde 32): se agregaron 6 tests para `getCurrentEdition()`
+cubriendo:
+- Payload con doc actual → devuelve Payload
+- Payload con docs vacío → fallback 2026
+- Payload con error → fallback 2026
+- Payload null → fallback 2026
+- Title fallback si falta en doc
+- Status null si falta en doc
+
+**DB validada:** 1 edición 2026, sin duplicados por year.
+
+**Próximas migraciones:** `Rubro` como siguiente slice (depende de Edition),
+luego `Category → Winner`. El patrón ya está probado dos veces (Sponsors y Edition).
+
 **Pendiente en Fase 3:**
 - Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
-- Crear el resto de las collections (Edition, Rubro, Category, Juror, Winner, etc.)
+- ~~Crear collection Edition~~ ✅ Hecho. Crear el resto de las collections (Rubro, Category, Juror, Winner, etc.)
   según el plan en `_scratch/Plan_Collections_Fase3.md`.
 - Storage S3 para producción.
 - Script de seed desde `src/mocks/`.
@@ -572,9 +603,9 @@ Fase 2 está **completa** (12/12, con release a `main`). **Fase 3 está en curso
 vertical slice inicial (Payload base + PostgreSQL + Admin + collections Users/Media/Sponsors)
 está funcionando. Lo que sigue:
 
-1. **Migrar `lib/content/` mock → queries de Payload** — empezar por `getSponsors()`
-   como prueba del pipeline (bajo riesgo, collection ya existente), luego el backbone
-   `Edition → Rubro → Category → Winner`.
+1. **Migrar `lib/content/` mock → queries de Payload** — ~~`getSponsors()`~~ ✅ hecho,
+   ~~`getCurrentEdition()`~~ ✅ hecho. Siguiente: `getRubros()` (depende de Edition),
+   luego el backbone `Rubro → Category → Winner`.
 2. **Crear el resto de las collections** según el orden topológico definido en
    `_scratch/Plan_Collections_Fase3.md`: Edition, SiteConfig, PageContent, RankingEntry,
    DownloadFile, HallOfFameMember, Rubro, Juror, Category, Winner.
@@ -645,11 +676,11 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 
 > **Estado al cierre de esta sesión (7 jun 2026):** **Fase 3 EN CURSO** —
 > Payload CMS 3 base integrado con PostgreSQL 16 en Docker. Admin `/admin`
-> funcionando con collections `Users` (auth), `Media` (uploads) y `Sponsors`.
-> Localization rails `es`/`pt` preparados. `.env.local` requerido (gitignoreado).
-> **32 tests en verde** (subió de 25 con 7 tests focales para `getSponsors()`).
-> Typecheck y build limpios. Las 12 páginas públicas de Fase 2 intactas.
-> **Primer pipeline real validado:** `getSponsors()` → Payload → Home con fallback
-> mock. `Sponsors` parcialmente migrado a Payload; resto de collections (Edition →
-> Rubro → Category → Winner) pendiente. **Próximo paso:** replicar el patrón de
-> `getSponsors()` para las demás entidades del backbone.
+> funcionando con collections `Users` (auth), `Media` (uploads), `Sponsors` y
+> `Editions`. Localization rails `es`/`pt` preparados. `.env.local` requerido
+> (gitignoreado). **38 tests en verde** (subió de 32 con 6 tests para
+> `getCurrentEdition()`). Typecheck y build limpios. Las 12 páginas públicas de
+> Fase 2 intactas. **Dos pipelines reales validados:** `getSponsors()` y
+> `getCurrentEdition()` → Payload con fallback seguro. `Edition` creado como raíz
+> del backbone; siguiente slice: `Rubro` (depende de Edition), luego
+> `Category → Winner`.
