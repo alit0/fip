@@ -504,9 +504,33 @@ cubriendo:
 **DB local:** Estructura de tablas y tipos creada. Registros de ganadores en 0
 esperando la carga de categorías históricas.
 
-**Backbone actual consolidado:** `Edition → Rubro → Category → Winner`.
+**Ranking — mini-hito cerrado (7 jun 2026):**
 
-**Próximo slice técnico:** Definir siguiente entidad CMS (Ranking o Juror).
+Collection Payload `RankingEntries` creada para gestionar los rankings históricos
+por país.
+
+**Comportamiento:**
+- Campos: `country` (text), `countrySlug` (text indexed), `year` (number),
+  `position` (number), `agency` (text), `granPrix`, `oro`, `plata`, `bronce`,
+  `total` (numbers), `order` (number).
+- Getter `getRankingEntries()` en `src/lib/content/rankings.ts` (nuevo archivo).
+- Fallback dinámico: aplana el objeto anidado `ranking.json` a una lista plana.
+- Seed idempotente por `countrySlug + year + position + agency`:
+  `npm run seed:rankings`.
+- **Nota histórica:** se utiliza `2024` como año representativo para el rango
+  consolidado `2017-2024` del mock actual.
+
+**Tests subidos a 53** (desde 50): se agregaron 3 tests para `getRankingEntries()`
+cubriendo:
+- Payload con docs → mapping directo al shape público.
+- Fallback a mocks con aplanado de países y filas.
+- Fallback ante fallo de conexión a DB.
+
+**DB local validada:** 145 entradas de ranking cargadas (6 países).
+
+**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking`.
+
+**Próximo slice técnico:** `Juror`.
 
 **Pendiente en Fase 3:**
 - Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
@@ -701,7 +725,7 @@ está funcionando. Lo que sigue:
    `_scratch/Plan_Collections_Fase3.md`: SiteConfig, PageContent, RankingEntry,
    DownloadFile, HallOfFameMember, Juror.
 3. **Storage S3 para producción** — reemplazar `staticDir: 'media'` por adapter S3.
-4. ~~**Script de seed**~~ ✅ Hecho: `npm run seed:sponsors`, `npm run seed:rubros`, `npm run seed:categories` y `npm run seed:winners` cargan datos desde mocks.
+4. ~~**Script de seed**~~ ✅ Hecho: `npm run seed:sponsors`, `npm run seed:rubros`, `npm run seed:categories`, `npm run seed:winners` y `npm run seed:rankings` cargan datos desde mocks.
 5. Codex escribe tests de integración para las queries de `lib/content/` en paralelo.
 
 ### 11.2 Pendientes de contenido
@@ -768,11 +792,12 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 > **Estado al cierre de esta sesión (7 jun 2026):** **Fase 3 EN CURSO** —
 > Payload CMS 3 base integrado con PostgreSQL 16 en Docker. Admin `/admin`
 > funcionando con collections `Users` (auth), `Media` (uploads), `Sponsors`,
-> `Editions`, `Rubros`, `Categories` y `Winners`. Localization rails `es`/`pt`
-> preparados. `.env.local` requerido (gitignoreado). **50 tests en verde**
-> (subió de 46 con 4 tests para `getWinners()`). Typecheck y build limpios. Las
-> 12 páginas públicas de Fase 2 intactas. **Cinco pipelines reales validados:**
-> `getSponsors()`, `getCurrentEdition()`, `getRubros()`, `getCategories()`
-> y `getWinners()` → Payload con fallback seguro. Backbone relacional núcleo
-> (`Edition → Rubro → Category → Winner`) consolidado.
+> `Editions`, `Rubros`, `Categories`, `Winners` y `RankingEntries`. Localization
+> rails `es`/`pt` preparados. `.env.local` requerido (gitignoreado).
+> **53 tests en verde** (subió de 50 con 3 tests para `getRankingEntries()`).
+> Typecheck y build limpios. Las 12 páginas públicas de Fase 2 intactas.
+> **Seis pipelines reales validados:** `getSponsors()`, `getCurrentEdition()`,
+> `getRubros()`, `getCategories()`, `getWinners()` y `getRankingEntries()`
+> → Payload con fallback seguro. Backbone relacional consolidado; siguiente
+> slice: `Juror`.
 

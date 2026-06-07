@@ -11,10 +11,10 @@ El proyecto está en **Fase 3 en curso**.
 - Fase 2 completa: 12/12 páginas públicas maquetadas con datos mock.
 - **PostgreSQL 16** integrado vía Docker Compose (`docker compose up -d`).
 - **Payload CMS 3** base integrado: admin en `/admin` funcionando.
-- Collections creadas: `Users` (auth admin), `Media` (uploads), `Sponsors`, `Editions`, `Rubros`, `Categories`, `Winners`.
+- Collections creadas: `Users` (auth admin), `Media` (uploads), `Sponsors`, `Editions`, `Rubros`, `Categories`, `Winners`, `RankingEntries`.
 - `.env.local` requerido para desarrollo (gitignoreado); `.env.example` como template.
-- Tests, typecheck y build en verde (50 tests).
-- Migración mock → queries en curso (Sponsors, Editions, Rubros, Categories y Winners ya migrados).
+- Tests, typecheck y build en verde (53 tests).
+- Migración mock → queries en curso (Sponsors, Editions, Rubros, Categories, Winners y Ranking ya migrados).
 
 
 - Áreas privadas de **Agencias** y **Jurados** siguen pendientes para fases finales.
@@ -138,7 +138,7 @@ Según la documentación de operación vigente:
 
 ## Próximas fases
 
-- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors/Editions/Rubros/Categories/Winners · ✅ `getSponsors()`, `getCurrentEdition()`, `getRubros()`, `getCategories()` y `getWinners()` migrados a Payload con fallback · 🔄 Siguiente slice recomendado: `Ranking` o `Juror`.
+- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors/Editions/Rubros/Categories/Winners/RankingEntries · ✅ `getSponsors()`, `getCurrentEdition()`, `getRubros()`, `getCategories()`, `getWinners()` y `getRankingEntries()` migrados a Payload con fallback · 🔄 Siguiente slice recomendado: `Juror`.
 - **Fase 4:** i18n completo es/pt para contenido.
 - **Fase 5:** área privada de Agencias.
 - **Fase 6:** área privada de Jurados y scoring.
