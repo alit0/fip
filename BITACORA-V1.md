@@ -432,8 +432,30 @@ cubriendo:
 
 **DB validada:** 1 edición 2026, sin duplicados por year.
 
-**Próximas migraciones:** `Rubro` como siguiente slice (depende de Edition),
-luego `Category → Winner`. El patrón ya está probado dos veces (Sponsors y Edition).
+**Rubros — mini-hito cerrado (7 jun 2026):**
+
+Collection Payload `Rubros` creada y cableada al backbone. Representa los grandes
+segmentos del festival (MP, Eventos, etc.).
+
+**Comportamiento:**
+- Campos: `number` (number), `code` (text), `name` (text localized),
+  `description` (textarea localized), `order` (number), `edition` (rel. Editions).
+- Getter `getRubros()` en `src/lib/content/rubros.ts` (movido desde `catalog.ts`).
+- Mapping dinámico: resuelve `editionYear` desde la relación con `Editions`.
+- Fallback seguro a mocks (`rubros.json`) si Payload falla o no hay datos.
+- Seed idempotente por `edición + número`: `npm run seed:rubros`.
+- Carga los 23 rubros estándar del festival asociados a la edición 2026.
+
+**Tests subidos a 42** (desde 38): se agregaron 4 tests para `getRubros()`
+cubriendo:
+- Payload con docs → mapping correcto (incluyendo `href` dinámico).
+- Fallback a mocks si DB está vacía o falla.
+- Resolución de `editionYear` por relación expandida o fallback.
+
+**DB validada:** 23 rubros creados, asignados a edición 2026.
+
+**Próximas migraciones:** `Category` como siguiente slice (depende de Rubro),
+luego `Winner`. El patrón ya está consolidado para el backbone relacional.
 
 **Pendiente en Fase 3:**
 - Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
@@ -622,8 +644,8 @@ vertical slice inicial (Payload base + PostgreSQL + Admin + collections Users/Me
 está funcionando. Lo que sigue:
 
 1. **Migrar `lib/content/` mock → queries de Payload** — ~~`getSponsors()`~~ ✅ hecho,
-   ~~`getCurrentEdition()`~~ ✅ hecho. Siguiente: `getRubros()` (depende de Edition),
-   luego el backbone `Rubro → Category → Winner`.
+   ~~`getCurrentEdition()`~~ ✅ hecho, ~~`getRubros()`~~ ✅ hecho. Siguiente: backbone
+   `Category → Winner`.
 2. **Crear el resto de las collections** según el orden topológico definido en
    `_scratch/Plan_Collections_Fase3.md`: Edition, SiteConfig, PageContent, RankingEntry,
    DownloadFile, HallOfFameMember, Rubro, Juror, Category, Winner.
@@ -694,11 +716,11 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 
 > **Estado al cierre de esta sesión (7 jun 2026):** **Fase 3 EN CURSO** —
 > Payload CMS 3 base integrado con PostgreSQL 16 en Docker. Admin `/admin`
-> funcionando con collections `Users` (auth), `Media` (uploads), `Sponsors` y
-> `Editions`. Localization rails `es`/`pt` preparados. `.env.local` requerido
-> (gitignoreado). **38 tests en verde** (subió de 32 con 6 tests para
-> `getCurrentEdition()`). Typecheck y build limpios. Las 12 páginas públicas de
-> Fase 2 intactas. **Dos pipelines reales validados:** `getSponsors()` y
-> `getCurrentEdition()` → Payload con fallback seguro. `Edition` creado como raíz
-> del backbone; siguiente slice: `Rubro` (depende de Edition), luego
+> funcionando con collections `Users` (auth), `Media` (uploads), `Sponsors`,
+> `Editions` y `Rubros`. Localization rails `es`/`pt` preparados. `.env.local`
+> requerido (gitignoreado). **42 tests en verde** (subió de 38 con 4 tests para
+> `getRubros()`). Typecheck y build limpios. Las 12 páginas públicas de Fase 2
+> intactas. **Tres pipelines reales validados:** `getSponsors()`,
+> `getCurrentEdition()` y `getRubros()` → Payload con fallback seguro.
+> `Edition` y `Rubro` creados como base del backbone; siguiente slice:
 > `Category → Winner`.
