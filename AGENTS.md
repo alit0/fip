@@ -52,9 +52,49 @@ conocimiento del códigobase.
 4. **NUNCA inventar un mapa si Graphify no está disponible.** 
    Si no hay grafo, leer los archivos normalmente.
 
-### D. Después del mapa, proceder con la tarea
+### D. Delegación (HARD GATE — el orchestrator NO hace todo solo)
 
-Solo después de completar A → B → C, empezar a tocar archivos.
+El orchestrator (`gentle-orchestrator`) es un **coordinador**, no un ejecutor monolítico.
+Debe delegar trabajo real a subagentes especializados y reservarse solo la síntesis,
+la verificación, las decisiones de alto nivel y la interacción con el usuario.
+
+**Mapa de delegación (no negociable):**
+
+| Tipo de tarea | Subagente | Herramienta | Cuándo |
+|---|---|---|---|
+| Leer 4+ archivos para entender | `explore` | `delegate` | Siempre que requiera exploración |
+| Investigación externa / docs | `researcher` | `delegate` | Web, API docs, librerías |
+| Diseño técnico / arquitectura | `sdd-design-ops` | `task` | Cambios con decisiones de diseño |
+| Especificación detallada | `sdd-spec-ops` | `task` | Requisitos formales |
+| Implementación de código | `sdd-apply-ops` | `task` | Cualquier cambio multi-archivo |
+| Verificación post-implementación | `sdd-verify-ops` | `task` | Después de cada cambio de código |
+| Documentación / bitácoras | `scribe` | `delegate` | README, changelog, bitácora |
+
+**El orchestrator SÍ puede hacer inline (sin delegar):**
+- Leer 1-3 archivos para decidir o verificar
+- Escribir un archivo mecánico (ya sabe exactamente qué)
+- Bash para estado (`git status`, `pwd`, `docker ps`)
+- Sintetizar resultados de subagentes
+- Preguntar al usuario y esperar respuesta
+
+**El orchestrator NO debe hacer inline:**
+- Leer 4+ archivos para "entender el código"
+- Escribir features multi-archivo
+- Correr `npm test`, `npm run build`, `npm install`
+- Investigar APIs o documentación externa
+- Editar archivos como preparación para más ediciones (delegar todo junto)
+
+**Protocolo previo a cada acción grande:**
+1. El orchestrator analiza la tarea y determina qué subagente(s) necesita.
+2. **Antes de delegar**, dice explícitamente: _"Voy a delegar X a [subagente] porque [motivo]."_
+3. Recibe el resultado y lo sintetiza para el usuario.
+4. Si la tarea tocó código, **obligatorio** correr `sdd-verify-ops` después.
+5. Si la tarea tocó docs, **obligatorio** revisar con `scribe`.
+
+**Regla de economía:**
+- Delegar cuando ahorre tokens, aporte especialización o separe concerns.
+- NO delegar tareas triviales (1 archivo, cambio mecánico conocido).
+- Si la tarea cabe en 1-3 lecturas + 1 escritura atómica, hacerla inline y explicar por qué no se delegó.
 
 ## Reglas de territorio
 
