@@ -549,6 +549,24 @@ para maquetar; nunca es código.** Lo que hay hoy:
 - [`JURADOS-SCORING-SPEC.md`](./JURADOS-SCORING-SPEC.md) — spec técnica preliminar del
   sistema de scoring de jurados, para la Fase 6 (la más compleja).
 
+### Documentos históricos de Emi (Referencia Funcional)
+
+Los archivos en `PDF/` (`Definición de Proyecto_ FIP.md` y `Flujo del Sitio Web...`)
+datan de agosto 2025. Sirven como visión original del proyecto.
+
+- **Veredicto:** Referencia funcional histórica, NO fuente técnica actual.
+- **Coincidencias:** Validan la visión general (sitio público, CMS, portales,
+  rankings, PDFs).
+- **Obsolescencia:** Strapi fue reemplazado por Payload CMS; la arquitectura de
+  API separada por una app única Next.js.
+- **Impacto:** Nada en estos documentos bloquea la Fase 3. El próximo slice técnico
+  sigue siendo `Rubro → Category → Winner`.
+- **Decisiones pendientes (extraídas de la visión original):**
+  - Criterios finales de scoring de jurados (unificar nombres entre docs).
+  - Definición de roles avanzados (Owner / Admin / Comité Ejecutivo).
+  - Dashboard de estadísticas para el administrador.
+  - Sistemas de notificaciones, historial de cambios (auditoría) y exportaciones.
+
 ---
 
 ## 10. Git y respaldo
