@@ -528,9 +528,34 @@ cubriendo:
 
 **DB local validada:** 145 entradas de ranking cargadas (6 países).
 
-**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking`.
+**Jurors — mini-hito cerrado (8 jun 2026):**
 
-**Próximo slice técnico:** `Juror`.
+Collection Payload `Jurors` creada para gestionar el cuerpo de jurados del festival.
+
+**Comportamiento:**
+- Campos: `edition` (rel. Editions), `name` (text), `role` (text), `agency` (text),
+  `country` (text), `countryCode` (text), `bio` (textarea), `photo` (rel. Media, opcional),
+  `order` (number), `active` (checkbox).
+- Getter `getJurors()` en `src/lib/content/jurors.ts` (nuevo archivo).
+- Payload-first con fallback mock seguro.
+- Seed idempotente por `name + edition`: `npm run seed:jurors`.
+- **Regla de integridad:** El seed NO crea ediciones automáticamente; si falta la Edition
+  correspondiente, saltea el jurado y avisa.
+- Genera `slug` dinámicamente desde `name` (lowercase + hyphens).
+
+**Tests subidos a 61** (desde 53): se agregaron 8 tests para `getJurors()`
+cubriendo:
+- Payload con docs → mapping correcto (incluyendo slug dinámico).
+- Fallback a mocks si DB está vacía o falla.
+- Manejo de relaciones no expandidas con fallbacks seguros.
+- Validación de campos opcionales (photo, bio).
+
+**DB local validada:** Estructura de tablas y tipos creada. Seed listo para ejecutar
+cuando haya ediciones en la DB.
+
+**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking` + `Jurors`.
+
+**Próximo slice técnico:** `HallOfFameMembers`.
 
 **Pendiente en Fase 3:**
 - Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
@@ -663,6 +688,42 @@ datan de agosto 2025. Sirven como visión original del proyecto.
   - Definición de roles avanzados (Owner / Admin / Comité Ejecutivo).
   - Dashboard de estadísticas para el administrador.
   - Sistemas de notificaciones, historial de cambios (auditoría) y exportaciones.
+
+### Documentos históricos de Emi (agosto 2025)
+
+En `PDF/` hay dos documentos de la visión funcional original del proyecto:
+
+- `Definición de Proyecto_ FIP.md`
+- `FIP Festival - Flujo del Sitio Web y App Autoadministrable.md`
+
+> [!IMPORTANT]
+> **Estos documentos son referencia funcional histórica, no fuente técnica actual.**
+> El proyecto cambió Strapi por Payload CMS, la paleta pasó de negro/blanco/dorado a
+> dark mode púrpura/dorado (fidelidad al sitio vivo), y el modelo de datos evolucionó
+> significativamente. Leer con contexto: son la visión de agosto 2025, no el estado actual.
+
+**Qué coinciden con el proyecto actual:**
+- Visión general: sitio público, CMS editable, portal de agencias, portal de jurados,
+  ganadores, rankings, PDFs descargables.
+- Priorización: público primero, áreas privadas después.
+- Stack base: Next.js + PostgreSQL.
+
+**Qué quedó obsoleto:**
+- **Strapi** → reemplazado por **Payload CMS 3** (monolito dentro de la misma app Next.js).
+- Paleta de colores (negro/blanco/dorado → púrpura/dorado dark mode).
+- Roles originales (Owner/Admin/Agencia/Jurado → modelo actual con Admin sin Owner separado).
+- Ritmo de ejecución (Emi era más agresiva; el proyecto actual usa 7 fases graduales).
+
+**Decisiones pendientes para fases futuras (rescatables de Emi):**
+- Criterios finales de scoring de jurados (hay 3 variantes en circulación: Emi 1, Emi 2,
+  y BITACORA actual — resolver con cliente antes de Fase 6).
+- Separación Owner / Admin / Comité Ejecutivo (para Fase 5).
+- Dashboard admin con estadísticas (post-lanzamiento).
+- Notificaciones (email a agencias tras envío, alertas a jurados).
+- Auditoría de cambios en el CMS (quién editó qué y cuándo).
+- Exportaciones de datos (ganadores, rankings, votos de jurados).
+
+**Nada de estos documentos bloquea la Fase 3 actual.** Ya implementamos Rubro, Category, Winner, RankingEntries y Jurors. El próximo slice técnico es `HallOfFameMembers`. Los documentos de Emi son útiles como checklist funcional para Fases 5 y 6, pero requieren reconciliación con el estado actual antes de usarse como spec.
 
 ---
 
