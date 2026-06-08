@@ -13,12 +13,13 @@ import { Categories } from './src/collections/Categories'
 import { Winners } from './src/collections/Winners'
 import { RankingEntries } from './src/collections/RankingEntries'
 import { Jurors } from './src/collections/Jurors'
+import { HallOfFameMembers } from './src/collections/HallOfFameMembers'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-  collections: [Users, Media, Sponsors, Editions, Rubros, Categories, Winners, RankingEntries, Jurors],
+  collections: [Users, Media, Sponsors, Editions, Rubros, Categories, Winners, RankingEntries, Jurors, HallOfFameMembers],
 
   admin: {
     user: Users.slug,

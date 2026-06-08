@@ -21,6 +21,7 @@ export { getPremios } from "./premios";
 export { getJurors } from "./jurors";
 export { getJurados } from "./jurados";
 export { getHallDeLaFama } from "./hall-de-la-fama";
+export { getHallOfFameMembers } from "./hallOfFameMembers";
 export { getContacto } from "./contacto";
 export { getRanking } from "./ranking";
 export { getRankingEntries, type RankingEntry } from "./rankings";

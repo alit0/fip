@@ -17,7 +17,8 @@
     "seed:categories": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-categories.ts",
     "seed:winners": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-winners.ts",
     "seed:rankings": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-rankings.ts",
-    "seed:jurors": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-jurors.ts"
+    "seed:jurors": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-jurors.ts",
+    "seed:hall-of-fame": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-hall-of-fame.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.85.0",
