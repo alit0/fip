@@ -14,12 +14,13 @@ import { Winners } from './src/collections/Winners'
 import { RankingEntries } from './src/collections/RankingEntries'
 import { Jurors } from './src/collections/Jurors'
 import { HallOfFameMembers } from './src/collections/HallOfFameMembers'
+import { DownloadFiles } from './src/collections/DownloadFiles'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
-  collections: [Users, Media, Sponsors, Editions, Rubros, Categories, Winners, RankingEntries, Jurors, HallOfFameMembers],
+  collections: [Users, Media, Sponsors, Editions, Rubros, Categories, Winners, RankingEntries, Jurors, HallOfFameMembers, DownloadFiles],
 
   admin: {
     user: Users.slug,

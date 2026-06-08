@@ -27,5 +27,6 @@ export { getRanking } from "./ranking";
 export { getRankingEntries, type RankingEntry } from "./rankings";
 export { getGanadores } from "./ganadores";
 export { getWinners, type WinnerEntry } from "./winners";
+export { getDownloadFiles, type DownloadFile } from "./downloadFiles";
 export { getSponsors } from "./sponsors";
 export { getCurrentEdition } from "./edition";
