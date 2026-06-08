@@ -575,9 +575,32 @@ cubriendo:
 
 **DB local validada:** Estructura de tablas y tipos creada.
 
-**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking` + `Jurors` + `HallOfFameMembers`.
+**DownloadFiles — mini-hito cerrado (8 jun 2026):**
 
-**Próximo slice técnico:** `DownloadFiles` o `PageContent/SiteConfig`.
+Collection Payload `DownloadFiles` creada para gestionar los archivos descargables del sitio (Reglamento, Tarifario, etc.).
+
+**Comportamiento:**
+- Campos: `key` (text indexed), `label` (text), `language` (es|pt), `format` (pdf|pptx|docx),
+  `file` (rel. Media, opcional), `fileUrl` (text temporal fallback), `section` (text),
+  `order` (number), `active` (checkbox).
+- Getter `getDownloadFiles()` en `src/lib/content/downloadFiles.ts` (nuevo archivo).
+- Payload-first con fallback mock seguro desde `site-config.json`.
+- Ordenamiento por `section`, `language`, `order`.
+- Seed idempotente por `key + language`: `npm run seed:download-files`.
+- Conserva el `fileUrl` hacia las rutas estáticas actuales, preparando el terreno para cuando se suban a Media.
+
+**Tests subidos a 74** (desde 70): se agregaron 4 tests para `getDownloadFiles()`
+cubriendo:
+- Payload con docs → mapping correcto.
+- Fallback a fileUrl si relation file no está.
+- Fallback a mocks si DB vacía o falla.
+- Ordenamiento y separación por idioma.
+
+**DB local validada:** 12 entradas cargadas (6 ES, 6 PT) con idempotencia correcta.
+
+**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking` + `Jurors` + `HallOfFameMembers` + `DownloadFiles`.
+
+**Próximo slice técnico:** `PageContent` o `SiteConfig`.
 
 **Pendiente en Fase 3:**
 - Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
