@@ -553,9 +553,31 @@ cubriendo:
 **DB local validada:** Estructura de tablas y tipos creada. Seed listo para ejecutar
 cuando haya ediciones en la DB.
 
-**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking` + `Jurors`.
+**HallOfFameMembers — mini-hito cerrado (8 jun 2026):**
 
-**Próximo slice técnico:** `HallOfFameMembers`.
+Collection Payload `HallOfFameMembers` creada para gestionar los miembros históricos del Hall de la Fama.
+A diferencia de Jurors o Winners, es una entidad histórica/global sin relación estricta con `Edition`.
+
+**Comportamiento:**
+- Campos: `slug` (text unique), `name` (text), `role` (text localized), `company` (text),
+  `country` (text), `countryCode` (text), `photo` (rel. Media, opcional), `logo` (rel. Media, opcional),
+  `bio` (richtext localized), `inductionYear` (number, opcional), `order` (number), `active` (checkbox).
+- Getter `getHallOfFameMembers()` en `src/lib/content/hallOfFameMembers.ts` (nuevo archivo).
+- Payload-first con fallback mock seguro desde `hall-de-la-fama.json`.
+- Seed idempotente por `slug`: `npm run seed:hall-of-fame`.
+- No duplica, no inventa datos y no sube Media todavía (fotos/logos quedan vacíos si faltan en mock).
+
+**Tests subidos a 70** (desde 61): se agregaron tests para `getHallOfFameMembers()`
+cubriendo:
+- Payload con docs → mapping correcto.
+- Fallback a mocks si DB está vacía o falla.
+- Ordenamiento y campos opcionales.
+
+**DB local validada:** Estructura de tablas y tipos creada.
+
+**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking` + `Jurors` + `HallOfFameMembers`.
+
+**Próximo slice técnico:** `DownloadFiles` o `PageContent/SiteConfig`.
 
 **Pendiente en Fase 3:**
 - Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
@@ -781,12 +803,14 @@ está funcionando. Lo que sigue:
 
 1. **Migrar `lib/content/` mock → queries de Payload** — ~~`getSponsors()`~~ ✅ hecho,
    ~~`getCurrentEdition()`~~ ✅ hecho, ~~`getRubros()`~~ ✅ hecho, ~~`getCategories()`~~ ✅ hecho,
-   ~~`getWinners()`~~ ✅ hecho. Siguiente: backbone `Ranking` o `Juror`.
+   ~~`getWinners()`~~ ✅ hecho, ~~`getRankingEntries()`~~ ✅ hecho, ~~`getJurors()`~~ ✅ hecho,
+   ~~`getHallOfFameMembers()`~~ ✅ hecho.
+   Siguiente: backbone `DownloadFiles` o `PageContent/SiteConfig`.
 2. **Crear el resto de las collections** según el orden topológico definido en
-   `_scratch/Plan_Collections_Fase3.md`: SiteConfig, PageContent, RankingEntry,
-   DownloadFile, HallOfFameMember, Juror.
+   `_scratch/Plan_Collections_Fase3.md`: SiteConfig, PageContent,
+   DownloadFile.
 3. **Storage S3 para producción** — reemplazar `staticDir: 'media'` por adapter S3.
-4. ~~**Script de seed**~~ ✅ Hecho: `npm run seed:sponsors`, `npm run seed:rubros`, `npm run seed:categories`, `npm run seed:winners` y `npm run seed:rankings` cargan datos desde mocks.
+4. ~~**Script de seed**~~ ✅ Hecho: `npm run seed:sponsors`, `npm run seed:rubros`, `npm run seed:categories`, `npm run seed:winners`, `npm run seed:rankings`, `npm run seed:jurors` y `npm run seed:hall-of-fame` cargan datos desde mocks.
 5. Codex escribe tests de integración para las queries de `lib/content/` en paralelo.
 
 ### 11.2 Pendientes de contenido
@@ -850,15 +874,16 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 
 ---
 
-> **Estado al cierre de esta sesión (7 jun 2026):** **Fase 3 EN CURSO** —
+> **Estado al cierre de esta sesión (8 jun 2026):** **Fase 3 EN CURSO** —
 > Payload CMS 3 base integrado con PostgreSQL 16 en Docker. Admin `/admin`
 > funcionando con collections `Users` (auth), `Media` (uploads), `Sponsors`,
-> `Editions`, `Rubros`, `Categories`, `Winners` y `RankingEntries`. Localization
-> rails `es`/`pt` preparados. `.env.local` requerido (gitignoreado).
-> **53 tests en verde** (subió de 50 con 3 tests para `getRankingEntries()`).
-> Typecheck y build limpios. Las 12 páginas públicas de Fase 2 intactas.
-> **Seis pipelines reales validados:** `getSponsors()`, `getCurrentEdition()`,
-> `getRubros()`, `getCategories()`, `getWinners()` y `getRankingEntries()`
+> `Editions`, `Rubros`, `Categories`, `Winners`, `RankingEntries`, `Jurors`
+> y `HallOfFameMembers`. Localization rails `es`/`pt` preparados. `.env.local`
+> requerido (gitignoreado). **70 tests en verde** (subió de 61 con 9 tests para
+> `getHallOfFameMembers()`). Typecheck y build limpios. Las 12 páginas
+> públicas de Fase 2 intactas. **Ocho pipelines reales validados:** `getSponsors()`,
+> `getCurrentEdition()`, `getRubros()`, `getCategories()`, `getWinners()`,
+> `getRankingEntries()`, `getJurors()` y `getHallOfFameMembers()`
 > → Payload con fallback seguro. Backbone relacional consolidado; siguiente
-> slice: `Juror`.
+> slice: `DownloadFiles` o `PageContent/SiteConfig`.
 
