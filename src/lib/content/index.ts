@@ -30,3 +30,4 @@ export { getWinners, type WinnerEntry } from "./winners";
 export { getDownloadFiles, type DownloadFile } from "./downloadFiles";
 export { getSponsors } from "./sponsors";
 export { getCurrentEdition } from "./edition";
+export { getPageContent, type PageContentEntry } from "./pageContent";
