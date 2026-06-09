@@ -11,10 +11,11 @@ El proyecto está en **Fase 3 en curso**.
 - Fase 2 completa: 12/12 páginas públicas maquetadas con datos mock.
 - **PostgreSQL 16** integrado vía Docker Compose (`docker compose up -d`).
 - **Payload CMS 3** base integrado: admin en `/admin` funcionando.
-- Collections creadas: `Users` (auth admin), `Media` (uploads), `Sponsors`, `Editions`, `Rubros`, `Categories`, `Winners`, `RankingEntries`, `Jurors`, `HallOfFameMembers`, `DownloadFiles`.
+- Collections creadas: `Users` (auth admin), `Media` (uploads), `Sponsors`, `Editions`, `Rubros`, `Categories`, `Winners`, `RankingEntries`, `Jurors`, `HallOfFameMembers`, `DownloadFiles`, `PageContent`.
+- Globals creados: `SiteConfig`.
 - `.env.local` requerido para desarrollo (gitignoreado); `.env.example` como template.
-- Tests, typecheck y build en verde (74 tests).
-- Migración mock → queries en curso (Sponsors, Editions, Rubros, Categories, Winners, Ranking, Jurors, HallOfFame y DownloadFiles ya migrados).
+- Tests, typecheck y build en verde (81 tests).
+- Migración mock → queries en curso (Sponsors, Editions, Rubros, Categories, Winners, Ranking, Jurors, HallOfFame, DownloadFiles, PageContent y SiteConfig ya migrados).
 
 
 - Áreas privadas de **Agencias** y **Jurados** siguen pendientes para fases finales.
@@ -58,6 +59,7 @@ npm run seed:rankings    # carga rankings desde mocks a Payload (idempotente)
 npm run seed:jurors      # carga jurados desde mocks a Payload (idempotente)
 npm run seed:hall-of-fame # carga miembros del hall of fame desde mocks a Payload (idempotente)
 npm run seed:download-files # carga archivos descargables desde mocks a Payload (idempotente)
+npm run seed:page-content   # carga contenidos de páginas y configuración global (create-only)
 ```
 
 
@@ -142,7 +144,7 @@ Según la documentación de operación vigente:
 
 ## Próximas fases
 
-- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors/Editions/Rubros/Categories/Winners/RankingEntries/Jurors/HallOfFameMembers/DownloadFiles · ✅ `getSponsors()`, `getCurrentEdition()`, `getRubros()`, `getCategories()`, `getWinners()`, `getRankingEntries()`, `getJurors()`, `getHallOfFameMembers()` y `getDownloadFiles()` migrados a Payload con fallback · 🔄 Siguiente slice recomendado: `PageContent` o `SiteConfig`.
+- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors/Editions/Rubros/Categories/Winners/RankingEntries/Jurors/HallOfFameMembers/DownloadFiles/PageContent y SiteConfig (Global) · ✅ `getSponsors()`, `getCurrentEdition()`, `getRubros()`, `getCategories()`, `getWinners()`, `getRankingEntries()`, `getJurors()`, `getHallOfFameMembers()`, `getDownloadFiles()`, `getPageContent()` y `getSiteConfig()` migrados a Payload con fallback · 🔄 Siguiente slice recomendado: Estructuras globales (TarifarioGlobal, PremiosGlobal, etc).
 - **Fase 4:** i18n completo es/pt para contenido.
 - **Fase 5:** área privada de Agencias.
 - **Fase 6:** área privada de Jurados y scoring.

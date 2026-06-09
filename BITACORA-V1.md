@@ -598,9 +598,26 @@ cubriendo:
 
 **DB local validada:** 12 entradas cargadas (6 ES, 6 PT) con idempotencia correcta.
 
-**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking` + `Jurors` + `HallOfFameMembers` + `DownloadFiles`.
+**PageContent y SiteConfig — mini-hito cerrado (9 jun 2026):**
 
-**Próximo slice técnico:** `PageContent` o `SiteConfig`.
+Implementación conjunta (commit técnico `1cf6f31`) para gestionar textos planos y configuración global.
+
+**Comportamiento:**
+- **SiteConfig:** Objeto Global de Payload. Maneja `contactEmails`, `phones`, `whatsapps`, `socialLinks` y `address` (localized).
+- **PageContent:** Colección para textos fijos. Campos: `pageKey`, `sectionKey`, `title` (localized), `body` (richtext Lexical, por ahora mapeado a string), `order`, `active`.
+- Textos con `localized:true` para soporte i18n futuro.
+- Getters `getSiteConfig()` y `getPageContent()` en `lib/content/`.
+- Payload-first con fallback seguro a mocks (`site-config.json`, `home.json`, etc.).
+- Seed: `npm run seed:page-content`. Estrategia **create-only**: crea si no existe, reporta `created/skipped`, y no pisa ediciones humanas. Primer contenido cargado: textos institucionales de Home.
+- **Fuera de alcance temporal:** Datos estructurados (tablas, cards, pasos) y el render de Lexical en UI (por ahora se extrae string plano).
+
+**Tests subidos a 81** (desde 74): se agregaron tests para los nuevos getters cubriendo:
+- Mappings correctos (arrays y richtext a strings planos).
+- Fallbacks vacíos y manejo de errores.
+
+**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking` + `Jurors` + `HallOfFameMembers` + `DownloadFiles` + `PageContent/SiteConfig`.
+
+**Próximo slice técnico:** Estructuras globales (TarifarioGlobal, PremiosGlobal, etc).
 
 **Pendiente en Fase 3:**
 - Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
@@ -827,13 +844,14 @@ está funcionando. Lo que sigue:
 1. **Migrar `lib/content/` mock → queries de Payload** — ~~`getSponsors()`~~ ✅ hecho,
    ~~`getCurrentEdition()`~~ ✅ hecho, ~~`getRubros()`~~ ✅ hecho, ~~`getCategories()`~~ ✅ hecho,
    ~~`getWinners()`~~ ✅ hecho, ~~`getRankingEntries()`~~ ✅ hecho, ~~`getJurors()`~~ ✅ hecho,
-   ~~`getHallOfFameMembers()`~~ ✅ hecho.
-   Siguiente: backbone `DownloadFiles` o `PageContent/SiteConfig`.
+   ~~`getHallOfFameMembers()`~~ ✅ hecho, ~~`getDownloadFiles()`~~ ✅ hecho,
+   ~~`getPageContent()`~~ ✅ hecho, ~~`getSiteConfig()`~~ ✅ hecho.
+   Siguiente: Estructuras globales (TarifarioGlobal, PremiosGlobal, etc).
 2. **Crear el resto de las collections** según el orden topológico definido en
    `_scratch/Plan_Collections_Fase3.md`: SiteConfig, PageContent,
-   DownloadFile.
+   DownloadFile (Implementados). Pendientes: estructuras globales de datos complejos.
 3. **Storage S3 para producción** — reemplazar `staticDir: 'media'` por adapter S3.
-4. ~~**Script de seed**~~ ✅ Hecho: `npm run seed:sponsors`, `npm run seed:rubros`, `npm run seed:categories`, `npm run seed:winners`, `npm run seed:rankings`, `npm run seed:jurors` y `npm run seed:hall-of-fame` cargan datos desde mocks.
+4. ~~**Script de seed**~~ ✅ Hecho: `npm run seed:sponsors`, `npm run seed:rubros`, `npm run seed:categories`, `npm run seed:winners`, `npm run seed:rankings`, `npm run seed:jurors`, `npm run seed:hall-of-fame`, `npm run seed:download-files` y `npm run seed:page-content` cargan datos desde mocks.
 5. Codex escribe tests de integración para las queries de `lib/content/` en paralelo.
 
 ### 11.2 Pendientes de contenido
@@ -897,16 +915,17 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 
 ---
 
-> **Estado al cierre de esta sesión (8 jun 2026):** **Fase 3 EN CURSO** —
+> **Estado al cierre de esta sesión (9 jun 2026):** **Fase 3 EN CURSO** —
 > Payload CMS 3 base integrado con PostgreSQL 16 en Docker. Admin `/admin`
 > funcionando con collections `Users` (auth), `Media` (uploads), `Sponsors`,
-> `Editions`, `Rubros`, `Categories`, `Winners`, `RankingEntries`, `Jurors`
-> y `HallOfFameMembers`. Localization rails `es`/`pt` preparados. `.env.local`
-> requerido (gitignoreado). **70 tests en verde** (subió de 61 con 9 tests para
-> `getHallOfFameMembers()`). Typecheck y build limpios. Las 12 páginas
-> públicas de Fase 2 intactas. **Ocho pipelines reales validados:** `getSponsors()`,
-> `getCurrentEdition()`, `getRubros()`, `getCategories()`, `getWinners()`,
-> `getRankingEntries()`, `getJurors()` y `getHallOfFameMembers()`
-> → Payload con fallback seguro. Backbone relacional consolidado; siguiente
-> slice: `DownloadFiles` o `PageContent/SiteConfig`.
+> `Editions`, `Rubros`, `Categories`, `Winners`, `RankingEntries`, `Jurors`,
+> `HallOfFameMembers`, `DownloadFiles` y `PageContent`, más global `SiteConfig`.
+> Localization rails `es`/`pt` preparados. `.env.local` requerido (gitignoreado).
+> **81 tests en verde** (subió de 74 con 7 tests para PageContent/SiteConfig).
+> Typecheck y build limpios. Las 12 páginas públicas de Fase 2 intactas.
+> **Diez pipelines reales validados:** `getSponsors()`, `getCurrentEdition()`,
+> `getRubros()`, `getCategories()`, `getWinners()`, `getRankingEntries()`,
+> `getJurors()`, `getHallOfFameMembers()`, `getDownloadFiles()`, `getPageContent()`
+> y `getSiteConfig()` → Payload con fallback seguro. Backbone relacional consolidado;
+> siguiente slice: Estructuras globales complejas (Tarifarios, etc.).
 
