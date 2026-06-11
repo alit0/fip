@@ -60,7 +60,13 @@ npm run seed:jurors      # carga jurados desde mocks a Payload (idempotente)
 npm run seed:hall-of-fame # carga miembros del hall of fame desde mocks a Payload (idempotente)
 npm run seed:download-files # carga archivos descargables desde mocks a Payload (idempotente)
 npm run seed:page-content   # carga contenidos de páginas y configuración global (create-only)
+npm run plane:check         # verifica acceso a la API de Plane (lee PLANE_API_KEY de .env.local; nunca la imprime)
 ```
+
+> **Acceso a Plane (agentes):** la API key vive UNA sola vez en `.env.local` como
+> `PLANE_API_KEY` (junto con `PLANE_WORKSPACE` y `PLANE_PROJECT_ID`). Todos los agentes
+> la leen del entorno — nunca hardcodeada, nunca pegada por sesión, nunca en git.
+> `.env.local` está gitignoreado. Ver las claves requeridas en `.env.example`.
 
 
 > **Nota:** `npm run seed:sponsors` requiere PostgreSQL corriendo (`docker compose up -d`)

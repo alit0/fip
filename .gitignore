@@ -48,3 +48,11 @@ graphify-out/
 
 # Payload CMS local media uploads (dev only; production uses S3/compatible storage)
 /media/
+
+# Plane operational artifacts (backups, board map) — local only, not repo assets
+plane-backup-*.json
+plane-backup-*.md
+plane-rebuilt-map.json
+# other agents' working artifacts
+geni-reporte.txt
+.deepseek/

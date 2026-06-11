@@ -20,7 +20,10 @@
     "seed:jurors": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-jurors.ts",
     "seed:hall-of-fame": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-hall-of-fame.ts",
     "seed:download-files": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-download-files.ts",
-    "seed:page-content": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-page-content.ts"
+    "seed:page-content": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-page-content.ts",
+    "plane:check": "tsx scripts/plane-check.ts",
+    "plane:states": "tsx -e \"const PLANE_API_BASE='https://plane.allitto.com/api/v1'; const fs=require('fs'); require('dotenv').config({path:'.env.local'}); async function main(){ const url = PLANE_API_BASE + '/workspaces/' + process.env.PLANE_WORKSPACE + '/projects/' + process.env.PLANE_PROJECT_ID + '/states/'; const res=await fetch(url,{headers:{'X-API-Key':process.env.PLANE_API_KEY}}); const data=await res.json(); console.log(JSON.stringify(data.results.map(s=>({id:s.id,name:s.name})),null,2)); } main();\"",
+    "plane:backup": "tsx scripts/plane-backup.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.85.0",
