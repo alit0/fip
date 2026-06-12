@@ -65,7 +65,9 @@ async function main() {
   let found = 0
 
   while (found < limit) {
-    const res = await fetch(`${url}?page=${page}&limit=50`, { headers })
+    // expand=labels,state so item.labels/item.state come back as objects with .name
+    // (without expand the list endpoint returns bare UUID strings and filtering silently matches nothing)
+    const res = await fetch(`${url}?page=${page}&limit=50&expand=labels,state`, { headers })
     if (!res.ok) {
       console.error(`❌ Plane API error: ${res.status} ${res.statusText}`)
       process.exit(1)
