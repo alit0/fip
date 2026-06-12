@@ -13,7 +13,7 @@ export default function CategoryItem({ category }: { category: Category }) {
             {category.code}
           </span>
           <h3 className="font-title text-sm font-bold uppercase tracking-wide text-fip-gold">
-            {category.title ?? "TODO: título"}
+            {category.title ?? category.code}
           </h3>
           {category.isSpecial && (
             <span className="rounded-full bg-fip-purple-500 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide">

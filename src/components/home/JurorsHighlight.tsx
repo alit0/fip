@@ -18,7 +18,7 @@ export default function JurorsHighlight({
         {jurors.map((juror) => (
           <li key={juror.slug} className="flex flex-col items-center text-center">
             <ImagePlaceholder
-              label="Foto (TODO)"
+              label="Foto del jurado"
               rounded="rounded-full"
               className="aspect-square w-24"
             />

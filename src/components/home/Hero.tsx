@@ -21,11 +21,10 @@ export default function Hero({ hero }: { hero: HomeContent["hero"] }) {
   return (
     <section className="relative isolate overflow-hidden bg-fip-purple-900">
       {/* Background image placeholder + readability gradient */}
-      <div className="absolute inset-0 -z-10 flex items-center justify-center bg-fip-purple-700/40">
-        <span className="px-6 text-center text-[11px] uppercase tracking-widest text-fip-white/25">
-          {hero.imageTodo}
-        </span>
-      </div>
+      <div
+        className="absolute inset-0 -z-10 bg-fip-purple-700/40"
+        aria-label={hero.imageTodo}
+      />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-fip-purple-900/40 via-fip-purple-900/20 to-fip-purple-900/90" />
 
       {/* Sello top-right */}

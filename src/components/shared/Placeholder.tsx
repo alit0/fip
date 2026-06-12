@@ -20,7 +20,7 @@ export default function Placeholder({
         {title}
       </h1>
       <p className="mt-6 max-w-prose text-fip-white/55">
-        {note ?? "Placeholder — el contenido de esta página se construye en la Fase 2."}
+        {note ?? "Contenido en preparación."}
       </p>
     </section>
   );

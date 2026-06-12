@@ -24,9 +24,7 @@ export default function ArticleSection({
         {article.body ? (
           <p className="whitespace-pre-line">{article.body}</p>
         ) : (
-          <p className="text-sm italic text-fip-white/40">
-            TODO: cuerpo legal completo de este artículo (verbatim del sitio / PDF).
-          </p>
+          <p className="text-sm italic text-fip-white/40">Contenido legal en preparación.</p>
         )}
         {article.showScoreTable && <ScoreTable rows={scoreTable} />}
       </div>
