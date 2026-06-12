@@ -16,6 +16,7 @@ import { Jurors } from './src/collections/Jurors'
 import { HallOfFameMembers } from './src/collections/HallOfFameMembers'
 import { DownloadFiles } from './src/collections/DownloadFiles'
 import { PageContent } from './src/collections/PageContent'
+import { ContactMessages } from './src/collections/ContactMessages'
 import { SiteConfig } from './src/globals/SiteConfig'
 
 const filename = fileURLToPath(import.meta.url)
@@ -35,6 +36,7 @@ export default buildConfig({
     HallOfFameMembers,
     DownloadFiles,
     PageContent,
+    ContactMessages,
   ],
   globals: [SiteConfig],
 
