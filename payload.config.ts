@@ -18,6 +18,7 @@ import { DownloadFiles } from './src/collections/DownloadFiles'
 import { PageContent } from './src/collections/PageContent'
 import { SiteConfig } from './src/globals/SiteConfig'
 import { PremiosGlobal } from './src/globals/PremiosGlobal'
+import { FechasGlobal } from './src/globals/FechasGlobal'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -37,7 +38,7 @@ export default buildConfig({
     DownloadFiles,
     PageContent,
   ],
-  globals: [SiteConfig, PremiosGlobal],
+  globals: [SiteConfig, PremiosGlobal, FechasGlobal],
 
   admin: {
     user: Users.slug,
