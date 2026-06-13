@@ -23,6 +23,7 @@
     "seed:page-content": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-page-content.ts",
     "seed:premios": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-premios.ts",
     "seed:fechas": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-fechas.ts",
+    "seed:inscripcion": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-inscripcion.ts",
     "plane:check": "tsx scripts/plane-check.ts",
     "plane:states": "tsx -e \"const PLANE_API_BASE='https://plane.allitto.com/api/v1'; const fs=require('fs'); require('dotenv').config({path:'.env.local'}); async function main(){ const url = PLANE_API_BASE + '/workspaces/' + process.env.PLANE_WORKSPACE + '/projects/' + process.env.PLANE_PROJECT_ID + '/states/'; const res=await fetch(url,{headers:{'X-API-Key':process.env.PLANE_API_KEY}}); const data=await res.json(); console.log(JSON.stringify(data.results.map(s=>({id:s.id,name:s.name})),null,2)); } main();\"",
     "plane:backup": "tsx scripts/plane-backup.ts"
