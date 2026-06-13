@@ -17,6 +17,7 @@ import { HallOfFameMembers } from './src/collections/HallOfFameMembers'
 import { DownloadFiles } from './src/collections/DownloadFiles'
 import { PageContent } from './src/collections/PageContent'
 import { SiteConfig } from './src/globals/SiteConfig'
+import { PremiosGlobal } from './src/globals/PremiosGlobal'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -36,7 +37,7 @@ export default buildConfig({
     DownloadFiles,
     PageContent,
   ],
-  globals: [SiteConfig],
+  globals: [SiteConfig, PremiosGlobal],
 
   admin: {
     user: Users.slug,
