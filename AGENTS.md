@@ -108,6 +108,27 @@ la verificación, las decisiones de alto nivel y la interacción con el usuario.
 - `.atl/**` — skill registry y artefactos de configuración
 - `graphify-out/**` — grafo de conocimiento (no editar a mano)
 
+## Acceso a Plane (MANDATORY)
+
+Los agentes acceden a Plane **siempre** a través de los scripts del repo — nunca asumen
+que la key está en el entorno, nunca la piden al humano:
+
+```bash
+npm run plane:check              # verificar acceso
+tsx scripts/plane-check.ts       # idem, directo
+tsx scripts/plane-query.ts [args]
+tsx scripts/plane-list.ts [args]
+tsx scripts/plane-backup.ts
+```
+
+Los scripts cargan `.env.local` automáticamente (con `npm run` o con `tsx` directo).
+Si un script Plane falla con `❌ Missing Plane env vars`:
+1. Verificar que `.env.local` existe en el worktree: `ls .env.local`
+2. Correr `npm run plane:check` para confirmar acceso
+3. Si falta `.env.local`, escalar al humano — nunca hardcodear la key
+
+**Nunca hardcodear la key. Nunca pedirla por chat. Nunca guardarla en código versionado.**
+
 ## Reglas no negociables
 
 1. Nunca commitear en `main` directo. `main` es sagrada (solo releases).
