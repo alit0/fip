@@ -110,8 +110,7 @@ la verificación, las decisiones de alto nivel y la interacción con el usuario.
 
 ## Acceso a Plane (MANDATORY)
 
-Los agentes acceden a Plane **siempre** a través de los scripts del repo — nunca asumen
-que la key está en el entorno, nunca la piden al humano:
+Los agentes acceden a Plane **siempre** a través de los scripts del repo:
 
 ```bash
 npm run plane:check              # verificar acceso
@@ -121,11 +120,17 @@ tsx scripts/plane-list.ts [args]
 tsx scripts/plane-backup.ts
 ```
 
-Los scripts cargan `.env.local` automáticamente (con `npm run` o con `tsx` directo).
-Si un script Plane falla con `❌ Missing Plane env vars`:
-1. Verificar que `.env.local` existe en el worktree: `ls .env.local`
-2. Correr `npm run plane:check` para confirmar acceso
-3. Si falta `.env.local`, escalar al humano — nunca hardcodear la key
+**Cómo llegan las vars al script:**
+`PLANE_API_KEY`, `PLANE_WORKSPACE` y `PLANE_PROJECT_ID` están seteadas como variables
+de entorno de usuario de Windows (`setx`). Los scripts las toman de `process.env` sin
+leer `.env.local` — lo cual es necesario porque el sandbox Codex (gentle-dev) deniega
+la lectura de `**/.env.local` bajo `C:\agents`.
+
+**Si un script Plane falla con `❌ Missing Plane env vars`:**
+1. NO pedir la key al humano
+2. NO intentar leer `.env.local` directamente
+3. El problema es que las vars de entorno no están seteadas en este proceso →
+   escalar a Sebastián para re-correr `setx` desde fuera del sandbox (tarea de infra)
 
 **Nunca hardcodear la key. Nunca pedirla por chat. Nunca guardarla en código versionado.**
 
