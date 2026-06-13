@@ -134,6 +134,30 @@ la lectura de `**/.env.local` bajo `C:\agents`.
 
 **Nunca hardcodear la key. Nunca pedirla por chat. Nunca guardarla en código versionado.**
 
+## Compuerta de avance a Ready for QA (HARD GATE)
+
+**La rama DEBE estar en origin antes de mover la card a Ready for QA.**
+
+Protocolo obligatorio al terminar implementación:
+
+```bash
+git push origin <rama>   # 1. push
+# si exit code = 0 → mover card a Ready for QA
+# si exit code != 0 → card queda en In Dev, reportar el fallo, NO avanzar
+```
+
+Verificar que el push llegó:
+```bash
+git ls-remote origin refs/heads/<rama>   # debe devolver el SHA del commit
+```
+
+**Razón:** Chano audita desde GitHub. Si la rama no está en origin, no puede ver el
+código — la compuerta verde local es irrelevante. Un push fallido silencioso seguido
+de un avance de estado rompe el flujo de auditoría completo.
+
+**Si el push falla:** dejar la card en In Dev, agregar comentario con el error exacto
+del push, escalar a Sebastián. No avanzar de estado bajo ninguna circunstancia.
+
 ## Reglas no negociables
 
 1. Nunca commitear en `main` directo. `main` es sagrada (solo releases).
