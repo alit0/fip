@@ -1,156 +1,67 @@
-# FIP Festival — réplica web moderna
+# FIP Festival — Réplica Web Moderna
 
-Réplica evolutiva del sitio [fipfestival.com.ar](https://www.fipfestival.com.ar/)
-con arquitectura moderna, preparada para pasar de contenido mock a CMS sin rehacer
-las páginas públicas.
+Réplica integral del sitio [fipfestival.com.ar](https://www.fipfestival.com.ar/) (Festival Iberoamericano de Promociones y Eventos) utilizando una arquitectura moderna basada en **Next.js 15**, **Payload CMS 3** y **PostgreSQL 16**.
 
-## Estado actual
+## El Equipo de Agentes
 
-El proyecto está en **Fase 3 en curso**.
+El desarrollo es impulsado por un equipo de 5 agentes especializados que operan de forma coordinada bajo la supervisión de un Tech Lead (humano).
 
-- Fase 2 completa: 12/12 páginas públicas maquetadas con datos mock.
-- **PostgreSQL 16** integrado vía Docker Compose (`docker compose up -d`).
-- **Payload CMS 3** base integrado: admin en `/admin` funcionando.
-- Collections creadas: `Users` (auth admin), `Media` (uploads), `Sponsors`, `Editions`, `Rubros`, `Categories`, `Winners`, `RankingEntries`, `Jurors`, `HallOfFameMembers`, `DownloadFiles`, `PageContent`.
-- Globals creados: `SiteConfig`.
-- `.env.local` requerido para desarrollo (gitignoreado); `.env.example` como template.
-- Tests, typecheck y build en verde (81 tests).
-- Migración mock → queries en curso (Sponsors, Editions, Rubros, Categories, Winners, Ranking, Jurors, HallOfFame, DownloadFiles, PageContent y SiteConfig ya migrados).
+| Agente | Rol | Responsabilidades |
+| :--- | :--- | :--- |
+| **Cloe** (Claude Code) | **Core / UI** | Páginas, componentes, maquetado y lógica de negocio en `src/app`. |
+| **Gepeto** (Gepeto) | **Infra / QA** | Configuración, seguridad, base de datos, tests de integración y `middleware.ts`. |
+| **Geni** (Gemini CLI) | **Relevamiento** | Investigación, scrapeo y documentación de contenido en `_scratch/`. |
+| **Chano** (Audit / Merge) | **QA / Auditoría** | Revisión de código (QA), ejecución de pruebas y merge de ramas a `develop`. |
+| **Opi** (Docs) | **Documentación** | Gestión de documentación y cierre de tareas en el estado *Ready for Docs*. |
 
+## Flujo de Trabajo (Git + Plane)
 
-- Áreas privadas de **Agencias** y **Jurados** siguen pendientes para fases finales.
+El proyecto utiliza **Plane** como tablero de gestión de tareas (cards) y un flujo de trabajo basado en **Git Worktrees** para permitir la operación en paralelo de los agentes.
 
-## Stack
+1.  **Card**: Cada tarea nace como una card en Plane.
+2.  **Worktree**: Cada agente tiene su propio espacio de trabajo físico en `C:/agents/fip-<agente>/` (compartiendo el mismo repositorio).
+3.  **Rama**: Una rama por card, sacada de `develop`: `feat/<CARD-ID>-<slug-corto>`.
+4.  **Commits**: Todos los commits comienzan con el ID de la card: `AGENTESOPE-XX: mensaje`.
+5.  **Compuerta**: Antes de entregar, el implementador verifica la "compuerta verde":
+    `npm run build && npm run typecheck && npm test`
+6.  **PR & QA**: La rama se pushea y la card se mueve a *Ready for QA*.
+7.  **Merge**: **Chano** audita el cambio. Si aprueba, mergea a `develop` y mueve la card a *Ready for Docs* (donde **Opi** finaliza el proceso).
+8.  **Main**: La rama `main` es sagrada y solo recibe releases estables del Tech Lead.
 
-- **Next.js 15** + **React 19** con App Router.
-- **Tailwind CSS v4**.
-- **next-intl** para ruteo y chrome de interfaz es/pt.
-- **TypeScript**.
-- **Vitest** + **React Testing Library** + **jsdom** para tests base.
-- **Payload CMS 3** + **PostgreSQL 16** (Docker) — integrados en Fase 3.
-- **Docker Compose** para base de datos local (`docker compose up -d`).
+## Estado Actual: Fase 3 (CMS & Globals)
 
-## Correr en local
+Estamos migrando el contenido estático a una gestión dinámica mediante **Payload CMS**.
 
-```bash
-cp .env.example .env.local   # editar con DATABASE_URI y PAYLOAD_SECRET
-docker compose up -d         # levantar PostgreSQL
-npm install
-npm run dev
-```
+-   ✅ **Backend**: PostgreSQL 16 en Docker + Payload 3 integrado.
+-   ✅ **Admin**: Panel de administración funcional en `/admin`.
+-   ✅ **Globals Migrados**: Sponsors, Editions, Rubros, Categories, Winners, RankingEntries, Jurors, HallOfFameMembers, DownloadFiles, PageContent y SiteConfig.
+-   🔄 **En curso**: Migración de estructuras globales complejas (TarifarioGlobal, PremiosGlobal, etc.).
+-   ⏳ **Próximas Fases**: Fase 4 (i18n completo), Fase 5 (Área Agencias), Fase 6 (Área Jurados).
 
-Abrir <http://localhost:3000> (sitio público) y <http://localhost:3000/admin> (CMS).
+## Cómo arrancar en local
 
-> **Nota:** `npm install` requiere `--legacy-peer-deps` por un desfase entre las peer
-> dependencies de Next.js y Payload CMS. No afecta el funcionamiento.
+1.  **Entorno**: Copia `.env.example` a `.env.local` y configura `DATABASE_URI`, `PAYLOAD_SECRET` y las llaves de Plane.
+2.  **Base de Datos**: Levanta PostgreSQL con Docker:
+    ```bash
+    docker compose up -d
+    ```
+3.  **Instalación**:
+    ```bash
+    npm install --legacy-peer-deps
+    ```
+4.  **Desarrollo**:
+    ```bash
+    npm run dev
+    ```
+    - Sitio público: `http://localhost:3000`
+    - Panel CMS: `http://localhost:3000/admin`
 
-Comandos útiles:
+## Documentación de Referencia
 
-```bash
-npm run build
-npm run typecheck
-npm run lint
-npm test
-npm run seed:sponsors   # carga sponsors desde mocks a Payload (idempotente)
-npm run seed:edition     # carga edición 2026 en Payload (idempotente)
-npm run seed:rubros      # carga rubros desde mocks a Payload (idempotente)
-npm run seed:winners     # carga ganadores desde mocks a Payload (idempotente)
-npm run seed:rankings    # carga rankings desde mocks a Payload (idempotente)
-npm run seed:jurors      # carga jurados desde mocks a Payload (idempotente)
-npm run seed:hall-of-fame # carga miembros del hall of fame desde mocks a Payload (idempotente)
-npm run seed:download-files # carga archivos descargables desde mocks a Payload (idempotente)
-npm run seed:page-content   # carga contenidos de páginas y configuración global (create-only)
-npm run plane:check         # verifica acceso a la API de Plane (lee PLANE_API_KEY de .env.local; nunca la imprime)
-```
+-   `BITACORA-V1.md`: Estado técnico real y bitácora de decisiones (Fuente de Verdad).
+-   `GIT-WORKFLOW.md`: Protocolo detallado de Git y ramas.
+-   `AGENTS.md`: Protocolo de actuación y delegación para agentes.
+-   `JURADOS-SCORING-SPEC.md`: Especificación técnica del módulo de scoring (Fase 6).
 
-> **Acceso a Plane (agentes):** la API key vive UNA sola vez en `.env.local` como
-> `PLANE_API_KEY` (junto con `PLANE_WORKSPACE` y `PLANE_PROJECT_ID`). Todos los agentes
-> la leen del entorno — nunca hardcodeada, nunca pegada por sesión, nunca en git.
-> `.env.local` está gitignoreado. Ver las claves requeridas en `.env.example`.
-
-
-> **Nota:** `npm run seed:sponsors` requiere PostgreSQL corriendo (`docker compose up -d`)
-> y `.env.local` configurado. Es idempotente: si se corre dos veces, no duplica sponsors.
-> No borra datos existentes.
-
-> **Nota:** `npm run seed:edition` requiere los mismos prerequisitos. Es idempotente
-> por `year`: si se corre dos veces, no duplica ediciones. El getter `getCurrentEdition()`
-> ya existe y devuelve la edición actual desde Payload con fallback seguro a 2026.
-
-## Estructura resumida
-
-```text
-src/
-├─ app/
-│  ├─ [locale]/         rutas públicas y layouts localizados
-│  └─ (payload)/        admin CMS y API de Payload
-├─ collections/         config de colecciones de Payload (Users, Media, Sponsors…)
-├─ components/          componentes de layout, páginas y shared UI
-├─ lib/content/         getters async que alimentan las páginas
-├─ mocks/               datos temporales usados por la capa de contenido
-├─ i18n/                routing y mensajes de next-intl
-└─ test/                smoke tests y tests base
-```
-
-## Regla arquitectónica clave
-
-Las páginas **no deben importar mocks directo**.
-
-El flujo correcto es:
-
-```text
-página → src/lib/content/ → src/mocks/
-```
-
-`src/lib/content/` es el punto de reemplazo previsto para Fase 3: cuando entren
-Payload y PostgreSQL, las páginas deberían seguir consumiendo los mismos getters
-async, pero esos getters pasarán de leer mocks a consultar datos reales.
-
-## i18n y rutas
-
-- `es` es el idioma default y se sirve **sin prefijo**.
-- `pt` se sirve con prefijo: `/pt/...`.
-- Las rutas viven bajo `src/app/[locale]/`.
-- El chrome/layout ya está preparado con `next-intl`.
-- El contenido del cuerpo sigue en migración incremental según la documentación
-  actual; la traducción completa queda para Fase 4.
-
-## Flujo de ramas
-
-Según la documentación de operación vigente:
-
-- `main` es estable/publicable y solo recibe releases.
-- `develop` es la rama de integración y trabajo diario.
-- Codex trabaja en ramas `feat/codex-*` creadas desde `develop` y no mergea solo.
-- El tech lead revisa e integra a `develop`.
-
-## Documentos importantes
-
-- [`ROADMAP.md`](./ROADMAP.md) — fases, hitos y trabajo pendiente.
-- [`BITACORA-V1.md`](./BITACORA-V1.md) — estado operativo y decisiones recientes.
-- [`MANUAL-DE-OPERACION.md`](./MANUAL-DE-OPERACION.md) — método de trabajo,
-  testing y criterios de avance.
-- [`ORQUESTACION-AGENTES.md`](./ORQUESTACION-AGENTES.md) — roles, ramas,
-  worktrees y reglas anti-pisada.
-- [`SECURITY-AUDIT-NPM.md`](./SECURITY-AUDIT-NPM.md) — auditoría npm y decisiones
-  de seguridad pendientes.
-- [`JURADOS-SCORING-SPEC.md`](./JURADOS-SCORING-SPEC.md) — especificación
-  preliminar del scoring de jurados para Fase 6.
-
-## Reglas rápidas para agentes
-
-- Una tarea por vez.
-- No tocar archivos fuera del territorio asignado.
-- No mezclar commits ni cambios de distintas tareas.
-- No modificar páginas/componentes/mocks/tests si la tarea no lo pide.
-- Verificar con `npm test`, `npm run typecheck` y `npm run build` antes de cerrar
-  cambios de código o configuración.
-- Si hay discrepancia entre auditoría/documentos viejos y el sitio en vivo, el sitio
-  en vivo manda.
-
-## Próximas fases
-
-- **Fase 3:** ✅ PostgreSQL (Docker) · ✅ Payload CMS base · ✅ Admin `/admin` · ✅ Collections Users/Media/Sponsors/Editions/Rubros/Categories/Winners/RankingEntries/Jurors/HallOfFameMembers/DownloadFiles/PageContent y SiteConfig (Global) · ✅ `getSponsors()`, `getCurrentEdition()`, `getRubros()`, `getCategories()`, `getWinners()`, `getRankingEntries()`, `getJurors()`, `getHallOfFameMembers()`, `getDownloadFiles()`, `getPageContent()` y `getSiteConfig()` migrados a Payload con fallback · 🔄 Siguiente slice recomendado: Estructuras globales (TarifarioGlobal, PremiosGlobal, etc).
-- **Fase 4:** i18n completo es/pt para contenido.
-- **Fase 5:** área privada de Agencias.
-- **Fase 6:** área privada de Jurados y scoring.
+---
+*Nota: Los archivos `ROADMAP.md`, `ORQUESTACION-AGENTES.md` y `MANUAL-DE-OPERACION.md` se consideran documentación legacy y no deben usarse como fuente de verdad.*
