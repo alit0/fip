@@ -36,8 +36,8 @@ técnico — es un mapa de requisitos, reglas de negocio e incógnitas.
 |--------|------|-----------|
 | Reglamento FIP, sección K — sitio en vivo | Primaria, pública | Reglas del juzgamiento, fases, criterios, tabla de puntajes, irrevocabilidad |
 | `Auditoria_FIP_Festival.docx`, sección 12.2 | Secundaria, interna | Resumen funcional del login y scoring; confirma que el sistema actual no es visible |
-| `ROADMAP.md`, Hito 6 | Secundaria, interna | Reparto de trabajo entre agentes para Fase 6 |
-| `ORQUESTACION-AGENTES.md` | Secundaria, interna | Territorio de Codex (tests críticos del scoring) |
+| [`ROADMAP.md`](./docs/legacy/ROADMAP.md), Hito 6 | Secundaria, interna | Reparto de trabajo entre agentes para Fase 6 |
+| [`ORQUESTACION-AGENTES.md`](./docs/legacy/ORQUESTACION-AGENTES.md) | Secundaria, interna | Territorio de Codex (tests críticos del scoring) |
 
 ---
 

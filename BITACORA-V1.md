@@ -219,7 +219,7 @@ Gemini en `_scratch/` (ver sección 9).
 
 > [!NOTE]
 > Los **cimientos arquitectónicos** (capa de datos async + ruteo i18n con `[locale]`
-> y next-intl) corresponden al **Hito 1** del [ROADMAP](./ROADMAP.md) y ya están
+> y next-intl) corresponden al **Hito 1** del [ROADMAP](./docs/legacy/ROADMAP.md) y ya están
 > hechos. Por eso la Fase 4 sólo tiene que cargar contenido sobre rieles existentes.
 
 ### Progreso de la Fase 2 (páginas)
@@ -771,7 +771,7 @@ En `PDF/` hay dos documentos de la visión funcional original del proyecto:
 - Stack base: Next.js + PostgreSQL.
 
 **Qué quedó obsoleto:**
-- **Strapi** → reemplazado por **Payload CMS 3** (monolito dentro de la misma app Next.js).
+- ** reemplazado por **Payload CMS 3** (monolito dentro de la misma app Next.js).
 - Paleta de colores (negro/blanco/dorado → púrpura/dorado dark mode).
 - Roles originales (Owner/Admin/Agencia/Jurado → modelo actual con Admin sin Owner separado).
 - Ritmo de ejecución (Emi era más agresiva; el proyecto actual usa 7 fases graduales).
@@ -799,7 +799,7 @@ sincronizados.
 > publicable, solo recibe releases — nadie commitea ahí directo). `develop` es la
 > rama de integración / trabajo diario donde cae todo. `main` se actualiza desde
 > `develop` solo en un release (hito publicable). El detalle del flujo está en
-> [ORQUESTACION-AGENTES.md](./ORQUESTACION-AGENTES.md).
+> [ORQUESTACION-AGENTES.md](./docs/legacy/ORQUESTACION-AGENTES.md).
 
 > [!WARNING]
 > **Incidente resuelto:** en el setup inicial hubo confusión de carpetas (una
@@ -849,6 +849,7 @@ está funcionando. Lo que sigue:
    Siguiente: Estructuras globales (TarifarioGlobal, PremiosGlobal, etc).
 2. **Crear el resto de las collections** según el orden topológico definido en
    `_scratch/Plan_Collections_Fase3.md`: SiteConfig, PageContent,
+geContent,
    DownloadFile (Implementados). Pendientes: estructuras globales de datos complejos.
 3. **Storage S3 para producción** — reemplazar `staticDir: 'media'` por adapter S3.
 4. ~~**Script de seed**~~ ✅ Hecho: `npm run seed:sponsors`, `npm run seed:rubros`, `npm run seed:categories`, `npm run seed:winners`, `npm run seed:rankings`, `npm run seed:jurors`, `npm run seed:hall-of-fame`, `npm run seed:download-files` y `npm run seed:page-content` cargan datos desde mocks.
