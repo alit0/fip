@@ -130,6 +130,29 @@ El sandbox Codex (usuario `CodexSandboxOnline`, perfil `gentle-dev`) deniega la 
 de `**/.env.local` pero NO deniega `.plane-config`. Sebastián mantiene `.plane-config`
 en cada worktree de Codex con las 3 vars. El archivo está en `.gitignore` — no se versiona.
 
+**Mover una card de estado (PATCH):**
+
+```bash
+# 1. Obtener el ID de la card y el ID del estado destino
+tsx scripts/plane-check.ts --list-states        # lista todos los estados con sus UUIDs
+tsx scripts/plane-query.ts --label agent:X      # lista cards con su UUID en el campo (id)
+
+# 2. Aplicar el cambio
+tsx scripts/plane-check.ts --update-state <issue-uuid> <state-uuid>
+```
+
+IDs de estado del proyecto (estables):
+| Estado | UUID |
+|---|---|
+| Ready for Dev | `b4346a4c-9897-4bd9-8580-0474a6ac9c3e` |
+| In Dev | `3acb214d-d8da-446a-825b-76770a383f88` |
+| Ready for QA | `e13846f7-31c3-4689-b29a-81d43f10c71e` |
+| QA | `2ed82130-d06d-4fa1-96ba-1b30def0a45d` |
+| Ready for Docs | `3a2e23f4-c474-46db-aed4-b35b3d9a1aba` |
+| Docs | `b1237dbb-3226-44b0-aa41-a15dd30c5c2d` |
+| Done | `a6664753-a901-45ad-b35e-9653b81667fa` |
+| Blocked | `4e22574f-d73d-4d9e-9a38-8db987dd9e20` |
+
 **Si un script Plane falla con `❌ Missing Plane env vars`:**
 1. NO pedir la key al humano
 2. NO hardcodear la key en ningún archivo
