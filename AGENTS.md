@@ -120,17 +120,21 @@ tsx scripts/plane-list.ts [args]
 tsx scripts/plane-backup.ts
 ```
 
-**Cómo llegan las vars al script:**
-`PLANE_API_KEY`, `PLANE_WORKSPACE` y `PLANE_PROJECT_ID` están seteadas como variables
-de entorno de usuario de Windows (`setx`). Los scripts las toman de `process.env` sin
-leer `.env.local` — lo cual es necesario porque el sandbox Codex (gentle-dev) deniega
-la lectura de `**/.env.local` bajo `C:\agents`.
+**Cómo llegan las vars al script (orden de prioridad):**
+
+1. `process.env` (si el runner las inyecta directamente)
+2. `.env.local` en la raíz del worktree (accesible para agentes no-sandbox)
+3. `.plane-config` en la raíz del worktree (fallback para el sandbox Codex)
+
+El sandbox Codex (usuario `CodexSandboxOnline`, perfil `gentle-dev`) deniega la lectura
+de `**/.env.local` pero NO deniega `.plane-config`. Sebastián mantiene `.plane-config`
+en cada worktree de Codex con las 3 vars. El archivo está en `.gitignore` — no se versiona.
 
 **Si un script Plane falla con `❌ Missing Plane env vars`:**
 1. NO pedir la key al humano
-2. NO intentar leer `.env.local` directamente
-3. El problema es que las vars de entorno no están seteadas en este proceso →
-   escalar a Sebastián para re-correr `setx` desde fuera del sandbox (tarea de infra)
+2. NO hardcodear la key en ningún archivo
+3. Verificar que `.plane-config` existe en la raíz del worktree
+4. Si falta, escalar a Sebastián (tarea de infra — él recrea el archivo)
 
 **Nunca hardcodear la key. Nunca pedirla por chat. Nunca guardarla en código versionado.**
 
