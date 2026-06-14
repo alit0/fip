@@ -1,3 +1,6 @@
+> ⚠️ OBSOLETO — este doc describe el modelo de 3 agentes (pre-Plane).
+> El sistema vigente está en [SYSTEM-OVERVIEW.md](../../docs/SYSTEM-OVERVIEW.md), [GIT-WORKFLOW.md](../../GIT-WORKFLOW.md) y [AGENTS.md](../../AGENTS.md).
+
 # Roadmap — Réplica web FIP Festival (v2, con equipo de agentes)
 
 > Plan paso a paso desde el estado actual hasta el objetivo final: sitio público +

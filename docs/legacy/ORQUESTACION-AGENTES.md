@@ -1,3 +1,6 @@
+> ⚠️ OBSOLETO — este doc describe el modelo de 3 agentes (pre-Plane).
+> El sistema vigente está en [SYSTEM-OVERVIEW.md](../../docs/SYSTEM-OVERVIEW.md), [GIT-WORKFLOW.md](../../GIT-WORKFLOW.md) y [AGENTS.md](../../AGENTS.md).
+
 # Guía de orquestación — Equipo de agentes FIP Festival
 
 > Cómo trabajan los tres agentes (Claude Code, Codex/GPT-5.5, Gemini CLI) sin
