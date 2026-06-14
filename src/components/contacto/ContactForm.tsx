@@ -7,12 +7,8 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const inputClass =
   "w-full rounded-lg border border-fip-white/15 bg-fip-white/5 px-4 py-3 text-fip-white placeholder:text-fip-white/40 focus:border-fip-gold focus:outline-none focus:ring-1 focus:ring-fip-gold";
 
-/**
- * Contact form. Phase 2 has NO backend, so submitting only runs front-end validation
- * and shows a simulated success state. Wiring the real send is a Phase 3 task.
- */
 export default function ContactForm() {
-  const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" });
+  const [form, setForm] = useState({ nombre: "", email: "", mensaje: "", website: "" });
   const [error, setError] = useState<string | null>(null);
   const [sent, setSent] = useState(false);
 
@@ -21,7 +17,9 @@ export default function ContactForm() {
       setForm((prev) => ({ ...prev, [field]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  const [sending, setSending] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError(null);
 
@@ -34,9 +32,24 @@ export default function ContactForm() {
       return;
     }
 
-    // TODO: conectar a backend en Fase 3 — enviar { nombre, email, mensaje } a la API.
-    // Por ahora no hay backend al cual mandar, así que simulamos el envío exitoso.
-    setSent(true);
+    setSending(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await res.json()) as { message?: string };
+
+      if (!res.ok) {
+        setError(data.message ?? "No pudimos enviar el mensaje. Probá más tarde.");
+        return;
+      }
+
+      setSent(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   if (sent) {
@@ -84,6 +97,19 @@ export default function ContactForm() {
         />
       </div>
 
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="website">Sitio web</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.website}
+          onChange={update("website")}
+        />
+      </div>
+
       <div>
         <label htmlFor="mensaje" className="mb-1 block text-sm font-bold text-fip-white/90">
           Mensaje
@@ -108,9 +134,10 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="inline-flex items-center justify-center rounded-full bg-fip-gold px-6 py-3 text-sm font-bold uppercase tracking-widest text-fip-purple-900 transition hover:brightness-110"
+        disabled={sending}
+        className="inline-flex items-center justify-center rounded-full bg-fip-gold px-6 py-3 text-sm font-bold uppercase tracking-widest text-fip-purple-900 transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        Enviar mensaje
+        {sending ? "Enviando…" : "Enviar mensaje"}
       </button>
     </form>
   );
