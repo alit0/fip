@@ -28,6 +28,20 @@ try {
   }
 } catch {}
 
+// Fallback for Codex sandbox: .plane-config is readable even when .env.local is denied
+try {
+  const planeConfigContent = readFileSync(resolve(repoRoot, '.plane-config'), 'utf-8')
+  for (const line of planeConfigContent.split('\n')) {
+    const t = line.trim()
+    if (!t || t.startsWith('#')) continue
+    const i = t.indexOf('=')
+    if (i === -1) continue
+    const k = t.slice(0, i).trim()
+    const v = t.slice(i + 1).trim()
+    if (!(k in process.env)) process.env[k] = v
+  }
+} catch {}
+
 const apiKey = process.env.PLANE_API_KEY ?? ''
 const ws = process.env.PLANE_WORKSPACE ?? ''
 const proj = process.env.PLANE_PROJECT_ID ?? ''
