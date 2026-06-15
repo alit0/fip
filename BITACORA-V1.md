@@ -930,3 +930,11 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 > y `getSiteConfig()` → Payload con fallback seguro. Backbone relacional consolidado;
 > siguiente slice: Estructuras globales complejas (Tarifarios, etc.).
 
+> **Corrección 14 jun 2026:** Opi marcó erróneamente las cards #51 (robots.txt), #52 (sitemap.ts), #55 (security headers) y #50 (favicon) como "pendiente de implementación, no hay código" y las cerró en Done. **Están implementadas y mergeadas a develop**:
+> - #50 favicon → mergeado en `1a19efe`
+> - #51 robots.txt → `src/app/robots.ts` (cfa9a029)
+> - #52 sitemap → `src/app/sitemap.ts` (4f93a295)
+> - #55 security headers → implementado vía Next.js 15 (3b5f3898)
+>
+> Las 4 cards deben estar en **Ready for Docs** (no en Done con nota falsa). La bitácora ya fue corregida.
+
