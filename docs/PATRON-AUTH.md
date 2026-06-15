@@ -36,7 +36,20 @@ Los roles están definidos en `src/lib/auth/roles.ts`:
 - `agency`: Acceso a dashboard de agencias y wizard de inscripción.
 - `juror`: Acceso al sistema de votación de jurados.
 
-## Ejemplo de Uso
+## Flujo de Login y Recuperación (Frontend)
+
+La autenticación desde el frontend se realiza delegando la gestión de la sesión a los endpoints REST nativos de Payload CMS (`/api/users/*`). El formulario cliente interactúa directamente con estos endpoints y verifica los roles en la respuesta.
+
+### 1. Login
+Se realiza un `POST` a `/api/users/login`. Si el login es exitoso, Payload establece la cookie de sesión (`payload-token`). El cliente verifica que el rol devuelto sea el correcto para el área (ej. `agency`) usando funciones utilitarias (ej. `isAgencyLoginResponse`) antes de redirigir al panel.
+
+### 2. Recuperación de Contraseña
+El flujo "Forgot Password" envía un `POST` a `/api/users/forgot-password` con el email del usuario. Si el usuario existe, Payload genera un token y envía un correo (requiere que el proveedor de email esté configurado en el backend).
+
+### 3. Reseteo de Contraseña
+El link enviado por correo dirige a la misma página de acceso, pero con un parámetro `?token=...`. El formulario detecta este token, entra en modo "reset" y envía la nueva contraseña junto con el token a `/api/users/reset-password`.
+
+## Ejemplo de Uso (Página Privada Server-Side)
 
 ```typescript
 import { requireRole } from '@/lib/auth';
