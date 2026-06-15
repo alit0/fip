@@ -10,9 +10,14 @@ El desarrollo se organiza en torno a 5 agentes con roles especializados. Cada ag
 | :--- | :--- | :--- | :--- |
 | **Cloe** | Core / UI | Maquetado, componentes y lógica en `src/app`. | `fip-cloe/` |
 | **Gepeto** | Infra / QA | Seguridad, base de datos, config y tests de integración. | `fip-gepeto/` |
-| **Geni** | Relevamiento | Investigación y documentación de contenido en `_scratch/`. | `fip-geni/` |
+| **Geni** | Relevamiento | Investigación y documentación substantive. | `fip-geni/` |
 | **Chano** | Audit / Merge | QA, auditoría de código y merge de ramas a `develop`. | `fip-chano/` |
-| **Opi** | Docs | Gestión de documentación y cierre formal de tareas. | `fip-opi/` |
+| **Opi** | Docs | Documentación mecánica y cierre formal de tareas. | `fip-opi/` |
+
+### Coordinación Geni-Opi
+Para optimizar el flujo de documentación:
+- **Opi** se encarga de cards mecánicas y breves (ej: notas de favicon, robots.txt, sitemap, security headers).
+- **Geni** toma las cards con "sustancia" que requieren criterio arquitectónico o investigación real (ej: patrones de Globals, backend de contacto, login).
 
 ---
 
