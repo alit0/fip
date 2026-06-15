@@ -615,7 +615,37 @@ Implementación conjunta (commit técnico `1cf6f31`) para gestionar textos plano
 - Mappings correctos (arrays y richtext a strings planos).
 - Fallbacks vacíos y manejo de errores.
 
-**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking` + `Jurors` + `HallOfFameMembers` + `DownloadFiles` + `PageContent/SiteConfig`.
+**Estructuras Globales Tipadas (Tarifario, Premios, Fechas, Inscripción) — mini-hito cerrado (12 jun 2026):**
+
+Implementación del patrón de *Globals* estructurados en Payload (`src/globals/`) para páginas enteras sin listados repetitivos.
+
+**Comportamiento (Patrón):**
+- **Estructura Estricta**: En lugar de aplanar todo a RichText, los Globals (`TarifarioGlobal.ts`, `PremiosGlobal.ts`, etc.) definen campos, grupos y arrays fuertemente tipados (`localized: true`) que coinciden con los mocks de Frontend.
+- **Relaciones Desacopladas (Downloads)**: Las descargas no usan un campo `relationship` directo (que complicaría el seed y export), sino un campo texto `esDownloadKey` y `ptDownloadKey` que se resuelve en tiempo de ejecución buscando en la colección `download-files`.
+- **Getters Flexibles**: `getPremios()`, `getTarifario()`, etc. leen de Payload (`findGlobal`) y aplican `mapSections()`, `mapTrophies()` para normalizar los datos al formato exacto del mock de la UI. Si Payload falla o devuelve vacío (`isEmptyPremiosGlobal()`), se usa el mock como fallback silencioso.
+- **Seed Create-Only**: Los scripts de seed (`seed-tarifario.ts`, etc.) cargan los datos del mock a Payload pero NO pisan si ya existen, protegiendo las ediciones humanas.
+
+**Backend Contacto — mini-hito cerrado (13 jun 2026):**
+
+Backend real para el formulario público de `/contacto`.
+
+**Comportamiento:**
+- Colección **ContactMessages** para persistencia (`stored`, `sent`, `spam`, `failed`).
+- Endpoint **REST** en `/api/contact/route.ts` que valida, aplica Rate Limiting (en memoria, max 5 req / 10m) y detecta spam vía Honeypot oculto.
+- **Envío de Email**: Integrado con Resend (`sendResendEmail`) usando `RESEND_API_KEY`.
+- Testeado con el happy path y rechazo de honeypot/spam.
+
+**Login Agencias (Área Privada) — mini-hito cerrado (13 jun 2026):**
+
+Implementación de login delegando en la API nativa de Payload.
+
+**Comportamiento:**
+- Usa `/api/users/login`, `/api/users/forgot-password` y `/api/users/reset-password`.
+- El frontend gestiona los estados de "login", "forgot" y "reset" en un solo componente que maneja los errores visuales y la validación.
+- Al hacer login, el frontend valida que el usuario devuelto tenga el rol adecuado (`isAgencyLoginResponse`) antes de redirigir al panel.
+- Protegido por el patrón `requireRole` detallado en `docs/PATRON-AUTH.md`.
+
+**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking` + `Jurors` + `HallOfFameMembers` + `DownloadFiles` + `PageContent/SiteConfig` + `Estructuras Globales (Tarifario, Premios, Fechas, Inscripcion)` + `ContactMessages` + Auth Flow.
 
 **Próximo slice técnico:** Estructuras globales (TarifarioGlobal, PremiosGlobal, etc).
 
