@@ -59,3 +59,5 @@ geni-reporte.txt
 
 # Plane API config (not in deny list, non-versionable)
 .plane-config
+# Local AI runtime state
+.atl/
