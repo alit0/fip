@@ -56,3 +56,6 @@ plane-rebuilt-map.json
 # other agents' working artifacts
 geni-reporte.txt
 .deepseek/
+
+# Plane API config (not in deny list, non-versionable)
+.plane-config
