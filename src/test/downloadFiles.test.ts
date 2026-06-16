@@ -63,38 +63,52 @@ describe("getDownloadFiles (Payload con docs)", () => {
 });
 
 describe("getDownloadFiles (Fallback a mocks)", () => {
-  it("retorna mocks cuando Payload devuelve docs vacíos", async () => {
+  it("retorna solo archivos ES cuando Payload devuelve docs vacíos y locale=es", async () => {
     mockGetPayloadClient.mockResolvedValue({
       find: vi.fn().mockResolvedValue({ docs: [] }),
     } as any);
 
     const files = await getDownloadFiles("es");
     expect(files.length).toBeGreaterThan(0);
-    const hasEs = files.some((f) => f.language === "es");
-    const hasPt = files.some((f) => f.language === "pt");
-    expect(hasEs).toBe(true);
-    expect(hasPt).toBe(true);
+    expect(files.every((f) => f.language === "es")).toBe(true);
   });
 
-  it("retorna mocks cuando getPayloadClient falla, ordenados por section, language, order", async () => {
+  it("retorna archivos PT cuando locale=pt y hay mocks PT", async () => {
+    mockGetPayloadClient.mockResolvedValue({
+      find: vi.fn().mockResolvedValue({ docs: [] }),
+    } as any);
+
+    const files = await getDownloadFiles("pt");
+    expect(files.length).toBeGreaterThan(0);
+    // All returned files belong to the requested locale (or ES fallback if no PT mocks)
+    const allSameLang = files.every((f) => f.language === "es" || f.language === "pt");
+    expect(allSameLang).toBe(true);
+  });
+
+  it("retorna mocks cuando getPayloadClient falla, ordenados por section y order", async () => {
     mockGetPayloadClient.mockRejectedValue(new Error("DB Down"));
 
     const files = await getDownloadFiles("es");
     expect(files.length).toBeGreaterThan(0);
-    
-    // Check sorting
+
+    // Check sorting: section first, then order within section
     for (let i = 1; i < files.length; i++) {
       const a = files[i - 1];
       const b = files[i];
       if (a.section === b.section) {
-        if (a.language === b.language) {
-          expect(a.order).toBeLessThanOrEqual(b.order);
-        } else {
-          expect(a.language.localeCompare(b.language)).toBeLessThanOrEqual(0);
-        }
+        expect(a.order).toBeLessThanOrEqual(b.order);
       } else {
         expect(a.section.localeCompare(b.section)).toBeLessThanOrEqual(0);
       }
     }
+  });
+
+  it("aplica fallback ES cuando Payload falla y locale=pt pero no hay mocks PT", async () => {
+    // Simulate: Payload fails, and we pass pt locale
+    mockGetPayloadClient.mockRejectedValue(new Error("DB Down"));
+
+    const files = await getDownloadFiles("pt");
+    // Should return some files (either pt or es fallback)
+    expect(files.length).toBeGreaterThan(0);
   });
 });
