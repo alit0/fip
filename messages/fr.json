@@ -1,0 +1,5 @@
+{
+  "nav": { "reglamento": "Règlement", "categorias": "Catégories", "inscripcion": "Inscription", "fechas": "Dates limites", "tarifario": "Tarifs", "premios": "Prix / Répliques", "jurados": "Jurés", "ganadores": "Lauréats", "hall": "Hall de la renommée", "contacto": "Contact", "descargas": "Téléchargements" },
+  "access": { "jurados": "Accès Jurés", "agencias": "Accès Agences" },
+  "footer": { "follow": "Suivez-nous sur", "downloadsEs": "Téléchargements (ES)", "downloadsPt": "Téléchargements (PT)", "contact": "Contact" }
+}
