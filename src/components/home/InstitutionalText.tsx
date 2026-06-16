@@ -12,7 +12,7 @@ export default function InstitutionalText({
     <Section bg="bright">
       <div className="grid items-start gap-10 md:grid-cols-[1fr_2fr]">
         <ImagePlaceholder
-          label="Trofeo principal FIP (TODO)"
+          label="Trofeo principal FIP"
           className="mx-auto aspect-[3/4] w-full max-w-xs"
         />
         <div>

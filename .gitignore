@@ -40,3 +40,24 @@ audit_live_site.py
 # downloadable PDF assets — served locally for dev/review, real serving via Phase 3 storage
 /PDF/
 /public/descargas/
+
+# local graph/code visualization artifacts
+.graphifyignore
+.opencode/
+graphify-out/
+
+# Payload CMS local media uploads (dev only; production uses S3/compatible storage)
+/media/
+
+# Plane operational artifacts (backups, board map) — local only, not repo assets
+plane-backup-*.json
+plane-backup-*.md
+plane-rebuilt-map.json
+# other agents' working artifacts
+geni-reporte.txt
+.deepseek/
+
+# Plane API config (not in deny list, non-versionable)
+.plane-config
+# Local AI runtime state
+.atl/

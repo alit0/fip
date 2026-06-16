@@ -7,7 +7,7 @@
     "badgeLabel": "Años",
     "ctaLabel": "Informe Ganadores 2025 .PDF",
     "ctaHref": "/descargas/campeones-2025.pdf",
-    "imageTodo": "TODO: foto del hero (red carpet / gala). Asset real pendiente."
+    "imageTodo": "Imagen principal del festival."
   },
   "muestraDigital": {
     "ctaLabel": "Informe Ganadores 2025 .PDF",
@@ -53,11 +53,11 @@
     "heading": "Jurados 2026",
     "ctaLabel": "Todos los jurados",
     "ctaHref": "/jurados/2026",
-    "todo": "TODO: la auditoría dice «12 jurados» pero lista 13; faltan cargo, agencia y fotos reales de cada jurado."
+    "todo": "Información ampliada de jurados pendiente de confirmación."
   },
   "sponsors": {
     "heading": "Auspician",
-    "todo": "TODO: lista de auspiciantes incompleta (auditoría: «AEVEA, Nuevo Marketing, La Fundación, Hall de la Fama, etc.») y logos pendientes."
+    "todo": "Lista de auspiciantes y logos pendiente de confirmación."
   },
   "rankings": { "heading": "Rankings" }
 }

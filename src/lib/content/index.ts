@@ -7,9 +7,9 @@
 export { type Locale, DEFAULT_LOCALE } from "./locale";
 export { getSiteConfig } from "./site-config";
 export { getHomeContent } from "./home";
+export { getRubros, type RubroEntry } from "./rubros";
+export { getCategories, type CategoryEntry } from "./categories";
 export {
-  getRubros,
-  getCategories,
   getCategoriesByRubro,
   getCategoriasPage,
 } from "./catalog";
@@ -21,7 +21,13 @@ export { getPremios } from "./premios";
 export { getJurors } from "./jurors";
 export { getJurados } from "./jurados";
 export { getHallDeLaFama } from "./hall-de-la-fama";
+export { getHallOfFameMembers } from "./hallOfFameMembers";
 export { getContacto } from "./contacto";
 export { getRanking } from "./ranking";
+export { getRankingEntries, type RankingEntry } from "./rankings";
 export { getGanadores } from "./ganadores";
+export { getWinners, type WinnerEntry } from "./winners";
+export { getDownloadFiles, type DownloadFile } from "./downloadFiles";
 export { getSponsors } from "./sponsors";
+export { getCurrentEdition } from "./edition";
+export { getPageContent, type PageContentEntry } from "./pageContent";

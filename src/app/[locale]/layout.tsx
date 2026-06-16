@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale, getMessages } from "next-intl/server";
 import { Inter, Lato, Archivo_Black } from "next/font/google";
 import { routing } from "@/i18n/routing";
+import { appIcons } from "@/lib/metadata/icons";
 import "../globals.css";
 
 const inter = Inter({
@@ -35,6 +36,7 @@ export const metadata: Metadata = {
   },
   description:
     "Festival Iberoamericano de Promociones y Eventos. 27 años de trayectoria.",
+  icons: appIcons,
 };
 
 export function generateStaticParams() {

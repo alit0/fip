@@ -19,7 +19,7 @@ export default function AwardsGrid({
             href={award.href}
             className="group flex flex-col items-center gap-3 rounded-lg p-3 transition hover:bg-fip-white/5"
           >
-            <ImagePlaceholder label="Trofeo (TODO)" className="aspect-square w-full" />
+            <ImagePlaceholder label="Trofeo" className="aspect-square w-full" />
             <span className="text-center text-xs font-bold uppercase tracking-wide text-fip-white/90 group-hover:text-fip-gold">
               {award.label}
             </span>

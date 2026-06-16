@@ -10,15 +10,43 @@
     "lint": "eslint .",
     "start": "next start",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "seed:sponsors": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-sponsors.ts",
+    "seed:edition": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-edition.ts",
+    "seed:rubros": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-rubros.ts",
+    "seed:categories": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-categories.ts",
+    "seed:winners": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-winners.ts",
+    "seed:rankings": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-rankings.ts",
+    "seed:jurors": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-jurors.ts",
+    "seed:hall-of-fame": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-hall-of-fame.ts",
+    "seed:download-files": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-download-files.ts",
+    "seed:page-content": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-page-content.ts",
+    "seed:premios": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-premios.ts",
+    "seed:fechas": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-fechas.ts",
+    "seed:inscripcion": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-inscripcion.ts",
+    "seed:pt-content": "tsx --require ./scripts/preload-nextenv.cjs scripts/seed-pt-content.ts",
+    "plane:check": "tsx scripts/plane-check.ts",
+    "plane:states": "tsx -e \"const PLANE_API_BASE='https://plane.allitto.com/api/v1'; const fs=require('fs'); require('dotenv').config({path:'.env.local'}); async function main(){ const url = PLANE_API_BASE + '/workspaces/' + process.env.PLANE_WORKSPACE + '/projects/' + process.env.PLANE_PROJECT_ID + '/states/'; const res=await fetch(url,{headers:{'X-API-Key':process.env.PLANE_API_KEY}}); const data=await res.json(); console.log(JSON.stringify(data.results.map(s=>({id:s.id,name:s.name})),null,2)); } main();\"",
+    "plane:backup": "tsx scripts/plane-backup.ts"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.85.0",
+    "@payloadcms/next": "^3.85.0",
+    "@payloadcms/richtext-lexical": "^3.85.0",
     "country-flag-icons": "^1.6.17",
+    "graphql": "^16.14.1",
     "lucide-react": "^0.469.0",
     "next": "^15.1.6",
     "next-intl": "^4.13.0",
+    "payload": "^3.85.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sharp": "^0.34.5",
+    "unique-names-generator": "^4.7.1"
+  },
+  "overrides": {
+    "form-data": "^4.0.6",
+    "postcss": "^8.5.15"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.5",
@@ -37,6 +65,7 @@
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.3",
     "vite-tsconfig-paths": "^5.1.4",
+    "tsx": "^4.21.0",
     "vitest": "^2.1.9"
   }
 }

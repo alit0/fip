@@ -21,9 +21,7 @@ export default function ImagePlaceholder({
       className={`flex flex-col items-center justify-center gap-2 border border-dashed border-fip-white/30 bg-fip-white/5 p-4 text-center ${rounded} ${className}`}
     >
       <ImageIcon className="text-fip-white/40" size={28} strokeWidth={1.5} />
-      <span className="text-[10px] uppercase tracking-widest text-fip-white/40">
-        {label}
-      </span>
+      <span className="sr-only">{label}</span>
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { MAIN_NAV, JURADO_YEARS, GANADOR_YEARS } from "@/lib/navigation";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 const DROPDOWN_ITEMS = {
   jurados: JURADO_YEARS.map((y) => ({ label: String(y), href: `/jurados/${y}` })),
@@ -93,16 +94,22 @@ export default function MainNav() {
           })}
         </ul>
 
-        {/* ---------- Mobile hamburger toggle (below lg) ---------- */}
-        <button
-          type="button"
-          aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen((v) => !v)}
-          className="text-fip-white lg:hidden"
-        >
-          {mobileOpen ? <X size={26} /> : <Menu size={26} />}
-        </button>
+        <div className="flex items-center gap-3">
+          <div className="hidden lg:block">
+            <LocaleSwitcher />
+          </div>
+
+          {/* ---------- Mobile hamburger toggle (below lg) ---------- */}
+          <button
+            type="button"
+            aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((v) => !v)}
+            className="text-fip-white lg:hidden"
+          >
+            {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
       </div>
 
       {/* ---------- Mobile drawer ---------- */}
@@ -158,6 +165,9 @@ export default function MainNav() {
                 </li>
               );
             })}
+            <li className="border-b border-white/5 py-3">
+              <LocaleSwitcher />
+            </li>
           </ul>
         </div>
       )}

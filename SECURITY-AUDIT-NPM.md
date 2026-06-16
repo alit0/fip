@@ -158,3 +158,60 @@ mantiene este upgrade en `package.json` ni en `package-lock.json`.
 Decisión pendiente para tech lead: si se quiere cerrar el critical de Vitest, hacerlo
 como tarea separada de migración de test runner/config Vite, no como bump seguro de
 dependencia.
+
+## Seguimiento Fase 3 — AGENTESOPE-62 — 2026-06-16
+
+**Rama:** `feat/AGENTESOPE-62-npm-security`
+
+### Estado inicial al comenzar esta fase
+
+`npm audit` reportaba **20 vulnerabilidades** (7 moderate, 12 high, 1 critical).
+Las vulnerabilidades habían crecido respecto a la Fase 1 por incorporación de Payload CMS al stack.
+
+### Fixes aplicados
+
+Se agregaron dos `overrides` en `package.json`:
+
+```json
+"overrides": {
+  "form-data": "^4.0.6",
+  "postcss": "^8.5.15"
+}
+```
+
+**`form-data@^4.0.6`**: Fix para CRLF injection (GHSA-hmw2-7cc7-3qxx).
+- Entró por: `jsdom@25.0.1` → `form-data@4.0.5`
+- Fix seguro: patch dentro del rango `^4.0.0` que jsdom ya declaraba.
+- Severidad: high → resuelto.
+
+**`postcss@^8.5.15`**: Fix para XSS via `</style>` en stringify (GHSA-qx2v-qp2m-jg93).
+- Entró por: `next@15.5.19` que vendorea `postcss@8.4.31` internamente.
+- Override fuerza la versión a nivel global incluyendo `next/node_modules/postcss`.
+- Severidad: moderate → resuelto.
+
+### Resultado post-fix
+
+`npm audit`: **16 vulnerabilidades** (4 moderate, 11 high, 1 critical).
+
+Las 4 restantes eliminadas son `form-data` (1 high) y `postcss`/`next`/`next-intl` en cascade (3 moderate, parcialmente).
+
+### Vulnerabilidades sin fix disponible (estado actual)
+
+| Paquete | Severidad | Motivo | Acción |
+|---------|-----------|--------|--------|
+| `esbuild <=0.28.0` | high | No hay fix upstream disponible. Afecta toda la cadena: `vite`, `tsx`, `drizzle-kit`, todo Payload CMS. Solo dev/tooling, no runtime público. | Documentado. Sin acción posible. |
+| `vitest <=3.2.5` (+ vite, vite-node, @vitest/mocker) | critical/moderate | Fix disponible: `vitest@4.1.9` (major). Ya intentado en Fase 2 y revertido — los tests dejaron de ejecutar por incompatibilidad de transforms con Rolldown/vite@8.x. | Pendiente como tarea separada de migración. |
+| `payload <=3.85.0` (+ @payloadcms/*) | high | Toda la cadena Payload depende de `tsx` que usa `esbuild` vulnerable. No hay versión de Payload 3.x sin este problema. | Sin fix en 3.x. Monitorear Payload 4.x. |
+| `postcss` vía `next` | moderate | El override resuelve el package anidado pero npm sigue mostrando `next` en el audit por declaración interna. La librería real instalada es 8.5.15. | Resuelto funcionalmente; el advisory se verá resuelto cuando Next actualice su declaración. |
+
+### Validación
+
+- `npx tsc --noEmit`: sin errores
+- `npx vitest run`: **120 tests pasan** (24 suites)
+
+### Decisiones tomadas
+
+1. **No se usó `npm audit fix`** (genera conflictos de peer deps con `@payloadcms/next@3.85.1` vs `next@15.5.x`).
+2. **No se upgradeó Vitest** a major — es una tarea separada de migración (documentado en Fase 2).
+3. **No se upgradeó Next** a 16.x — cambia el rango de compatibilidad con Payload y es un salto mayor no autorizado.
+4. **Overrides manuales** es el mecanismo correcto para fijar versiones transitivas sin breaking changes en dependencias directas.

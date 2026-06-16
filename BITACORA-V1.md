@@ -3,9 +3,9 @@
 > Réplica de [fipfestival.com.ar](https://www.fipfestival.com.ar/) en **Next.js + Payload CMS**.
 > Documento de referencia para retomar el proyecto o traspasarlo a otra persona.
 
-**Estado:** Fase 2 en curso — 7 de 12 páginas maquetadas · equipo de 3 agentes en marcha
+**Estado:** Fase 3 EN CURSO — Payload CMS base integrado · PostgreSQL en Docker · Admin /admin funcionando
 **Repositorio:** `github.com/alit0/fip` (trabajo en `develop`; `main` = releases)
-**Última actualización:** 3 de junio de 2026
+**Última actualización:** 7 de junio de 2026
 
 ## Tabla de contenidos
 
@@ -173,8 +173,13 @@ src/
 │     │  ├─ contacto/, 20-consejos/
 │     │  ├─ jurados/[year]/, ganadores/[year]/, ranking/[country]/
 │     ├─ (auth)/                 # áreas privadas (fase final): acceso/jurados, acceso/agencias
-│     └─ (payload)/              # admin CMS (se cablea en Fase 3)
-├─ collections/                  # SCHEMA Payload = modelo de datos (Fase 3)
+│     └─ (payload)/              # admin CMS + API (cableado en Fase 3) ✅
+│        ├─ admin/[[...segments]]/ page.tsx, not-found.tsx
+│        ├─ admin/importMap.js
+│        ├─ api/[...slug]/route.ts
+│        └─ layout.tsx
+├─ collections/                  # SCHEMA Payload = modelo de datos (Fase 3) ✅
+│  ├─ Users.ts, Media.ts, Sponsors.ts
 ├─ components/
 │  ├─ layout/                    # TopBar, MainNav (con menú mobile), Footer, SocialIcons
 │  ├─ home/ categorias/ inscripcion/ fechas/ reglamento/   # componentes por página
@@ -206,33 +211,34 @@ Gemini en `_scratch/` (ver sección 9).
 | Fase | Qué incluye | Estado |
 |------|-------------|--------|
 | **Fase 1** | Arquitectura + esqueleto: layout base, routing de las 15 páginas como placeholders, tokens | ✅ Completa y pusheada |
-| **Fase 2** | Frontend público con datos mock: maquetar las 12 páginas, responsive + SEO | 🔄 En curso (7/12) |
-| **Fase 3** | Backend/API + CMS: collections de Payload, PostgreSQL, panel admin, storage, migrar mock→queries | ⏳ Pendiente |
+| **Fase 2** | Frontend público con datos mock: maquetar las 12 páginas, responsive + SEO | ✅ Completa (12/12) — release a `main` |
+| **Fase 3** | Backend/API + CMS: collections de Payload, PostgreSQL, panel admin, storage, migrar mock→queries | 🔄 En curso — Payload base + PostgreSQL + Admin integrados |
 | **Fase 4** | i18n es/pt: campos traducibles + UI con next-intl + descargas por idioma | ⏳ Pendiente (rieles ya puestos en Hito 1) |
 | **Fase 5** | Área privada Agencias: login, dashboard, wizard de 4 pasos, validaciones | ⏳ Pendiente |
 | **Fase 6** | Área privada Jurados: scoring por 4 criterios, votos bloqueables, reportes (la más compleja) | ⏳ Pendiente |
 
 > [!NOTE]
 > Los **cimientos arquitectónicos** (capa de datos async + ruteo i18n con `[locale]`
-> y next-intl) corresponden al **Hito 1** del [ROADMAP](./ROADMAP.md) y ya están
+> y next-intl) corresponden al **Hito 1** del [ROADMAP](./docs/legacy/ROADMAP.md) y ya están
 > hechos. Por eso la Fase 4 sólo tiene que cargar contenido sobre rieles existentes.
 
 ### Progreso de la Fase 2 (páginas)
 
 - [x] 1. **Home** — hero, premios, FIP 2025, categorías, jurados, auspiciantes, rankings (corregido para alinearlo al sitio en vivo)
-- [x] 2. **Reglamento** — índice, artículos A–R, tabla de puntajes
+- [x] 2. **Reglamento** — índice, artículos A–R, tabla de puntajes **+ cuerpos verbatim cargados**
 - [x] 3. **Categorías** — 23 rubros, 143 categorías reales (desde PDF + MP del sitio en vivo)
 - [x] 4. **Inscripción** — pasos, condiciones, contenido de la presentación
 - [x] 5. **Fechas de cierre** — descuentos por pago anticipado + tabla de cierres regionales
 - [x] 6. **Tarifario** — aranceles, descuentos por cantidad, formas de pago, envío de factura
 - [x] 7. **Premios / Réplicas** — catálogo de 6 trofeos con precios, tarifario de envío, medios de pago
-- [ ] 8. Jurados `[year]` ← siguiente (Gemini ya relevó)
-- [ ] 9. Ganadores `[year]` (Gemini dejó solo datos crudos; 2024 y 2023 sólo en PDF)
-- [ ] 10. Hall de la Fama (Gemini ya relevó)
-- [ ] 11. Ranking `[country]` (Gemini ya relevó)
-- [ ] 12. Contacto (incluye formulario nuevo)
+- [x] 8. **Jurados `[year]`** — grilla por año (2020-2026), país/bandera; fuente v2 con flag interno de verificación
+- [x] 9. **Ganadores `[year]`** — híbrida (completo / parcial / solo-PDF) con botones de informe en PDF
+- [x] 10. **Hall de la Fama** — bloque institucional + miembros (bio en texto o en imagen)
+- [x] 11. **Ranking `[country]`** — tabla histórica 2017-2024 por país (6 países)
+- [x] 12. **Contacto** — datos de contacto + formulario (client component; envío sin backend, TODO Fase 3)
 
-Las 5 que faltan (8–12) están como placeholders y ya tienen su ruta y su smoke test.
+Las 12 páginas públicas están maquetadas sobre la capa async + i18n, con smoke tests y
+aserciones de datos críticos. **Release de Fase 2 a `main`** hecho (ver "Estado al cierre").
 
 ---
 
@@ -251,7 +257,7 @@ Las 5 que faltan (8–12) están como placeholders y ya tienen su ruta y su smok
 > sentido una base de datos para mostrar páginas vacías). La estructura quedó lista
 > para que Payload entre limpio en la Fase 3.
 
-### 7.2 Fase 2 — Páginas maquetadas (7/12)
+### 7.2 Fase 2 — Páginas maquetadas (12/12)
 
 Todas tiran de un mock tipado a través de la capa async (`lib/content`), con
 SEO/Open Graph por página e imágenes como placeholders marcados `TODO`.
@@ -264,6 +270,9 @@ alinearlo al sitio en vivo** (ver detalle abajo).
 
 **Reglamento** — índice de anclas, artículos A–R con badges, tabla de puntajes
 (Gran Prix 12 · Oro 10 · Plata 6 · Bronce 4 · Finalista 1), descargas ES/PT.
+**Cuerpos legales verbatim cargados** (17 de 18 artículos, desde
+`_scratch/Texto_Canonico_Vivo.md`): pasó de solo-estructura a **contenido completo**.
+El Art. O queda sin cuerpo a propósito (el vivo solo tiene su título, sin texto legal).
 
 **Categorías** — header + grilla de 23 rubros numerados (anclas `#rubro-N`) +
 "Ventajas a considerar" + detalle por rubro. Las **143 categorías** se extrajeron de
@@ -292,14 +301,362 @@ pasada (`fix(home)`):
 
 1. **FIP 2025** — el cuerpo ya estaba en verbatim completo; se ajustaron los
    subtítulos a mayúsculas como en el vivo ("LA NOCHE DE LOS CAMPEONES", "LOS
-   ANUNCIOS DEL FIP"). _(Esto cierra el pendiente histórico del copy verbatim.)_
+   ANUNCIOS DEL FIP"). _(Pendiente histórico del copy verbatim **RESUELTO**:
+   confirmado contra `_scratch/Texto_Canonico_Vivo.md` por la auditoría de fidelidad.)_
 2. **Franja del informe** — el vivo no tiene título "Muestra digital"; la franja
    quedó sólo con el CTA de descarga del informe (sin título ni imagen).
 3. **Nombres de premios** — "Oro/Plata/Bronce" → "FIP de Oro/Plata/Bronce".
 4. **"Quiero mi réplica"** — pasó de botón externo a ser un ítem más de la grilla de
    premios, como en el vivo.
 
-### 7.3 Infraestructura (territorio Codex)
+### 7.3 Fase 3 — Payload CMS base (en curso)
+
+**PostgreSQL:** base de datos PostgreSQL 16 Alpine levantada con Docker Compose
+(`docker compose up -d`). Contenedor `fip-postgres`, usuario `fip_user`, base
+`fip_dev`, puerto `5432`, volumen persistente `fip_postgres_data`. Healthcheck con
+`pg_isready`.
+
+**Payload CMS 3:** integrado como dependencia dentro de la misma app Next.js.
+Configuración en `payload.config.ts` (raíz del proyecto) con:
+- `@payloadcms/db-postgres` conectado vía `DATABASE_URI` de `.env.local`.
+- `@payloadcms/richtext-lexical` como editor.
+- Localization rails `es`/`pt` preparados (`defaultLocale: es`, `fallback: true`).
+- Tipos generados en `src/payload-types.ts`.
+
+**Collections iniciales creadas:**
+- `Users` — auth mínima (`auth: true`, email/password). Para entrar al admin.
+  Sin roles complejos todavía (Fase 5-6).
+- `Media` — uploads para imágenes, PDF, PPTX, DOCX. `staticDir: 'media'`.
+  Storage local primero; S3 pendiente.
+- `Sponsors` — `name` (requerido), `country`, `countryCode` (ISO alpha-2),
+  `logo` (upload→Media, opcional), `url`, `order`, `active` (default `true`).
+
+**Rutas de Payload:** bajo `src/app/(payload)/` (fuera del `[locale]` de i18n):
+- `admin/[[...segments]]/page.tsx` — panel admin (`/admin`).
+- `api/[...slug]/route.ts` — REST API (`/api`).
+- `layout.tsx` — `RootLayout` con `serverFunction` e `importMap`.
+
+**Middleware:** next-intl excluye `/admin` del matcher para no interferir.
+
+**Dependencias instaladas:** `payload`, `@payloadcms/next`, `@payloadcms/db-postgres`,
+`@payloadcms/richtext-lexical`, `sharp`, `graphql`.
+
+**Nota técnica:** la instalación usó `--legacy-peer-deps` porque
+`@payloadcms/next@3.85.0` espera Next.js `<15.5.0` pero el proyecto tiene
+`next@15.5.19`. No afecta el funcionamiento (build, typecheck y tests en verde).
+
+**Pipeline real validado — mini-hito cerrado (7 jun 2026):**
+
+`getSponsors()` ahora lee Payload primero y cae al mock si:
+- DB no disponible
+- Payload falla
+- `docs: []` (sin sponsors activos en la base)
+
+El fallback mock ("Avid") queda intacto como red de seguridad cuando Payload
+no responde o no tiene datos. Home ya renderiza sponsors reales desde Payload
+(`Test Payload Sponsor`, `Test Payload Sponsor 2`); el mock no apareció,
+confirmando que el pipeline real está funcionando.
+
+**Tests subidos a 32** (desde 25): se agregaron 7 tests focales para `getSponsors()`
+cubriendo:
+- Payload con docs válidos → mapping correcto de `name`, `url`, `logoUrl`
+- Payload con `docs: []` → fallback mock
+- Payload con error → fallback mock
+- Protección contra mutación del campo `name` (mutation testing confirma)
+
+**Mutation testing:** antes de este cambio, los tests no detectaban roturas en
+el mapping de `name`; ahora sí. Fue el indicador de que el pipeline real estaba
+validado.
+
+**`/admin` funciona** — puede tener timeout inicial (>30s) por carga pesada
+de Payload CMS durante el primer arranque.
+
+**Pendientes específicos de Sponsors:**
+- ~~Seed formal de Sponsors~~ ✅ Hecho: `npm run seed:sponsors`
+- Resolver `logoUrl` real desde Media (actualmente hardcodeado como `null`)
+
+**Próximas migraciones:** ~~`Edition`~~ ✅ Hecho. Siguiente: `Rubro` (depende de Edition),
+luego `Category → Winner`. El patrón ya está probado dos veces (Sponsors y Edition).
+
+**Seed formal de Sponsors — mini-hito cerrado (7 jun 2026):**
+
+Script oficial creado en `scripts/seed-sponsors.ts` para cargar sponsors desde
+`src/mocks/sponsors.json` a Payload/PostgreSQL. Comando: `npm run seed:sponsors`.
+
+**Comportamiento:**
+- Lee los 4 sponsors del mock: AEVEA, Nuevo Marketing, La Fundación, Hall de la Fama
+- Upsert por `name` (exact match): si existe, actualiza `url`/`active`/`order`; si no, crea
+- Idempotente: correr dos veces no duplica
+- No borra datos existentes (no implementa delete/reset)
+- No sube logos todavía (`logoUrl` queda pendiente; Media no está cableada)
+- Mapea: `name`, `url`, `active: true`, `order` (índice del array)
+- NO mapea `country`/`countryCode` (no están en el mock actual)
+
+**Requisitos:**
+- PostgreSQL corriendo (`docker compose up -d`)
+- `.env.local` con `DATABASE_URI` y `PAYLOAD_SECRET`
+
+**Datos de prueba locales:** la DB local tiene 2 sponsors adicionales (`Test Payload Sponsor`,
+`Test Payload Sponsor 2`) creados manualmente durante verificación del pipeline. No son parte
+del seed oficial; pueden limpiarse manualmente si molestan, pero no afectan el funcionamiento.
+
+**Pendiente específico:**
+- Resolver `logoUrl` real desde Media (actualmente hardcodeado como `null` en mock y seed)
+
+**Edition mínimo — mini-hito cerrado (7 jun 2026):**
+
+Collection Payload `Editions` creada como raíz del backbone del modelo de datos
+(entidad sin dependencias que agrupa Rubros, Categorías, Ganadores, etc.).
+
+**Comportamiento:**
+- Campos: `year` (number, required, unique), `isCurrent` (checkbox, default false),
+  `title` (text opcional), `status` (select: draft/active/closed)
+- Getter `getCurrentEdition()` en `src/lib/content/edition.ts`
+- Intenta leer desde Payload: `find({ where: { isCurrent: true }, limit: 1 })`
+- Fallback seguro si Payload falla, docs vacío, o tabla no existe:
+  ```ts
+  { year: 2026, isCurrent: true, title: "FIP Festival 2026", status: "active" }
+  ```
+- Seed idempotente por `year`: `npm run seed:edition`
+- No borra ediciones existentes
+- Warn si hay múltiples ediciones con `isCurrent=true`
+
+**Tests subidos a 38** (desde 32): se agregaron 6 tests para `getCurrentEdition()`
+cubriendo:
+- Payload con doc actual → devuelve Payload
+- Payload con docs vacío → fallback 2026
+- Payload con error → fallback 2026
+- Payload null → fallback 2026
+- Title fallback si falta en doc
+- Status null si falta en doc
+
+**DB validada:** 1 edición 2026, sin duplicados por year.
+
+**Rubros — mini-hito cerrado (7 jun 2026):**
+
+Collection Payload `Rubros` creada y cableada al backbone. Representa los grandes
+segmentos del festival (MP, Eventos, etc.).
+
+**Comportamiento:**
+- Campos: `number` (number), `code` (text), `name` (text localized),
+  `description` (textarea localized), `order` (number), `edition` (rel. Editions).
+- Getter `getRubros()` en `src/lib/content/rubros.ts` (movido desde `catalog.ts`).
+- Mapping dinámico: resuelve `editionYear` desde la relación con `Editions`.
+- Fallback seguro a mocks (`rubros.json`) si Payload falla o no hay datos.
+- Seed idempotente por `edición + número`: `npm run seed:rubros`.
+- Carga los 23 rubros estándar del festival asociados a la edición 2026.
+
+**Tests subidos a 42** (desde 38): se agregaron 4 tests para `getRubros()`
+cubriendo:
+- Payload con docs → mapping correcto (incluyendo `href` dinámico).
+- Fallback a mocks si DB está vacía o falla.
+- Resolución de `editionYear` por relación expandida o fallback.
+
+**DB validada:** 23 rubros creados, asignados a edición 2026.
+
+**Categorías — mini-hito cerrado (7 jun 2026):**
+
+Collection Payload `Categories` creada y cableada al backbone relacional.
+Establece la jerarquía `Edition → Rubro → Category`.
+
+**Comportamiento:**
+- Campos: `rubro` (rel. Rubros), `edition` (rel. Editions), `code` (text),
+  `title` (text localized), `description` (textarea localized), `awardIcon` (select),
+  `isSpecial`, `specialType`, `isNew` (flags), `order` (number).
+- Getter `getCategories()` en `src/lib/content/categories.ts` (nuevo archivo).
+- Mapping dinámico: resuelve `rubroCode`, `rubroNumber` y `editionYear` mediante
+  relaciones de profundidad 2 (`depth: 2`).
+- Fallback seguro a mocks (`categories.json`) mapeados dinámicamente si Payload falla.
+- Seed idempotente por `edición + rubro + código`: `npm run seed:categories`.
+- Carga las 147 categorías reales del festival vinculadas a sus rubros.
+
+**Tests subidos a 46** (desde 42): se agregaron 4 tests para `getCategories()`
+cubriendo:
+- Payload con docs → mapping relacional correcto.
+- Fallback a mocks con reconstrucción dinámica del mapa de rubros.
+- Manejo de relaciones no expandidas (fallbacks a 0 / string vacío).
+
+**DB validada:** 147 categorías creadas, vinculadas a sus 23 rubros padres.
+
+**Winners — mini-hito cerrado (7 jun 2026):**
+
+Collection Payload `Winners` creada y cableada al backbone relacional.
+Completa el núcleo duro del modelo de datos del festival.
+
+**Comportamiento:**
+- Campos: `edition` (rel. Editions), `rubro` (rel. Rubros), `category` (rel. Categories),
+  `awardLevel` (select), `specialAwardName` (text localized), `campaign` (text),
+  `brand` (text), `agency` (text), `country` (text), `isGrandReco` (checkbox).
+- Getter `getWinners()` en `src/lib/content/winners.ts` (nuevo archivo).
+- Fallback dinámico: realiza un "flattening" del archivo anidado `ganadores.json`
+  para entregar una lista plana compatible con el nuevo modelo.
+- Seed idempotente por `edición + categoría + nivel + campaña + agencia`:
+  `npm run seed:winners`.
+- **Regla de integridad:** El seed NO crea ediciones automáticamente; requiere que el
+  backbone (`Edition` y `Categories`) para el año en cuestión ya existan en la DB.
+
+**Tests subidos a 50** (desde 46): se agregaron 4 tests para `getWinners()`
+cubriendo:
+- Payload con docs → mapping relacional profundo (`depth: 2`).
+- Fallback a mocks con aplanado de años, rubros y categorías.
+- Manejo de relaciones no expandidas con fallbacks seguros.
+
+**DB local:** Estructura de tablas y tipos creada. Registros de ganadores en 0
+esperando la carga de categorías históricas.
+
+**Ranking — mini-hito cerrado (7 jun 2026):**
+
+Collection Payload `RankingEntries` creada para gestionar los rankings históricos
+por país.
+
+**Comportamiento:**
+- Campos: `country` (text), `countrySlug` (text indexed), `year` (number),
+  `position` (number), `agency` (text), `granPrix`, `oro`, `plata`, `bronce`,
+  `total` (numbers), `order` (number).
+- Getter `getRankingEntries()` en `src/lib/content/rankings.ts` (nuevo archivo).
+- Fallback dinámico: aplana el objeto anidado `ranking.json` a una lista plana.
+- Seed idempotente por `countrySlug + year + position + agency`:
+  `npm run seed:rankings`.
+- **Nota histórica:** se utiliza `2024` como año representativo para el rango
+  consolidado `2017-2024` del mock actual.
+
+**Tests subidos a 53** (desde 50): se agregaron 3 tests para `getRankingEntries()`
+cubriendo:
+- Payload con docs → mapping directo al shape público.
+- Fallback a mocks con aplanado de países y filas.
+- Fallback ante fallo de conexión a DB.
+
+**DB local validada:** 145 entradas de ranking cargadas (6 países).
+
+**Jurors — mini-hito cerrado (8 jun 2026):**
+
+Collection Payload `Jurors` creada para gestionar el cuerpo de jurados del festival.
+
+**Comportamiento:**
+- Campos: `edition` (rel. Editions), `name` (text), `role` (text), `agency` (text),
+  `country` (text), `countryCode` (text), `bio` (textarea), `photo` (rel. Media, opcional),
+  `order` (number), `active` (checkbox).
+- Getter `getJurors()` en `src/lib/content/jurors.ts` (nuevo archivo).
+- Payload-first con fallback mock seguro.
+- Seed idempotente por `name + edition`: `npm run seed:jurors`.
+- **Regla de integridad:** El seed NO crea ediciones automáticamente; si falta la Edition
+  correspondiente, saltea el jurado y avisa.
+- Genera `slug` dinámicamente desde `name` (lowercase + hyphens).
+
+**Tests subidos a 61** (desde 53): se agregaron 8 tests para `getJurors()`
+cubriendo:
+- Payload con docs → mapping correcto (incluyendo slug dinámico).
+- Fallback a mocks si DB está vacía o falla.
+- Manejo de relaciones no expandidas con fallbacks seguros.
+- Validación de campos opcionales (photo, bio).
+
+**DB local validada:** Estructura de tablas y tipos creada. Seed listo para ejecutar
+cuando haya ediciones en la DB.
+
+**HallOfFameMembers — mini-hito cerrado (8 jun 2026):**
+
+Collection Payload `HallOfFameMembers` creada para gestionar los miembros históricos del Hall de la Fama.
+A diferencia de Jurors o Winners, es una entidad histórica/global sin relación estricta con `Edition`.
+
+**Comportamiento:**
+- Campos: `slug` (text unique), `name` (text), `role` (text localized), `company` (text),
+  `country` (text), `countryCode` (text), `photo` (rel. Media, opcional), `logo` (rel. Media, opcional),
+  `bio` (richtext localized), `inductionYear` (number, opcional), `order` (number), `active` (checkbox).
+- Getter `getHallOfFameMembers()` en `src/lib/content/hallOfFameMembers.ts` (nuevo archivo).
+- Payload-first con fallback mock seguro desde `hall-de-la-fama.json`.
+- Seed idempotente por `slug`: `npm run seed:hall-of-fame`.
+- No duplica, no inventa datos y no sube Media todavía (fotos/logos quedan vacíos si faltan en mock).
+
+**Tests subidos a 70** (desde 61): se agregaron tests para `getHallOfFameMembers()`
+cubriendo:
+- Payload con docs → mapping correcto.
+- Fallback a mocks si DB está vacía o falla.
+- Ordenamiento y campos opcionales.
+
+**DB local validada:** Estructura de tablas y tipos creada.
+
+**DownloadFiles — mini-hito cerrado (8 jun 2026):**
+
+Collection Payload `DownloadFiles` creada para gestionar los archivos descargables del sitio (Reglamento, Tarifario, etc.).
+
+**Comportamiento:**
+- Campos: `key` (text indexed), `label` (text), `language` (es|pt), `format` (pdf|pptx|docx),
+  `file` (rel. Media, opcional), `fileUrl` (text temporal fallback), `section` (text),
+  `order` (number), `active` (checkbox).
+- Getter `getDownloadFiles()` en `src/lib/content/downloadFiles.ts` (nuevo archivo).
+- Payload-first con fallback mock seguro desde `site-config.json`.
+- Ordenamiento por `section`, `language`, `order`.
+- Seed idempotente por `key + language`: `npm run seed:download-files`.
+- Conserva el `fileUrl` hacia las rutas estáticas actuales, preparando el terreno para cuando se suban a Media.
+
+**Tests subidos a 74** (desde 70): se agregaron 4 tests para `getDownloadFiles()`
+cubriendo:
+- Payload con docs → mapping correcto.
+- Fallback a fileUrl si relation file no está.
+- Fallback a mocks si DB vacía o falla.
+- Ordenamiento y separación por idioma.
+
+**DB local validada:** 12 entradas cargadas (6 ES, 6 PT) con idempotencia correcta.
+
+**PageContent y SiteConfig — mini-hito cerrado (9 jun 2026):**
+
+Implementación conjunta (commit técnico `1cf6f31`) para gestionar textos planos y configuración global.
+
+**Comportamiento:**
+- **SiteConfig:** Objeto Global de Payload. Maneja `contactEmails`, `phones`, `whatsapps`, `socialLinks` y `address` (localized).
+- **PageContent:** Colección para textos fijos. Campos: `pageKey`, `sectionKey`, `title` (localized), `body` (richtext Lexical, por ahora mapeado a string), `order`, `active`.
+- Textos con `localized:true` para soporte i18n futuro.
+- Getters `getSiteConfig()` y `getPageContent()` en `lib/content/`.
+- Payload-first con fallback seguro a mocks (`site-config.json`, `home.json`, etc.).
+- Seed: `npm run seed:page-content`. Estrategia **create-only**: crea si no existe, reporta `created/skipped`, y no pisa ediciones humanas. Primer contenido cargado: textos institucionales de Home.
+- **Fuera de alcance temporal:** Datos estructurados (tablas, cards, pasos) y el render de Lexical en UI (por ahora se extrae string plano).
+
+**Tests subidos a 81** (desde 74): se agregaron tests para los nuevos getters cubriendo:
+- Mappings correctos (arrays y richtext a strings planos).
+- Fallbacks vacíos y manejo de errores.
+
+**Estructuras Globales Tipadas (Tarifario, Premios, Fechas, Inscripción) — mini-hito cerrado (12 jun 2026):**
+
+Implementación del patrón de *Globals* estructurados en Payload (`src/globals/`) para páginas enteras sin listados repetitivos.
+
+**Comportamiento (Patrón):**
+- **Estructura Estricta**: En lugar de aplanar todo a RichText, los Globals (`TarifarioGlobal.ts`, `PremiosGlobal.ts`, etc.) definen campos, grupos y arrays fuertemente tipados (`localized: true`) que coinciden con los mocks de Frontend.
+- **Relaciones Desacopladas (Downloads)**: Las descargas no usan un campo `relationship` directo (que complicaría el seed y export), sino un campo texto `esDownloadKey` y `ptDownloadKey` que se resuelve en tiempo de ejecución buscando en la colección `download-files`.
+- **Getters Flexibles**: `getPremios()`, `getTarifario()`, etc. leen de Payload (`findGlobal`) y aplican `mapSections()`, `mapTrophies()` para normalizar los datos al formato exacto del mock de la UI. Si Payload falla o devuelve vacío (`isEmptyPremiosGlobal()`), se usa el mock como fallback silencioso.
+- **Seed Create-Only**: Los scripts de seed (`seed-tarifario.ts`, etc.) cargan los datos del mock a Payload pero NO pisan si ya existen, protegiendo las ediciones humanas.
+
+**Backend Contacto — mini-hito cerrado (13 jun 2026):**
+
+Backend real para el formulario público de `/contacto`.
+
+**Comportamiento:**
+- Colección **ContactMessages** para persistencia (`stored`, `sent`, `spam`, `failed`).
+- Endpoint **REST** en `/api/contact/route.ts` que valida, aplica Rate Limiting (en memoria, max 5 req / 10m) y detecta spam vía Honeypot oculto.
+- **Envío de Email**: Integrado con Resend (`sendResendEmail`) usando `RESEND_API_KEY`.
+- Testeado con el happy path y rechazo de honeypot/spam.
+
+**Login Agencias (Área Privada) — mini-hito cerrado (13 jun 2026):**
+
+Implementación de login delegando en la API nativa de Payload.
+
+**Comportamiento:**
+- Usa `/api/users/login`, `/api/users/forgot-password` y `/api/users/reset-password`.
+- El frontend gestiona los estados de "login", "forgot" y "reset" en un solo componente que maneja los errores visuales y la validación.
+- Al hacer login, el frontend valida que el usuario devuelto tenga el rol adecuado (`isAgencyLoginResponse`) antes de redirigir al panel.
+- Protegido por el patrón `requireRole` detallado en `docs/PATRON-AUTH.md`.
+
+**Backbone actual consolidado:** `Edition → Rubro → Category → Winner` + `Ranking` + `Jurors` + `HallOfFameMembers` + `DownloadFiles` + `PageContent/SiteConfig` + `Estructuras Globales (Tarifario, Premios, Fechas, Inscripcion)` + `ContactMessages` + Auth Flow.
+
+**Próximo slice técnico:** Estructuras globales (TarifarioGlobal, PremiosGlobal, etc).
+
+**Pendiente en Fase 3:**
+- Migrar el resto de `lib/content/` de mock → queries de Payload (sin tocar páginas).
+- ~~Crear collection Edition~~ ✅ Hecho. Crear el resto de las collections (Rubro, Category, Juror, Winner, etc.)
+  según el plan en `_scratch/Plan_Collections_Fase3.md`.
+- Storage S3 para producción.
+- Script de seed desde `src/mocks/`.
+
+### 7.4 Infraestructura (territorio Codex)
 
 - **Boundaries** del App Router: `error.tsx`, `loading.tsx`, `not-found.tsx` en
   `src/app/[locale]/`.
@@ -309,15 +666,17 @@ pasada (`fix(home)`):
 - Auditoría de dependencias npm corrida (fase 1, sólo reporte): ver
   [`SECURITY-AUDIT-NPM.md`](./SECURITY-AUDIT-NPM.md) y sección 9.
 
-### 7.4 Testing
+### 7.5 Testing
 
-**18 tests, todos en verde** (Vitest + Testing Library + jsdom). Cobertura actual:
+**25 tests, todos en verde** (Vitest + Testing Library + jsdom). Cobertura actual:
 
-- **Smoke** de todas las páginas maquetadas (renderizan sin error): públicas
-  estáticas, públicas con datos (async) y dinámicas con un parámetro válido
-  (`jurados/2026`, `ganadores/2025`, `ranking/colombia`).
-- **Aserciones de dato crítico** en las páginas que lo ameritan: Premios (que aparezca
-  el precio clave `550`) y Home (que aparezca `LA NOCHE DE LOS CAMPEONES`).
+- **Smoke** de las 12 páginas públicas (renderizan sin error): públicas estáticas,
+  públicas con datos (async) y dinámicas con un parámetro válido (`jurados/2026`,
+  `ganadores/2025`, `ranking/colombia`).
+- **Aserciones de dato crítico** en las páginas que lo ameritan: Premios (`550`), Home
+  (`LA NOCHE DE LOS CAMPEONES`), Jurados (un jurado con su país), Ganadores (caso
+  completo y caso solo-PDF), Ranking (una agencia), Contacto (email + formulario) y
+  Reglamento (cuerpo verbatim de un artículo).
 - Un test unitario de helper (`isExternal`).
 
 > [!NOTE]
@@ -404,6 +763,60 @@ para maquetar; nunca es código.** Lo que hay hoy:
 - [`JURADOS-SCORING-SPEC.md`](./JURADOS-SCORING-SPEC.md) — spec técnica preliminar del
   sistema de scoring de jurados, para la Fase 6 (la más compleja).
 
+### Documentos históricos de Emi (Referencia Funcional)
+
+Los archivos en `PDF/` (`Definición de Proyecto_ FIP.md` y `Flujo del Sitio Web...`)
+datan de agosto 2025. Sirven como visión original del proyecto.
+
+- **Veredicto:** Referencia funcional histórica, NO fuente técnica actual.
+- **Coincidencias:** Validan la visión general (sitio público, CMS, portales,
+  rankings, PDFs).
+- **Obsolescencia:** Strapi fue reemplazado por Payload CMS; la arquitectura de
+  API separada por una app única Next.js.
+- **Impacto:** Nada en estos documentos bloquea la Fase 3. El próximo slice técnico
+  sigue siendo `Winner`.
+- **Decisiones pendientes (extraídas de la visión original):**
+  - Criterios finales de scoring de jurados (unificar nombres entre docs).
+  - Definición de roles avanzados (Owner / Admin / Comité Ejecutivo).
+  - Dashboard de estadísticas para el administrador.
+  - Sistemas de notificaciones, historial de cambios (auditoría) y exportaciones.
+
+### Documentos históricos de Emi (agosto 2025)
+
+En `PDF/` hay dos documentos de la visión funcional original del proyecto:
+
+- `Definición de Proyecto_ FIP.md`
+- `FIP Festival - Flujo del Sitio Web y App Autoadministrable.md`
+
+> [!IMPORTANT]
+> **Estos documentos son referencia funcional histórica, no fuente técnica actual.**
+> El proyecto cambió Strapi por Payload CMS, la paleta pasó de negro/blanco/dorado a
+> dark mode púrpura/dorado (fidelidad al sitio vivo), y el modelo de datos evolucionó
+> significativamente. Leer con contexto: son la visión de agosto 2025, no el estado actual.
+
+**Qué coinciden con el proyecto actual:**
+- Visión general: sitio público, CMS editable, portal de agencias, portal de jurados,
+  ganadores, rankings, PDFs descargables.
+- Priorización: público primero, áreas privadas después.
+- Stack base: Next.js + PostgreSQL.
+
+**Qué quedó obsoleto:**
+- ** reemplazado por **Payload CMS 3** (monolito dentro de la misma app Next.js).
+- Paleta de colores (negro/blanco/dorado → púrpura/dorado dark mode).
+- Roles originales (Owner/Admin/Agencia/Jurado → modelo actual con Admin sin Owner separado).
+- Ritmo de ejecución (Emi era más agresiva; el proyecto actual usa 7 fases graduales).
+
+**Decisiones pendientes para fases futuras (rescatables de Emi):**
+- Criterios finales de scoring de jurados (hay 3 variantes en circulación: Emi 1, Emi 2,
+  y BITACORA actual — resolver con cliente antes de Fase 6).
+- Separación Owner / Admin / Comité Ejecutivo (para Fase 5).
+- Dashboard admin con estadísticas (post-lanzamiento).
+- Notificaciones (email a agencias tras envío, alertas a jurados).
+- Auditoría de cambios en el CMS (quién editó qué y cuándo).
+- Exportaciones de datos (ganadores, rankings, votos de jurados).
+
+**Nada de estos documentos bloquea la Fase 3 actual.** Ya implementamos Rubro, Category, Winner, RankingEntries y Jurors. El próximo slice técnico es `HallOfFameMembers`. Los documentos de Emi son útiles como checklist funcional para Fases 5 y 6, pero requieren reconciliación con el estado actual antes de usarse como spec.
+
 ---
 
 ## 10. Git y respaldo
@@ -416,7 +829,7 @@ sincronizados.
 > publicable, solo recibe releases — nadie commitea ahí directo). `develop` es la
 > rama de integración / trabajo diario donde cae todo. `main` se actualiza desde
 > `develop` solo en un release (hito publicable). El detalle del flujo está en
-> [ORQUESTACION-AGENTES.md](./ORQUESTACION-AGENTES.md).
+> [ORQUESTACION-AGENTES.md](./docs/legacy/ORQUESTACION-AGENTES.md).
 
 > [!WARNING]
 > **Incidente resuelto:** en el setup inicial hubo confusión de carpetas (una
@@ -454,14 +867,23 @@ git clone https://github.com/alit0/fip.git
 
 ### 11.1 Próximos pasos inmediatos (en orden)
 
-1. **Seguir Fase 2** — maquetar las 5 páginas restantes (Jurados `[year]`, Ganadores
-   `[year]`, Hall de la Fama, Ranking `[country]`, Contacto), una por vez, revisando
-   en el navegador y comparando contra el vivo. Usar los relevamientos de Gemini de
-   `_scratch/` como fuente.
-2. **Conseguir el relevamiento de Ganadores** que falta en `_scratch/` (o trabajar
-   desde los PDFs, recordando que 2024 y 2023 son sólo PDF).
-3. **Decidir sobre la auditoría npm fase 2** — aplicar (o no) los fixes de seguridad
-   reportados en `SECURITY-AUDIT-NPM.md`. Pendiente de decisión.
+Fase 2 está **completa** (12/12, con release a `main`). **Fase 3 está en curso** — el
+vertical slice inicial (Payload base + PostgreSQL + Admin + collections Users/Media/Sponsors/Editions/Rubros/Categories/Winners)
+está funcionando. Lo que sigue:
+
+1. **Migrar `lib/content/` mock → queries de Payload** — ~~`getSponsors()`~~ ✅ hecho,
+   ~~`getCurrentEdition()`~~ ✅ hecho, ~~`getRubros()`~~ ✅ hecho, ~~`getCategories()`~~ ✅ hecho,
+   ~~`getWinners()`~~ ✅ hecho, ~~`getRankingEntries()`~~ ✅ hecho, ~~`getJurors()`~~ ✅ hecho,
+   ~~`getHallOfFameMembers()`~~ ✅ hecho, ~~`getDownloadFiles()`~~ ✅ hecho,
+   ~~`getPageContent()`~~ ✅ hecho, ~~`getSiteConfig()`~~ ✅ hecho.
+   Siguiente: Estructuras globales (TarifarioGlobal, PremiosGlobal, etc).
+2. **Crear el resto de las collections** según el orden topológico definido en
+   `_scratch/Plan_Collections_Fase3.md`: SiteConfig, PageContent,
+geContent,
+   DownloadFile (Implementados). Pendientes: estructuras globales de datos complejos.
+3. **Storage S3 para producción** — reemplazar `staticDir: 'media'` por adapter S3.
+4. ~~**Script de seed**~~ ✅ Hecho: `npm run seed:sponsors`, `npm run seed:rubros`, `npm run seed:categories`, `npm run seed:winners`, `npm run seed:rankings`, `npm run seed:jurors`, `npm run seed:hall-of-fame`, `npm run seed:download-files` y `npm run seed:page-content` cargan datos desde mocks.
+5. Codex escribe tests de integración para las queries de `lib/content/` en paralelo.
 
 ### 11.2 Pendientes de contenido
 
@@ -469,14 +891,27 @@ git clone https://github.com/alit0/fip.git
 - [ ] Confirmar el nombre del Rubro 5 (Desarrollo Humano vs. "FIP Salud y desarrollo humano").
 - [ ] Reemplazar todos los placeholders de imágenes por assets reales (fotos de
   jurados, logos, íconos de premios, sello "27", banderas, imágenes OG).
+- [ ] **Consulta cliente/FIP:** el Art. R del Reglamento dice "Vigencia: 31 de Junio
+  2026" — junio tiene 30 días. Es un **error de contenido del vivo** (no un typo), se
+  dejó **verbatim**. Confirmar el valor correcto con el cliente.
 
-### 11.3 Deuda técnica anotada
+### 11.3 Auditoría de fidelidad de texto y pulido (Hito 7)
+
+- [ ] **Referencia de fidelidad:** `_scratch/Texto_Canonico_Vivo.md` contiene el texto
+  verbatim del vivo (extraído el 2/6/2026) de las **5 páginas institucionales** (Home,
+  Reglamento, Inscripción, Tarifario, Premios). Es la fuente para auditar la fidelidad
+  de texto en el pulido del Hito 7.
+- [ ] **Inscripción — variaciones menores vs el vivo** (detectadas en la auditoría de
+  fidelidad): "Muestra Digital" debería decir "Muestra Itinerante"; ajustes de
+  puntuación/énfasis. Cosmético, para el Hito 7.
+
+### 11.4 Deuda técnica anotada
 
 - [ ] **Renombrar `MuestraDigital.tsx`** — tras la corrección del Home, el componente
   ya no maqueta ninguna "muestra digital" (es la franja del informe de ganadores). El
   nombre quedó sin describir lo que hace; renombrar en un refactor aparte.
 
-### 11.4 Sobre el testing (criterio acordado)
+### 11.5 Sobre el testing (criterio acordado)
 
 No obsesionarse con cobertura total ahora. En Fase 2 (páginas estáticas con mock) lo
 visual se valida mirando el navegador, y cada página suma su smoke + una aserción de
@@ -485,7 +920,7 @@ la Fase 3 y, sobre todo, las áreas privadas — el wizard de carga de agencias 
 scoring de jurados (4 criterios, votos bloqueables). Ahí un bug no es un color
 corrido: es un voto mal calculado o una campaña que no se guarda.
 
-### 11.5 Recordatorios de método
+### 11.6 Recordatorios de método
 
 - Una página/tarea por vez por agente; revisar en el navegador antes de aprobar;
   commit + push a `develop` antes de seguir. **`main` es sagrada: nadie commitea ahí
@@ -511,9 +946,25 @@ corrido: es un voto mal calculado o una campaña que no se guarda.
 
 ---
 
-> **Estado al cierre de esta sesión:** Fase 2 con 7 de 12 páginas (Home, Reglamento,
-> Categorías, Inscripción, Fechas de cierre, Tarifario, Premios) maquetadas,
-> verificadas y pusheadas; Home alineado al sitio en vivo. Cimientos arquitectónicos
-> (capa async + ruteo i18n) y andamiaje de testing (18 tests en verde) hechos. Equipo
-> de 3 agentes en marcha con git worktrees. **Próximo paso sugerido:** maquetar las 5
-> páginas restantes de Fase 2, empezando por Jurados `[year]`.
+> **Estado al cierre de esta sesión (9 jun 2026):** **Fase 3 EN CURSO** —
+> Payload CMS 3 base integrado con PostgreSQL 16 en Docker. Admin `/admin`
+> funcionando con collections `Users` (auth), `Media` (uploads), `Sponsors`,
+> `Editions`, `Rubros`, `Categories`, `Winners`, `RankingEntries`, `Jurors`,
+> `HallOfFameMembers`, `DownloadFiles` y `PageContent`, más global `SiteConfig`.
+> Localization rails `es`/`pt` preparados. `.env.local` requerido (gitignoreado).
+> **81 tests en verde** (subió de 74 con 7 tests para PageContent/SiteConfig).
+> Typecheck y build limpios. Las 12 páginas públicas de Fase 2 intactas.
+> **Diez pipelines reales validados:** `getSponsors()`, `getCurrentEdition()`,
+> `getRubros()`, `getCategories()`, `getWinners()`, `getRankingEntries()`,
+> `getJurors()`, `getHallOfFameMembers()`, `getDownloadFiles()`, `getPageContent()`
+> y `getSiteConfig()` → Payload con fallback seguro. Backbone relacional consolidado;
+> siguiente slice: Estructuras globales complejas (Tarifarios, etc.).
+
+> **Corrección 14 jun 2026:** Opi marcó erróneamente las cards #51 (robots.txt), #52 (sitemap.ts), #55 (security headers) y #50 (favicon) como "pendiente de implementación, no hay código" y las cerró en Done. **Están implementadas y mergeadas a develop**:
+> - #50 favicon → mergeado en `1a19efe`
+> - #51 robots.txt → `src/app/robots.ts` (cfa9a029)
+> - #52 sitemap → `src/app/sitemap.ts` (4f93a295)
+> - #55 security headers → implementado vía Next.js 15 (3b5f3898)
+>
+> Las 4 cards deben estar en **Ready for Docs** (no en Done con nota falsa). La bitácora ya fue corregida.
+

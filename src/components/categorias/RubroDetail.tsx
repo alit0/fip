@@ -30,8 +30,7 @@ export default function RubroDetail({
         </ul>
       ) : (
         <p className="px-1 py-5 text-sm italic text-fip-white/40">
-          TODO: categorías de este rubro{pendingRange ? ` (${pendingRange})` : ""} — títulos y
-          descripciones pendientes de transcripción desde categorias.pdf.
+          Categorías en preparación{pendingRange ? ` (${pendingRange})` : ""}.
         </p>
       )}
     </section>

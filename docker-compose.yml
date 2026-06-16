@@ -1,0 +1,34 @@
+# Este compose levanta solo la base de datos local para desarrollo.
+services:
+  postgres:
+    # Imagen oficial de PostgreSQL en una version estable y liviana.
+    image: postgres:16-alpine
+
+    # Nombre fijo para que sea facil encontrar el contenedor con docker ps.
+    container_name: fip-postgres
+
+    # Variables que usa la imagen oficial para crear usuario, password y base inicial.
+    environment:
+      POSTGRES_USER: fip_user
+      POSTGRES_PASSWORD: fip_password
+      POSTGRES_DB: fip_dev
+
+    # Mapea el puerto local 5432 al puerto interno de PostgreSQL.
+    ports:
+      - "5432:5432"
+
+    # Guarda los datos en un volumen nombrado para no perderlos al recrear el contenedor.
+    volumes:
+      - fip_postgres_data:/var/lib/postgresql/data
+
+    # Comprueba que PostgreSQL acepte conexiones antes de considerarlo saludable.
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fip_user -d fip_dev"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+# Volumen persistente administrado por Docker para los datos de PostgreSQL.
+volumes:
+  fip_postgres_data:

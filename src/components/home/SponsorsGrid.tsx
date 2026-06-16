@@ -17,7 +17,7 @@ export default function SponsorsGrid({
           <li
             key={sponsor.name}
             className="flex h-20 w-40 items-center justify-center rounded-md bg-fip-white px-4 text-center text-sm font-bold text-fip-purple-900"
-            title="TODO: logo real pendiente"
+            title={sponsor.name}
           >
             {sponsor.name}
           </li>
