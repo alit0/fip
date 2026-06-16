@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [develop, main]
+  pull_request:
+    branches: [develop, main]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Run tests
+        run: npm test
+
+      # next build requires a live PostgreSQL database (DATABASE_URI) and
+      # a PAYLOAD_SECRET. Without these, the build will fail at payload.config
+      # initialization. Skipping the build step in CI until GitHub secrets are
+      # configured or a test-mode build target is available.
+      #
+      # To enable the build step:
+      #   1. Add these GitHub repository secrets:
+      #      - DATABASE_URI  (PostgreSQL connection string)
+      #      - PAYLOAD_SECRET  (long random string)
+      #      - SITE_URL  (e.g. https://www.fipfestival.com.ar)
+      #   2. Uncomment the step below.
+      #
+      # TODO(AGENTESOPE-64): enable build once CI secrets are wired up
+      # - name: Build
+      #   run: npm run build
+      #   env:
+      #     DATABASE_URI: ${{ secrets.DATABASE_URI }}
+      #     PAYLOAD_SECRET: ${{ secrets.PAYLOAD_SECRET }}
+      #     SITE_URL: ${{ secrets.SITE_URL }}
